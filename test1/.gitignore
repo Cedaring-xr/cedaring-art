@@ -11,6 +11,13 @@
 # production
 /build
 
+# brushes
+/public/brushes
+/src/utils/brushes
+
+# models
+/public/models
+
 # misc
 .DS_Store
 .env.local

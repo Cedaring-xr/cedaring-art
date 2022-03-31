@@ -1,22 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import { useCallback, useEffect } from 'react';
+import { init } from './utils/initDroneLayer';
 
 function App() {
+  useEffect(() => {
+    init();
+
+  }, [])
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <ul> 
+          <li>home</li>
+          <li>about</li>
+          <li>artwork</li>
+          <li>worlds</li>
+          <li>nfts</li>
+          <li>writings</li>
+          <li>contact</li>
+        </ul>
       </header>
     </div>
   );
