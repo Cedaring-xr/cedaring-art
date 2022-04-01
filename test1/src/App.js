@@ -1,7 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import { useCallback, useEffect } from 'react';
 import { init } from './utils/initDroneLayer';
+import Header from './components/Header';
+
+
 
 function App() {
   useEffect(() => {
@@ -9,19 +11,9 @@ function App() {
 
   }, [])
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <ul> 
-          <li>home</li>
-          <li>about</li>
-          <li>artwork</li>
-          <li>worlds</li>
-          <li>nfts</li>
-          <li>writings</li>
-          <li>contact</li>
-        </ul>
-      </header>
+      <Header />
     </div>
   );
 }
