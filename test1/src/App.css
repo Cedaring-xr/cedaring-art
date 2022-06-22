@@ -1,6 +1,17 @@
 .App {
   text-align: center;
+  background-color: #6e6f70;
 }
+
+canvas {
+  border: #61dafb;
+  /* border-width: 10px; */
+  display: block;
+}
+
+/* .canvas-main {
+  background: red;
+} */
 
 /* .App-logo {
   height: 40vmin;
@@ -28,14 +39,14 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 .nav-container {
   text-align: left;
@@ -43,4 +54,10 @@
 
 .nav-list {
   list-style: none;
+}
+
+.body-container {
+  background-color: #8e9fa0;
+  height: 200px;
+  opacity: .5;
 }
