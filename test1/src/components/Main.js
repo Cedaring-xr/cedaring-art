@@ -1,5 +1,5 @@
 import React from "react";
-import { altScene } from '../utils/altScene';
+import { AltScene } from '../utils/altScene';
 
 
 
@@ -7,7 +7,7 @@ import { altScene } from '../utils/altScene';
 
 
 export default function Main() {
-    altScene()
+    AltScene()
 
     return (
       <div className='body-container'>

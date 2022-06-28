@@ -7,11 +7,16 @@ canvas {
   border: #61dafb;
   /* border-width: 10px; */
   display: block;
+  height: 600px;
 }
 
 /* .canvas-main {
   background: red;
 } */
+
+.canvas-alt {
+  background: #61dafb;
+}
 
 /* .App-logo {
   height: 40vmin;

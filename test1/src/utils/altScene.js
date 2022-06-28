@@ -1,13 +1,11 @@
 import * as THREE from 'three';
-// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
-// init();
-// const loader = new GLTFLoader();
-// const gltfLoader = new GLTFLoader();
 
-export function altScene() {
+export function AltScene() {
    
     const scene = new THREE.Scene();
+    const loader = new GLTFLoader();
 
     // fov, aspect ration, near plane, far plane
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
@@ -25,13 +23,28 @@ export function altScene() {
         camera.updateProjectionMatrix();
     })
 
-    const geometry = new THREE.SphereGeometry( 10, 10, 5);
-    const material = new THREE.MeshLambertMaterial({color: 0xFFCC00});
-    const sphere = new THREE.Mesh(geometry, material);
+    loader.load('otter/scene.gltf', function(gltf) {
+        const root = gltf.scene;
+        root.scale.set(0.4, 0.4, 0.4)
+        scene.add(root)
+    });
 
-    renderer.render(scene, camera);
-    scene.add(sphere);
+    // const geometry = new THREE.SphereGeometry( 10, 10, 5);
+    // const material = new THREE.MeshLambertMaterial({color: 0xFFCC00});
+    // const sphere = new THREE.Mesh(geometry, material);
+
+    const light = new THREE.DirectionalLight(0xffffff, 1)
+    light.position.set(2, 2, 5)
+    scene.add(light);
+
+    
+    // scene.add(sphere);
 
    
+    function animate() {
+        requestAnimationFrame(animate)
+        renderer.render(scene, camera);
+    }
+    animate();
 
 }
