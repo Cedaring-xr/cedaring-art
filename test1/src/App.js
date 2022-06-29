@@ -6,10 +6,12 @@ import Main from './components/Main';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
-import { AltScene } from './utils/altScene';
+// import { AltScene } from './utils/altScene';
 
 import Box from './components/Box';
 import { ThreeIcosa } from './utils/glbLoader';
+import { blocksScene } from './utils/blocksScene';
+import ThreeScene from './utils/three-scene';
 
 
 // @react-three/fiber is a framework that renders react components in Three
@@ -19,23 +21,17 @@ import { ThreeIcosa } from './utils/glbLoader';
 function App() {
   return (
     
+    
     <div className="App">
       <Header />
-      {/* <Main /> */}
+      <ThreeScene />
+      <Main />
       <Canvas className="canvas-main">
         <OrbitControls enableZoom={false} />
         <ambientLight intensity={0.5} />
         <directionalLight position={[-2, 5, 2]} intensity={1} />
         <Suspense fallback={null}>
           <Box />
-        </Suspense>
-      </Canvas>
-      <Canvas className="canvas-alt">
-        <OrbitControls enableZoom={false} />
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[-2, 5, 2]} intensity={1} />
-        <Suspense fallback={null}>
-          <AltScene />
         </Suspense>
       </Canvas>
     </div>

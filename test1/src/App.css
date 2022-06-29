@@ -63,6 +63,7 @@ canvas {
 
 .body-container {
   background-color: #8e9fa0;
-  height: 200px;
+  height: 600px;
   opacity: .5;
+  display: flex;
 }
