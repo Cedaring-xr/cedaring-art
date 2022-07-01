@@ -40,6 +40,12 @@ class ThreeScene extends Component {
 
         this.group.position.z = -3
 
+
+        //camera
+        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+        this.camera.position.z = 5;
+       
+
         //shapes
         const geometry = new THREE.BoxGeometry(1,1,1);
         const material = new THREE.MeshBasicMaterial({
@@ -48,19 +54,14 @@ class ThreeScene extends Component {
         this.cube = new THREE.Mesh(geometry, material);
         this.scene.add(this.cube);
 
-        //camera
-        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-        this.camera.position.z = 5;
-         // focusing the camera at object
-         this.camera.lookAt(this.cube.position)
-       
-
         //scale
         this.cube.scale.x = 0.5
         this.cube.scale.y = 0.7
         this.cube.scale.z = 0.1
 
-       
+        // focusing the camera at object
+        this.camera.lookAt(this.cube.position)
+        
         //renderer
         this.renderer = new THREE.WebGL1Renderer();
         this.renderer.setSize(window.innerWidth, window.innerHeight)
@@ -73,8 +74,7 @@ class ThreeScene extends Component {
 
 
         //gsap animation
-        gsap.to(this.cube.position, { duration: 2, delay: 1, x: 4})
-        gsap.to(this.cube.position, { duration: 2, delay: 3, x: -4})
+        gsap.to(this.cube.position, { duration: 1, delay: 1, x: 4})
 
         //event listeners
         window.addEventListener('resize', this.handleWindowResize);
