@@ -100,6 +100,13 @@ class ThreeScene extends Component {
         this.renderer.render(this.scene, this.camera);
     }
 
+    // cursor= ()=> {
+    //     this.window.addEventListener('mousemove', (event) =>{
+    //         this.cursor.x = event.clientX / sizes.width - 0.5
+    //         this.cursor.y = event.clientY / sizes.height - 0.5
+    //     })
+    // }
+
     render(){
         return (
             <div

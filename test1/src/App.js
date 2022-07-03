@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import React, { useCallback, useEffect, Suspense } from 'react';
 import { init } from './utils/initDroneLayer';
 import Header from './components/Header';
@@ -9,9 +9,9 @@ import { OrbitControls } from '@react-three/drei';
 // import { AltScene } from './utils/altScene';
 
 import Box from './components/Box';
-import { ThreeIcosa } from './utils/glbLoader';
 import { blocksScene } from './utils/blocksScene';
 import ThreeScene from './utils/three-scene';
+import OpenBrushScene from './utils/glbLoader';
 
 
 // @react-three/fiber is a framework that renders react components in Three
@@ -25,6 +25,8 @@ function App() {
     <div className="App">
       <Header />
       <ThreeScene />
+      <div className="break-box"></div>
+      <OpenBrushScene className="canvas-openbrush"/>
       <Main />
       <Canvas className="canvas-main">
         <OrbitControls enableZoom={false} />
