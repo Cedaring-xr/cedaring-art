@@ -1,20 +1,60 @@
-import React from "react";
-
+import React , { useEffect, useState } from "react";
+import classes from './Header.module.scss';
+import { BiMenuAltRight } from "react-icons/bi";
+import { AiOutlineClose } from "react-icons/ai";
 
 export default function Header() {
-    return (
-      <div className='header-main'>
-        <h1>Cedaring.art</h1>
-        <nav className='nav-container'>
-          <ul className='nav-list'>
-            <li><a href='#about'>about</a></li>
-            <li><a href='#artwork'>artwork</a></li>
-            <li><a href='#ntfs'>nfts</a></li>
-            <li><a href='#vr-worlds'>VR worlds</a></li>
-            <li><a href='#blog'>blog</a></li>
-            <li><a href='#other'>other</a></li>
-          </ul>
-        </nav>
-      </div>
-    )
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuToggleHandler= () => {
+    setMenuOpen((p) => !p)
   }
+  const [size, setSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+  useEffect(() => {
+    const handleResize = ()=> {
+      setSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    window.addEventListener("resize", handleResize);
+
+    return() => window.removeEventListener("resize", handleResize);
+  }, [])
+
+  useEffect(() => {
+    if(size.width > 768 && menuOpen) {
+      setMenuOpen(false);
+    }
+  }, [size.width, menuOpen])
+
+  return (
+    <div className='header-main'>
+      <header className={classes.header}>
+        <div className={classes.header__content}>
+          <h2 className={classes.header__content__logo}>Cedaring.Art</h2>
+          <nav className={`${classes.header__content__nav} ${menuOpen ? classes.isMenu : ""}`}>
+            <ul>
+              <li>
+                <a href="/artwork">VR Artwork</a>
+              </li>
+              <li>
+                <a href="/blog">Blog</a>
+              </li>
+              <li>
+                <a href="/climbing">Climbing</a>
+              </li>
+            </ul>
+            <button>Extra Page</button>
+          </nav>
+          <div className={classes.header__content__toggle}>
+            {!menuOpen ? <BiMenuAltRight onClick={menuToggleHandler}/> : <AiOutlineClose onClick={menuToggleHandler}/>} 
+          </div>
+        </div>
+        
+      </header>
+    </div>
+  )
+}

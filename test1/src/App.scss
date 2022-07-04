@@ -1,12 +1,17 @@
-
+@import "./Styles/variables.scss";
 
 //variables
 $altBlueColor: #61dafb;
 
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
 
 
 .App {
   text-align: center;
+  font-family: $headerFont;
   background-color: #6e6f70;
 }
 
@@ -50,22 +55,6 @@ canvas {
   color: #61dafb;
 }
 
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-.nav-container {
-  text-align: left;
-}
-
-.nav-list {
-  list-style: none;
-}
 
 .body-container {
   background-color: $altBlueColor;
@@ -83,4 +72,20 @@ canvas {
   height: 50px;
   background-color: white;
   display: block;
+}
+
+
+//other tutorial stuff
+body {
+  width: 100%;
+  font-family: $headerFont;
+  color: $dark;
+}
+
+.page-header {
+  align-items: center;
+  text-align: center;
+  margin: 50px;
+  display: block;
+  background-color: red;
 }

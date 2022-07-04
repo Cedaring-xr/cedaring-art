@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals'; //perforance stuff
+import { BrowserRouter  as Router } from 'react-router-dom';
 
     //older version for react 17
 // ReactDOM.render(
@@ -15,7 +16,9 @@ import reportWebVitals from './reportWebVitals'; //perforance stuff
     // newer react 18 version
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <App />
+  <Router>
+    <App />
+  </Router>
 );
 
 
