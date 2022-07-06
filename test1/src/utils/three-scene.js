@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import * as THREE from 'three';
-import { OrbitControls } from "@react-three/drei";
 import { MeshBasicMaterial } from "three";
 import gsap from 'gsap'
 

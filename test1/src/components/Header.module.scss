@@ -26,6 +26,13 @@
             font-size: 2rem;
             font-weight: bold;
             text-decoration: none;
+            a {
+                text-decoration: none;
+            }
+            a:visited {
+                text-decoration: none;
+                color: rgba($light, 0.1);
+            }
         }
 
         &__nav {

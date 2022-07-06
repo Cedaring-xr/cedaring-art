@@ -58,9 +58,8 @@ canvas {
 
 .body-container {
   background-color: $altBlueColor;
-  height: 200px;
-  opacity: .5;
-  display: flex;
+  height: 80px;
+  display: block;
 }
 
 .canvas-openbrush {
@@ -88,4 +87,8 @@ body {
   margin: 50px;
   display: block;
   background-color: red;
+}
+
+.temp-header {
+  padding-top: 30px;
 }

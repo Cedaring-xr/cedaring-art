@@ -5,15 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals'; //perforance stuff
 import { BrowserRouter  as Router } from 'react-router-dom';
 
-    //older version for react 17
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
 
-    // newer react 18 version
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>

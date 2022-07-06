@@ -12,7 +12,7 @@ export default function Climbing() {
                 <ambientLight intensity={0.5} />
                 <directionalLight position={[-2, 5, 2]} intensity={1} />
                 <Suspense fallback={null}>
-                <Box />
+                    <Box />
                 </Suspense>
             </Canvas>
         </div>

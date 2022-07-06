@@ -34,7 +34,9 @@ export default function Header() {
     <div className='header-main'>
       <header className={classes.header}>
         <div className={classes.header__content}>
-          <h2 className={classes.header__content__logo}>Cedaring.Art</h2>
+          <h2 className={classes.header__content__logo}>
+            <a href="/">Cedaring.Art</a>
+          </h2>
           <nav className={`${classes.header__content__nav} ${menuOpen ? classes.isMenu : ""}`}>
             <ul>
               <li>
