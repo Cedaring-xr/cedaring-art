@@ -1,14 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Page404 from "./pages/Page404";
 import Artwork from "./pages/Artwork";
 import Climbing from "./pages/Climbing";
 import Blog from "./pages/Blog";
 import Worlds from "./pages/Worlds";
+import Page404 from "./pages/Page404";
 
-
-export default function Routing() {
+export default function PageRoutes() {
     return (
         <Router>
             <Routes>

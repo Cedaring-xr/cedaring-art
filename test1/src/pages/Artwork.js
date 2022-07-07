@@ -1,6 +1,7 @@
 import React from "react";
 import ThreeScene from '../utils/three-scene';
 import OpenBrushScene from '../utils/glbLoader';
+import Main from '../components/Main';
 
 export default function Artwork() {
     return (

@@ -3,8 +3,6 @@ import ThreeScene from '../utils/three-scene';
 import OpenBrushScene from '../utils/glbLoader';
 
 
-// add in a three js scene into this component
-
 
 export default function Main() {
 

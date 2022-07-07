@@ -5,7 +5,7 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 
 export default function Header() {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const menuToggleHandler= () => {
     setMenuOpen((p) => !p)
@@ -44,7 +44,7 @@ export default function Header() {
           <nav className={`${classes.header__content__nav} ${menuOpen ? classes.isMenu : ""}`}>
             <ul>
               <li>
-                <Link to="/artwork">VR Artwork</Link>
+                <a href="/artwork">VR Artwork</a>
               </li>
               <li>
                 <a href="/blog">Blog</a>
@@ -56,9 +56,7 @@ export default function Header() {
                 <a href="/worlds">VR worlds</a>
               </li>
             </ul>
-            <button onClick={() => {
-              navigate("/page404")
-            }}>404 page</button>
+            <button>404 page</button>
           </nav>
           <div className={classes.header__content__toggle}>
             {!menuOpen ? <BiMenuAltRight onClick={menuToggleHandler}/> : <AiOutlineClose onClick={menuToggleHandler}/>} 
