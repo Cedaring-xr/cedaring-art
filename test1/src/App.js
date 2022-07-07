@@ -1,6 +1,5 @@
 import './App.scss';
 import React, { useCallback, useEffect, Suspense } from 'react';
-// import { init } from './utils/initDroneLayer';
 
 //pages
 import Header from './components/Header';
@@ -13,12 +12,11 @@ import Blog from './pages/Blog';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Switch, Route } from "react-router-dom";
- 
 // import { AltScene } from './utils/altScene';
-
-import Box from './components/Box';
-import { blocksScene } from './utils/blocksScene';
-
+// import Box from './components/Box';
+// import { blocksScene } from './utils/blocksScene';
+import { BrowserRouter as Router, Link } from "react-router-dom";
+import Routing from './routes';
 
 
 // @react-three/fiber is a framework that renders react components in Three
@@ -31,18 +29,8 @@ function App() {
     
     <div className="App">
       <Layout>
-          <Route path="/">
-            <Home />
-          </Route>
-          <Route path="/artwork">
-            <Artwork />
-          </Route>
-          <Route path="/blog">
-            <Blog />
-          </Route>
-          <Route path="/climbing">
-            <Climbing />
-          </Route>
+          <Header />
+          <Routing />
       </Layout>
       <Main />
     </div>

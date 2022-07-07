@@ -1,13 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 
-
 $headerFont: 'Ubuntu', sans-serif;
-
-
 $mainBlockColor: #345abc;
-
-
 
 //other colors
 $dark: rgb(29,29,29);
@@ -26,7 +21,7 @@ $headerHeight: 100px;
 //basic mix-in
 @mixin breakpoint($point) {
     @if $point == md {
-        // 760px
+        // 760px (standard mobile breakpoint) 
         @media (min-width: 48em) {
             @content;
         }

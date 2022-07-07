@@ -1,17 +1,21 @@
 import React , { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom"
 import classes from './Header.module.scss';
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 
 export default function Header() {
+  let navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const menuToggleHandler= () => {
     setMenuOpen((p) => !p)
   }
+
   const [size, setSize] = useState({
     width: undefined,
     height: undefined,
   });
+
   useEffect(() => {
     const handleResize = ()=> {
       setSize({
@@ -40,7 +44,7 @@ export default function Header() {
           <nav className={`${classes.header__content__nav} ${menuOpen ? classes.isMenu : ""}`}>
             <ul>
               <li>
-                <a href="/artwork">VR Artwork</a>
+                <Link to="/artwork">VR Artwork</Link>
               </li>
               <li>
                 <a href="/blog">Blog</a>
@@ -48,8 +52,13 @@ export default function Header() {
               <li>
                 <a href="/climbing">Climbing</a>
               </li>
+              <li>
+                <a href="/worlds">VR worlds</a>
+              </li>
             </ul>
-            <button>Extra Page</button>
+            <button onClick={() => {
+              navigate("/page404")
+            }}>404 page</button>
           </nav>
           <div className={classes.header__content__toggle}>
             {!menuOpen ? <BiMenuAltRight onClick={menuToggleHandler}/> : <AiOutlineClose onClick={menuToggleHandler}/>} 
