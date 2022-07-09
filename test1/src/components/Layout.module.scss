@@ -2,7 +2,7 @@
 
 
 .container {
-    height: calc(100vh - #{$headerHeight});
+    height: 300px;
     background: $background;
     display: flex;
     justify-content: center;
