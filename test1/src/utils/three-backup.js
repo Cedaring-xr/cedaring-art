@@ -1,95 +1,111 @@
 import React, { Component } from "react";
 import * as THREE from 'three';
-import { OrbitControls } from "@react-three/drei";
-import { MeshBasicMaterial } from "three";
-import gsap from 'gsap'
+import { GLTFGoogleTiltBrushMaterialExtension } from 'three-icosa';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import gsap from 'gsap';
+import * as dat from "dat.gui";
 
-class ThreeScene extends Component {
+
+
+
+class OpenBrushSceneTest extends Component {
     componentDidMount(){
+        const parameters = {
+            color: 0x44bb22
+        }
 
-        //scene
+        // scene
         this.scene = new THREE.Scene();
+        this.loader = new GLTFLoader();
+        this.gui = new dat.GUI({closed: true, width: 400});
 
-        //grouping
-        this.group = new THREE.Group()
-        this.scene.add(this.group)
+        // light
+        this.light = new THREE.DirectionalLight(0xffffff, 5)
+        this.light2 = new THREE.PointLight(0xffffff , 10)
+        this.light3 = new THREE.AmbientLight(0xfffffff, 5)
+        this.light.position.set(10, 50, 10)
+        this.scene.add(this.light, this.light2);
 
-        const cube1 = new THREE.Mesh(
-            new THREE.BoxGeometry(1,1,1),
-            new THREE.MeshBasicMaterial({color: 0xffAAEE})
-        )
-        cube1.position.x = 0.8
-        cube1.position.y = 0.8
-        this.group.add(cube1)
-
-        const cube2 = new THREE.Mesh(
-            new THREE.BoxGeometry(1,1,1),
-            new THREE.MeshBasicMaterial({color: 0xffbbff})
-        )
-        cube2.position.x = 1.2
-        cube2.position.y = 1.2
-        this.group.add(cube2)
-
-        const cube3 = new THREE.Mesh(
-            new THREE.BoxGeometry(1,1,1),
-            new THREE.MeshBasicMaterial({color: 0xaa22ee})
-        )
-        cube3.position.x = 2
-        cube3.position.y = 2
-        this.group.add(cube3)
-
-        this.group.position.z = -3
-
-
-        //camera
-        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-        this.camera.position.z = 5;
-       
-
-        //shapes
+        // test cube
         const geometry = new THREE.BoxGeometry(1,1,1);
-        const material = new THREE.MeshBasicMaterial({
-            color: 0x00ff00
-        });
+        const geoSphere = new THREE.SphereGeometry(2,2,2);
+        const geoPlane = new THREE.PlaneGeometry(5,5,5);
+        const material = new THREE.MeshBasicMaterial({color: parameters.color});
         this.cube = new THREE.Mesh(geometry, material);
-        this.scene.add(this.cube);
+        this.sphere = new THREE.Mesh(geoSphere, material);
+        this.plane = new THREE.Mesh(geoPlane, material);
 
-        //scale
-        this.cube.scale.x = 0.5
-        this.cube.scale.y = 0.7
-        this.cube.scale.z = 0.1
-
-        // focusing the camera at object
-        this.camera.lookAt(this.cube.position)
+        // this.scene.add(this.cube, this.sphere, this.plane);
+    
+        this.sphere.position.x = 3;
+        this.plane.position.y = 5;
         
-        //renderer
+        this.cube.rotateOnAxis.x = 0.5;
+
+        //loading manager
+        const loadingManager = new THREE.LoadingManager();
+        loadingManager.onStart = ()=> {
+            //updates for loading progress bar
+        }
+        loadingManager.onLoad = ()=> {
+            
+        }
+        loadingManager.onProgress = ()=> {
+            
+        }
+        loadingManager.onError = ()=> {
+            
+        }
+
+        // model loading
+        this.loader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../brushes'));
+        this.loader.load('/models/circuitArm.glb', (model) => {
+            this.scene.add(model.scene);
+        });
+
+        // gui/debug
+        this.gui.add(this.cube.position, 'x').min(-5).max(5).step(0.1);
+        this.gui.add(this.cube.position, 'y').min(-5).max(5).step(0.1);
+        this.gui.add(this.cube.position, 'z').min(-5).max(5).step(0.1);
+        this.gui.add(this.cube, 'visible');
+        this.gui.addColor(parameters, 'color').onChange(()=> {
+            material.color.set(parameters.color)
+        })
+
+
+        // camera
+        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+        this.camera.position.z = -3;
+        this.camera.position.y = 12;
+        this.camera.position.x = 4;
+        // this.camera.lookAt(this.cube.position)
+
+    // render
         this.renderer = new THREE.WebGL1Renderer();
         this.renderer.setSize(window.innerWidth, window.innerHeight)
         this.mount.appendChild(this.renderer.domElement)
-
-        
-        this.animation();
-        this.groupAnimation();
+        // re-run renderer for updates to the scene
         this.renderer.render(this.scene, this.camera);
 
+         // controls
+        this.comtrols = new OrbitControls(this.camera, this.renderer.domElement)
 
-        //gsap animation
-        gsap.to(this.cube.position, { duration: 1, delay: 1, x: 4})
+        //animation
+        this.animation();
+        // this.groupAnimation();
+        this.renderer.render(this.scene, this.camera);
 
         //event listeners
         window.addEventListener('resize', this.handleWindowResize);
+
+        
     }
 
     animation= ()=> {
         requestAnimationFrame(this.animation);
         this.cube.rotation.x +=0.01;
         this.cube.rotation.y +=0.01;
-        this.renderer.render(this.scene, this.camera);
-    }
-
-    groupAnimation= ()=> {
-        requestAnimationFrame(this.groupAnimation)
-        this.group.rotation.x +=0.01;
         this.renderer.render(this.scene, this.camera);
     }
 
@@ -111,4 +127,4 @@ class ThreeScene extends Component {
     }
 }
 
-export default ThreeScene;
+export default OpenBrushSceneTest;
