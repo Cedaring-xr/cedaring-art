@@ -5,6 +5,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import gsap from 'gsap';
 import * as dat from "dat.gui";
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
+import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 
 
 
@@ -43,6 +45,11 @@ class OpenBrushSceneTest extends Component {
         
         this.cube.rotateOnAxis.x = 0.5;
 
+
+        // axis helper to mark center point
+        const axesHelper = new THREE.AxesHelper()
+        this.scene.add(axesHelper)
+
         //loading manager
         const loadingManager = new THREE.LoadingManager();
         loadingManager.onStart = ()=> {
@@ -58,10 +65,31 @@ class OpenBrushSceneTest extends Component {
             
         }
 
-        // model loading
-        this.loader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../brushes'));
-        this.loader.load('/models/circuitArm.glb', (model) => {
-            this.scene.add(model.scene);
+        // // model loading
+        // this.loader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../brushes'));
+        // this.loader.load('/models/scroll.glb', (model) => {
+        //     this.scene.add(model.scene);
+        // });
+
+        // 3d font loading
+        const txtLoader = new FontLoader();
+        txtLoader.load('/extras/fonts/helvetiker_regular.typeface.json', (font)=> {
+            const geometryFont = new TextGeometry('Cedaring', {
+                font: font,
+                size: 1,
+                height: 0.2,
+                curveSegments: 5,  //poly count
+                bevelEnabled: true,
+                bevelThickness: 0.03,
+                bevelSize: 0.02,
+                bevelOffset: 0,
+                bevelSegments: 5
+            });
+            geometryFont.computeBoundingBox()
+            geometryFont.center()
+            const textMaterial = new THREE.MeshBasicMaterial({color: parameters.color});
+            const text = new THREE.Mesh(geometryFont, textMaterial);
+            this.scene.add(text)
         });
 
         // gui/debug
