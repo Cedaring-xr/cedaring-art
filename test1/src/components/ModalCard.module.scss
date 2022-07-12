@@ -1,0 +1,19 @@
+@import "../Styles/variables.scss";
+
+
+
+// styles for modal
+
+.modal {
+    height: 300px;
+    background: $background;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close {
+    height: 50px;
+    width: 50px;
+    background-color: brown;
+}

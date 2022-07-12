@@ -62,8 +62,8 @@ class OpenBrushScene extends Component {
         // re-run renderer for updates to the scene
         this.renderer.render(this.scene, this.camera);
 
-         // controls
-         this.comtrols = new OrbitControls(this.camera, this.renderer.domElement)
+        // controls
+        this.comtrols = new OrbitControls(this.camera, this.renderer.domElement)
 
         //animation
         this.animation();

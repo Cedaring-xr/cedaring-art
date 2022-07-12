@@ -1,11 +1,5 @@
-import {
-    PerspectiveCamera,
-    Scene,
-    Clock,
-    WebGLRenderer
-} from 'three';
-    
-import { TiltLoader, updateBrushes } from 'three-tiltloader';
+import { PerspectiveCamera, Scene, Clock, WebGLRenderer } from 'three';
+    import { TiltLoader, updateBrushes } from 'three-tiltloader';
 
 export function tiltLoad() {
     

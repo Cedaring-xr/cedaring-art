@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import ThreeScene from '../utils/three-scene';
 import OpenBrushScene from '../utils/glbLoader';
-import Main from '../components/Main';
 
 export default function Artwork() {
+    const setModalOpen = false
     return (
         <div>
             <div className="grid-container">
-            <div className="grid-card">
+            <div className="grid-card" onClick={()=> setModalOpen(true)}>
                     <div className="grid-card-content">
                         <div className="grid-img-container">
                             <img className="grid-card-img" src="/extras/clock_Moment.jpg"/>
