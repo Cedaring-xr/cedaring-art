@@ -7,25 +7,29 @@ import Modal from "react-modal";
 
 // covers the artwork viewer component that should call a glb or tilt file loader scene
 
-export default function Modal() {
-  const [display, setDisplay] = useState(true);
+const ModalCard = ({ isOpen, onClose }) => {
+  const [open, setOpen] = useState()
 
-  const open = () => {
-    setDisplay(true)
-  };
-  const close = () => {
-    setDisplay(false)
-  };
+  function onClose() {
+    setOpen(isOpen = false)
+  }
 
-  return (
-    <div className={classes.container}>
-      <Modal isOpen={modalIsOpen}>
-        <h3 className="temp-header">Modal openbrush canvas</h3>
-        <ThreeScene />
-        <div className={classes.close} onClick={close}>
-          X close
-        </div>
-      </Modal>
-    </div>
-  )
+  if (!isOpen) {
+    console.log('modal') 
+    return null
+  } else {
+    return (
+      <div className={classes.container}>
+        <Modal isOpen={isOpen} onClose={() => isOpen(false)}>
+          <h3 className="temp-header">Modal openbrush canvas</h3>
+          <button className={classes.close} onClick={onClose}>
+            X close
+          </button>
+          <ThreeScene />
+        </Modal>
+      </div>
+    )
+  }
 }
+
+export default ModalCard
