@@ -3,6 +3,7 @@
         "name": "Season Clock",
         "description": "clock scene description",
         "preview-img": "/extras/clock_Moment.jpg",
+        "model": "/models/cyclos.glb",
         "three-settings": {
             "lights": "",
             "other": ""
@@ -12,6 +13,7 @@
         "name": "Circuit Arm",
         "description": "electric should be animated",
         "preview-img": "/extras/circuitArm2_Moment.jpg",
+        "model": "/models/circuitArm.glb",
         "three-settings": {
             "lights": "",
             "other": ""
@@ -21,6 +23,7 @@
         "name": "City Tree",
         "description": "single sided box fun",
         "preview-img": "/extras/cityTree_Moment.jpg",
+        "model": "/models/pinata.glb",
         "three-settings": {
             "lights": "",
             "other": ""
@@ -30,6 +33,27 @@
         "name": "Cube Tree",
         "description": "tree growing around white cubes",
         "preview-img": "/extras/cubeTree_Moment.jpg",
+        "model": "/models/cubeTree.glb",
+        "three-settings": {
+            "lights": "",
+            "other": ""
+        }
+    },
+    {
+        "name": "Pinata",
+        "description": "pinata quest",
+        "preview-img": "/extras/cubeTree_Moment.jpg",
+        "model": "/models/pinata.glb",
+        "three-settings": {
+            "lights": "",
+            "other": ""
+        }
+    },
+    {
+        "name": "Paint Beach",
+        "description": "blending surfaces tests",
+        "preview-img": "/extras/origamiCrane_Moment.jpg",
+        "model": "/models/paintBeach.glb",
         "three-settings": {
             "lights": "",
             "other": ""
