@@ -3,13 +3,19 @@ import Counter from "../utils/counter";
 import ModalCard from "../components/ModalCard";
 import art from "../Assets/artwork.json";
 
+let instance = null
+
  class Artwork extends Component {
     
-    constructor(props) {
-        super(props)
+    constructor(canvas) {
+        super()
         this.state = {
             isOpen: false
         }
+        if(instance) {   //singleton structure for camera import
+            return null
+        }
+        instance = this
     }
 
     openModal() {
