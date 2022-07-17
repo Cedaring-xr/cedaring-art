@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import * as THREE from 'three';
-import { GLTFGoogleTiltBrushMaterialExtension } from 'three-icosa';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import React, { Component } from "react"
+import * as THREE from 'three'
+import { GLTFGoogleTiltBrushMaterialExtension } from 'three-icosa'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import gsap from 'gsap'
-import * as dat from "dat.gui";
+import * as lilGui from "lil-gui"
 
 
 // this will be used in the artwork section to display Open brush content
@@ -19,7 +19,7 @@ class ThreeScene extends Component {
         //scene
         this.scene = new THREE.Scene();
         this.loader = new GLTFLoader();
-        this.gui = new dat.GUI({closed: true, width: 400});
+        this.gui = new lilGui.GUI({closed: true, width: 400});
 
         //grouping
         this.group = new THREE.Group()
