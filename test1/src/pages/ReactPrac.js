@@ -25,13 +25,13 @@ export default function ReactPrac() {
     }
 
     function handleAddTodo(e) {
-        console.log(todoNameRef.current)
+        console.log(todoNameRef)
         const name = todoNameRef.current.value
         if (name === '') return
         setTodos(prevTodos => {
             return [...prevTodos, {id: uuidv4(), name:name, complete:false}]
         })
-        todoNameRef.current = null
+        todoNameRef.current.value = null
     }
 
     function handleClearTodos() {
