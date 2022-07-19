@@ -55,6 +55,9 @@ export default function Header() {
               <li>
                 <a href="/worlds">VR worlds</a>
               </li>
+              <li>
+                <a href="/react">React Practice</a>
+              </li>
             </ul>
             <button>404 page</button>
           </nav>

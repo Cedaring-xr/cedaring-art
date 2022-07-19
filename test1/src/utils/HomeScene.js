@@ -7,11 +7,12 @@ import gsap from 'gsap';
 import * as lilGui from "lil-gui"
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader"
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry"
+import { AmbientLight } from "three"
 
 
 
 
-class OpenBrushSceneTest extends Component {
+export default class HomepageScene extends Component {
     componentDidMount(){
         const parameters = {
             color: 0x44bb22
@@ -23,11 +24,12 @@ class OpenBrushSceneTest extends Component {
         this.gui = new lilGui.GUI({closed: true, width: 400});
 
         // light
-        this.light = new THREE.DirectionalLight(0xffffff, 5)
+        this.directLight = new THREE.DirectionalLight(0xffffff, 5)
+        this.lightHelper = new THREE.DirectionalLightHelper(this.directLight, 5)
         this.light2 = new THREE.PointLight(0xffffff , 10)
-        this.light3 = new THREE.AmbientLight(0xfffffff, 5)
-        this.light.position.set(10, 50, 10)
-        this.scene.add(this.light, this.light2);
+        this.light3 = new THREE.AmbientLight(0xff00ff, 5)
+        this.directLight.position.set(5, 5, 10)
+        this.scene.add(this.directLight, this.light2, this.light3, this.lightHelper);
 
         // test cube
         const geometry = new THREE.BoxGeometry(1,1,1);
@@ -88,18 +90,21 @@ class OpenBrushSceneTest extends Component {
             geometryFont.computeBoundingBox()
             geometryFont.center()
             const textMaterial = new THREE.MeshBasicMaterial({color: parameters.color});
-            const text = new THREE.Mesh(geometryFont, textMaterial);
-            this.scene.add(text)
+            this.text = new THREE.Mesh(geometryFont, textMaterial);
+            this.scene.add(this.text)
         });
 
-        // gui/debug
-        this.gui.add(this.cube.position, 'x').min(-5).max(5).step(0.1);
-        this.gui.add(this.cube.position, 'y').min(-5).max(5).step(0.1);
-        this.gui.add(this.cube.position, 'z').min(-5).max(5).step(0.1);
-        this.gui.add(this.cube, 'visible');
+        // debug gui
+        this.gui.add(this.cube.position, 'x').min(-5).max(5).step(0.1)
+        this.gui.add(this.cube.position, 'y').min(-5).max(5).step(0.1)
+        this.gui.add(this.cube.position, 'z').min(-5).max(5).step(0.1)
+        this.gui.add(this.cube, 'visible')
         this.gui.addColor(parameters, 'color').onChange(()=> {
             material.color.set(parameters.color)
         })
+        this.gui.add(this.directLight, 'intensity').min(0).max(10).step(0.1)
+        this.gui.add(this.lightHelper, 'visible')
+        // this.gui.add(this.text, 'visible');  //visible is not a property of text
 
 
         // camera
@@ -154,5 +159,3 @@ class OpenBrushSceneTest extends Component {
         )
     }
 }
-
-export default OpenBrushSceneTest;

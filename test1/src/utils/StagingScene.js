@@ -6,7 +6,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 export default class StagingScene extends Component{
    
     constructor() {
-
+        super()
 
 
         this.scene = new THREE.Scene();

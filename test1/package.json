@@ -20,6 +20,7 @@
     "three": "^0.138.3",
     "three-icosa": "^0.3.0",
     "three-tiltloader": "^0.2.2",
+    "uuid": "^8.3.2",
     "web-vitals": "^2.1.0",
     "yarn": "^1.22.18"
   },

@@ -1,10 +1,10 @@
 import React from "react";
-import OpenBrushSceneTest from '../utils/three-backup';
+import HomepageScene from '../utils/HomeScene';
 
 export default function Home() {
     return (
         <div>
-            <OpenBrushSceneTest className="canvas-openbrush"/>
+            <HomepageScene className="canvas-openbrush"/>
         </div>
     )
 }
