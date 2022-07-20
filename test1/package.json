@@ -16,6 +16,7 @@
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
+    "react-spring": "^9.5.0",
     "three": "^0.138.3",
     "three-icosa": "^0.3.0",
     "three-tiltloader": "^0.2.2",
