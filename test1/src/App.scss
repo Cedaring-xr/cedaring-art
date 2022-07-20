@@ -15,6 +15,10 @@ $altBlueColor: #61dafb;
   background-color: #6e6f70;
 }
 
+#portal-root {
+  position: fixed;
+}
+
 canvas {
   /* border-width: 10px; */
   display: block;
