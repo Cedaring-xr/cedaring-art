@@ -4,9 +4,10 @@ import LandScene from '../utils/LandScene';
 export default function Climbing() {
     return (
         <>
-            <h1 className="page-header">Climbing stuff</h1>
+            <div className='Heading_container'>
+                <h1 className="page_header">Colorado climbing projects visualized in 3D</h1>
+            </div>
             <LandScene />
-        </>
-            
+        </> 
     )
 }

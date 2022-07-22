@@ -7,7 +7,10 @@ export default function Artwork()  {
     const [isOpen, setOpen] = useState(false) //state starts in the parent
 
     return (
-        <div>
+        <>
+            <div className='Heading_container'>
+                <h1 className="page_header">Virtual Reality Artwork created with Openbrush</h1>
+            </div>
             <div className="grid-container">
                 { art.reverse().map( card => {
                     return(
@@ -28,6 +31,6 @@ export default function Artwork()  {
                     )
                 })}  
             </div>
-        </div>
+        </>
     )
 }

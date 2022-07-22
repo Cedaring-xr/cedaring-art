@@ -1,19 +1,12 @@
 import React, { Component } from "react"
 import * as THREE from 'three'
-import { GLTFGoogleTiltBrushMaterialExtension } from 'three-icosa'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import gsap from 'gsap';
 import * as lilGui from "lil-gui"
-import { FontLoader } from "three/examples/jsm/loaders/FontLoader"
-import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry"
-import { AmbientLight } from "three"
 
 export default class LandScene extends Component {
     componentDidMount(){
-        const parameters = {
-            color: 0x44bb22
-        }
 
         // scene
         this.scene = new THREE.Scene();
@@ -21,63 +14,37 @@ export default class LandScene extends Component {
         this.gui = new lilGui.GUI({closed: true, width: 400});
 
         // light
-        this.directLight = new THREE.DirectionalLight(0xffffff, 5)
-        this.lightHelper = new THREE.DirectionalLightHelper(this.directLight, 5)
-        this.light2 = new THREE.PointLight(0xffffff , 10)
-        this.light3 = new THREE.AmbientLight(0xff00ff, 5)
+        this.directLight = new THREE.DirectionalLight(0xffffff, 1)
+        // this.lightHelper = new THREE.DirectionalLightHelper(this.directLight, 5)
+        // this.light2 = new THREE.PointLight(0xffffff , 10)
+        this.light3 = new THREE.AmbientLight(0xffffff, 10)
         this.directLight.position.set(5, 5, 10)
-        this.scene.add(this.directLight, this.light2, this.light3, this.lightHelper);
+        this.scene.add(this.ligth3);
 
         // axis helper to mark center point
         const axesHelper = new THREE.AxesHelper()
         this.scene.add(axesHelper)
 
-        //loading manager
-        const loadingManager = new THREE.LoadingManager();
-        loadingManager.onStart = ()=> {
-            //updates for loading progress bar
-        }
-        loadingManager.onLoad = ()=> {
-            
-        }
-        loadingManager.onProgress = ()=> {
-            
-        }
-        loadingManager.onError = ()=> {
-            
-        }
+        //test plane
+        const plane = new THREE.Mesh(
+            new THREE.PlaneGeometry(5, 5),
+            new THREE.MeshBasicMaterial({color: 0xffff00, side: THREE.DoubleSide})
+        )
+        // plane.position.x = 1.2
+        // plane.position.y = 1.2
+        this.scene.add(plane)
 
         // model loading
-        this.loader.load('/models/LizardHead.glb', (model) => {
+        let example = new THREE.Object3D();
+        const mountains = this.loader.load('/models/LizardHead2.glb', (model) => {
             console.log(model)
-            this.scene.add(model.scene);
-        });
-
-        // 3d font loading
-        const txtLoader = new FontLoader();
-        txtLoader.load('/extras/fonts/helvetiker_regular.typeface.json', (font)=> {
-            const geometryFont = new TextGeometry('Cedaring', {
-                font: font,
-                size: 1,
-                height: 0.2,
-                curveSegments: 5,  //poly count
-                bevelEnabled: true,
-                bevelThickness: 0.03,
-                bevelSize: 0.02,
-                bevelOffset: 0,
-                bevelSegments: 5
-            });
-            geometryFont.computeBoundingBox()
-            geometryFont.center()
-            const textMaterial = new THREE.MeshBasicMaterial({color: parameters.color});
-            this.text = new THREE.Mesh(geometryFont, textMaterial);
-            this.scene.add(this.text)
+            example = model
+            model.scene.scale.set(0.01, 0.01, 0.01)
+            this.scene.add(example.scene);
         });
 
         // debug gui
-        this.gui.add(this.directLight, 'intensity').min(0).max(10).step(0.1)
-        this.gui.add(this.lightHelper, 'visible')
-        // this.gui.add(this.text, 'visible');  //visible is not a property of text
+        this.gui.add(this.light3, 'intensity').min(0).max(100).step(0.5)
 
 
         // camera
@@ -87,7 +54,7 @@ export default class LandScene extends Component {
         this.camera.position.x = 4;
         // this.camera.lookAt(this.cube.position)
 
-    // render
+        // render
         this.renderer = new THREE.WebGL1Renderer();
         this.renderer.setSize(window.innerWidth, window.innerHeight)
         this.mount.appendChild(this.renderer.domElement)
@@ -104,8 +71,6 @@ export default class LandScene extends Component {
 
         //event listeners
         window.addEventListener('resize', this.handleWindowResize);
-
-        
     }
 
     animation= ()=> {
