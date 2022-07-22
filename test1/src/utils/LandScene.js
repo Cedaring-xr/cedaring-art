@@ -14,25 +14,26 @@ export default class LandScene extends Component {
         this.gui = new lilGui.GUI({closed: true, width: 400});
 
         // light
-        this.directLight = new THREE.DirectionalLight(0xffffff, 1)
+        this.directLight = new THREE.DirectionalLight('#fff', 5)
+        this.directLight.position.set(0.25, 3, -2.25)
         // this.lightHelper = new THREE.DirectionalLightHelper(this.directLight, 5)
         // this.light2 = new THREE.PointLight(0xffffff , 10)
         this.light3 = new THREE.AmbientLight(0xffffff, 10)
         this.directLight.position.set(5, 5, 10)
-        this.scene.add(this.ligth3);
+        this.scene.add(this.ligth3, this.directLight);
 
         // axis helper to mark center point
         const axesHelper = new THREE.AxesHelper()
         this.scene.add(axesHelper)
 
-        //test plane
-        const plane = new THREE.Mesh(
-            new THREE.PlaneGeometry(5, 5),
-            new THREE.MeshBasicMaterial({color: 0xffff00, side: THREE.DoubleSide})
-        )
-        // plane.position.x = 1.2
-        // plane.position.y = 1.2
-        this.scene.add(plane)
+        //Colorado model loading
+        const colorado = this.loader.load('/models/colorado.glb', (model) => {
+            console.log(model)
+            example = model
+            model.scene.scale.set(0.01, 0.01, 0.01)
+            this.scene.add(example.scene);
+            this.gui.add(example.scene.rotation, 'y').min(-Math.PI).max(Math.PI).step(0.01).name('Y-rotation')
+        });
 
         // model loading
         let example = new THREE.Object3D();
@@ -45,37 +46,54 @@ export default class LandScene extends Component {
 
         // debug gui
         this.gui.add(this.light3, 'intensity').min(0).max(100).step(0.5)
-
+        this.gui.add(this.directLight.position, 'x').min(-5).max(5).step(0.01).name('LightX')
+        this.gui.add(this.directLight.position, 'y').min(-5).max(5).step(0.01).name('LightY')
+        this.gui.add(this.directLight.position, 'z').min(-5).max(5).step(0.01).name('LightZ')
+        
 
         // camera
-        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-        this.camera.position.z = -3;
-        this.camera.position.y = 12;
-        this.camera.position.x = 4;
+        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
+        this.camera.position.z = -4
+        this.camera.position.y = 3
+        this.camera.position.x = 1
         // this.camera.lookAt(this.cube.position)
 
+        //envirionment map
+        this.envTexture = new THREE.CubeTextureLoader();
+        const envBackground = this.envTexture.load([
+            '/extras/background/px.png',  //px
+            '/extras/background/nx.png',  //py
+            '/extras/background/py.png',  //nx
+            '/extras/background/ny.png',  //ny
+            '/extras/background/pz.png',  //pz
+            '/extras/background/nz.png'   //nz
+        ])
+        this.scene.background = envBackground
+
         // render
-        this.renderer = new THREE.WebGL1Renderer();
+        this.renderer = new THREE.WebGL1Renderer({alpha: true})
+        this.renderer.setClearColor(0xfff, 0)
         this.renderer.setSize(window.innerWidth, window.innerHeight)
+        this.renderer.physicallyCorrectLights = true
         this.mount.appendChild(this.renderer.domElement)
         // re-run renderer for updates to the scene
-        this.renderer.render(this.scene, this.camera);
+        this.renderer.render(this.scene, this.camera)
 
          // controls
         this.comtrols = new OrbitControls(this.camera, this.renderer.domElement)
 
         //animation
-        this.animation();
+        this.animation()
         // this.groupAnimation();
-        this.renderer.render(this.scene, this.camera);
+        this.renderer.render(this.scene, this.camera)
 
         //event listeners
-        window.addEventListener('resize', this.handleWindowResize);
+        window.addEventListener('resize', this.handleWindowResize)
     }
 
     animation= ()=> {
-        requestAnimationFrame(this.animation);
-        this.renderer.render(this.scene, this.camera);
+        requestAnimationFrame(this.animation)
+        this.renderer.render(this.scene, this.camera)
     }
 
     handleWindowResize= ()=> {
