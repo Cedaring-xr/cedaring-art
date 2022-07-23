@@ -56,9 +56,10 @@ export default class HomepageScene extends Component {
         const loadingManager = new THREE.LoadingManager();
         loadingManager.onStart = ()=> {
             //updates for loading progress bar
+            console.log('loading start')
         }
         loadingManager.onLoad = ()=> {
-            
+            console.log('loading end')
         }
         loadingManager.onProgress = ()=> {
             
