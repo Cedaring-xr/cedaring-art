@@ -9,9 +9,20 @@ export default class LandScene extends Component {
     componentDidMount(){
 
         // scene
-        this.scene = new THREE.Scene();
-        this.loader = new GLTFLoader();
-        this.gui = new lilGui.GUI({closed: true, width: 400});
+        this.scene = new THREE.Scene()
+        this.loadingManager = new THREE.LoadingManager(
+            // Loaded
+            () => {
+                console.log('loaded')
+                gsap.to(overlayMaterial.uniforms.uAlpha, {duration: 2, value: 0})
+            },
+            // Progress
+            () => {
+                console.log('progress')
+            }
+        )
+        this.loader = new GLTFLoader()
+        this.gui = new lilGui.GUI({closed: false, width: 400})
 
         // light
         this.directLight = new THREE.DirectionalLight('#fff', 5)
@@ -22,6 +33,31 @@ export default class LandScene extends Component {
         this.directLight.position.set(5, 5, 10)
         this.scene.add(this.ligth3, this.directLight);
 
+        //overlay
+        const overlayGeometry = new THREE.PlaneBufferGeometry(2,2,1,1)
+        const overlayMaterial = new THREE.ShaderMaterial({
+            transparent: true,
+            uniforms:
+            {
+                uAlpha: { value: 1 }
+            },
+            vertexShader: `
+                void main()
+                {
+                    gl_Position = vec4(position, 1.0);
+                }
+            `,
+            fragmentShader: `
+                uniform float uAlpha;
+                void main()
+                {
+                    gl_FragColor = vec4(0.0, 0.0, 0.0, uAlpha);
+                }
+            `
+        })
+        const overlayIntro = new THREE.Mesh(overlayGeometry, overlayMaterial)
+        this.scene.add(overlayIntro)
+
         // axis helper to mark center point
         const axesHelper = new THREE.AxesHelper()
         this.scene.add(axesHelper)
@@ -30,7 +66,7 @@ export default class LandScene extends Component {
         const colorado = this.loader.load('/models/colorado.glb', (model) => {
             console.log(model)
             example = model
-            model.scene.scale.set(0.01, 0.01, 0.01)
+            model.scene.scale.set(0.1, 0.1, 0.1)
             this.scene.add(example.scene);
             this.gui.add(example.scene.rotation, 'y').min(-Math.PI).max(Math.PI).step(0.01).name('Y-rotation')
         });
@@ -41,6 +77,11 @@ export default class LandScene extends Component {
             console.log(model)
             example = model
             model.scene.scale.set(0.01, 0.01, 0.01)
+            model.scene.position.y = 0.80
+            model.scene.position.x = -28
+            model.scene.position.z = 17
+            this.gui.add(example.scene.position, 'z').min(-40).max(40).step(0.01).name('Z-position')
+            this.gui.add(example.scene.position, 'x').min(-40).max(40).step(0.01).name('X-position')
             this.scene.add(example.scene);
         });
 
@@ -69,6 +110,9 @@ export default class LandScene extends Component {
             '/extras/background/nz.png'   //nz
         ])
         this.scene.background = envBackground
+
+        //loading manager
+
 
         // render
         this.renderer = new THREE.WebGL1Renderer({alpha: true})
