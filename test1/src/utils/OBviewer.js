@@ -9,7 +9,7 @@ import * as lilGui from "lil-gui"
 
 
 
-class ModelScene extends Component {
+class OpenBrushScene extends Component {
     componentDidMount(){
         const parameters = {
             color: 0x44bb22
@@ -128,4 +128,4 @@ class ModelScene extends Component {
     }
 }
 
-export default ModelScene;
+export default OpenBrushScene;

@@ -135,6 +135,7 @@ export default class LandScene extends Component {
             '/extras/background/pz.png',  //pz
             '/extras/background/nz.png'   //nz
         ])
+        envBackground.encoding = THREE.sRGBEncoding
         this.scene.background = envBackground
 
 
@@ -144,12 +145,14 @@ export default class LandScene extends Component {
         this.renderer.setClearColor(0xfff, 0)
         this.renderer.setSize(window.innerWidth, window.innerHeight)
         this.renderer.physicallyCorrectLights = true
+        this.renderer.outputEncoding = THREE.sRGBEncoding
         this.mount.appendChild(this.renderer.domElement)
         // re-run renderer for updates to the scene
         this.renderer.render(this.scene, this.camera)
 
         // controls
-        this.comtrols = new OrbitControls(this.camera, this.renderer.domElement)
+        const sceneControls = new OrbitControls(this.camera, this.renderer.domElement)
+        sceneControls.enableZoom = false
 
         //animation
         this.animation()
