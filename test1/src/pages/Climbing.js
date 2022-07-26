@@ -8,7 +8,7 @@ export default function Climbing() {
 
     return (
         <>
-            <Parallax pages={2}>
+            {/* <Parallax pages={2}>
                 <ParallaxLayer speed={1} style={{ backgroundImage: `url(${image1})`, backgroundSize: 'contain'}}>
                     
                 </ParallaxLayer>
@@ -16,7 +16,7 @@ export default function Climbing() {
                 <h4>page header text</h4>
                 </ParallaxLayer>
                 
-            </Parallax>
+            </Parallax> */}
             <div className='Heading_container'>
                 <h1 className="page_header">Colorado climbing projects visualized in 3D</h1>
             </div>

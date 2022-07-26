@@ -80,7 +80,7 @@ export default class LandScene extends Component {
         const overlayIntro = new THREE.Mesh(overlayGeometry, overlayMaterial)
         this.scene.add(overlayIntro)
 
-        // axis helper to mark center point
+    // center axis helper
         const axesHelper = new THREE.AxesHelper()
         this.scene.add(axesHelper)
 
@@ -152,7 +152,7 @@ export default class LandScene extends Component {
 
         // controls
         const sceneControls = new OrbitControls(this.camera, this.renderer.domElement)
-        sceneControls.enableZoom = false
+        // sceneControls.enableZoom = false
 
         //animation
         this.animation()
