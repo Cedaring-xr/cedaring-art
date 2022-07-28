@@ -17,23 +17,39 @@ class ShaderPractice extends Component {
         }
 
         //scene
-        this.scene = new THREE.Scene();
-        this.loader = new GLTFLoader();
-        this.gui = new lilGui.GUI({closed: true, width: 400});
+        this.scene = new THREE.Scene()
+        this.loader = new GLTFLoader()
+        this.gui = new lilGui.GUI({closed: true, width: 400})
 
         //shapes
-        const geometry = new THREE.BoxGeometry(1,1,1);
+        const geometry = new THREE.BoxGeometry(1,1,1)
 
         const material = new THREE.RawShaderMaterial({
-            vertexShader: '',
-            fragmentShader: ''
+            vertexShader: `
+                uniform mat4 projectionMatrix;
+                uniform mat4 viewMatrix;
+                uniform mat4 modelMatrix;
+                attribute vec3 position;
+
+                void main() {
+                    gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(position, 1.0);
+                }
+            `,
+            fragmentShader: `
+                precision mediump float;
+
+                void main() {
+                    gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+                }
+            `,
+            wireframe: true
         })
 
         // const material = new THREE.MeshBasicMaterial({
         //     color: 0x00ff00
         // });
-        this.cube = new THREE.Mesh(geometry, material);
-        this.scene.add(this.cube);
+        this.cube = new THREE.Mesh(geometry, material)
+        this.scene.add(this.cube)
 
         // model loading
         // this.loader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../brushes'));
@@ -51,8 +67,8 @@ class ShaderPractice extends Component {
         // })
 
         //camera
-        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-        this.camera.position.z = 5;
+        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
+        this.camera.position.z = 5
          // focusing the camera at object
          this.camera.lookAt(this.cube.position)
        
@@ -64,14 +80,22 @@ class ShaderPractice extends Component {
 
        
         //renderer
-        this.renderer = new THREE.WebGL1Renderer();
+        this.renderer = new THREE.WebGL1Renderer()
         this.renderer.setSize(window.innerWidth, window.innerHeight)
         this.mount.appendChild(this.renderer.domElement)
 
-        
-        this.animation();
-        // this.groupAnimation();
-        this.renderer.render(this.scene, this.camera);
+        //animation
+        const clock = new THREE.Clock()
+
+        const tick = () => {
+            const elapsedTime = clock.getElapsedTime()
+            this.controls.update()
+            this.renderer.render(this.scene, this.camera)
+            window.requestAnimationFrame(tick);
+        }
+        this.animation()
+        // this.groupAnimation()
+        this.renderer.render(this.scene, this.camera)
 
         // controls
         this.controls = new OrbitControls(this.camera, this.renderer.domElement)

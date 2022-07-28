@@ -14,19 +14,20 @@ class OpenBrushScene extends Component {
 
     // scene
         this.scene = new THREE.Scene()
-        this.loader = new GLTFLoader()
-        this.gui = new lilGui.GUI({closed: true, width: 400})
+        const clock = new THREE.Clock()
+        const gltfLoader = new GLTFLoader()
+        // this.gui = new lilGui.GUI({closed: true, width: 400})
 
     // light
         this.light = new THREE.DirectionalLight(0xffffff, 100)
-        this.light2 = new THREE.PointLight(0xfff, 5)
-        this.light3 = new THREE.AmbientLight(0xffffff, 20)
+        this.light2 = new THREE.PointLight(0xffffff, 10)
+        this.light3 = new THREE.AmbientLight(0xffffff, 18)
         // this.light.position.set(10, 50, 10)
         this.scene.add(this.light3)
 
     // model loading
-        this.loader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../brushes'))
-        this.loader.load('/models/circuitArm.glb', (model) => {
+        gltfLoader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../brushes')) //brushes folder has shader files also
+        gltfLoader.load('/models/otter.glb', (model) => {
             console.log(model)
             this.scene.add(model.scene)
         });
@@ -38,26 +39,32 @@ class OpenBrushScene extends Component {
         this.camera.position.y = 3;
         this.camera.position.x = 0.8;
 
-
     // render
         this.renderer = new THREE.WebGL1Renderer()
         this.renderer.setSize(window.innerWidth, window.innerHeight)
         this.mount.appendChild(this.renderer.domElement)
         this.renderer.render(this.scene, this.camera)
 
+        const tick = () => {
+            const elapsedTime = clock.getElapsedTime()
+            // console.log(elapsedTime)
+            this.controls.update()
+            this.renderer.render(this.scene, this.camera)
+            window.requestAnimationFrame(tick);
+        }
+
+
     // controls
         this.controls = new OrbitControls(this.camera, this.renderer.domElement)
 
     //animation
-        this.animation()
-        // this.groupAnimation()
-        //event listeners
+        tick()
         window.addEventListener('resize', this.handleWindowResize);
     }
 
     animation = ()=> {
         requestAnimationFrame(this.animation);
-        this.renderer.render(this.scene, this.camera);
+        this.renderer.render(this.scene, this.camera, this.model);
     }
 
     handleWindowResize = ()=> {
@@ -78,4 +85,4 @@ class OpenBrushScene extends Component {
     }
 }
 
-export default OpenBrushScene;
+export default OpenBrushScene

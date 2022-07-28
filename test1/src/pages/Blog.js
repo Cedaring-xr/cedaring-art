@@ -10,8 +10,8 @@ export default function Blog() {
                 <h1 className="page_header">writings</h1>
             </div>
             {/* <TiltLoad /> */}
-            <OpenBrushScene />
-            {/* <ShaderPractice /> */}
+            {/* <OpenBrushScene /> */}
+            <ShaderPractice />
         </>
         
     )

@@ -21,7 +21,7 @@ export default class HomepageScene extends Component {
         // scene
         this.scene = new THREE.Scene();
         this.loader = new GLTFLoader();
-        this.gui = new lilGui.GUI({closed: true, width: 400});
+        // this.gui = new lilGui.GUI({closed: true, width: 400});
 
         // light
         this.directLight = new THREE.DirectionalLight(0xffffff, 5)
@@ -96,15 +96,15 @@ export default class HomepageScene extends Component {
         });
 
         // debug gui
-        this.gui.add(this.cube.position, 'x').min(-5).max(5).step(0.1)
-        this.gui.add(this.cube.position, 'y').min(-5).max(5).step(0.1)
-        this.gui.add(this.cube.position, 'z').min(-5).max(5).step(0.1)
-        this.gui.add(this.cube, 'visible')
-        this.gui.addColor(parameters, 'color').onChange(()=> {
-            material.color.set(parameters.color)
-        })
-        this.gui.add(this.directLight, 'intensity').min(0).max(10).step(0.1)
-        this.gui.add(this.lightHelper, 'visible')
+        // this.gui.add(this.cube.position, 'x').min(-5).max(5).step(0.1)
+        // this.gui.add(this.cube.position, 'y').min(-5).max(5).step(0.1)
+        // this.gui.add(this.cube.position, 'z').min(-5).max(5).step(0.1)
+        // this.gui.add(this.cube, 'visible')
+        // this.gui.addColor(parameters, 'color').onChange(()=> {
+        //     material.color.set(parameters.color)
+        // })
+        // this.gui.add(this.directLight, 'intensity').min(0).max(10).step(0.1)
+        // this.gui.add(this.lightHelper, 'visible')
         // this.gui.add(this.text, 'visible');  //visible is not a property of text
 
 

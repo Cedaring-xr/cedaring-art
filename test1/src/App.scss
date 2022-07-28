@@ -192,3 +192,12 @@ body {
   transform-origin: top right;
   transition: transform 1.5s ease-in-out;
 }
+
+
+//header parallax stuff
+
+.header-parallax-container {
+  height: 400px;
+  width: 100%;
+  background-color: $altBlueColor;
+}

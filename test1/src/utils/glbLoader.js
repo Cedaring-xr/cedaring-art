@@ -35,8 +35,8 @@ class ModelScene extends Component {
 
 
     // model loading
-        this.loader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../brushes'))
-        this.loader.load('/models/circuitArm.glb', (model) => {
+        // this.loader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../brushes'))
+        this.loader.load('/models/snowball.glb', (model) => {
             console.log(model)
             this.scene.add(model.scene)
         });
@@ -49,27 +49,6 @@ class ModelScene extends Component {
         this.gui.addColor(parameters, 'color').onChange(()=> {
             material.color.set(parameters.color)
         })
-
-            // let clock = new Clock();
-            // let loader = new TiltLoader();
-            // let updateableMeshes;
-            // // Point the loader to a folder of all the brush shaders and textures.
-            // loader.setBrushDirectory( './resources/brushes' );
-            // loader.load( './resources/models/cyclos.glb', ( tiltData ) => {
-            //     // The returned object contains two components:
-            //     //  scene : Object3D. This is the model you want to place in the scene
-            //     //  updateableMeshes : Mesh[]. An array of all the brush meshes that require updating. Save this to a variable.
-            //     scene.add( tiltData.scene );
-            //     updateableMeshes = tiltData.updateableMeshes;
-            // });
-            // function render() {
-            //     // Pass the mesh array to the helper function for animating.
-            //     if( updateableMeshes !== undefined ) {
-            //         updateBrushes( updateableMeshes, clock.getElapsedTime(), camera.position );
-            //     }
-            //     renderer.render( scene, camera );
-            // }
-            // renderer.setAnimationLoop( render );
 
 
         // camera
@@ -101,8 +80,8 @@ class ModelScene extends Component {
 
     animation = ()=> {
         requestAnimationFrame(this.animation);
-        this.cube.rotation.x +=0.01;
-        this.cube.rotation.y +=0.01;
+        // this.cube.rotation.x +=0.01;
+        // this.cube.rotation.y +=0.01;
         this.renderer.render(this.scene, this.camera);
     }
 
