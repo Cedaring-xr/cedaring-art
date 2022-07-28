@@ -1,15 +1,15 @@
-import './App.scss';
-import React from 'react';
-
-//pages
-import Layout from "./components/Layout";
-import PageRoutes from './routes';
+import React from 'react'
+import PageRoutes from './routes'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import './App.scss'
 
 function App() {
   return (
     <div className="App">
-      <Layout />
+      <Header />
       <PageRoutes />
+      <Footer />
     </div>
   );
 }

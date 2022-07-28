@@ -1,0 +1,61 @@
+@import "../Styles/variables.scss";
+
+.footer {
+    background: $dark;
+    width: 100%;
+    height: $headerHeight;
+    text-decoration: none;
+    padding: 0 1.5rem;
+    @include breakpoint(md) {
+        padding: 0 3rem;
+    }
+    transition: 0.3s ease all;
+
+    &__content {
+        overflow: hidden;
+        color: $light;
+        margin: 0 auto;
+        padding-top: 2rem;
+        max-width: 1920px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 100;
+
+        &__logo {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+    }
+
+    &__social {
+        align-items: center;
+
+        &__icon {
+        display: flex;
+        text-decoration: none;
+        color: rgba($dark, 0.1);
+        align-items: center;
+
+            a:visited {
+                text-decoration: none;
+                color: rgba($light, 0.1);
+            }
+        }
+
+        &__text {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: $dark;
+            position: relative;
+            top: -55px;
+        }
+    }
+
+    &__img {
+        max-width: 300px;
+    }
+}

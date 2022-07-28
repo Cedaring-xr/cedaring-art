@@ -59,7 +59,6 @@ export default function Header() {
                 <a href="/react">React Practice</a>
               </li>
             </ul>
-            <button>404 page</button>
           </nav>
           <div className={classes.header__content__toggle}>
             {!menuOpen ? <BiMenuAltRight onClick={menuToggleHandler}/> : <AiOutlineClose onClick={menuToggleHandler}/>} 

@@ -123,7 +123,7 @@ export default class HomepageScene extends Component {
         this.renderer.render(this.scene, this.camera);
 
          // controls
-        this.comtrols = new OrbitControls(this.camera, this.renderer.domElement)
+        // this.comtrols = new OrbitControls(this.camera, this.renderer.domElement)
 
         //animation
         this.animation();
