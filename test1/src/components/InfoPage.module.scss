@@ -1,0 +1,32 @@
+@import "../Styles/variables.scss";
+
+
+.container {
+    background-color: #d7d7d7;
+    overflow: hidden;
+    display: flex;
+    padding: 2%;
+}
+
+
+.img {
+    max-width: 800px;
+    clip-path: polygon(0 10%, 0 0, 100% 0, 100% 100%);
+}
+
+.text {
+    padding: 5rem;
+    background-color: rgb(127, 127, 127);
+    opacity: 0.8;
+    border-radius: 20px;
+    padding: 5rem;
+    margin:50px;
+    height: fit-content;
+
+
+    &__content {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.2rem;
+
+    }
+}

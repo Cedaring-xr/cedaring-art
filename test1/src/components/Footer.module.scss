@@ -3,22 +3,21 @@
 .footer {
     background: $dark;
     width: 100%;
-    height: $headerHeight;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
     text-decoration: none;
-    padding: 0 1.5rem;
+    padding: 0;
     @include breakpoint(md) {
         padding: 0 3rem;
     }
     transition: 0.3s ease all;
 
     &__content {
-        overflow: hidden;
         color: $light;
         margin: 0 auto;
         padding-top: 2rem;
-        max-width: 1920px;
-        height: 100%;
-        display: flex;
+        flex-grow: 1;
         align-items: center;
         justify-content: space-between;
         position: relative;
@@ -32,10 +31,14 @@
 
     &__social {
         align-items: center;
+        flex-grow: 1;
+        
+        
 
         &__icon {
-        display: flex;
         text-decoration: none;
+        flex-grow: 1;
+        min-width: 300px;
         color: rgba($dark, 0.1);
         align-items: center;
 
@@ -51,7 +54,8 @@
             font-size: 1.4rem;
             color: $dark;
             position: relative;
-            top: -55px;
+            top: -60px;
+            left: 10px;
         }
     }
 

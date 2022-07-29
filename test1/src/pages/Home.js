@@ -9,9 +9,7 @@ export default function Home() {
 
             </div>
             <HomepageScene className="canvas-openbrush"/>
-            <div className="info-container">
-                <InfoPage />
-            </div>
+            <InfoPage />
         </>
     )
 }
