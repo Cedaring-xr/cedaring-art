@@ -2,10 +2,11 @@
 
 
 .container {
-    background-color: #d7d7d7;
+    background-color: #eee;
     overflow: hidden;
     display: flex;
     padding: 2%;
+    // max-height: 1vh;
 }
 
 
@@ -16,6 +17,8 @@
 
 .text {
     padding: 5rem;
+    line-height: 1.5;
+    min-width: 30rem;
     background-color: rgb(127, 127, 127);
     opacity: 0.8;
     border-radius: 20px;

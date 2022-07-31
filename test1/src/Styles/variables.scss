@@ -18,10 +18,16 @@ $spacing-large: 24px;
 $borderRadius: 12px;
 $headerHeight: 100px;
 
+//text
+$maxParagraphWidth: 60rem;
+
 //basic mix-in
 @mixin breakpoint($point) {
     @if $point == md {
-        // 760px (standard mobile breakpoint) 
+        // 1920px (max desktop size)
+        // 760px (standard tablet breakpoint) 
+        // 420px (standard phone
+        // 320px (min phone width)
         @media (min-width: 48em) {
             @content;
         }
