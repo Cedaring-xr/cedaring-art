@@ -17,6 +17,7 @@
 
 # models
 /public/models
+/public/extras
 
 # misc
 .DS_Store

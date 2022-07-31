@@ -26,7 +26,7 @@ class OpenBrushScene extends Component {
 
     // model loading
         gltfLoader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../brushes')) //brushes folder has shader files also
-        gltfLoader.load('/models/ammy.glb', (model) => {
+        gltfLoader.load('/models/circuitArm.glb', (model) => {
             console.log(model)
             this.scene.add(model.scene)
         });
@@ -39,7 +39,7 @@ class OpenBrushScene extends Component {
         this.camera.position.x = 6;
 
     // render
-        this.renderer = new THREE.WebGL1Renderer()
+        this.renderer = new THREE.WebGLRenderer()
         this.renderer.setSize(window.innerWidth, window.innerHeight)
         this.mount.appendChild(this.renderer.domElement)
         this.renderer.render(this.scene, this.camera)

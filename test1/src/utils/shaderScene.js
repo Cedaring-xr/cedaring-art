@@ -7,8 +7,6 @@ import gsap from 'gsap'
 import * as lilGui from 'lil-gui'
 
 
-// this will be used in the artwork section to display Open brush content
-
 class ShaderPractice extends Component {
     componentDidMount(){
 
@@ -25,46 +23,70 @@ class ShaderPractice extends Component {
         const geometry = new THREE.BoxGeometry(1,1,1)
 
         const material = new THREE.RawShaderMaterial({
-            vertexShader: `
+            vertexShader: `#version 300 es
+                in vec4 a_position;
+                in vec3 a_normal;
+                in vec4 a_color;
+                in vec2 a_texcoord0;
+                
+                out vec4 v_color;
+                out vec3 v_normal;  // Camera-space normal.
+                out vec3 v_position;  // Camera-space position.
+                out vec2 v_texcoord0;
+                out vec3 v_light_dir_0;  // Camera-space light direction, main light.
+                out vec3 v_light_dir_1;  // Camera-space light direction, other light.
+                out float f_fog_coord;
+                
+                uniform mat4 modelViewMatrix;
                 uniform mat4 projectionMatrix;
-                uniform mat4 viewMatrix;
-                uniform mat4 modelMatrix;
-                attribute vec3 position;
-
+                uniform mat3 normalMatrix;
+                uniform mat4 u_SceneLight_0_matrix;
+                uniform mat4 u_SceneLight_1_matrix;
+                
                 void main() {
-                    gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(position, 1.0);
+                gl_Position = projectionMatrix * modelViewMatrix * a_position;
+                f_fog_coord = gl_Position.z;
+                v_normal = normalMatrix * a_normal;
+                v_position = (modelViewMatrix * a_position).xyz;
+                v_light_dir_0 = mat3(u_SceneLight_0_matrix) * vec3(0, 0, 1);
+                v_light_dir_1 = mat3(u_SceneLight_1_matrix) * vec3(0, 0, 1);
+                v_color = a_color;
+                v_texcoord0 = a_texcoord0;
                 }
             `,
-            fragmentShader: `
+            fragmentShader: `#version 300 es
                 precision mediump float;
 
+                out vec4 fragColor;
+                
+                in vec4 v_color;
+                in vec3 v_position;
+                in vec2 v_texcoord0;
+                
+                uniform sampler2D u_MainTex;
+                uniform float u_Cutoff;
+                uniform vec3 u_fogColor;
+                uniform float u_fogDensity;
+                in float f_fog_coord;
+                
+                
+                vec3 ApplyFog(vec3 color) {
+                float density = (u_fogDensity / .693147) * 10.;
+                
+                float fogFactor = f_fog_coord * density;
+                fogFactor = exp2(-fogFactor);
+                fogFactor = clamp( fogFactor, 0.0, 1.0 );
+                return mix(u_fogColor, color.xyz, fogFactor);
+                }
+                
                 void main() {
-                    gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+                fragColor.rgb = ApplyFog(v_color.rgb);
+                fragColor.a = 1.0;
                 }
             `,
-            wireframe: true
         })
-
-        // const material = new THREE.MeshBasicMaterial({
-        //     color: 0x00ff00
-        // });
         this.cube = new THREE.Mesh(geometry, material)
         this.scene.add(this.cube)
-
-        // model loading
-        // this.loader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../brushes'));
-        // this.loader.load('/models/cyclos.glb', (model) => {
-        //     this.scene.add(model.scene);
-        // });
-
-        // gui/debug
-        // this.gui.add(this.cube.position, 'x').min(-5).max(5).step(0.1);
-        // this.gui.add(this.cube.position, 'y').min(-5).max(5).step(0.1);
-        // this.gui.add(this.cube.position, 'z').min(-5).max(5).step(0.1);
-        // this.gui.add(this.cube, 'visible');
-        // this.gui.addColor(parameters, 'color').onChange(()=> {
-        //     material.color.set(parameters.color)
-        // })
 
         //camera
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
@@ -80,7 +102,7 @@ class ShaderPractice extends Component {
 
        
         //renderer
-        this.renderer = new THREE.WebGL1Renderer()
+        this.renderer = new THREE.WebGLRenderer()
         this.renderer.setSize(window.innerWidth, window.innerHeight)
         this.mount.appendChild(this.renderer.domElement)
 

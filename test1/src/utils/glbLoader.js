@@ -54,7 +54,7 @@ class ModelScene extends Component {
         this.camera.position.x = 0.8;
 
     // render
-        this.renderer = new THREE.WebGL1Renderer();
+        this.renderer = new THREE.WebGLRenderer();
         this.renderer.setSize(window.innerWidth, window.innerHeight)
         this.mount.appendChild(this.renderer.domElement)
         this.renderer.render(this.scene, this.camera);
@@ -65,7 +65,6 @@ class ModelScene extends Component {
         //animation
         this.animation()
         // this.groupAnimation()
-        this.updateMeshes()
         this.renderer.render(this.scene, this.camera)
 
         //event listeners
@@ -77,10 +76,6 @@ class ModelScene extends Component {
         // this.cube.rotation.x +=0.01;
         // this.cube.rotation.y +=0.01;
         this.renderer.render(this.scene, this.camera);
-    }
-
-    updateMeshes = ()=> {
-        
     }
 
     handleWindowResize = ()=> {
