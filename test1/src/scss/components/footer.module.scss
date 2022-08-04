@@ -1,4 +1,46 @@
-@import "../Styles/variables.scss";
+@use '../abstracts';
+
+
+//placeholder
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+
+$headerFont: 'Ubuntu', sans-serif;
+$mainBlockColor: #345abc;
+
+//other colors
+$dark: rgb(29,29,29);
+$light: #fff;
+$primary: rgb(165, 165, 244);
+$background: rgb(244, 244, 255);
+
+//spacing
+$spacing-med: 16px;
+$spacing-large: 24px;
+
+//border
+$borderRadius: 12px;
+$headerHeight: 100px;
+
+//text
+$maxParagraphWidth: 60rem;
+
+//basic mix-in
+@mixin breakpoint($point) {
+    @if $point == md {
+        // 1920px (max desktop size)
+        // 760px (standard tablet breakpoint) 
+        // 420px (standard phone
+        // 320px (min phone width)
+        @media (min-width: 48em) {
+            @content;
+        }
+    }
+}
+
+        //placeholder
+
 
 .footer {
     background: rgb(49, 47, 47);
@@ -63,3 +105,4 @@
         max-width: 300px;
     }
 }
+        

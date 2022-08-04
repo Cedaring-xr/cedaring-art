@@ -1,4 +1,38 @@
-@import "./Styles/variables.scss";
+@use "./scss/abstracts";
+@use "./scss/components";
+@use "./scss/pages";
+
+
+
+
+        //placeholder
+
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+
+        $headerFont: 'Ubuntu', sans-serif;
+        $mainBlockColor: #345abc;
+        
+        //other colors
+        $dark: rgb(29,29,29);
+        $light: #fff;
+        $primary: rgb(165, 165, 244);
+        $background: rgb(244, 244, 255);
+        
+        //spacing
+        $spacing-med: 16px;
+        $spacing-large: 24px;
+        
+        //border
+        $borderRadius: 12px;
+        $headerHeight: 100px;
+        
+        //text
+        $maxParagraphWidth: 60rem;
+        
+                //placeholder
+
+
 
 //variables
 $altBlueColor: #61dafb;

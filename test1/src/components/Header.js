@@ -1,6 +1,6 @@
 import React , { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom"
-import classes from './Header.module.scss';
+import styles from "../scss/components/header.module.scss"
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 
@@ -36,14 +36,14 @@ export default function Header() {
 
   return (
     <div className='header-main'>
-      <header className={classes.header}>
-        <div className={classes.header__content}>
-          <div className={classes.header__content__logo}>
+      <header className={styles.header}>
+        <div className={styles.header__content}>
+          <div className={styles.header__content__logo}>
             <a href="/">
-              <h1 className={classes.header__content__title}>Cedaring.Art</h1>
+              <h1 className={styles.header__content__title}>Cedaring.Art</h1>
             </a>
           </div>
-          <nav className={`${classes.header__content__nav} ${menuOpen ? classes.isMenu : ""}`}>
+          <nav className={`${styles.header__content__nav} ${menuOpen ? styles.isMenu : ""}`}>
             <ul>
               <li>
                 <a href="/artwork">VR Artwork</a>
@@ -62,7 +62,7 @@ export default function Header() {
               </li>
             </ul>
           </nav>
-          <div className={classes.header__content__toggle}>
+          <div className={styles.header__content__toggle}>
             {!menuOpen ? <BiMenuAltRight onClick={menuToggleHandler}/> : <AiOutlineClose onClick={menuToggleHandler}/>} 
           </div>
         </div>

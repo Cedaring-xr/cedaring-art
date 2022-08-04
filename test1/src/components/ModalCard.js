@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDom from 'react-dom'
 import ThreeScene from '../utils/three-scene';
-import classes from "./ModalCard.module.scss";
+import styles from "../scss/components/modalCard.module.scss"
 
 
 import closeIcon from "../Assets/x-png.png"
@@ -14,8 +14,8 @@ export default function ModalCard({ open, onClose, children }) {
   
   return (
     ReactDom.createPortal(
-      <div className={classes.background} onClick={onClose}>
-        <div >
+      <div className={styles.background} onClick={onClose}>
+        <div>
           {children}
           <img src={closeIcon} alt="" style={{cursor: 'pointer'}} onClick={onClose} />
           <button onClick={onClose}>test</button> 
