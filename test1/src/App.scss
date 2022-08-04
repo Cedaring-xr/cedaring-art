@@ -3,37 +3,6 @@
 @use "./scss/pages";
 
 
-
-
-        //placeholder
-
-        @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-
-
-        $headerFont: 'Ubuntu', sans-serif;
-        $mainBlockColor: #345abc;
-        
-        //other colors
-        $dark: rgb(29,29,29);
-        $light: #fff;
-        $primary: rgb(165, 165, 244);
-        $background: rgb(244, 244, 255);
-        
-        //spacing
-        $spacing-med: 16px;
-        $spacing-large: 24px;
-        
-        //border
-        $borderRadius: 12px;
-        $headerHeight: 100px;
-        
-        //text
-        $maxParagraphWidth: 60rem;
-        
-                //placeholder
-
-
-
 //variables
 $altBlueColor: #61dafb;
 
@@ -48,7 +17,7 @@ a {
 
 .App {
   text-align: center;
-  font-family: $headerFont;
+  font-family: abstracts.$headerFont;
   background-color: #6e6f70;
 }
 
@@ -61,10 +30,6 @@ canvas {
   display: block;
   height: 600px;
 }
-
-/* .canvas-main {
-  background: red;
-} */
 
 .canvas-alt {
   background: $altBlueColor;
@@ -107,8 +72,8 @@ canvas {
 //other tutorial stuff
 body {
   width: 100%;
-  font-family: $headerFont;
-  color: $dark;
+  font-family: abstracts.$headerFont;
+  color: abstracts.$dark;
 }
 
 .page-header {
@@ -198,15 +163,15 @@ body {
 // page top container area
 .Heading_container {
   height: 300px;
-  background: $background;
+  background: abstracts.$background;
   display: flex;
   justify-content: center;
   align-items: center;
 
   h1 {
       padding: 1.5rem 2.5rem;
-      background: linear-gradient(220deg, $primary, rgba($primary, 0.5));
-      border-radius: $borderRadius calc(#{$borderRadius} * 10);
+      background: linear-gradient(220deg, abstracts.$primary, rgba(abstracts.$primary, 0.5));
+      border-radius: abstracts.$borderRadius calc(#{abstracts.$borderRadius} * 10);
   }
 }
 

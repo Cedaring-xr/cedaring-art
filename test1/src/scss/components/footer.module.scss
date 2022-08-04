@@ -1,47 +1,6 @@
 @use '../abstracts';
 
 
-//placeholder
-
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-
-
-$headerFont: 'Ubuntu', sans-serif;
-$mainBlockColor: #345abc;
-
-//other colors
-$dark: rgb(29,29,29);
-$light: #fff;
-$primary: rgb(165, 165, 244);
-$background: rgb(244, 244, 255);
-
-//spacing
-$spacing-med: 16px;
-$spacing-large: 24px;
-
-//border
-$borderRadius: 12px;
-$headerHeight: 100px;
-
-//text
-$maxParagraphWidth: 60rem;
-
-//basic mix-in
-@mixin breakpoint($point) {
-    @if $point == md {
-        // 1920px (max desktop size)
-        // 760px (standard tablet breakpoint) 
-        // 420px (standard phone
-        // 320px (min phone width)
-        @media (min-width: 48em) {
-            @content;
-        }
-    }
-}
-
-        //placeholder
-
-
 .footer {
     background: rgb(49, 47, 47);
     width: 100%;
@@ -50,13 +9,10 @@ $maxParagraphWidth: 60rem;
     gap: 1rem;
     text-decoration: none;
     padding: 0;
-    @include breakpoint(md) {
-        padding: 0 3rem;
-    }
     transition: 0.3s ease all;
 
     &__content {
-        color: $light;
+        color: abstracts.$light;
         margin: 0 auto;
         padding-top: 2rem;
         flex-grow: 1;
@@ -81,12 +37,12 @@ $maxParagraphWidth: 60rem;
         text-decoration: none;
         flex-grow: 1;
         min-width: 300px;
-        color: rgba($dark, 0.1);
+        color: rgba(rgb(29,29,29), 0.1);
         align-items: center;
 
             a:visited {
                 text-decoration: none;
-                color: rgba($light, 0.1);
+                color: rgba(#fff, 0.1);
             }
         }
 
@@ -94,7 +50,7 @@ $maxParagraphWidth: 60rem;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.4rem;
-            color: $dark;
+            color: rgb(29,29,29);
             position: relative;
             top: -60px;
             left: 10px;
