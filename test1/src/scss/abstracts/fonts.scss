@@ -1,8 +1,21 @@
 
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+//sans-serif
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+//serif
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+
 
 
 $headerFont: 'Ubuntu', sans-serif;
+$bodyFont: 'Lora', serif;
+
+
 $maxParagraphWidth: 60rem;
 
+p {
+    font-family: $bodyFont;
+}
+
+
+// 1em default is usually around 16px, em is relative to parent. rem is root em, based on font size of html element

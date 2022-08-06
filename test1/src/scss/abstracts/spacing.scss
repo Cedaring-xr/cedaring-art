@@ -7,3 +7,6 @@ $spacing-large: 24px;
 //border
 $borderRadius: 12px;
 $headerHeight: 100px;
+
+
+// if using em for spacing, it is based on font size of that element not parent. Rem is still based on root.
