@@ -4,6 +4,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import gsap from 'gsap'
 import * as lilGui from "lil-gui"
+import Stats from 'stats.js'
 
 
 
@@ -14,13 +15,15 @@ export default class HomepageScene extends Component {
         const parameters = {
             color: 0x44bb22
         }
+        let modelObj = null
 
-        // scene
-        this.scene = new THREE.Scene();
-        this.loader = new GLTFLoader();
-        this.gui = new lilGui.GUI({closed: true, width: 400});
+    // scene
+        this.scene = new THREE.Scene()
+        const manager = new THREE.LoadingManager()
+        this.loader = new GLTFLoader(manager)
+        this.gui = new lilGui.GUI({closed: true, width: 400})
 
-        // light
+    // lights
         this.directLight = new THREE.DirectionalLight(0xffffff, 5)
         this.lightHelper = new THREE.DirectionalLightHelper(this.directLight, 5)
         this.light2 = new THREE.PointLight(0xffffff , 10)
@@ -28,7 +31,7 @@ export default class HomepageScene extends Component {
         this.directLight.position.set(5, 5, 10)
         this.scene.add(this.directLight, this.light2, this.light3)
 
-        // test cube
+    // test cube
         const geometry = new THREE.BoxGeometry(1,1,1)
         const geoPlane = new THREE.PlaneGeometry(5,5)
         const material = new THREE.MeshBasicMaterial({color: 0xfffeee, side: THREE.DoubleSide})
@@ -42,32 +45,34 @@ export default class HomepageScene extends Component {
         // this.cube.rotateOnAxis.x = 0.5
 
         this.loader.load('/models/burger.glb', (model) => {
-            console.log(model)
+            console.log(model.scene)
+            this.modelObj = model.scene
             this.scene.add(model.scene)
+        }, undefined, function ( error ) {
+            console.log(error)
         });
 
+    // Loading manager
+        manager.onStart = ()=> {
+            console.log('started')
+        }
+        manager.onLoad = ()=> {
+            console.log('loaded')
+            this.animation()
+        }
+        manager.onProgress = (itemUrl, itemsLoaded, itemsTotal)=> {
+            console.log(itemUrl, itemsLoaded, itemsTotal)
+        }
+        manager.onError = ()=> {
+            console.log('Error on loading manager')
+        }
+        
 
         // axis helper to mark center point
         const axesHelper = new THREE.AxesHelper()
         this.scene.add(axesHelper)
 
-        //loading manager
-        const loadingManager = new THREE.LoadingManager()
-        loadingManager.onStart = ()=> {
-            //updates for loading progress bar
-            console.log('loading start')
-        }
-        loadingManager.onLoad = ()=> {
-            console.log('loading end')
-        }
-        loadingManager.onProgress = ()=> {
-            
-        }
-        loadingManager.onError = ()=> {
-            
-        }
-
-        // debug gui
+    // debug gui
         // this.gui.add(this.cube.position, 'x').min(-5).max(5).step(0.1)
         // this.gui.add(this.cube.position, 'y').min(-5).max(5).step(0.1)
         // this.gui.add(this.cube.position, 'z').min(-5).max(5).step(0.1)
@@ -80,12 +85,17 @@ export default class HomepageScene extends Component {
         // this.gui.add(this.text, 'visible');  //visible is not a property of text
 
 
-        // camera
+    // camera
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
         this.camera.position.z = -10
         this.camera.position.y = 3
         this.camera.position.x = -5
         // this.camera.lookAt(this.cube.position)
+
+    //stats
+        const stats = new Stats()
+        stats.showPanel( 0 ) // 0: fps, 1: ms, 2: mb, 3+: custom
+        document.body.appendChild( stats.dom );
 
     // render
         this.renderer = new THREE.WebGL1Renderer()
@@ -94,30 +104,34 @@ export default class HomepageScene extends Component {
         // re-run renderer for updates to the scene
         this.renderer.render(this.scene, this.camera)
 
-         //controls
+    //controls
         this.controls = new OrbitControls(this.camera, this.renderer.domElement)
         this.controls.enableZoom = false
         
 
-        //animation
-        this.animation()
-        // this.groupAnimation()
-        this.renderer.render(this.scene, this.camera)
-
-        //event listeners
+    //event listeners
         window.addEventListener('resize', this.handleWindowResize)
 
-        
+        function monitorStats() {
+            stats.begin();
+            // monitored code goes here
+            stats.end();
+            
+            requestAnimationFrame( monitorStats );
+        }
+        requestAnimationFrame( monitorStats );
+
     }
 
-    animation= ()=> {
-        requestAnimationFrame(this.animation);
-        this.cube.rotation.x +=0.01;
-        this.cube.rotation.y +=0.01;
-        this.renderer.render(this.scene, this.camera);
+    animation = () => {
+        requestAnimationFrame(this.animation)
+        this.cube.rotation.x += 0.01
+        this.cube.rotation.y += 0.01
+        this.modelObj.rotation.y += 137.5 * (Math.PI / 180)
+        this.renderer.render(this.scene, this.camera)
     }
 
-    handleWindowResize= ()=> {
+    handleWindowResize = () => {
         this.camera.aspect = window.innerWidth / window.innerHeight;
         this.camera.updateProjectionMatrix();
         this.renderer.setSize(window.innerWidth, window.innerHeight);
