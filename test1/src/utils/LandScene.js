@@ -4,6 +4,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import gsap from 'gsap'
 import * as lilGui from "lil-gui"
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader"
+import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry"
 
 export default class LandScene extends Component {
     componentDidMount(){
@@ -85,8 +87,8 @@ export default class LandScene extends Component {
         this.scene.add(axesHelper)
 
     // model loading
-        let glbModel = new THREE.Object3D();
-        const colorado = this.loader.load('/models/colorado.glb', (model) => {
+        let glbModel
+        this.loader.load('/models/colorado.glb', (model) => {
             console.log(model)
             glbModel = model.scene
             glbModel.scale.set(0.1, 0.1, 0.1)
@@ -108,7 +110,33 @@ export default class LandScene extends Component {
             updateAllMaterials()
         })
 
-    // ed
+    // 3d font loading
+        const textureLoader = new THREE.TextureLoader()
+        const coloradoTexture = textureLoader.load('/extras/images/coTexture.png')
+        const txtLoader = new FontLoader();
+        txtLoader.load('/extras/fonts/helvetiker_regular.typeface.json', (font)=> {
+        const geometryFont = new TextGeometry('COLORADO', {
+            font: font,
+            size: 10,
+            height: 0.1,
+            curveSegments: 5,  //poly count
+            bevelEnabled: true,
+            bevelThickness: 0.3,
+            bevelSize: 0.2,
+            bevelOffset: 0,
+            bevelSegments: 5
+        });
+        geometryFont.computeBoundingBox()
+        geometryFont.center()
+        const fontMaterial = new THREE.MeshBasicMaterial({
+            map: coloradoTexture
+        })
+        const textMaterial = new THREE.MeshBasicMaterial({color: 0x666aaa});
+        this.text = new THREE.Mesh(geometryFont, fontMaterial);
+        this.scene.add(this.text)
+        this.text.position.z = -30 
+        this.text.position.y = 8
+    });
 
     // debug gui
         const debugObject = {}
@@ -122,9 +150,9 @@ export default class LandScene extends Component {
 
     // camera
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
-        this.camera.position.z = 30
-        this.camera.position.y = 14
-        this.camera.position.x = -6
+        this.camera.position.z = 45
+        this.camera.position.y = 18
+        this.camera.position.x = 0
         // this.camera.lookAt(this.cube.position)
 
      //envirionment map
