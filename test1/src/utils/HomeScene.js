@@ -92,6 +92,15 @@ export default class HomepageScene extends Component {
         this.camera.position.x = -5
         // this.camera.lookAt(this.cube.position)
 
+
+    //raycaster
+        const raycaster = new THREE.Raycaster()
+        const rayOrigin = new THREE.Vector3(-10, 3, -5)
+        const rayDirection = new THREE.Vector3(0, 10, 0) // needs to match camera since camera doesn't move
+        rayDirection.normalize() //reduce vector 3 length to 1 but keep directions
+        raycaster.set(rayOrigin, rayDirection)
+        // const intersects = raycaster.intersectObject([this.modelObj])
+
     //stats
         const stats = new Stats()
         stats.showPanel( 0 ) // 0: fps, 1: ms, 2: mb, 3+: custom
@@ -120,6 +129,11 @@ export default class HomepageScene extends Component {
             requestAnimationFrame( monitorStats );
         }
         requestAnimationFrame( monitorStats );
+
+
+        function onPointerMove ( event ) {
+            
+        }
 
     }
 

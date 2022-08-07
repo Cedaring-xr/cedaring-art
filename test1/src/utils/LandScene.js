@@ -108,6 +108,8 @@ export default class LandScene extends Component {
             updateAllMaterials()
         })
 
+    // ed
+
     // debug gui
         const debugObject = {}
         debugObject.envMapIntensity = 5
