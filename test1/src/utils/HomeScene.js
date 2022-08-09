@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
+import { TransformControls } from "three/examples/jsm/controls/TransformControls"
 import gsap from 'gsap'
 import * as lilGui from "lil-gui"
 import Stats from 'stats.js'
@@ -15,7 +16,6 @@ export default class HomepageScene extends Component {
         const parameters = {
             color: 0x44bb22
         }
-        let modelObj = null
 
     // scene
         this.scene = new THREE.Scene()
@@ -41,8 +41,7 @@ export default class HomepageScene extends Component {
 
         this.scene.add(this.cube, this.plane)
         this.plane.rotation.x = - Math.PI / 2
-    
-        // this.cube.rotateOnAxis.x = 0.5
+
 
         this.loader.load('/models/burger.glb', (model) => {
             console.log(model.scene)
@@ -72,18 +71,6 @@ export default class HomepageScene extends Component {
         const axesHelper = new THREE.AxesHelper()
         this.scene.add(axesHelper)
 
-    // debug gui
-        // this.gui.add(this.cube.position, 'x').min(-5).max(5).step(0.1)
-        // this.gui.add(this.cube.position, 'y').min(-5).max(5).step(0.1)
-        // this.gui.add(this.cube.position, 'z').min(-5).max(5).step(0.1)
-        // this.gui.add(this.cube, 'visible')
-        // this.gui.addColor(parameters, 'color').onChange(()=> {
-        //     material.color.set(parameters.color)
-        // })
-        // this.gui.add(this.directLight, 'intensity').min(0).max(10).step(0.1)
-        // this.gui.add(this.lightHelper, 'visible')
-        // this.gui.add(this.text, 'visible');  //visible is not a property of text
-
 
     // camera
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
@@ -107,7 +94,7 @@ export default class HomepageScene extends Component {
         document.body.appendChild( stats.dom );
 
     // render
-        this.renderer = new THREE.WebGL1Renderer()
+        this.renderer = new THREE.WebGLRenderer()
         this.renderer.setSize(window.innerWidth, window.innerHeight)
         this.mount.appendChild(this.renderer.domElement)
         // re-run renderer for updates to the scene
@@ -116,6 +103,12 @@ export default class HomepageScene extends Component {
     //controls
         this.controls = new OrbitControls(this.camera, this.renderer.domElement)
         this.controls.enableZoom = false
+        this.transform = new TransformControls(this.camera, this.renderer.domElement)
+        this.transform.addEventListener('change', render)
+
+        function render() {
+            this.renderer.render(this.scene, this.camera)
+        }
         
 
     //event listeners
@@ -129,11 +122,6 @@ export default class HomepageScene extends Component {
             requestAnimationFrame( monitorStats );
         }
         requestAnimationFrame( monitorStats );
-
-
-        function onPointerMove ( event ) {
-            
-        }
 
     }
 
