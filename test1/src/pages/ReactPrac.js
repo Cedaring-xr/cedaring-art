@@ -1,51 +1,71 @@
 import React, { useState, useRef, useEffect } from 'react'
 import TodoList from '../components/TodoList'
-import { v4 as uuidv4 } from 'uuid';
-
+import { v4 as uuidv4 } from 'uuid'
+import { useTransition, animated } from 'react-spring'
 
 export default function ReactPrac() {
-    const [todos, setTodos] = useState([])
-    const todoNameRef = useRef()
-    const LOCAL_STOREAGE_KEY = 'todoApp.todos'
+  const [todos, setTodos] = useState([])
+  const [items, setItems] = useState([])
+  const todoNameRef = useRef()
+  const transition = useTransition(items, {
+    from: { x: -100, y: 800, opacity: 0 },
+    enter: item => async (next) => {
+        await next({ y: item.y, opacity: 1 , delay: item.delay}) //back to back animation chain
+        await next({ x: 0 })
+    },
+    leave: { x: 100, y: 800, opacity: 0 },
+  });
 
-    useEffect(() => {
-        const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STOREAGE_KEY))
-        if (storedTodos) setTodos(storedTodos)
-    }, [])
+  const LOCAL_STOREAGE_KEY = 'todoApp.todos'
 
-    useEffect(() => {
-        localStorage.setItem(LOCAL_STOREAGE_KEY, JSON.stringify(todos))
-    }, [todos])
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STOREAGE_KEY));
+    if (storedTodos) setTodos(storedTodos)
+  }, [])
 
-    function toggleTodo(id) {
-        const newTodos = [...todos]
-        const todo = newTodos.find(todo => todo.id === id)
-        todo.complete = !todo.complete
-        setTodos(newTodos)
-    }
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STOREAGE_KEY, JSON.stringify(todos))
+  }, [todos])
 
-    function handleAddTodo(e) {
-        console.log(todoNameRef)
-        const name = todoNameRef.current.value
-        if (name === '') return
-        setTodos(prevTodos => {
-            return [...prevTodos, {id: uuidv4(), name:name, complete:false}]
-        })
-        todoNameRef.current.value = null
-    }
+  function toggleTodo(id) {
+    const newTodos = [...todos]
+    const todo = newTodos.find((todo) => todo.id === id)
+    todo.complete = !todo.complete
+    setTodos(newTodos)
+  }
 
-    function handleClearTodos() {
-        const newTodos = todos.filter(todo => !todo.complete)
-        setTodos(newTodos)
-    }
+  function handleAddTodo(e) {
+    console.log(todoNameRef)
+    const name = todoNameRef.current.value
+    if (name === '') return
+    setTodos((prevTodos) => {
+      return [...prevTodos, { id: uuidv4(), name: name, complete: false }]
+    })
+    todoNameRef.current.value = null
+  }
+
+  function handleClearTodos() {
+    const newTodos = todos.filter((todo) => !todo.complete)
+    setTodos(newTodos)
+  }
 
   return (
     <>
-        <TodoList todos = {todos} toggleTodo={toggleTodo} />
-        <input type="text" ref={todoNameRef}/>
-        <button onClick={handleAddTodo}>Add Todo</button>
-        <button onClick={handleClearTodos}>Clear Completed Todos</button>
-        <div>{todos.filter(todo => !todo.complete).length} left todo</div>
+      <TodoList todos={todos} toggleTodo={toggleTodo} />
+      <input type="text" ref={todoNameRef} />
+      <button onClick={handleAddTodo}>Add Todo</button>
+      <button onClick={handleClearTodos}>Clear Completed Todos</button>
+      <div>{todos.filter((todo) => !todo.complete).length} left todo</div>
+      <button
+        onClick={() => {
+          setItems((v) => (v.length ? [] : [{ y: -100, delay: 0 }, { y: -50, delay: 100 }, { y: 0 , delay: 200}]))
+        }}
+      >
+        {items.length ? 'un-mount' : 'mount'}
+      </button>
+      {transition((style, item) =>
+        item ? <animated.div style={style} className="spring-container" /> : ''
+      )}
     </>
   )
 }

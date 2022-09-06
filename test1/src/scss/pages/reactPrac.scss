@@ -1,0 +1,16 @@
+@use '../abstracts';
+@use '../components';
+
+
+
+//styling for react practice page
+
+.spring-container {
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    border-radius: 8px;
+    background-color: rebeccapurple;
+    margin: 10px auto;
+  }
+
