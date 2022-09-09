@@ -6,11 +6,26 @@
 //styling for react practice page
 
 .spring-container {
-    width: 100px;
+    width: 500px;
     height: 100px;
     align-items: center;
     border-radius: 8px;
     background-color: rebeccapurple;
+    border: 2px solid black;
     margin: 10px auto;
-  }
+}
+
+.content-block {
+    width: 90%;
+    height: 600px;
+    background-color: lightgray;
+    justify-content: center;
+    padding: 20px;
+}
+
+.todo-container {
+    width: 100%;
+    height: 400px;
+    margin: 50px auto;
+}
 
