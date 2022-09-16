@@ -15,7 +15,7 @@
     <button onClick="sendCommands(['new']); sendCommands(['brush.home']);">Clear Current Scene</button>
     <button onclick="sendCommands(['save.new']);">Save Current Scene</button>
     <script>
-        var brushes = {{brushesJson}};
+        // var brushes = {{brushesJson}};
         var menu = document.getElementById("brush.type");
         for (var brush of brushes) {
             var option = document.createElement("option");
@@ -35,8 +35,7 @@
             sendCommands([
                 'color.set.html=' + document.getElementById("brush.color").value,
                 'brush.size.set=' + document.getElementById("brush.size").value,
-                'brush.type=' + document.getElementById("brush.type").value,
-                'brush.turn.y=90'
+                'brush.type=' + document.getElementById("brush.type").value
             ]);
 
             var angle = parseFloat(document.getElementById('angle').value);

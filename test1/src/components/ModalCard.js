@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import ReactDom from 'react-dom'
+import React, { useState } from 'react';
+import ReactDom from 'react-dom';
 import ThreeScene from '../utils/three-scene';
-import styles from "../scss/components/modalCard.module.scss"
+import styles from '../scss/components/modalCard.module.scss';
 
-
-import closeIcon from "../Assets/x-png.png"
+import closeIcon from '../Assets/logos/x-png.png';
 
 
 const portalRoot = document.getElementById('portal-root')
