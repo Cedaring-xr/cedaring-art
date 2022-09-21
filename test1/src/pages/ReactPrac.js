@@ -97,6 +97,7 @@ export default function ReactPrac() {
                     )
                 )}
             </div>
+            <div className='tutorial-block'></div>
         </>
     );
 }

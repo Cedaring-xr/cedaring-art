@@ -8,6 +8,7 @@ import * as lilGui from "lil-gui"
 
 
 
+
 class OpenBrushScene extends Component {
     componentDidMount(){
 
@@ -18,14 +19,14 @@ class OpenBrushScene extends Component {
         // this.gui = new lilGui.GUI({closed: true, width: 400})
 
     // light
-        this.light = new THREE.DirectionalLight(0xffffff, 2)
+        this.light = new THREE.DirectionalLight(0xffffff, 5)
         this.light2 = new THREE.PointLight(0xffffff, 10)
         this.light3 = new THREE.AmbientLight(0xffffff, 1)
         this.light.position.set(10, 50, 10)
         this.scene.add(this.light, this.light3)
 
     // model loading
-        gltfLoader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../brushes')) //brushes folder has shader files also
+        gltfLoader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../extras/brushes')) //brushes folder has shader files also
         gltfLoader.load('/models/circuitArm.glb', (model) => {
             console.log(model)
             this.scene.add(model.scene)
@@ -34,9 +35,9 @@ class OpenBrushScene extends Component {
 
     // camera
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-        this.camera.position.z = 5;
-        this.camera.position.y = 8;
-        this.camera.position.x = 6;
+        this.camera.position.z = 1.7;
+        this.camera.position.y = 3.9;
+        this.camera.position.x = 0.2;
 
     // render
         this.renderer = new THREE.WebGLRenderer()
