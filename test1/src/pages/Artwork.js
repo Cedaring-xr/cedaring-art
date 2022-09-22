@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ModalCard from "../components/ModalCard";
 import art from "../Assets/artwork.json";
 
+import styles from '../scss/components/modalCard.module.scss';
+
 
 export default function Artwork()  {
     const [isOpen, setOpen] = useState(false) //state starts in the parent

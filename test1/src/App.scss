@@ -2,7 +2,6 @@
 @use "./scss/components";
 @use "./scss/pages";
 
-
 //variables
 $altBlueColor: #61dafb;
 
@@ -83,77 +82,6 @@ body {
   padding-top: 30px;
 }
 
-
-//grid stuff
-.grid-container {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  place-items: center center;
-  padding: 20px;
-  overflow: hidden;
-}
-
-.grid-card {
-  display: grid;
-  border-radius: 10px;
-  height: 500px;
-  background: transparent;
-  place-items: center center;
-  overflow: hidden;
-  position: relative;
-}
-
-.grid-card-content {
-  position: relative;
-  display: grid;
-  overflow: hidden;
-  width: 97%;
-  height: 97%;
-  background-color: #d0d2d4;
-  border-radius: 10px;
-
-  // .grid-img-container::before {
-  //   content: '';
-  //   width: 100px;
-  //   height: 160%;
-  //   position: absolute;
-  //   left: 40%;
-  //   top: -20%;
-  //   background: linear-gradient(#47494d, #f8cc7a);
-  //   animation: animate 8s linear infinite;
-  // }
-  
-
-  //other card stuff
-  .grid-img-container {
-    position: relative;
-    height: 100%;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    border-radius: 10px;
-  }
-
-  .grid-card-img {
-    width: 100%;
-    z-index: 10;
-  }
-}
-
-.grid-card-desc-container {
-  position: relative;
-  p {
-    font-size: 0.7em;
-  }
-}
-
-@keyframes animate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 // page top container area
 .Heading_container {

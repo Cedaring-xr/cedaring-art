@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import TodoList from '../components/TodoList';
+import CardInfo from '../components/CardInfo';
+import art from '../Assets/artwork.json';
 import { v4 as uuidv4 } from 'uuid';
 import { useTransition, animated } from 'react-spring';
 import { gsap } from 'gsap';
@@ -97,7 +99,9 @@ export default function ReactPrac() {
                     )
                 )}
             </div>
-            <div className='tutorial-block'></div>
+            <div className='tutorial-block'>
+                <CardInfo  /> 
+            </div>
         </>
     );
 }

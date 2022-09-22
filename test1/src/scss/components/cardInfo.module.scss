@@ -1,0 +1,34 @@
+@use '../abstracts';
+
+
+
+.card {
+    width: 100px;
+    height: 200px;
+}
+
+.content {
+    position: relative;
+    display: grid;
+    overflow: hidden;
+    width: 97%;
+    height: 97%;
+    background-color: #d0d2d4;
+    border-radius: 10px;
+
+}
+    //other card stuff
+.grid-img-container {
+    position: relative;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-radius: 10px;
+}
+    
+.grid-card-img {
+    width: 100%;
+    z-index: 10;
+}
+
+
+        
