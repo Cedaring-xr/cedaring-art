@@ -57,6 +57,9 @@ export default function ReactPrac() {
         setTodos(newTodos);
     }
 
+
+    
+
     return (
         <>
             <div className="todo-container">
@@ -100,7 +103,7 @@ export default function ReactPrac() {
                 )}
             </div>
             <div className='tutorial-block'>
-                <CardInfo  /> 
+                <CardInfo /> 
             </div>
         </>
     );

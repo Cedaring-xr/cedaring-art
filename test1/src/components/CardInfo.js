@@ -34,3 +34,22 @@ export default function CardInfo(props) {
         </>
     );
 }
+
+
+// const nums = [1, 2, 3, 4, 5]
+
+// const squared = nums.map(function(i) {
+//     return i^2
+// })
+
+// const names = ['test', 'words', 'tree', 'rock']
+
+// const capitals = names.map((i) => {
+//     return i[0].toUpperCase() + i.slice(1)
+// })
+
+
+
+// const items = ['block', 'camera', 'light']
+
+// const par = items.map((i) => `<p>${i}</p>`)  //implicit return example
