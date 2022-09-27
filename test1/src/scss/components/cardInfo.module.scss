@@ -3,8 +3,8 @@
 
 
 .card {
-    width: 100px;
-    height: 200px;
+    width: 200px;
+    height: 300px;
 }
 
 .content {
@@ -15,7 +15,6 @@
     height: 97%;
     background-color: #d0d2d4;
     border-radius: 10px;
-
 }
     //other card stuff
 .grid-img-container {
@@ -28,6 +27,19 @@
 .grid-card-img {
     width: 100%;
     z-index: 10;
+}
+
+.newItem {
+    width: 45px;
+    height: 20px;
+    position: absolute;
+    background-color: turquoise;
+    z-index: 1;
+    border: 1px solid teal;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 5px;
 }
 
 

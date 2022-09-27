@@ -58,6 +58,9 @@ export default function ReactPrac() {
     }
 
 
+
+    // gsap.from('.tutorial-block', { duration: 3, x: '-100%', ease: 'bounce'})
+
     
 
     return (
