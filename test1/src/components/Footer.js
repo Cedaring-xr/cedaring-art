@@ -5,6 +5,7 @@ import styles from '../scss/components/footer.module.scss';
 import instaIcon from '../Assets/logos/insta-icon.png';
 import twitterIcon from '../Assets/logos/twitter-icon.png';
 import githubIcon from '../Assets/logos/github-icon.png';
+import gitIconGimp from '../Assets/logos/gitIcon-gimp.png';
 
 export default function Footer() {
     return (
@@ -24,7 +25,7 @@ export default function Footer() {
             <div className={styles.footer__social__icon}>
                 <a href="https://github.com/Cedaring-xr" target="_blank">
                     <img
-                        src={githubIcon}
+                        src={gitIconGimp}
                         className={styles.footer__img}
                     />
                     <p className={styles.footer__social__text}>Cedaring-xr</p>
