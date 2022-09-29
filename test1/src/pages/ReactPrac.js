@@ -5,10 +5,13 @@ import art from '../Assets/artwork.json';
 import { v4 as uuidv4 } from 'uuid';
 import { useTransition, animated } from 'react-spring';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import backLayer from '../Assets/images/parallax/backLayer2.png';
 import midLayer from '../Assets/images/parallax/midLayer2.png';
 import frontLayer from '../Assets/images/parallax/frontLayer2.png';
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 
@@ -63,14 +66,68 @@ export default function ReactPrac() {
         setTodos(newTodos);
     }
 
+// parallax stuff
+    // gsap.to('#prlx-back', {
+    //     y: -200,
+    //     duration: 3,
+    //     scrollTrigger: '#prlx-back'
 
+    // })
 
-    // gsap.from('.tutorial-block', { duration: 3, x: '-100%', ease: 'bounce'})
+    gsap.to('#prlx-back', {
+        scrollTrigger: {
+            scrub : 1
+        },
+        y: 600
+    })
+    gsap.to('#prlx-mid', {
+        scrollTrigger: {
+            scrub : 1
+        },
+        y: 400
+    })
+    gsap.to('#prlx-front', {
+        scrollTrigger: {
+            scrub : 1
+        },
+        y: 100
+    })
+    gsap.to('.parallax-text', {
+        scrollTrigger: {
+            scrub: 1
+        },
+        y: 1200,
+        x: 400,
+        rotation: 30
+    })
+    gsap.to('.parallax-nav', {
+        scrollTrigger: {
+            scrub: 1
+        },
+        y: 800,
+        x: -400,
+        rotation: -40
+    })
 
     
 
     return (
         <>
+            <div className='tutorial-block'>
+                <div className='parallax-box'>
+                    <img src={backLayer} className='parallax-img' id='prlx-back'/>
+                    <h1 className='parallax-text'>Cedaring.Art</h1>
+                    <img src={midLayer} className='parallax-img' id='prlx-mid'/>
+                    <nav className='parallax-nav'>
+                        <ul>
+                            <li className='nav-item'><a>Artwork</a></li>
+                            <li className='nav-item'><a>Writing</a></li>
+                            <li className='nav-item'><a>Climbing</a></li>
+                        </ul>
+                    </nav>
+                    <img src={frontLayer} className='parallax-img' id='prlx-front'/>
+                </div>
+            </div>
             <div className="todo-container">
                 <TodoList todos={todos} toggleTodo={toggleTodo} />
                 <input type="text" ref={todoNameRef} />
@@ -81,13 +138,6 @@ export default function ReactPrac() {
                 <div>
                     {todos.filter((todo) => !todo.complete).length} left todo
                 </div>
-            </div>
-            <div className='tutorial-block'>
-                 <div className='parallax-box'>
-                    <img src={backLayer} className='parallax-img' />
-                    <img src={midLayer} className='parallax-img' />
-                    <img src={frontLayer} className='parallax-img' />
-                 </div>
             </div>
             <div className="content-block">
                 <button

@@ -35,11 +35,76 @@
 }
 
 .parallax-box {
-    background-color: green;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,100,121,1) 10%, rgba(255,141,0,1) 79%);
     position: relative;
-    height: 270px;
+    height: 320px;
     overflow: hidden;
 }
+
+.parallax-text {
+    color: abstracts.$light;
+    margin-left: 2%;
+    font-size: 4rem;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 14px 6px rgba(16, 16, 16, 0.6)
+}
+
+.parallax-nav {
+    position: absolute;
+    top: 10%;
+    right: 2%;
+
+    ul {
+        display: flex;
+        list-style: none;
+        flex-direction: row;
+        padding: 0;
+        position: static;
+        margin-bottom: abstracts.$spacing-large;
+        
+        li {
+            text-decoration: none;
+            color: abstracts.$light;
+            padding: 0.75rem 1.25rem;
+            border-radius: abstracts.$borderRadius;
+            font-size: 1.7rem;
+            font-weight: bold;
+            transition: 0.3s ease all;
+            text-shadow: 1px 1px 1px #919191,
+                1px 2px 1px #919191,
+                1px 3px 1px #919191,
+                1px 6px 6px rgba(16, 16, 16, 0.6);
+
+            &:hover {
+                background: rgba(abstracts.$dark, 0.5);
+            }
+            a {
+                background: transparent;
+            }
+        
+        }
+    }
+}
+
+#prlx-mid {
+    top: 60px;
+}
+
+#prlx-back {
+    top: 30px;
+}
+
+#prlx-front {
+    top: 30px;
+}
+
 
 .parallax-img {
     height: 350px;
