@@ -94,5 +94,53 @@
             }
         },
         "date-created": "6/24/22"
+    },
+    {
+        "id": 6,
+        "name": "Chameleon",
+        "description": "additional models go here",
+        "preview-img": "/extras/origamiCrane_Moment.jpg",
+        "model": "/models/paintBeach.glb",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "date-created": "6/24/22"
+    },
+    {
+        "id": 7,
+        "name": "Chameleon",
+        "description": "additional models go here",
+        "preview-img": "/extras/origamiCrane_Moment.jpg",
+        "model": "/models/paintBeach.glb",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "date-created": "6/24/22"
+    },
+    {
+        "id": 8,
+        "name": "Chameleon",
+        "description": "additional models go here",
+        "preview-img": "/extras/clock_Moment.jpg",
+        "model": "/models/paintBeach.glb",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "date-created": "6/24/22"
     }
 ]

@@ -6,6 +6,12 @@ import { v4 as uuidv4 } from 'uuid';
 import { useTransition, animated } from 'react-spring';
 import { gsap } from 'gsap';
 
+import backLayer from '../Assets/images/parallax/backLayer2.png';
+import midLayer from '../Assets/images/parallax/midLayer2.png';
+import frontLayer from '../Assets/images/parallax/frontLayer2.png';
+
+
+
 export default function ReactPrac() {
     const [todos, setTodos] = useState([]);
     const [items, setItems] = useState([]);
@@ -75,6 +81,13 @@ export default function ReactPrac() {
                 <div>
                     {todos.filter((todo) => !todo.complete).length} left todo
                 </div>
+            </div>
+            <div className='tutorial-block'>
+                 <div className='parallax-box'>
+                    <img src={backLayer} className='parallax-img' />
+                    <img src={midLayer} className='parallax-img' />
+                    <img src={frontLayer} className='parallax-img' />
+                 </div>
             </div>
             <div className="content-block">
                 <button

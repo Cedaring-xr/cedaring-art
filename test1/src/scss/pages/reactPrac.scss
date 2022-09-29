@@ -34,3 +34,15 @@
     border: 5px solid black;
 }
 
+.parallax-box {
+    background-color: green;
+    position: relative;
+    height: 270px;
+    overflow: hidden;
+}
+
+.parallax-img {
+    height: 350px;
+    position: absolute;
+}
+
