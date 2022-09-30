@@ -67,13 +67,6 @@ export default function ReactPrac() {
     }
 
 // parallax stuff
-    // gsap.to('#prlx-back', {
-    //     y: -200,
-    //     duration: 3,
-    //     scrollTrigger: '#prlx-back'
-
-    // })
-
     gsap.to('#prlx-back', {
         scrollTrigger: {
             scrub : 1
@@ -113,16 +106,16 @@ export default function ReactPrac() {
 
     return (
         <>
-            <div className='tutorial-block'>
+            <div>
                 <div className='parallax-box'>
                     <img src={backLayer} className='parallax-img' id='prlx-back'/>
-                    <h1 className='parallax-text'>Cedaring.Art</h1>
+                    <a href="/"><h1 className='parallax-text'>Cedaring.Art</h1></a>
                     <img src={midLayer} className='parallax-img' id='prlx-mid'/>
                     <nav className='parallax-nav'>
                         <ul>
-                            <li className='nav-item'><a>Artwork</a></li>
-                            <li className='nav-item'><a>Writing</a></li>
-                            <li className='nav-item'><a>Climbing</a></li>
+                            <li className='nav-item'><a href='/artwork'>Artwork</a></li>
+                            <li className='nav-item'><a href='/blog'>Writing</a></li>
+                            <li className='nav-item'><a href='climbing'>Climbing</a></li>
                         </ul>
                     </nav>
                     <img src={frontLayer} className='parallax-img' id='prlx-front'/>

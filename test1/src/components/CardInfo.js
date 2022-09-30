@@ -18,17 +18,6 @@ export default function CardInfo(props) {
     gsap.from('.grid-img-container', {duration: 2, opacity: 0, delay: 1} )
     gsap.fromTo(".card" , { opacity: 0, scale: 0.5 , rotation: 180 }, {duration: 1, delay: 1, opacity: 1, scale: 1, rotation: 0})
 
-    const timeline = gsap.timeline({ defaults: { duration: 1}})
-    timeline
-        .from('.header', { y: '-100%', ease: 'bounce'})
-        .from('.link', { opacity: 0, stagger: 0.5})
-        .from('.right', { x: '-100vw', ease: 'bounce'}, '<0.5') //0.5 sec after previous animation
-
-
-    gsap.to('.card', {
-        scrollTrigger: '.box',
-        y: 100
-    })
 
     const artData = art.reverse().map(props => {
         return (
