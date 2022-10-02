@@ -77,13 +77,13 @@ export default function ReactPrac() {
         scrollTrigger: {
             scrub : 1
         },
-        y: 400
+        y: 450
     })
     gsap.to('#prlx-front', {
         scrollTrigger: {
             scrub : 1
         },
-        y: 100
+        y: 300
     })
     gsap.to('.parallax-text', {
         scrollTrigger: {

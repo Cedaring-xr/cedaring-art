@@ -32,10 +32,10 @@
 
 .parallax-box {
     background: rgb(2,0,36);
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,100,121,1) 10%, rgba(255,141,0,1) 79%);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,100,121,1) 10%, rgb(255, 146, 13) 79%);
     position: relative;
     height: 22vw;
-    max-height: 280px;
+    max-height: 260px;
     overflow: hidden;
 }
 
@@ -73,8 +73,9 @@
         li {
             text-decoration: none;
             color: abstracts.$light;
-            padding: 0.75rem 1.25rem;
-            border-radius: abstracts.$borderRadius;
+            padding: 0.45rem 1rem;
+            margin: 0 .5rem;
+            border-radius: abstracts.$borderRadiusSmall;
             font-size: 1.7rem;
             font-weight: bold;
             transition: 0.3s ease all;
@@ -95,16 +96,16 @@
     }
 }
 
-#prlx-mid {
-    top: 60px;
-}
-
 #prlx-back {
     top: 30px;
 }
 
+#prlx-mid {
+    top: 120px;
+}
+
 #prlx-front {
-    top: 30px;
+    top: 170px;
 }
 
 
