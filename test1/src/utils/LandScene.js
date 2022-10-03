@@ -15,7 +15,7 @@ export default class LandScene extends Component {
         this.scene = new THREE.Scene()
         const manager = new THREE.LoadingManager()
         this.loader = new GLTFLoader(manager)
-        const loadingBar = document.querySelector('.canvas-loading-bar')
+        const loadingBar = document.querySelector('.center')
         this.gui = new lilGui.GUI({closed: false, width: 400})
 
     // lights
@@ -42,7 +42,7 @@ export default class LandScene extends Component {
         manager.onProgress = (itemUrl, itemsLoaded, itemsTotal)=> {
             console.log(itemUrl, itemsLoaded, itemsTotal)
             const progressRatio = itemsLoaded / itemsTotal
-            loadingBar.style.transform = `scaleX(${progressRatio})`
+            
 
         }
         manager.onError = ()=> {

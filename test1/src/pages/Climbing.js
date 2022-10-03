@@ -21,7 +21,10 @@ export default function Climbing() {
                 <h1 className="page_header">Colorado climbing projects visualized in 3D</h1>
             </div>
             <LandScene />
-            <div className='canvas-loading-bar'></div>
+            <div className='center'>
+                <div className='ring'></div>
+                <span>Loading...</span>
+            </div>
         </> 
     )
 }

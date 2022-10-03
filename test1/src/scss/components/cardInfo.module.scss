@@ -5,6 +5,10 @@
 .card {
     width: 200px;
     height: 300px;
+
+    &:hover {
+        transform: translateY(50px) scale(1.2);
+    }
 }
 
 .content {
