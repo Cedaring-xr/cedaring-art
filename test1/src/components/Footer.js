@@ -10,7 +10,7 @@ export default function Footer() {
     return (
         <footer className={styles.footer}>
             <div className={styles.footer__content}>
-                <h6 className={styles.footer__content__logo}>.</h6>
+                <h6 className={styles.footer__content__logo}>aksdf</h6>
             </div>
             <div className={styles.footer__social__icon}>
                 <a href="https://www.instagram.com/cedaring_xr/" target="_blank">

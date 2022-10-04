@@ -4,10 +4,16 @@
 .footer {
     background: rgb(49, 47, 47);
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.2rem;
     text-decoration: none;
     transition: 0.3s ease all;
-    padding: 5px 15px 0 15px;
+    padding: 5px 10px 0 10px;
+    align-content: center;
+
+    @include abstracts.breakpoint(tablet) {
+        flex-direction: row;
+    }
 
     &__content {
         color: abstracts.$light;
@@ -24,9 +30,9 @@
     &__social {
 
         &__icon {
-        margin-top: 5px;
         flex-grow: 1;
         height: 70px;
+        align-self: center;
         overflow: hidden;
             
             a {
@@ -49,6 +55,7 @@
             position: relative;
             top: -52px;
             left: 76px;
+            margin-right: 0;
         }
     }
 

@@ -14,3 +14,11 @@
 .canvas-openbrush {
   max-height: 300px; //overwritten by three js
 }
+
+.canvas-box {
+  display: flex;
+  border: 1px solid red;
+  min-height: 80vh;
+  max-height: 200vw;
+  overflow: hidden;
+}

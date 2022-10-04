@@ -21,6 +21,7 @@ export default class HomepageScene extends Component {
         this.scene = new THREE.Scene()
         const manager = new THREE.LoadingManager()
         this.loader = new GLTFLoader(manager)
+        const loadingBar = document.querySelector('.center')
         this.gui = new lilGui.GUI({closed: true, width: 400})
 
     // lights
@@ -52,11 +53,18 @@ export default class HomepageScene extends Component {
         });
 
     // Loading manager
+        // Loading manager
         manager.onStart = ()=> {
             console.log('started')
         }
         manager.onLoad = ()=> {
-            console.log('loaded')
+            if(loadingBar){
+                gsap.delayedCall(0.5, () => {
+                    console.log('loaded')
+                    loadingBar.classList.add('ended')
+                    loadingBar.style.transform = ''
+                })
+            }
             this.animation()
         }
         manager.onProgress = (itemUrl, itemsLoaded, itemsTotal)=> {
@@ -109,6 +117,18 @@ export default class HomepageScene extends Component {
         function render() {
             this.renderer.render(this.scene, this.camera)
         }
+
+    // test canvas resize
+        // var container = this.renderer.domElement.parentElement;
+        // container.addEventListener('resize', onContainerResize);
+
+        // function onContainerResize() {
+        //     var box = container.getBoundingClientRect();
+        //     this.renderer.setSize(box.width, box.height);
+
+        //     this.camera.aspect = box.width/box.height
+        //     this.camera.updateProjectionMatrix()
+        // }
         
 
     //event listeners
