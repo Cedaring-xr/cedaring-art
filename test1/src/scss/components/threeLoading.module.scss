@@ -4,7 +4,7 @@
 .center {
     display: flex;
     position: relative;
-    top: -50vh;
+    top: -70vh;
     text-align: center;
     justify-content: center;
 
@@ -63,30 +63,5 @@
     }
 }
 
-.container {
-    position: relative;
-}
-
-.percentage {
-    position: relative;
-}
 
 
-//canvas loading bar
-.container {
-    position: absolute;
-    top: 80%;
-    width: 100%;
-    height: 10px;
-    background: #fff;
-    transform: scaleX(0);
-    transition: transform 0.5s;
-    transform-origin: top left;
-    will-change: transform;
-  }
-  
-//   .canvas-loading-bar.ended {
-//     transform: scaleX(0);
-//     transform-origin: top right;
-//     transition: transform 1.5s ease-in-out;
-//   }

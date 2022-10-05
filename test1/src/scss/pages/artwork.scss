@@ -10,3 +10,31 @@
     border: 2px solid #000;
     background-color: abstracts.$light;
 }
+
+.openbrush-banner {
+    width: 95%;
+    min-height: 50px;
+    display: flex;
+    margin: 20px;
+    padding: 5px auto;
+    align-content: center;
+    background-color: #d8a25c;
+    border: 2px solid #666;
+    border-radius: 5px;
+    position: relative;
+
+    p {
+        font-family: abstracts.$bodyFont;
+        font-size: 1.2rem;
+    }
+
+    .close-icon {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 10px;
+        top: 5px;
+    }
+}
+
+

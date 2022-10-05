@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ModalCard from "../components/ModalCard";
 import art from "../Assets/artwork.json";
+import closeIcon from '../Assets/logos/x-png.png';
 
 import styles from '../scss/components/modalCard.module.scss';
 
@@ -12,6 +13,10 @@ export default function Artwork()  {
         <>
             <div className='Heading_container'>
                 <h1 className="page_header">Virtual Reality Artwork created with Openbrush</h1>
+            </div>
+            <div className="openbrush-banner">
+                <p>Openbrush is the VR application used to create most of my VR artwork. It is an open source version of Tiltbrush, which google stopped updating in 2021. Open source projects like this take a lot of work to maintain. If you like my artwork or are interested in the program, consider supporting Openbrush or contributing to the community so that we don't lose these awesome resources.</p>
+                <img src={closeIcon} className="close-icon" />
             </div>
             <div className="grid-container">
                 { art.reverse().map( card => {
