@@ -27,7 +27,7 @@ class OpenBrushScene extends Component {
 
     // model loading
         gltfLoader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../extras/brushes')) //brushes folder has shader files also
-        gltfLoader.load('/models/circuitArm.glb', (model) => {
+        gltfLoader.load('/models/leaves.glb', (model) => {
             console.log(model)
             this.scene.add(model.scene)
         });

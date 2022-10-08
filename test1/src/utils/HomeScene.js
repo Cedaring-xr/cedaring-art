@@ -44,7 +44,7 @@ export default class HomepageScene extends Component {
         this.plane.rotation.x = - Math.PI / 2
 
 
-        this.loader.load('/models/burger.glb', (model) => {
+        this.loader.load('/models/leaves.glb', (model) => {
             console.log(model.scene)
             this.modelObj = model.scene
             this.scene.add(model.scene)
@@ -147,9 +147,9 @@ export default class HomepageScene extends Component {
 
     animation = () => {
         requestAnimationFrame(this.animation)
-        this.cube.rotation.x += 0.01
-        this.cube.rotation.y += 0.01
-        this.modelObj.rotation.y += 137.5 * (Math.PI / 180)
+        // this.cube.rotation.x += 0.01
+        // this.cube.rotation.y += 0.01
+        // this.modelObj.rotation.y += 137.5 * (Math.PI / 180)
         this.renderer.render(this.scene, this.camera)
     }
 
