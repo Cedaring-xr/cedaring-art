@@ -13,9 +13,9 @@
     background: abstracts.$dark;
     width: 100%;
     height: abstracts.$headerHeight;
-    padding: 0 1.5rem;
+    padding: 0;
     @include breakpoint(md) {
-        padding: 0 3rem;
+        padding:0;
     }
     transition: 0.3s ease all;
 
@@ -159,5 +159,100 @@
                 display: none;
             }
         }
+    }
+}
+
+
+// temp other
+.parallax-box {
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,100,121,1) 10%, rgb(255, 146, 13) 79%);
+    position: relative;
+    height: 22vw;
+    max-height: 260px;
+    overflow: hidden;
+}
+
+.parallax-text {
+    color: abstracts.$light;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: clamp(1.5rem, 8vw, 3rem);
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 10px 6px rgba(16, 16, 16, 0.8);
+
+
+    @include abstracts.breakpoint(tablet) {
+        font-size: clamp(3rem, 4vw, 4rem);
+    }
+}
+
+.parallax-nav {
+    position: absolute;
+    top: 10%;
+    right: 2%;
+
+    ul {
+        display: flex;
+        list-style: none;
+        flex-direction: row;
+        padding: 0;
+        position: static;
+        margin-bottom: abstracts.$spacing-large;
+        
+        li {
+            text-decoration: none;
+            color: abstracts.$light;
+            padding: 0.45rem 1rem;
+            margin: 0 .5rem;
+            border-radius: abstracts.$borderRadiusSmall;
+            font-size: 1.7rem;
+            font-weight: bold;
+            transition: 0.3s ease all;
+            text-shadow: 1px 1px 1px #919191,
+                1px 2px 1px #919191,
+                1px 3px 1px #919191,
+                1px 6px 4px rgba(16, 16, 16, 0.7);
+
+            &:hover {
+                background: rgba(abstracts.$dark, 0.5);
+            }
+            a {
+                background: transparent;
+                color: abstracts.$light;
+            }
+        
+        }
+    }
+}
+
+#prlx-back {
+    top: 30px;
+}
+
+#prlx-mid {
+    top: 120px;
+}
+
+#prlx-front {
+    top: 170px;
+}
+
+
+.parallax-img {
+    max-height: 200px;
+    width: 110%;
+    position: absolute;
+
+    @include abstracts.breakpoint(tablet) {
+        max-height: 350px;
+    }
+
+    @include abstracts.breakpoint(desktop) {
+        height: 350px;
     }
 }

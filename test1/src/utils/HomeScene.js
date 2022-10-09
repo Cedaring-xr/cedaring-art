@@ -22,7 +22,7 @@ export default class HomepageScene extends Component {
         const manager = new THREE.LoadingManager()
         this.loader = new GLTFLoader(manager)
         const loadingBar = document.querySelector('.center')
-        this.gui = new lilGui.GUI({closed: true, width: 400})
+        // this.gui = new lilGui.GUI({closed: true, width: 0})
 
     // lights
         this.directLight = new THREE.DirectionalLight(0xffffff, 5)
@@ -98,8 +98,8 @@ export default class HomepageScene extends Component {
 
     //stats
         const stats = new Stats()
-        stats.showPanel( 0 ) // 0: fps, 1: ms, 2: mb, 3+: custom
-        document.body.appendChild( stats.dom );
+        // stats.showPanel( 0 ) // 0: fps, 1: ms, 2: mb, 3+: custom
+        // document.body.appendChild( stats.dom );
 
     // render
         this.renderer = new THREE.WebGLRenderer()
