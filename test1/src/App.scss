@@ -38,30 +38,9 @@ a {
   display: block;
 }
 
-
-//other tutorial stuff
-body {
-  width: 100%;
-  font-family: abstracts.$headerFont;
-  color: abstracts.$dark;
-}
-
-.page-header {
-  align-items: center;
-  text-align: center;
-  margin: 25px;
-  display: block;
-  background-color: red;
-}
-
-.temp-header {
-  padding-top: 30px;
-}
-
-
 // page top container area
 .Heading_container {
-  height: 150px;
+   min-height: 150px;
   background: abstracts.$background;
   display: flex;
   justify-content: center;

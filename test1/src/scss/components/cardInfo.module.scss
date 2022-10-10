@@ -13,7 +13,7 @@
 
 .content {
     position: relative;
-    display: grid;
+    display: flex;
     overflow: hidden;
     width: 97%;
     height: 97%;
@@ -22,7 +22,6 @@
 }
     //other card stuff
 .grid-img-container {
-    position: relative;
     height: 100%;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     border-radius: 10px;

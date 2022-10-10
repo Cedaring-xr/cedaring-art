@@ -10,9 +10,8 @@
 
     span {
         color: #737373;
-        font-size: 20px;
+        font-size: 1.7rem;
         text-transform: uppercase;
-        letter-spacing: 1px;
         line-height: 200px;
         animation: text 3s ease-in-out infinite;
     }
@@ -27,7 +26,7 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    animation: ring 2s linear infinite;
+    animation: ring 1.6s linear infinite;
 
     :before {
         position: absolute;
@@ -37,7 +36,7 @@
         height: 100%;
         width: 100%;
         border-radius: 50%;
-        box-shadow: 0 0 5px rgba(255, 255, 255, .3);
+        box-shadow: 0 0 8px rgba(255, 255, 255, .3);
 
     }
 }
@@ -45,15 +44,15 @@
 @keyframes ring {
     0% {
         transform: rotate(0deg);
-        box-shadow: 1px 5px 2px #e65c00;
+        box-shadow: 2px 5px 2px #fa0a0a;
     }
     50% {
         transform: rotate(180deg);
-        box-shadow: 1px 5px 2px #18b201;
+        box-shadow: 2px 5px 2px #f0cf13;
     }
     100% {
         transform: rotate(360deg);
-        box-shadow: 1px 5px 2px #0456c8;
+        box-shadow: 2px 5px 2px #59ff17;
     }
 }
 

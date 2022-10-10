@@ -5,32 +5,42 @@
 .container {
     background-color: #eee;
     overflow: hidden;
-    display: flex;
-    padding: 2%;
+    display: grid;
+    grid-column: 2;
+    padding: 0;
     // max-height: 1vh;
+    @include abstracts.breakpoint(other) {
+        border: 5px solid rgb(42, 42, 65);
+        margin: clamp(10px, 5%, 300px);
+        flex-direction: row;
+    }
 }
 
 
 .img {
-    max-width: 800px;
+    position: relative;
+    right: 0;
     clip-path: polygon(0 10%, 0 0, 100% 0, 100% 100%);
 }
 
 .text {
-    padding: 5rem;
-    line-height: 1.5;
+    position: relative;
+    left: 0;
+    top: 50px;
+    padding: 3rem;
+    line-height: 1.2;
     min-width: 30rem;
-    background-color: rgb(127, 127, 127);
-    opacity: 0.8;
-    border-radius: 20px;
-    padding: 5rem;
-    margin:50px;
+    background-color: rgb(7, 84, 114);
+    border-radius: 12px;
+    opacity: 0.9;
+    margin-left: 0;
+    margin-top: 50px;
     height: fit-content;
 
 
     &__content {
+        color: #fff;
         font-family: 'Times New Roman', Times, serif;
         font-size: 1.2rem;
-
     }
 }

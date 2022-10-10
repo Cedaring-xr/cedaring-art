@@ -11,8 +11,8 @@
         
 .header {
     background: abstracts.$dark;
+    font-family: abstracts.$headerFont;
     width: 100%;
-    height: abstracts.$headerHeight;
     padding: 0;
     @include breakpoint(md) {
         padding:0;
@@ -162,7 +162,6 @@
     }
 }
 
-
 // temp other
 .parallax-box {
     background: rgb(2,0,36);
@@ -241,7 +240,6 @@
 #prlx-front {
     top: 170px;
 }
-
 
 .parallax-img {
     max-height: 200px;
