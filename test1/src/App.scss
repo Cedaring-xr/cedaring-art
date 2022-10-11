@@ -38,17 +38,4 @@ a {
   display: block;
 }
 
-// page top container area
-.Heading_container {
-   min-height: 150px;
-  background: abstracts.$background;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  h1 {
-      padding: 1.5rem 2.5rem;
-      background: linear-gradient(220deg, abstracts.$primary, rgba(abstracts.$primary, 0.5));
-      border-radius: abstracts.$borderRadius calc(#{abstracts.$borderRadius} * 10);
-  }
-}
