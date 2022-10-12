@@ -74,7 +74,7 @@ export default function Header() {
    })
    gsap.to('.parallax-nav', {
          scrollTrigger: {
-            scrub: 1
+            scrub: 0.5
          },
          y: 600,
          x: -400,
@@ -90,12 +90,14 @@ export default function Header() {
                         <h1 className="parallax-text">Cedaring.Art</h1>
                   </a>
                   <img src={midLayer} className="parallax-img" id="prlx-mid" />
-                  <nav className="parallax-nav">
+                  <nav className={`parallax-nav ${styles.header__content__nav} ${
+                            menuOpen ? styles.isMenu : ''
+                        }`}>
                      <ul>
                         <li className="nav-item"><a href="/artwork">Artwork</a></li>
                         <li className="nav-item"><a href="/blog">stories</a></li>
                         <li className="nav-item"><a href="/climbing">Climbing</a></li>
-                        <li><a href="/react">React</a></li>
+                        {/* <li><a href="/react">React</a></li> */}
                      </ul>
                   </nav>
                   <img src={frontLayer} className="parallax-img" id="prlx-front" />

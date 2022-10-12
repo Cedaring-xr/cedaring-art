@@ -14,10 +14,8 @@
     font-family: abstracts.$headerFont;
     width: 100%;
     padding: 0;
-    @include breakpoint(md) {
-        padding:0;
-    }
     transition: 0.3s ease all;
+    overflow: hidden;
 
     &__content {
         overflow: hidden;
@@ -56,17 +54,16 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: rgba(abstracts.$dark, 0.9);
-            backdrop-filter: blur(2px);
             transform: translate(0);
             transition: 0.3s ease transform;
 
-            @include breakpoint(md) {
+            @include abstracts.breakpoint(tablet) {
                 transform: none;
                 flex-direction: row;
                 background: transparent;
                 width: auto;
                 height: 100%;
+
                 position: static;
             }
 
@@ -76,9 +73,9 @@
                 padding: 0;
                 flex-direction: column;
                 margin-bottom: abstracts.$spacing-large;
-                @include breakpoint(md) {
+
+                @include abstracts.breakpoint(tablet) {
                     flex-direction: row;
-                    align-items: center;
                     margin-bottom: 0;
                     margin-right: calc(0.5rem + #{abstracts.$spacing-med});
                 }
@@ -88,7 +85,7 @@
                     a {
                         text-decoration: none;
                         color: inherit;
-                        padding: 0.75rem 1.25rem;
+                        padding: 0.75rem rem;
                         border-radius: abstracts.$borderRadius;
                         transition: 0.3s ease all;
         
@@ -123,7 +120,7 @@
                 &:active {
                     border-color: abstracts.$primary;
                     background: linear-gradient(rgba(abstracts.$light, 0.2), rgba(abstracts.$light, 0.3));
-                    color: abstracts.$primary;
+                    color: #fff;
                 }
             }
     
@@ -147,9 +144,10 @@
             cursor: pointer;
             display: flex;
             align-items: center;
-            font-size: 2rem;
+            font-size: 3rem;
             transition: 0.3s ease all;
             position: relative;
+            color: #fff;
 
             &:hover {
                 color: abstracts.$primary;
@@ -169,7 +167,7 @@
     position: relative;
     height: 22vw;
     max-height: 260px;
-    overflow: hidden;
+    padding: 0;
 }
 
 .parallax-text {
@@ -209,8 +207,9 @@
             padding: 0.45rem 1rem;
             margin: 0 .5rem;
             border-radius: abstracts.$borderRadiusSmall;
-            font-size: 1.7rem;
+            font-size: clamp(1rem, 3vw, 3rem);
             font-weight: bold;
+            margin-bottom: 120px;
             transition: 0.3s ease all;
             text-shadow: 1px 1px 1px #919191,
                 1px 2px 1px #919191,
