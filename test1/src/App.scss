@@ -14,6 +14,10 @@ a {
   text-decoration: none;
 }
 
+body {
+  background: rgb(244,249,255);
+  background: radial-gradient(circle, rgba(244,249,255,1) 10%, rgba(184,186,189,1) 63%);
+}
 
 
 #portal-root {
