@@ -1,7 +1,8 @@
-import React from 'react';
-import OpenBrushScene from '../utils/OBviewer';
-import TiltLoad from '../utils/tiltLoader';
-import ShaderPractice from '../utils/shaderScene';
+import React from 'react'
+import OpenBrushScene from '../utils/OBviewer'
+import TiltLoad from '../utils/tiltLoader'
+import ShaderPractice from '../utils/shaderScene'
+import FbxScene from '../utils/fbxLoader'
 
 export default function Blog() {
     return (
@@ -11,6 +12,7 @@ export default function Blog() {
             </div>
             {/* <TiltLoad /> */}
             <OpenBrushScene />
+            {/* <FbxScene /> */}
             {/* <ShaderPractice /> */}
         </>
     );

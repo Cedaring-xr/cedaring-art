@@ -44,7 +44,7 @@ export default class HomepageScene extends Component {
         this.plane.rotation.x = - Math.PI / 2
 
 
-        this.loader.load('/models/leaves.glb', (model) => {
+        this.loader.load('/models/fallFox.glb', (model) => {
             console.log(model.scene)
             this.modelObj = model.scene
             this.scene.add(model.scene)
