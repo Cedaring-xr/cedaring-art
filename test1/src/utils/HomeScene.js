@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import * as THREE from 'three'
+import { GLTFGoogleTiltBrushMaterialExtension } from 'three-icosa'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import { TransformControls } from "three/examples/jsm/controls/TransformControls"
@@ -27,10 +28,10 @@ export default class HomepageScene extends Component {
     // lights
         this.directLight = new THREE.DirectionalLight(0xffffff, 5)
         this.lightHelper = new THREE.DirectionalLightHelper(this.directLight, 5)
-        this.light2 = new THREE.PointLight(0xffffff , 10)
-        this.light3 = new THREE.AmbientLight(0xff00ff, 5)
+        this.light2 = new THREE.PointLight(0xffffff , 2)
+        this.light3 = new THREE.AmbientLight(0xffffff, 2)
         this.directLight.position.set(5, 5, 10)
-        this.scene.add(this.directLight, this.light2, this.light3)
+        this.scene.add(this.directLight, this.light3)
 
     // test cube
         const geometry = new THREE.BoxGeometry(1,1,1)
@@ -40,17 +41,29 @@ export default class HomepageScene extends Component {
         this.cube = new THREE.Mesh(geometry, material2)
         this.plane = new THREE.Mesh(geoPlane, material)
 
-        this.scene.add(this.cube, this.plane)
-        this.plane.rotation.x = - Math.PI / 2
+        // this.scene.add(this.cube, this.plane)
+        // this.plane.rotation.x = - Math.PI / 2
 
 
+    // model loading
+        this.loader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../extras/brushes')) //brushes folder has shader files also
         this.loader.load('/models/fallFox.glb', (model) => {
-            console.log(model.scene)
-            this.modelObj = model.scene
+            console.log(model)
             this.scene.add(model.scene)
-        }, undefined, function ( error ) {
-            console.log(error)
         });
+
+    //envirionment map
+        this.envTexture = new THREE.CubeTextureLoader()
+        const envBackground = this.envTexture.load([
+            '/extras/background/tanSky/px.png',  //px
+            '/extras/background/tanSky/nx.png',  //py
+            '/extras/background/tanSky/py.png',  //nx
+            '/extras/background/tanSky/ny.png',  //ny
+            '/extras/background/tanSky/pz.png',  //pz
+            '/extras/background/tanSky/nz.png'   //nz
+        ])
+        envBackground.encoding = THREE.sRGBEncoding
+        this.scene.background = envBackground
 
     // Loading manager
         // Loading manager

@@ -35,12 +35,12 @@ class OpenBrushScene extends Component {
     //envirionment map
         this.envTexture = new THREE.CubeTextureLoader()
         const envBackground = this.envTexture.load([
-            '/extras/background/px.png',  //px
-            '/extras/background/nx.png',  //py
-            '/extras/background/py.png',  //nx
-            '/extras/background/ny.png',  //ny
-            '/extras/background/pz.png',  //pz
-            '/extras/background/nz.png'   //nz
+            '/extras/background/openSky/px.png',  //px
+            '/extras/background/openSky/nx.png',  //py
+            '/extras/background/openSky/py.png',  //nx
+            '/extras/background/openSky/ny.png',  //ny
+            '/extras/background/openSky/pz.png',  //pz
+            '/extras/background/openSky/nz.png'   //nz
         ])
         envBackground.encoding = THREE.sRGBEncoding
         this.scene.background = envBackground

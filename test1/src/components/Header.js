@@ -44,26 +44,34 @@ export default function Header() {
 
 
 // parallax stuff
-   gsap.to('#prlx-back', {
-      scrollTrigger: {
-          scrub : 1.2
-      },
-      y: 400
-   })
-   gsap.to('#prlx-mid', {
-         scrollTrigger: {
-            start: 'top top',
-            scrub : 1.4
-         },
-         y: 450
-   })
-   gsap.to('#prlx-front', {
-         scrollTrigger: {
-            scrub : 1.6,
-            start: 'top top'
-         },
-         y: 300
-   })
+
+
+    if(document.querySelector('#prlx-back')) {
+        gsap.to('#prlx-back', {
+            scrollTrigger: {
+                scrub : 1.2
+            },
+            y: 400
+         })
+    }
+    if(document.querySelector('#prlx-mid')) {
+        gsap.to('#prlx-mid', {
+            scrollTrigger: {
+                start: 'top top',
+                scrub : 1.4
+            },
+            y: 450
+        })
+    }
+    if(document.querySelector('#prlx-front')) {
+        gsap.to('#prlx-front', {
+                scrollTrigger: {
+                    scrub : 1.6,
+                    start: 'top top'
+                },
+                y: 300
+        })
+    }
    gsap.to('.parallax-text', {
          scrollTrigger: {
             scrub: 0.5
