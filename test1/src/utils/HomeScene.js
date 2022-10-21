@@ -27,22 +27,22 @@ export default class HomepageScene extends Component {
 
     // lights
         this.directLight = new THREE.DirectionalLight(0xffffff, 5)
-        this.lightHelper = new THREE.DirectionalLightHelper(this.directLight, 5)
+        this.directLight2 = new THREE.DirectionalLight(0xffffff, 5)
+        this.lightHelper = new THREE.DirectionalLightHelper(this.directLight, 10)
         this.light2 = new THREE.PointLight(0xffffff , 2)
         this.light3 = new THREE.AmbientLight(0xffffff, 2)
         this.directLight.position.set(5, 5, 10)
-        this.scene.add(this.directLight, this.light3)
+        this.directLight2.position.set(1, 1, 1)
+        this.scene.add(this.directLight, this.directLight2, this.light3)
 
     // test cube
-        const geometry = new THREE.BoxGeometry(1,1,1)
-        const geoPlane = new THREE.PlaneGeometry(5,5)
-        const material = new THREE.MeshBasicMaterial({color: 0xfffeee, side: THREE.DoubleSide})
+        const geoPlane = new THREE.PlaneGeometry(15, 15)
+        const material = new THREE.MeshBasicMaterial({color: 0x16844b, side: THREE.DoubleSide})
         const material2 = new THREE.MeshBasicMaterial({color: parameters.color})
-        this.cube = new THREE.Mesh(geometry, material2)
         this.plane = new THREE.Mesh(geoPlane, material)
 
-        // this.scene.add(this.cube, this.plane)
-        // this.plane.rotation.x = - Math.PI / 2
+        this.scene.add(this.plane)
+        this.plane.rotation.x = - Math.PI / 2
 
 
     // model loading
@@ -55,12 +55,12 @@ export default class HomepageScene extends Component {
     //envirionment map
         this.envTexture = new THREE.CubeTextureLoader()
         const envBackground = this.envTexture.load([
-            '/extras/background/tanSky/px.png',  //px
-            '/extras/background/tanSky/nx.png',  //py
-            '/extras/background/tanSky/py.png',  //nx
-            '/extras/background/tanSky/ny.png',  //ny
-            '/extras/background/tanSky/pz.png',  //pz
-            '/extras/background/tanSky/nz.png'   //nz
+            '/extras/background/cloudsLight/px.png',  //px
+            '/extras/background/cloudsLight/nx.png',  //py
+            '/extras/background/cloudsLight/py.png',  //nx
+            '/extras/background/cloudsLight/ny.png',  //ny
+            '/extras/background/cloudsLight/pz.png',  //pz
+            '/extras/background/cloudsLight/nz.png'   //nz
         ])
         envBackground.encoding = THREE.sRGBEncoding
         this.scene.background = envBackground
@@ -73,7 +73,7 @@ export default class HomepageScene extends Component {
         manager.onLoad = ()=> {
             if(loadingBar){
                 gsap.delayedCall(0.5, () => {
-                    console.log('loaded')
+                    // console.log('loaded')
                     loadingBar.classList.add('ended')
                     loadingBar.style.transform = ''
                 })

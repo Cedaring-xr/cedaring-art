@@ -13,7 +13,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 export default function Header() {
-    // let navigate = useNavigate()
     const [menuOpen, setMenuOpen] = useState(false);
     const menuToggleHandler = () => {
         setMenuOpen((p) => !p);
@@ -44,61 +43,37 @@ export default function Header() {
 
 
 // parallax stuff
+    let prlxTimeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.header',
+            pin: false,
+            start: 'top top', // top of trigger top of viewport
+            end: '+= 500',
+            scrub: 1,
+            snap: {
+                snapTo: 'labels',
+                duration: {min: 0.2, max: 3},
+                delay: 0.2
+            }
+        }
+    })
 
-
-    if(document.querySelector('#prlx-back')) {
-        gsap.to('#prlx-back', {
-            scrollTrigger: {
-                scrub : 1.2
-            },
-            y: 400
-         })
-    }
-    if(document.querySelector('#prlx-mid')) {
-        gsap.to('#prlx-mid', {
-            scrollTrigger: {
-                start: 'top top',
-                scrub : 1.4
-            },
-            y: 450
-        })
-    }
-    if(document.querySelector('#prlx-front')) {
-        gsap.to('#prlx-front', {
-                scrollTrigger: {
-                    scrub : 1.6,
-                    start: 'top top'
-                },
-                y: 300
-        })
-    }
-   gsap.to('.parallax-text', {
-         scrollTrigger: {
-            scrub: 0.5
-         },
-         y: 900,
-         x: 400,
-         rotation: 30
-   })
-   gsap.to('.parallax-nav', {
-         scrollTrigger: {
-            scrub: 0.5
-         },
-         y: 600,
-         x: -400,
-         rotation: -40
-   })
+    prlxTimeline.addLabel('start')
+        .from(".box p", {scale: 0.3, rotation:45, autoAlpha: 0})
+        .addLabel("color")
+        .from(".box", {backgroundColor: "#28a92b"})
+        .addLabel("spin")
+        .to(".box", {rotation: 360})
+        .addLabel("end");
 
     return (
         <div className="header-main">
             <header className={styles.header}>
                <div className="parallax-box">
-                  <img src={backLayer} className="parallax-img" id="prlx-back" />
-                  <a href="/">
-                        <h1 className="parallax-text">Cedaring.Art</h1>
-                  </a>
-                  <img src={midLayer} className="parallax-img" id="prlx-mid" />
-                  <nav className={`parallax-nav ${styles.header__content__nav} ${
+                    <img src={backLayer} className="parallax-img" id="prlx-back" />
+                    <h1 className="parallax-text"><a href="/">Cedaring.Art</a></h1>
+                    <img src={midLayer} className="parallax-img" id="prlx-mid" />
+                    <nav className={`parallax-nav ${styles.header__content__nav} ${
                             menuOpen ? styles.isMenu : ''
                         }`}>
                      <ul>

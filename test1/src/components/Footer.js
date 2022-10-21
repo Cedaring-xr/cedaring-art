@@ -22,21 +22,21 @@ export default function Footer() {
                 </a>
             </div>
             <div className={styles.footer__social__icon}>
-                <a href="https://github.com/Cedaring-xr" target="_blank">
-                    <img
-                        src={githubIcon}
-                        className={styles.footer__img}
-                    />
-                    <p className={styles.footer__social__text}>Cedaring-xr</p>
-                </a>
-            </div>
-            <div className={styles.footer__social__icon}>
                 <a href="https://twitter.com/CedaringXR" target="_blank">
                     <img
                         src={twitterIcon}
                         className={styles.footer__img}
                     />
                     <p className={styles.footer__social__text}>@CedaringXR</p>
+                </a>
+            </div>
+            <div className={styles.footer__social__icon}>
+                <a href="https://github.com/Cedaring-xr" target="_blank">
+                    <img
+                        src={githubIcon}
+                        className={styles.footer__img}
+                    />
+                    <p className={styles.footer__social__text}>Cedaring-xr</p>
                 </a>
             </div>
         </footer>

@@ -159,12 +159,12 @@ export default class LandScene extends Component {
      //envirionment map
         this.envTexture = new THREE.CubeTextureLoader()
         const envBackground = this.envTexture.load([
-            '/extras/background/px.png',  //px
-            '/extras/background/nx.png',  //py
-            '/extras/background/py.png',  //nx
-            '/extras/background/ny.png',  //ny
-            '/extras/background/pz.png',  //pz
-            '/extras/background/nz.png'   //nz
+            '/extras/background/groundBase/px.png',  //px
+            '/extras/background/groundBase/nx.png',  //py
+            '/extras/background/groundBase/py.png',  //nx
+            '/extras/background/groundBase/ny.png',  //ny
+            '/extras/background/groundBase/pz.png',  //pz
+            '/extras/background/groundBase/nz.png'   //nz
         ])
         envBackground.encoding = THREE.sRGBEncoding
         this.scene.background = envBackground

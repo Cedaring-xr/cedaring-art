@@ -38,6 +38,16 @@
     }
 }
 
+.outer-container::before {
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    top: -30px;
+    background: linear-gradient(to top, #fff, transparent);
+    z-index: 100;
+  }
+
 .text {
     padding: 2rem;
     line-height: 1.2;

@@ -8,6 +8,15 @@
         }
     }
 }    
+
+.header-main::after {
+    content: '';
+    position: absolute;
+    height: 70px;
+    width: 100%;
+    background: linear-gradient(to bottom, rgb(24, 24, 27), transparent);
+    z-index: 100;
+}
         
 .header {
     background: abstracts.$dark;
@@ -20,27 +29,12 @@
     &__content {
         overflow: hidden;
         color: abstracts.$light;
-        margin: 0 auto;
         max-width: 1920px;
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
         position: relative;
-        z-index: 100;
-
-        &__logo {
-            font-size: 2rem;
-            font-weight: bold;
-            text-decoration: none;
-            a {
-                text-decoration: none;
-            }
-            a:visited {
-                text-decoration: none;
-                color: rgba(abstracts.$light, 0.1);
-            }
-        }
 
         &__nav {
             top: 0;
@@ -50,6 +44,7 @@
             height: 100vh;
             position: fixed;
             display: flex;
+            z-index: 20;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -63,7 +58,6 @@
                 background: transparent;
                 width: auto;
                 height: 100%;
-
                 position: static;
             }
 
@@ -81,6 +75,10 @@
                 }
                 
                 li {
+                    text-shadow: 1px 1px 1px #919191,
+                        1px 2px 1px #919191,
+                        1px 3px 1px #919191,
+                        1px 6px 4px rgba(16, 16, 16, 0.7);
                     
                     a {
                         text-decoration: none;
@@ -89,9 +87,7 @@
                         border-radius: abstracts.$borderRadius;
                         transition: 0.3s ease all;
         
-                        &:hover {
-                            background: rgba(abstracts.$light, 0.1);
-                        }
+                        
                         &:active {
                             border-radius: calc(#{abstracts.$borderRadius} + 6px);
                             background: linear-gradient(rgba(abstracts.$light, 0.1), rgba(abstracts.$light, 0.2));
@@ -124,33 +120,26 @@
                 }
             }
     
-            &.isMenu {
+            &__isMenu {
                 transform: translate(100%);
+                background-color: #919191;
             }
-        }
-
-        &__title {
-            text-shadow: 1px 1px 1px #919191,
-            1px 2px 1px #919191,
-            1px 3px 1px #919191,
-            1px 4px 1px #919191,
-            1px 5px 1px #919191,
-            1px 6px 1px #919191,
-            1px 7px 1px #919191,
-            1px 18px 6px rgba(16, 16, 16, 0.6)
         }
 
         &__toggle {
             cursor: pointer;
             display: flex;
             align-items: center;
-            font-size: 3rem;
+            font-size: clamp(2rem, 12vw, 3.3rem);
             transition: 0.3s ease all;
-            position: relative;
+            position: absolute;
+            right: 0.6rem;
+            top: 0.4rem;
+            z-index: 30;
             color: #fff;
 
             &:hover {
-                color: abstracts.$primary;
+                color: #919191;
             }
 
             @include breakpoint(md) {
@@ -162,19 +151,21 @@
 
 // temp other
 .parallax-box {
-    background: rgb(2,0,36);
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,100,121,1) 10%, rgb(255, 146, 13) 79%);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgb(48, 181, 211) 10%, rgb(190, 108, 14) 79%);
     position: relative;
     height: 22vw;
-    max-height: 260px;
+    max-height: 240px;
     padding: 0;
 }
 
 .parallax-text {
     color: abstracts.$light;
-    margin-left: 0.5rem;
-    margin-top: 0.5rem;
-    font-size: clamp(1.5rem, 8vw, 3rem);
+    padding-top:1rem;
+    padding-left: 0.5rem;
+    position: relative;
+    z-index: 50;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    width:fit-content;
     text-shadow: 1px 1px 1px #919191,
         1px 2px 1px #919191,
         1px 3px 1px #919191,
@@ -182,46 +173,38 @@
         1px 5px 1px #919191,
         1px 10px 6px rgba(16, 16, 16, 0.8);
 
-
     @include abstracts.breakpoint(tablet) {
-        font-size: clamp(3rem, 4vw, 4rem);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        
     }
 }
 
 .parallax-nav {
     position: absolute;
-    top: 10%;
-    right: 2%;
+    top: 1%;
+    right: 0;
 
     ul {
         display: flex;
         list-style: none;
-        flex-direction: row;
-        padding: 0;
+        flex-direction: column;
         position: static;
-        margin-bottom: abstracts.$spacing-large;
+        margin-bottom: 4rem;
+
+        @include breakpoint(md) {
+            flex-direction: row;
+        }
         
         li {
             text-decoration: none;
             color: abstracts.$light;
             padding: 0.45rem 1rem;
-            margin: 0 .5rem;
             border-radius: abstracts.$borderRadiusSmall;
-            font-size: clamp(1rem, 3vw, 3rem);
+            font-size: clamp(1rem, 2.8vw, 2.2rem);
             font-weight: bold;
-            margin-bottom: 120px;
-            transition: 0.3s ease all;
-            text-shadow: 1px 1px 1px #919191,
-                1px 2px 1px #919191,
-                1px 3px 1px #919191,
-                1px 6px 4px rgba(16, 16, 16, 0.7);
 
             &:hover {
                 background: rgba(abstracts.$dark, 0.5);
-            }
-            a {
-                background: transparent;
-                color: abstracts.$light;
             }
         
         }
@@ -229,27 +212,19 @@
 }
 
 #prlx-back {
-    top: 30px;
+    top: 18%;
 }
 
 #prlx-mid {
-    top: 120px;
+    top: 54%;
 }
 
 #prlx-front {
-    top: 170px;
+    top: 70%;
 }
 
 .parallax-img {
-    max-height: 200px;
-    width: 110%;
+    width: 100%;
     position: absolute;
-
-    @include abstracts.breakpoint(tablet) {
-        max-height: 350px;
-    }
-
-    @include abstracts.breakpoint(desktop) {
-        height: 350px;
-    }
+    z-index: 2;
 }
