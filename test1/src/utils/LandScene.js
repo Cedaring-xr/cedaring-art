@@ -64,7 +64,7 @@ export default class LandScene extends Component {
             transparent: true,
             uniforms:
             {
-                uAlpha: { value: 0.9 }
+                uAlpha: { value: 1 }
             },
             vertexShader: `
                 void main()
@@ -178,12 +178,12 @@ export default class LandScene extends Component {
         this.renderer.physicallyCorrectLights = true
         this.renderer.outputEncoding = THREE.sRGBEncoding
         this.mount.appendChild(this.renderer.domElement)
-        // re-run renderer for updates to the scene
         this.renderer.render(this.scene, this.camera)
 
-        // controls
+    // controls
         const sceneControls = new OrbitControls(this.camera, this.renderer.domElement)
-        // sceneControls.enableZoom = false
+        sceneControls.enableZoom = false
+        sceneControls.enablePan = false
 
         //animation
         this.animation()

@@ -9,10 +9,10 @@
     justify-content: center;
 
     span {
-        color: #181818;
-        font-size: 1.7rem;
+        color: #f1f1f1;
+        font-size: 1.8rem;
         text-transform: uppercase;
-        line-height: 200px;
+        line-height: 180px;
         animation: text 3s ease-in-out infinite;
     }
 }
@@ -23,42 +23,41 @@
 
 .ring {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    animation: ring 1.6s linear infinite;
+    animation: ring 1.8s linear infinite;
 
-    :before {
-        position: absolute;
-        content: '';
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        border-radius: 50%;
-        box-shadow: 0 0 8px rgba(255, 255, 255, .3);
-
-    }
+    // :before {
+    //     position: absolute;
+    //     content: '';
+    //     left: 0;
+    //     top: 0;
+    //     height: 100%;
+    //     width: 100%;
+    //     border-radius: 50%;
+    //     box-shadow: 0 0 8px rgba(179, 37, 37, 0.3);
+    // }
 }
 
 @keyframes ring {
     0% {
         transform: rotate(0deg);
-        box-shadow: 2px 5px 2px #fa0a0a;
+        box-shadow: 2px 6px 4px #ffd900;
     }
     50% {
         transform: rotate(180deg);
-        box-shadow: 2px 5px 2px #f0cf13;
+        box-shadow: 4px 10px 6px #e69705;
     }
     100% {
         transform: rotate(360deg);
-        box-shadow: 2px 5px 2px #59ff17;
+        box-shadow: 2px 5px 2px #a3e704;
     }
 }
 
 @keyframes text {
     50% {
-        color: black;
+        color: rgb(97, 97, 97);
     }
 }
 

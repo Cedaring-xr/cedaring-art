@@ -43,28 +43,28 @@ export default function Header() {
 
 
 // parallax stuff
-    let prlxTimeline = gsap.timeline({
-        scrollTrigger: {
-            trigger: '.header',
-            pin: false,
-            start: 'top top', // top of trigger top of viewport
-            end: '+= 500',
-            scrub: 1,
-            snap: {
-                snapTo: 'labels',
-                duration: {min: 0.2, max: 3},
-                delay: 0.2
-            }
-        }
-    })
+    // let prlxTimeline = gsap.timeline({
+    //     scrollTrigger: {
+    //         trigger: '.header',
+    //         pin: false,
+    //         start: 'top top', // top of trigger top of viewport
+    //         end: '+= 500',
+    //         scrub: 1,
+    //         snap: {
+    //             snapTo: 'labels',
+    //             duration: {min: 0.2, max: 3},
+    //             delay: 0.2
+    //         }
+    //     }
+    // })
 
-    prlxTimeline.addLabel('start')
-        .from(".box p", {scale: 0.3, rotation:45, autoAlpha: 0})
-        .addLabel("color")
-        .from(".box", {backgroundColor: "#28a92b"})
-        .addLabel("spin")
-        .to(".box", {rotation: 360})
-        .addLabel("end");
+    // prlxTimeline.addLabel('start')
+    //     .from(".box p", {scale: 0.3, rotation:45, autoAlpha: 0})
+    //     .addLabel("color")
+    //     .from(".box", {backgroundColor: "#28a92b"})
+    //     .addLabel("spin")
+    //     .to(".box", {rotation: 360})
+    //     .addLabel("end");
 
     return (
         <div className="header-main">
