@@ -12,4 +12,7 @@
   min-height: 80vh;
   max-height: 200vw;
   overflow: hidden;
+  position: relative;
+  z-index: 11;
+  background-color: black;
 }

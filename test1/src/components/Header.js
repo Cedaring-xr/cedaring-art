@@ -78,7 +78,7 @@ export default function Header() {
                         }`}>
                      <ul>
                         <li className="nav-item"><a href="/artwork">Artwork</a></li>
-                        <li className="nav-item"><a href="/blog">stories</a></li>
+                        <li className="nav-item"><a href="/blog">Writing</a></li>
                         <li className="nav-item"><a href="/climbing">Climbing</a></li>
                         {/* <li><a href="/react">React</a></li> */}
                      </ul>
@@ -92,46 +92,6 @@ export default function Header() {
                         )}
                   </div>
                </div>
-
-                {/* <div className={styles.header__content}>
-                    <div className={styles.header__content__logo}>
-                        <a href="/">
-                            <h1 className={styles.header__content__title}>
-                                Cedaring.Art
-                            </h1>
-                        </a>
-                    </div>
-                    <nav
-                        className={`${styles.header__content__nav} ${
-                            menuOpen ? styles.isMenu : ''
-                        }`}
-                    >
-                        <ul>
-                            <li>
-                                <a href="/artwork">VR Artwork</a>
-                            </li>
-                            <li>
-                                <a href="/blog">Blog</a>
-                            </li>
-                            <li>
-                                <a href="/climbing">Climbing</a>
-                            </li>
-                            <li>
-                                <a href="/worlds">VR worlds</a>
-                            </li>
-                            <li>
-                                <a href="/react">React Practice</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div className={styles.header__content__toggle}>
-                        {!menuOpen ? (
-                            <BiMenuAltRight onClick={menuToggleHandler} />
-                        ) : (
-                            <AiOutlineClose onClick={menuToggleHandler} />
-                        )}
-                    </div>
-                </div> */}
             </header>
         </div>
     );

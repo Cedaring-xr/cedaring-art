@@ -32,12 +32,14 @@ export default class LandScene extends Component {
             console.log('started')
         }
         manager.onLoad = ()=> {
-            gsap.delayedCall(0.5, () => {
-                console.log('loaded')
-                gsap.to(overlayMaterial.uniforms.uAlpha, {duration: 2, value: 0})
-                loadingBar.classList.add('ended')
-                loadingBar.style.transform = ''
-            })
+            if(loadingBar) {
+                gsap.delayedCall(0.5, () => {
+                    console.log('loaded')
+                    gsap.to(overlayMaterial.uniforms.uAlpha, {duration: 2, value: 0})
+                    loadingBar.classList.add('ended')
+                    loadingBar.style.transform = ''
+                })
+            }
         }
         manager.onProgress = (itemUrl, itemsLoaded, itemsTotal)=> {
             console.log(itemUrl, itemsLoaded, itemsTotal)

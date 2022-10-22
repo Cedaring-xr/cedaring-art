@@ -11,12 +11,12 @@ export default function Artwork()  {
 
     return (
         <>
-            <div className='Heading_container'>
-                <h1 className="page_header">Virtual Reality Artwork created with Openbrush</h1>
+            <div className="text">
+                <p className="text-content">Openbrush is the VR application used to create most of my VR artwork. It is an open source version of Tiltbrush, the popular VR program. Open source projects like this take a lot of work to maintain. If you like my artwork or are interested in the program, consider supporting Openbrush or contributing to the community so that we don't lose these awesome resources.</p>
+                <img className='openbrush-logo' />
             </div>
-            <div className="openbrush-banner">
-                <p>Openbrush is the VR application used to create most of my VR artwork. It is an open source version of Tiltbrush, which google stopped updating in 2021. Open source projects like this take a lot of work to maintain. If you like my artwork or are interested in the program, consider supporting Openbrush or contributing to the community so that we don't lose these awesome resources.</p>
-                <img src={closeIcon} className="close-icon" />
+            <div className="text">
+                <p className="text-content">I have spent over 250 hours this past year learning more about artwork and the VR art applications. Most of the artwork on show here is made in Openbrush. I have also tried out gravity sketch, and quill. </p>
             </div>
             <div className="grid-container">
                 { art.reverse().map( card => {

@@ -14,7 +14,7 @@
 
     @include abstracts.breakpoint(other) {
         margin: 0px auto;
-        max-width: 1440px;
+        max-width: 1340px;
         
     }
 
@@ -37,16 +37,6 @@
     }
 }
 
-.outer-container::before {
-    content: '';
-    position: absolute;
-    height: 100px;
-    width: 100%;
-    top: -30px;
-    background: linear-gradient(to top, #fff, transparent);
-    z-index: 100;
-  }
-
 .text {
     padding: 2rem;
     line-height: 1.2;
@@ -63,6 +53,11 @@
         font-family: 'Times New Roman', Times, serif;
         font-size: 1.2rem;
     }
+}
+
+.tagline {
+    font-size: 1.4rem;
+    color: rgb(250, 206, 11);
 }
 
 .block1 {

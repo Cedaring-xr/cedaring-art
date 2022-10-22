@@ -2,39 +2,28 @@
 @use '../components';
 
 
-
-
-.cards {
-    width: 300px;
-    height: 600px;
-    border: 2px solid #000;
-    background-color: abstracts.$light;
+.text-content {
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
 }
 
-.openbrush-banner {
-    width: 95%;
-    min-height: 50px;
-    display: flex;
-    margin: 20px;
-    padding: 5px auto;
-    align-content: center;
-    background-color: #d8a25c;
-    border: 2px solid #666;
-    border-radius: 5px;
-    position: relative;
+//duplicate of info text
+.text {
+    padding: 2rem;
+    line-height: 1.2;
+    min-width: 25rem;
+    width: 80%;
+    max-width: 1200px;
+    text-align: left;
+    background-color: rgb(7, 84, 114);
+    box-shadow: inset 0 0 0 500px rgba(255, 255, 255, 0.2);
+    opacity: 0.9;
+    margin: 40px auto;
 
-    p {
-        font-family: abstracts.$bodyFont;
+    &__content {
+        color: #fff;
+        font-family: 'Times New Roman', Times, serif;
         font-size: 1.2rem;
     }
-
-    .close-icon {
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        right: 10px;
-        top: 5px;
-    }
 }
-
-

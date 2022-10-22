@@ -9,15 +9,14 @@ export default function InfoPage() {
                 <div className='inner-container'>
                     <img src={testImage} className="img" />
                     <div className="text block1">
+                        <h4 className={styles.tagline}>Hi! My name is Matt Ray. Welcome to my personal website. </h4>
                         <p className={styles.text__content}>
-                            Hi! My name is Matt Ray. Welcome to my personal website. 
-                            <br></br>
-                            I am a web developer, VR artist, and rock climber. I built this website to showcase some of the art that I have made and also to practice my web development skills learning three JS and bridging the gap between VR, 3D, and web in my own little way. I believe that the internet is the greatest learning and communication resouce that has ever existed.
+                            I am a web developer, VR artist, and rock climber. I built this website for fun to showcase some of the art that I have made and also to practice my web development skills. Each of the pages has a different implimentation of Three JS to display 3D scenes on the web. I love the blending of 3D, VR, AR, and the internet. I hope to do more VR and AR stuff in the future.
                         </p>
                     </div>
                     <div className="text block2">
                         <p className={styles.text__content}>
-                            Cedaring (Cedar Ring) is a play on words that combines the two. It symbolizes continual growth and circular unity. I also just like trees and needed a unique username.
+                            The name Cedaring is a play on words that combines Cedar and Ring. Similar to a tree ring it symbolizes continual growth and circular unity. I also just like trees and needed a unique username.
                         </p>
                     </div>
                 </div>

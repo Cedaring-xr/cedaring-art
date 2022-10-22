@@ -18,27 +18,6 @@ export default class HomepageScene extends Component {
         const loadingBar = document.querySelector('.center')
         // this.gui = new lilGui.GUI({closed: true, width: 0})
 
-    // lights
-        this.directLight = new THREE.DirectionalLight(0xffaaff, 3)
-        this.light2 = new THREE.PointLight(0xffffff , 2)
-        this.light3 = new THREE.AmbientLight(0xf5d058, 0.5)
-        this.directLight.position.set(-40, 10, 0)
-        this.scene.add(this.directLight, this.light3)
-
-    // helpers
-        const axesHelper = new THREE.AxesHelper()
-        const directLightHelper = new THREE.DirectionalLightHelper(this.directLight, 5)
-        const ambientLightHelper = new THREE.AmbientLightProbe(this.light3, 2)
-        this.scene.add(axesHelper, directLightHelper, ambientLightHelper)
-
-    // test cube
-        const geoPlane = new THREE.PlaneGeometry(3, 3)
-        const material = new THREE.MeshBasicMaterial({color: 0x16844b, side: THREE.DoubleSide})
-        this.plane = new THREE.Mesh(geoPlane, material)
-        this.plane.position.set(-3, -5, 2)
-        this.scene.add(this.plane)
-        this.plane.rotation.x = - Math.PI / 2
-
     //overlay
         const overlayGeometry = new THREE.PlaneBufferGeometry(2,2,1,1)
         const overlayMaterial = new THREE.ShaderMaterial({
@@ -63,6 +42,27 @@ export default class HomepageScene extends Component {
         })
         const overlayIntro = new THREE.Mesh(overlayGeometry, overlayMaterial)
         this.scene.add(overlayIntro)
+
+    // lights
+        this.directLight = new THREE.DirectionalLight(0xffaaff, 3)
+        this.light2 = new THREE.PointLight(0xffffff , 2)
+        this.light3 = new THREE.AmbientLight(0xf5d058, 0.5)
+        this.directLight.position.set(-40, 10, 0)
+        this.scene.add(this.directLight, this.light3)
+
+    // helpers
+        const axesHelper = new THREE.AxesHelper()
+        const directLightHelper = new THREE.DirectionalLightHelper(this.directLight, 5)
+        const ambientLightHelper = new THREE.AmbientLightProbe(this.light3, 2)
+        this.scene.add(axesHelper, directLightHelper, ambientLightHelper)
+
+    // test cube
+        const geoPlane = new THREE.PlaneGeometry(3, 3)
+        const material = new THREE.MeshBasicMaterial({color: 0x16844b, side: THREE.DoubleSide})
+        this.plane = new THREE.Mesh(geoPlane, material)
+        this.plane.position.set(-3, -5, 2)
+        this.scene.add(this.plane)
+        this.plane.rotation.x = - Math.PI / 2
 
 
     // model loading
