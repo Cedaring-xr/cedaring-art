@@ -112,8 +112,8 @@ export default class HomepageScene extends Component {
     // camera
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
         this.camera.position.z = -10
-        this.camera.position.y = 3
-        this.camera.position.x = -5
+        this.camera.position.y = -1
+        this.camera.position.x = -10
         // this.camera.lookAt(this.cube.position)
 
 
@@ -126,8 +126,9 @@ export default class HomepageScene extends Component {
         // const intersects = raycaster.intersectObject([this.modelObj])
 
     //stats
-        const stats = new Stats()
-        // stats.showPanel( 0 ) // 0: fps, 1: ms, 2: mb, 3+: custom
+        const stats = new Stats() 
+        stats.showPanel( 0 ) // 0: fps, 1: ms, 2: mb, 3+: custom
+        // document.getElementById('canvas').appendChild(stats.dom); 
         // document.body.appendChild( stats.dom );
 
     // render
