@@ -16,7 +16,7 @@ export default class LandScene extends Component {
         const manager = new THREE.LoadingManager()
         this.loader = new GLTFLoader(manager)
         const loadingBar = document.querySelector('.center')
-        this.gui = new lilGui.GUI({closed: false, width: 400})
+        // this.gui = new lilGui.GUI({closed: false, width: 400})
 
     // lights
         this.directLight = new THREE.DirectionalLight('#fff', 5)
@@ -96,7 +96,7 @@ export default class LandScene extends Component {
             glbModel = model.scene
             glbModel.scale.set(0.1, 0.1, 0.1)
             this.scene.add(glbModel)
-            this.gui.add(glbModel.rotation, 'y').min(-Math.PI).max(Math.PI).step(0.01).name('Y-rotation')
+            // this.gui.add(glbModel.rotation, 'y').min(-Math.PI).max(Math.PI).step(0.01).name('Y-rotation')
             updateAllMaterials()
         })
 
@@ -107,8 +107,8 @@ export default class LandScene extends Component {
             glbModel.position.y = 0.80
             glbModel.position.x = -28
             glbModel.position.z = 17
-            this.gui.add(glbModel.position, 'z').min(-40).max(40).step(0.01).name('Z-position')
-            this.gui.add(glbModel.position, 'x').min(-40).max(40).step(0.01).name('X-position')
+            // this.gui.add(glbModel.position, 'z').min(-40).max(40).step(0.01).name('Z-position')
+            // this.gui.add(glbModel.position, 'x').min(-40).max(40).step(0.01).name('X-position')
             this.scene.add(glbModel);
             updateAllMaterials()
         })
@@ -144,11 +144,11 @@ export default class LandScene extends Component {
     // debug gui
         const debugObject = {}
         debugObject.envMapIntensity = 5
-        this.gui.add(this.light3, 'intensity').min(0).max(100).step(0.5)
-        this.gui.add(this.directLight.position, 'x').min(-5).max(5).step(0.01).name('LightX')
-        this.gui.add(this.directLight.position, 'y').min(-5).max(5).step(0.01).name('LightY')
-        this.gui.add(this.directLight.position, 'z').min(-5).max(5).step(0.01).name('LightZ')
-        this.gui.add(debugObject, 'envMapIntensity').min(0).max(10).step(0.01).name('envMapIntensity').onChange(updateAllMaterials)
+        // this.gui.add(this.light3, 'intensity').min(0).max(100).step(0.5)
+        // this.gui.add(this.directLight.position, 'x').min(-5).max(5).step(0.01).name('LightX')
+        // this.gui.add(this.directLight.position, 'y').min(-5).max(5).step(0.01).name('LightY')
+        // this.gui.add(this.directLight.position, 'z').min(-5).max(5).step(0.01).name('LightZ')
+        // this.gui.add(debugObject, 'envMapIntensity').min(0).max(10).step(0.01).name('envMapIntensity').onChange(updateAllMaterials)
     
 
     // camera

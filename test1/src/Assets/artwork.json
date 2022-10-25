@@ -81,8 +81,8 @@
     },
     {
         "id": 5,
-        "name": "Paint Beach",
-        "description": "blending surfaces tests",
+        "name": "Origami Crane",
+        "description": "Reconstructing the folds of origami with triangle shapes of the crease-map",
         "preview-img": "/extras/origamiCrane_Moment.jpg",
         "model": "/models/paintBeach.glb",
         "three-settings": {
@@ -97,9 +97,9 @@
     },
     {
         "id": 6,
-        "name": "Chameleon",
-        "description": "additional models go here",
-        "preview-img": "/extras/origamiCrane_Moment.jpg",
+        "name": "Glass Tree Gate",
+        "description": "Stained glass effect for an entryway",
+        "preview-img": "/extras/treeGate.jpg",
         "model": "/models/paintBeach.glb",
         "three-settings": {
             "lights": "",
@@ -113,9 +113,9 @@
     },
     {
         "id": 7,
-        "name": "Chameleon",
-        "description": "additional models go here",
-        "preview-img": "/extras/origamiCrane_Moment.jpg",
+        "name": "Flower Scroll Shrine",
+        "description": "experimenting with flowers and 2D to 3D transition",
+        "preview-img": "/extras/flowerScroll.jpg",
         "model": "/models/paintBeach.glb",
         "three-settings": {
             "lights": "",
@@ -129,9 +129,9 @@
     },
     {
         "id": 8,
-        "name": "Chameleon",
-        "description": "additional models go here",
-        "preview-img": "/extras/clock_Moment.jpg",
+        "name": "Okami",
+        "description": "Okami fan art with openbrush theme",
+        "preview-img": "/extras/AmmyBrush.jpg",
         "model": "/models/paintBeach.glb",
         "three-settings": {
             "lights": "",

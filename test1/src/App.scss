@@ -15,11 +15,14 @@ a {
   color: #fff;
 }
 
-body {
-  background: rgb(255,254,252);
-  background: linear-gradient(180deg, rgba(255,254,252,1) 13%, rgba(230,230,221,1) 77%);
+canvas {
+  max-width: 100%;
 }
 
+body {
+  background: rgb(255,254,252);
+  background: linear-gradient(180deg, rgb(219, 214, 208) 13%, rgb(228, 228, 214) 77%);
+}
 
 #portal-root {
   position: fixed;
@@ -28,7 +31,6 @@ body {
 .App-link {
   color: #61dafb;
 }
-
 
 .body-container {
   background-color: $altBlueColor;
@@ -43,4 +45,12 @@ body {
   display: block;
 }
 
-
+.canvas-box {
+  display: flex;
+  min-height: 80vh;
+  max-height: 200vw;
+  overflow: hidden;
+  position: relative;
+  z-index: 11;
+  background-color: black;
+}

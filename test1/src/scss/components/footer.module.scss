@@ -8,7 +8,7 @@
     gap: 0.2rem;
     text-decoration: none;
     transition: 0.3s ease all;
-    padding: 5px 10px 0 10px;
+    padding: 5px 0;
     align-content: center;
 
     @include abstracts.breakpoint(tablet) {
@@ -31,7 +31,7 @@
 
         &__icon {
         flex-grow: 1;
-        height: 55px;
+        height: 42px;
         align-self: center;
         overflow: hidden;
             
@@ -48,19 +48,29 @@
         &__text {
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.25rem;
+            font-size: 1rem;
             font-family: abstracts.$headerFont;
             max-width: 170px;
             color: rgb(29,29,29);
             position: relative;
-            top: -52px;
-            left: 76px;
+            top: -45px;
+            left: 66px;
             margin-right: 0;
         }
     }
 
     &__img {
-        max-height: 65px;
+        max-height: 55px;
     }
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    transform: translateY(-15px);
+    height: 15px;
+    width: 100%;
+    background: linear-gradient(to top, rgb(45, 45, 48), transparent);
+    z-index: 140;
 }
         

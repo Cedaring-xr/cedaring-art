@@ -7,8 +7,8 @@ export default function Climbing() {
 
     return (
         <>
-            <div className='Heading_container'>
-                <h1 className="page_header">Colorado climbing projects visualized in 3D</h1>
+            <div className='text '>
+                <h1 className="text__content">Rock climbing trips</h1>
             </div>
             <LandScene />
             <div className='center'>

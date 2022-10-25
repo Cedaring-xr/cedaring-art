@@ -1,13 +1,11 @@
 @use '../abstracts';
 
-
 .background {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    top:0;
+    top: 0;
     left: 0;
-    background-color: lightseagreen;
     opacity: 0.6;
 }
 
@@ -27,11 +25,11 @@
     background-color: brown;
 }
 
-// break 
+// break
 
 .grid-container {
     display: grid;
-    gap: 2rem;
+    gap: 3rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     place-items: center center;
     padding: 20px;
@@ -40,52 +38,52 @@
 
 .grid-card {
     display: grid;
-    border-radius: 10px;
     height: 500px;
-    background: transparent;
     place-items: center center;
     overflow: hidden;
     position: relative;
-  }
-  
-  .grid-card-content {
+    // background-color: aqua;
+}
+
+.grid-card-content {
     position: relative;
     display: grid;
-    overflow: hidden;
-    width: 97%;
-    height: 97%;
-    background-color: #d0d2d4;
-    border-radius: 10px;
-  
-    // .grid-img-container::before {
-    //   content: '';
-    //   width: 100px;
-    //   height: 160%;
-    //   position: absolute;
-    //   left: 40%;
-    //   top: -20%;
-    //   background: linear-gradient(#47494d, #f8cc7a);
-    //   animation: animate 8s linear infinite;
-    // }
+    width: 90%;
+    border-width: 4px;
+    border-style: solid;
+    background: linear-gradient(45deg, gold, rgb(124, 124, 8));
+    border-radius: 6px;
+    // border-image: linear-gradient(45deg, rgb(201, 165, 5), rgba(0, 0, 0, 0)) 1 100%;
+    // border-top: 0;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.4) 2px 5px 7px, rgba(0, 0, 0, 0.3) 0px 8px 15px -3px;
+    }
     
-  
+    
     //other card stuff
     .grid-img-container {
-      position: relative;
-      height: 100%;
-      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-      border-radius: 10px;
+        position: relative;
+        height: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     }
-  
+
     .grid-card-img {
-      width: 100%;
-      z-index: 10;
+      min-width:200px;
     }
-  }
-  
-  .grid-card-desc-container {
+}
+
+.grid-card-desc-container {
     position: relative;
     p {
-      font-size: 0.7em;
+        font-size: 1rem;
+        padding: 5px;
     }
-  }
+
+    h4 {
+      position: relative;
+      bottom: 40px;
+      float: right;
+      margin: 0.5rem 20px
+    }
+}

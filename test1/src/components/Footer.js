@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
 import styles from '../scss/components/footer.module.scss';
-
 import instaIcon from '../Assets/logos/instaIcon-small.png';
 import twitterIcon from '../Assets/logos/twitterIcon-small.png';
 import githubIcon from '../Assets/logos/githubIcon-small.png';
+
 
 export default function Footer() {
     return (
         <footer className={styles.footer}>
             <div className={styles.footer__content}>
-                <h6 className={styles.footer__content__logo}>aksdf</h6>
+                <h6 className={styles.footer__content__logo}></h6>
             </div>
             <div className={styles.footer__social__icon}>
                 <a href="https://www.instagram.com/cedaring_xr/" target="_blank">

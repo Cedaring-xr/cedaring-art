@@ -5,7 +5,6 @@ import Artwork from "./pages/Artwork";
 import Climbing from "./pages/Climbing";
 import Blog from "./pages/Blog";
 import Worlds from "./pages/Worlds";
-import Page404 from "./pages/Page404";
 import ReactPrac from "./pages/ReactPrac";
 
 export default function PageRoutes() {
@@ -18,7 +17,6 @@ export default function PageRoutes() {
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/worlds" element={<Worlds />} />
                 <Route path="/react" element={<ReactPrac />} />
-                <Route path="*" element={<Page404 />} />
             </Routes>
         </Router>
     )
