@@ -1,13 +1,14 @@
 import React, { useState, useRef, useEffect } from "react";
-import ModalCard from "../components/ModalCard";
 import art from "../Assets/artwork.json";
 import closeIcon from '../Assets/logos/x-png.png';
+import ArtworkScene1 from "../utils/ArtworkScene";
 
 import styles from '../scss/components/infoText.module.scss';
-import { gsap, ScrollTrigger } from "gsap/all";
-
+import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/all";
 import { BiExpand } from "react-icons/bi";
 
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Artwork()  {
     const [isOpen, setOpen] = useState(false) //state starts in the parent
@@ -15,10 +16,13 @@ export default function Artwork()  {
 
 //gsap animation
     useEffect(() => {
-        gsap.to(card, {duration: 2, x: 100});
+        gsap.from('.grid-card', {duration: 0.7, y: 50, x: -20, opacity: 0});
     }, [])
 
-
+    const handleExpand = () => {
+        gsap.to('.grid-card', {duration: 0.7, width: 90, height: 90})
+        // console.log(index)
+    }
 
     return (
         <>
@@ -27,9 +31,10 @@ export default function Artwork()  {
                 <img className='openbrush-logo' />
             </div>
             <div className="grid-container">
-                { art.reverse().map( card => {
+                { art.map( card => {
                     return(
-                        <div key={card.id} className="grid-card" >
+                        // <div id={index} onClick={(e) => this.handleClick(index,e)} /> 
+                        <div key={card.id} className="grid-card" onClick={(e) => handleExpand()}>
                             <div className="grid-card-content" ref={el => card = el}>
                                 <div className="grid-img-container">
                                     <img className="grid-card-img" src={card["preview-img"]}/>

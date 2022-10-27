@@ -59,11 +59,11 @@ class ThreeScene extends Component {
         this.cube = new THREE.Mesh(geometry, material);
         this.scene.add(this.cube);
 
-        // model loading
-        this.loader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../brushes'));
-        this.loader.load('/models/cyclos.glb', (model) => {
-            this.scene.add(model.scene);
-        });
+        // // model loading
+        // this.loader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../brushes'));
+        // this.loader.load('/models/cyclos.glb', (model) => {
+        //     this.scene.add(model.scene);
+        // });
 
         // gui/debug
         this.gui.add(this.cube.position, 'x').min(-5).max(5).step(0.1);
@@ -88,7 +88,8 @@ class ThreeScene extends Component {
 
        
         //renderer
-        this.renderer = new THREE.WebGL1Renderer();
+        this.renderer = new THREE.WebGLRenderer( {alpha: true });
+        this.renderer.setClearColor( 0x000000, 0 ); // the default
         this.renderer.setSize(window.innerWidth, window.innerHeight)
         this.mount.appendChild(this.renderer.domElement)
 

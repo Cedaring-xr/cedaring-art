@@ -113,7 +113,7 @@
     },
     {
         "id": 7,
-        "name": "Flower Scroll Shrine",
+        "name": "Flower Scroll",
         "description": "experimenting with flowers and 2D to 3D transition",
         "preview-img": "/extras/flowerScroll.jpg",
         "model": "/models/paintBeach.glb",
