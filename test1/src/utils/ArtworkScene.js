@@ -27,7 +27,7 @@ class ArtworkScene1 extends Component {
 
     // model loading
         gltfLoader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../extras/brushes')) //brushes folder has shader files also
-        gltfLoader.load('/models/fallFox.glb', (model) => {
+        gltfLoader.load('/models/cubeTree.glb', (model) => {
             console.log(model)
             this.scene.add(model.scene)
         });
