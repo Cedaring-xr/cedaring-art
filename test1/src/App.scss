@@ -24,8 +24,8 @@ canvas {
 }
 
 body {
-  background: rgb(255,254,252);
-  background: linear-gradient(180deg, rgb(219, 214, 208) 13%, rgb(228, 228, 214) 77%);
+  background: rgb(230,214,209);
+  background: radial-gradient(circle, rgba(230,214,209,1) 0%, rgba(235,220,217,1) 50%, rgba(203,210,213,1) 100%);
 }
 
 #portal-root {
