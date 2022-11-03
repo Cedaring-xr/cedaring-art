@@ -13,9 +13,9 @@
 .header-main::after {
     content: '';
     position: absolute;
-    height: 70px;
+    height: 50px;
     width: 100%;
-    background: linear-gradient(to bottom, rgb(24, 24, 27), transparent);
+    background: linear-gradient(to bottom, rgb(43, 43, 44), transparent);
     z-index: 14;
 }
         

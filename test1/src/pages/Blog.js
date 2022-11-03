@@ -1,18 +1,17 @@
 import React from 'react'
 import OpenBrushScene from '../utils/OBviewer'
 import ShaderPractice from '../utils/shaderScene'
-import ThreeScene from '../utils/three-scene';
+import ThreeScene from '../utils/three-scene'
+import WritingSelection from '../components/WritingSelection'
 
 export default function Blog() {
     return (
         <>
             <div className="text">
-                <h1 className="tagline">Blog type posts with 3D graphics</h1>
-                <p className="text__content">I like to write about esoteric tech stuff and my own perspectives on the future of the internet. I want to add 3D visual to enhance the narative experience. This is just for fun.</p>
+                <h1 className="tagline">Blending of 3D visuals and written naratives</h1>
+                <p className="text__content">I want to write my own stories/naratives/blog posts eventually but for now I am starting with poems or short stories written by actual writers. The goal is to create a fun 3D visual based aspect to ehance the storytelling.</p>
             </div>
-            {/* <OpenBrushScene /> */}
-            {/* <FbxScene /> */}
-            <ThreeScene />
+            <WritingSelection props />
         </>
     );
 }

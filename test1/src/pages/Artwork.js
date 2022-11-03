@@ -16,15 +16,6 @@ export default function Artwork()  {
 
 //gsap animation
     useEffect(() => {
-        // let cardTimeline = gsap.timeline({
-        //     scrollTrigger: {
-        //         trigger: '.grid-card',
-        //         start: 'top bottom',
-        //         duration: 1.2,
-        //         y: 80
-        //     }
-        // })
-
         gsap.from('.grid-card', {
             duration: 1.2, 
             y: 80, 
@@ -37,7 +28,6 @@ export default function Artwork()  {
                 duration: 1.2
             }
         });
-
     }, [])
 
     const handleExpand = (e) => {
@@ -48,6 +38,11 @@ export default function Artwork()  {
         //     rotation: 90
         // })
         // console.log(e)
+    }
+
+    const openCard = (id) => {
+        // set state to open with id of card?
+        
     }
 
     return (
@@ -61,7 +56,7 @@ export default function Artwork()  {
                 { art.map( card => {
                     return(
                         <div key={card.id} className="grid-card" onClick={(e) => setOpen(true)}>
-                            <ModalCard open={isOpen} onClose={() => setOpen(false)} />
+                            <ModalCard open={isOpen} onClose={() => setOpen(false)} id={card.id}/>
                             <div className="grid-card-content" ref={el => card = el}>
                                 <div className="grid-img-container">
                                     <img className="grid-card-img" src={card["preview-img"]}/>

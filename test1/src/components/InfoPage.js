@@ -1,13 +1,48 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import styles from '../scss/components/infoText.module.scss';
 import testImage from '../Assets/images/land16-9.png';
 
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
+
+
 export default function InfoPage() {
+
+    useEffect(() => {
+        gsap.from('.text', {
+            duration: 1, 
+            y: 20, 
+            x: -100, 
+            opacity: 0, 
+            stagger: 0.3,
+            scrollTrigger: {
+                trigger: '.text',
+                start: 'center bottom',
+                duration: 1
+            }
+        });
+
+        gsap.from('.info-img-large', {
+            duration: 0.8, 
+            y: 20, 
+            x: 200, 
+            opacity: 0, 
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: '.info-img-large',
+                start: 'center bottom',
+                duration: 0.8
+            }
+        });
+    }, [])
+
     return (
         <>
             <div className="outer-container">
                 <div className='inner-container'>
-                    <img src={testImage} className="img" />
+                    <img src={testImage} className="img info-img-large" />
                     <div className="text block1">
                         <h4 className={styles.tagline}>Hi! I'm Matt. <br></br>Welcome to my personal website. </h4>
                         <p className={styles.text__content}>

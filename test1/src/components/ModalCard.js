@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDom from 'react-dom';
-import ThreeScene from '../utils/three-scene';
 import styles from '../scss/components/modalCard.module.scss';
 
 import closeIcon from '../Assets/logos/x-png.png';
@@ -8,8 +7,10 @@ import ArtworkScene1 from '../utils/ArtworkScene';
 
 const portalRoot = document.getElementById('portal-root');
 
-export default function ModalCard({ open, onClose, children }) {
+export default function ModalCard({ open, onClose, children, id }) {
     if (!open) return null;
+
+    console.log(id, 'iasdociasodfasd')
 
     return ReactDom.createPortal(
         <div className="modal-background" onClick={onClose}>
