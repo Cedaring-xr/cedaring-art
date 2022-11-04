@@ -7,10 +7,10 @@ import ArtworkScene1 from '../utils/ArtworkScene';
 
 const portalRoot = document.getElementById('portal-root');
 
-export default function ModalCard({ open, onClose, children, id }) {
+export default function ModalCard({ open, onClose, children, cardId }) {
     if (!open) return null;
 
-    console.log(id, 'iasdociasodfasd')
+    console.warn(cardId, 'should return card id number')
 
     return ReactDom.createPortal(
         <div className="modal-background" onClick={onClose}>

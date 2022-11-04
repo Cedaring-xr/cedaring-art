@@ -12,6 +12,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Artwork()  {
     const [isOpen, setOpen] = useState(false) //state starts in the parent
+    const [state, setState] = useState(art)
+    const cardId = art.id
+
+
+
+
     let card = useRef(null);
 
 //gsap animation
@@ -40,9 +46,9 @@ export default function Artwork()  {
         // console.log(e)
     }
 
-    const openCard = (id) => {
+    const openModal = (cardId) => {
         // set state to open with id of card?
-        
+        console.log(cardId)
     }
 
     return (
@@ -53,10 +59,10 @@ export default function Artwork()  {
                 <img className='openbrush-logo' />
             </div>
             <div className="grid-container">
-                { art.map( card => {
+                { state.map( card => {
                     return(
-                        <div key={card.id} className="grid-card" onClick={(e) => setOpen(true)}>
-                            <ModalCard open={isOpen} onClose={() => setOpen(false)} id={card.id}/>
+                        <div key={card.id} className="grid-card" onClick={(e) => openModal(cardId)}>
+                            <ModalCard open={isOpen} onClose={() => setOpen(false)} id={cardId}/>
                             <div className="grid-card-content" ref={el => card = el}>
                                 <div className="grid-img-container">
                                     <img className="grid-card-img" src={card["preview-img"]}/>
