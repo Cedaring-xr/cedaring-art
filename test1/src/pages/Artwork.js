@@ -58,7 +58,7 @@ export default function Artwork()  {
                 <p className={styles.text__content}>Openbrush is the VR application used to create most of my VR artwork. It is an open source version of Tiltbrush, the popular VR program. Open source projects like this take a lot of work to maintain. If you like my artwork or are interested in the program, consider supporting Openbrush or contributing to the community so that we don't lose these awesome resources.</p>
                 <img className='openbrush-logo' />
             </div>
-            <div className="grid-container">
+            <div className="artwork-grid-container">
                 { state.map( card => {
                     return(
                         <div key={card.id} className="grid-card" onClick={(e) => openModal(cardId)}>
