@@ -152,7 +152,10 @@
 
 // temp other
 .parallax-box {
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgb(48, 181, 211) 10%, rgb(190, 108, 14) 79%);
+    background: url('../../Assets/images/parallax/background1.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100%;
     position: relative;
     height: 22vw;
     max-height: 180px;

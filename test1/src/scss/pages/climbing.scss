@@ -1,3 +1,17 @@
 @use '../abstracts';
 @use '../components';
 
+.scroll-scene {
+    position: fixed;
+    border: 2px solid red;
+}
+
+.canvas-text {
+    width: 100vw;
+    height: 100vh;
+    padding: 0 auto;
+
+    h4 {
+        font-size: 4rem;
+    }
+}
