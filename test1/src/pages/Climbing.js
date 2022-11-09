@@ -9,8 +9,9 @@ export default function Climbing() {
 
     return (
         <>
-            <div className='text'>
-                <h1 className="text__content">Rock climbing trips</h1>
+            <div className="text">
+                <h1 className="tagline">Rock climbing trips</h1>
+                <p className="text__content">Working with gps and elevation data to create 3D layouts of mountains</p>
             </div>
             {/* <LandScene /> */}
             <ScrollBasedScene className='scroll-scene'>

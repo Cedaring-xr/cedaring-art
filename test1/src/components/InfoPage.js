@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import styles from '../scss/components/infoText.module.scss';
 import testImage from '../Assets/images/land16-9.png';
 import selfie3 from '../Assets/images/self3.jpg';
@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function InfoPage() {
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         gsap.from('.grid-item', {
             duration: 0.6,
             y: 50, 
@@ -26,18 +26,9 @@ export default function InfoPage() {
             }
         });
 
-        // gsap.from('.info-img-large', {
-        //     duration: 0.8, 
-        //     y: 20, 
-        //     x: 200, 
-        //     opacity: 0, 
-        //     stagger: 0.1,
-        //     scrollTrigger: {
-        //         trigger: '.info-img-large',
-        //         start: 'center bottom',
-        //         duration: 0.8
-        //     }
-        // });
+        return () => {
+            // cleanup-code
+        }
     }, [])
 
     return (

@@ -1,13 +1,13 @@
 import React, { Component } from "react"
 import * as THREE from 'three'
-import { GLTFGoogleTiltBrushMaterialExtension } from 'three-icosa'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import gsap from 'gsap'
+import { ScrollTrigger } from "gsap/all";
 import * as lilGui from "lil-gui"
 
 
-// this will be used in the artwork section to display Open brush content
+gsap.registerPlugin(ScrollTrigger);
 
 class ScrollBasedScene extends Component {
     componentDidMount(){
@@ -16,7 +16,7 @@ class ScrollBasedScene extends Component {
             color: 0x44bb22
         }
 
-        //scene
+    //scene
         this.scene = new THREE.Scene();
         this.loader = new GLTFLoader()
         this.gui = new lilGui.GUI({closed: true, width: 400});
@@ -31,7 +31,7 @@ class ScrollBasedScene extends Component {
         this.scene.add(this.ligth3, this.directLight)
 
 
-        //shapes
+    //shapes
         const geometry = new THREE.BoxGeometry(1,1,1);
         const material = new THREE.MeshBasicMaterial({
             color: 0x00ff00
@@ -70,10 +70,13 @@ class ScrollBasedScene extends Component {
         })
 
     //camera
-        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-        this.camera.position.z = 5;
-         // focusing the camera at object
-         this.camera.lookAt(this.cube.position)
+        this.camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 1000);
+        this.camera.position.set(0, 0, 6)
+        // this.camera.position.z = 5;
+
+        // focusing the camera at object
+        let cameraTarget = this.cube.position
+        this.camera.lookAt(cameraTarget)
        
     //scale
         this.cube.scale.x = 0.5
@@ -93,6 +96,10 @@ class ScrollBasedScene extends Component {
         this.renderer.setSize(window.innerWidth, window.innerHeight)
         this.mount.appendChild(this.renderer.domElement)
 
+
+        const container = document.querySelector('.scroll-scene')
+        container.appendChild(this.renderer.domElement)
+
         
         this.animation();
         this.renderer.render(this.scene, this.camera);
@@ -102,6 +109,8 @@ class ScrollBasedScene extends Component {
 
 
         //gsap animation
+        
+        // gsap.to(glbModel.rotation.x, { duration: 2, delay: 10, x: 4})
         // gsap.to(this.cube.position, { duration: 2, delay: 1, x: 4})
         // gsap.to(this.cube.position, { duration: 2, delay: 3, x: -4})
 
@@ -117,10 +126,11 @@ class ScrollBasedScene extends Component {
     }
 
     handleWindowResize= ()=> {
-        this.camera.aspect = window.innerWidth / window.innerHeight;
-        this.camera.updateProjectionMatrix();
-        this.renderer.setSize(window.innerWidth, window.innerHeight);
-        this.renderer.render(this.scene, this.camera);
+        this.camera.aspect = window.innerWidth / window.innerHeight //change to container size???
+        this.camera.updateProjectionMatrix()
+        this.renderer.setSize(window.innerWidth, window.innerHeight)
+        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+        this.renderer.render(this.scene, this.camera)
     }
 
     render(){
