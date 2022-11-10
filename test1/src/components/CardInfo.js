@@ -12,9 +12,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function CardInfo(props) {
 
-    // gsap.from('.grid-img-container', {duration: 2, opacity: 0, delay: 1} )
-    // gsap.fromTo(".card" , { opacity: 0, scale: 0.5 , rotation: 180 }, {duration: 1, delay: 1, opacity: 1, scale: 1, rotation: 0})
-
     // expand card animation
     const tween = gsap.to(".card", {
         duration: 4, 
@@ -63,9 +60,3 @@ export default function CardInfo(props) {
         </>
     );
 }
-
-
-{/* <div className="grid-container">
-{ art.reverse().map( card => {
-    return(
-        <div key={card.id} className="grid-card" > */}

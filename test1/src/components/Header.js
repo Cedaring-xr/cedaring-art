@@ -41,8 +41,10 @@ export default function Header() {
         }
     }, [size.width, menuOpen]);
 
-
 // parallax stuff
+    useEffect(() => {
+        //move stuff here
+    })
     // let prlxTimeline = gsap.timeline({
     //     scrollTrigger: {
     //         trigger: '.header',
@@ -80,7 +82,7 @@ export default function Header() {
                         <li className="nav-item"><a href="/artwork">Artwork</a></li>
                         <li className="nav-item"><a href="/blog">Writing</a></li>
                         <li className="nav-item"><a href="/climbing">Climbing</a></li>
-                        {/* <li><a href="/react">React</a></li> */}
+                        <li><a href="/react">React</a></li>
                      </ul>
                   </nav>
                   <img src={frontLayer} className="parallax-img" id="prlx-front" />

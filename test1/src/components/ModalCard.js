@@ -4,20 +4,21 @@ import styles from '../scss/components/modalCard.module.scss';
 
 import closeIcon from '../Assets/logos/x-png.png';
 import ArtworkScene1 from '../utils/ArtworkScene';
+import ArtworkSceneFunctional from '../utils/ArtworkSceneFunctional';
 
 const portalRoot = document.getElementById('portal-root');
 
-export default function ModalCard({ open, onClose, children, cardId }) {
-    if (!open) return null;
-
-    console.warn(cardId, 'should return card id number')
+export default function ModalCard({ card, onClose, children }) {
+    // only the single card prop should be passed down along with the close function
+    console.log(card)
+    // item should be passed down again to the scene
 
     return ReactDom.createPortal(
         <div className="modal-background" onClick={onClose}>
             <div className='modal-container'>
-                {children}
                 <img src={closeIcon} className='close' alt="" style={{ cursor: 'pointer' }} onClick={onClose} />
-                <ArtworkScene1 />
+                {/* <ArtworkSceneFunctional /> */}
+                <div>tesetasldkfjalsdjf alksdjf</div>
             </div>
         </div>,
         portalRoot

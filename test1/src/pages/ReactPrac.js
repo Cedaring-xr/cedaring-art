@@ -105,7 +105,7 @@ export default function ReactPrac() {
     
     return (
         <>
-            <div>
+            {/* <div>
                 <div className='parallax-box'>
                     <img src={backLayer} className='parallax-img' id='prlx-back'/>
                     <a href="/"><h1 className='parallax-text'>Cedaring.Art</h1></a>
@@ -119,7 +119,7 @@ export default function ReactPrac() {
                     </nav>
                     <img src={frontLayer} className='parallax-img' id='prlx-front'/>
                 </div>
-            </div>
+            </div> */}
             <div className="todo-container">
                 <TodoList todos={todos} toggleTodo={toggleTodo} />
                 <input type="text" ref={todoNameRef} />

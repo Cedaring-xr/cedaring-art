@@ -3,7 +3,7 @@ import { useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
 import texture from "../Assets/celVinyl.png"
 
-export default function Box() {
+export default function ReactFiber() {
     const colorMap = useLoader(TextureLoader, texture)
 
     return <mesh rotation={[90, 0, 20]}>

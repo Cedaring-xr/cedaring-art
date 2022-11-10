@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, Suspense } from 'react'
-import Box from '../components/Box'
+import Box from '../components/ReactFiber'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import OpenBrushScene from '../utils/OBviewer'
