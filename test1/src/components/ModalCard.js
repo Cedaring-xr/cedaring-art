@@ -8,9 +8,8 @@ import ArtworkSceneFunctional from '../utils/ArtworkSceneFunctional';
 
 const portalRoot = document.getElementById('portal-root');
 
-export default function ModalCard({ card, onClose, children }) {
+export default function ModalCard({ card, onClose}) {
     // only the single card prop should be passed down along with the close function
-    console.log(card)
     // item should be passed down again to the scene
 
     return ReactDom.createPortal(

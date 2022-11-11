@@ -1,28 +1,26 @@
 import React, { useState, useRef, useEffect } from 'react';
 import TodoList from '../components/TodoList';
 import CardInfo from '../components/CardInfo';
+import ReducerSection from '../components/ReducerSection';
+
 
 import { v4 as uuidv4 } from 'uuid';
 import { useTransition, animated } from 'react-spring';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import backLayer from '../Assets/images/parallax/backLayer2.png';
-import midLayer from '../Assets/images/parallax/midLayer2.png';
-import frontLayer from '../Assets/images/parallax/frontLayer2.png';
-
 gsap.registerPlugin(ScrollTrigger);
-
 
 
 export default function ReactPrac() {
     const [todos, setTodos] = useState([]);
     const [items, setItems] = useState([]);
     const todoNameRef = useRef();
+
     const transition = useTransition(items, {
         from: { x: -500, y: 350, opacity: 0 },
         enter: (item) => async (next) => {
-            await next({ y: item.y, opacity: 1, delay: item.delay }); //back to back animation chain
+            await next({ y: item.y, opacity: 1, delay: item.delay }); //back to back animation chain (react spring)
             await next({ x: -100 });
         },
         leave: { x: 500, y: 200, opacity: 0 }
@@ -89,7 +87,7 @@ export default function ReactPrac() {
         scrollTrigger: {
             scrub: 1
         },
-        y: 1200,
+        y: 500,
         x: 400,
         rotation: 30
     })
@@ -98,8 +96,8 @@ export default function ReactPrac() {
             scrub: 1
         },
         y: 800,
-        x: -400,
-        rotation: -40
+        x: -500,
+        rotation: -90
     })
 
     
@@ -162,6 +160,7 @@ export default function ReactPrac() {
             </div>
             <div className='tutorial-block'>
                 <CardInfo /> 
+                <ReducerSection />
             </div>
         </>
     );

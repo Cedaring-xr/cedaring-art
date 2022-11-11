@@ -10,8 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 export default function Artwork()  {
-    const [items, setItems] = useState(artwork) 
-    const [isOpen, setOpen] = useState()
+    const [artworkItems, setArtworkItems] = useState([])
+    const [showPortal, toggleShowPortal] = useState(false)
 
 //gsap animation
     useLayoutEffect(() => {
@@ -29,24 +29,15 @@ export default function Artwork()  {
         });
     }, [])
 
-    const handleExpand = (e) => {
-        // gsap.to(e.target, {
-        //     duration: 0.7, 
-        //     width: 90, 
-        //     height: 90,
-        //     rotation: 90
-        // })
-        // console.log(e)
-    }
-
     const openModal = (card) => {
         // set state to open with id of card?
-        console.warn(card)
+        console.warn('card id', card.id)
+        toggleShowPortal(true)
     }
 
     const closeModal = (card) => {
         console.warn(card.id)
-        
+        toggleShowPortal(false)
     }
 
     return (
@@ -60,7 +51,7 @@ export default function Artwork()  {
                 { artwork.map( card => {
                     return(
                         <div key={card.id} className="grid-card" onClick={() => openModal(card)}>
-                            <ModalCard open={isOpen} onClose={() => closeModal(card)} />
+                            {showPortal && <ModalCard onClose={() => closeModal(card)} />}
                             <div className="grid-card-content">
                                 <div className="grid-img-container">
                                     <img className="grid-card-img" src={card["preview-img"]}/>
