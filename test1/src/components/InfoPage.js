@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect, useRef, useLayoutEffect } from "react";
 import styles from '../scss/components/infoText.module.scss';
 import testImage from '../Assets/images/land16-9.png';
 import selfie3 from '../Assets/images/self3.jpg';
@@ -13,29 +13,30 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function InfoPage() {
 
-    useLayoutEffect(() => {
-        gsap.from('.grid-item', {
-            duration: 0.6,
-            y: 50, 
-            x: -20, 
-            opacity: 0, 
-            stagger: 0.2,
-            scrollTrigger: {
-                trigger: '.grid-item',
-                start: 'center bottom'
-            }
-        });
+    const gridItem = useRef()
 
-        return () => {
-            // cleanup-code
-        }
+    useLayoutEffect(() => {
+        // let gridctx = gsap.context((self) => {
+        //     self.from(".grid-item", {
+        //         duration: 0.6,
+        //         y: 50, 
+        //         x: -20, 
+        //         opacity: 0, 
+        //         stagger: 0.2,
+        //         scrollTrigger: {
+        //             trigger: ".grid-item",
+        //             start: 'center bottom'
+        //         }
+        //     });
+        // }, gridItem)
+        // return () => gridctx.revert()
     }, [])
 
     return (
         <>
             <div className="outer-container">
                 <div className="grid info-grid-container">
-                    <div className="grid-item grid-text">
+                    <div ref={gridItem} className="grid-item grid-text">
                         <h4 className="tagline grid-tagline">Hi! I'm Matt. <br></br>Welcome to my personal website. </h4>
                     </div>
                     <div className="grid-item">

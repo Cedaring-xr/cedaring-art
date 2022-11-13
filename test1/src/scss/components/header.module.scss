@@ -1,15 +1,5 @@
 @use '../abstracts';
-
-//basic mix-in
-@mixin breakpoint($point) {
-    @if $point == md {
-        @media (min-width: 48em) {
-            @content;
-        }
-    }
-}    
-
-
+ 
 .header-main::after {
     content: '';
     position: absolute;
@@ -119,7 +109,6 @@
             }
     
             &.isMenu {
-                // transform: translate(100%);
                 background-color: #2c2c2c;
                 position: fixed;
                 z-index: 28;
@@ -143,7 +132,7 @@
                 color: #aaa6a6;
             }
 
-            @include breakpoint(md) {
+            @include abstracts.breakpoint(tablet) {
                 display: none;
             }
         }
@@ -195,7 +184,7 @@
         position: static;
         margin-bottom: 4rem;
 
-        @include breakpoint(md) {
+        @include abstracts.breakpoint(tablet) {
             flex-direction: row;
         }
         

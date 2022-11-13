@@ -1,5 +1,4 @@
 import React, { useLayoutEffect, useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import styles from '../scss/components/header.module.scss';
 import { BiMenuAltRight } from 'react-icons/bi';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -15,13 +14,9 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const menuToggleHandler = () => {
-        setMenuOpen((p) => !p);
+        setMenuOpen((open) => !open);
     };
-
-    const [size, setSize] = useState({
-        width: undefined,
-        height: undefined
-    });
+    const [size, setSize] = useState({ width: undefined, height: undefined });
 
     useEffect(() => {
         const handleResize = () => {
@@ -41,31 +36,22 @@ export default function Header() {
         }
     }, [size.width, menuOpen]);
 
-// parallax stuff
     useLayoutEffect(() => {
         //should be using Ref to attach to elements instead of class or id
         // let prlxTimeline = gsap.timeline({
-    //     scrollTrigger: {
-    //         trigger: '.header',
-    //         pin: false,
-    //         start: 'top top', // top of trigger top of viewport
-    //         end: '+= 500',
-    //         scrub: 1,
-    //         snap: {
-    //             snapTo: 'labels',
-    //             duration: {min: 0.2, max: 3},
-    //             delay: 0.2
-    //         }
-    //     }
-    // })
-
-    // prlxTimeline.addLabel('start')
-    //     .from(".box p", {scale: 0.3, rotation:45, autoAlpha: 0})
-    //     .addLabel("color")
-    //     .from(".box", {backgroundColor: "#28a92b"})
-    //     .addLabel("spin")
-    //     .to(".box", {rotation: 360})
-    //     .addLabel("end");
+        //     scrollTrigger: {
+        //         trigger: '.header',
+        //         pin: false,
+        //         start: 'top top', // top of trigger top of viewport
+        //         end: '+= 500',
+        //         scrub: 1,
+        //         snap: {
+        //             snapTo: 'labels',
+        //             duration: {min: 0.2, max: 3},
+        //             delay: 0.2
+        //         }
+        //     }
+        // })
     })
     
     return (
