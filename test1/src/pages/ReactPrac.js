@@ -4,6 +4,7 @@ import CardInfo from '../components/CardInfo';
 import ReducerSection from '../components/ReducerSection';
 import Stopwatch from '../components/Stopwatch';
 import StopwatchRef from '../components/StopwatchRef';
+import SideMenu from '../components/SideMenu';
 
 
 import { v4 as uuidv4 } from 'uuid';
@@ -165,6 +166,9 @@ export default function ReactPrac() {
                 <ReducerSection />
                 <Stopwatch />
                 <StopwatchRef />
+            </div>
+            <div className='tutorial-block'>
+                <SideMenu />
             </div>
         </>
     );

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from '../scss/components/header.module.scss';
 import { BiMenuAltRight } from 'react-icons/bi';
@@ -42,10 +42,9 @@ export default function Header() {
     }, [size.width, menuOpen]);
 
 // parallax stuff
-    useEffect(() => {
-        //move stuff here
-    })
-    // let prlxTimeline = gsap.timeline({
+    useLayoutEffect(() => {
+        //should be using Ref to attach to elements instead of class or id
+        // let prlxTimeline = gsap.timeline({
     //     scrollTrigger: {
     //         trigger: '.header',
     //         pin: false,
@@ -67,7 +66,8 @@ export default function Header() {
     //     .addLabel("spin")
     //     .to(".box", {rotation: 360})
     //     .addLabel("end");
-
+    })
+    
     return (
         <div className="header-main">
             <header className={styles.header}>
