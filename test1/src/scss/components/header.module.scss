@@ -75,7 +75,6 @@
                         border-radius: abstracts.$borderRadius;
                         transition: 0.3s ease all;
         
-                        
                         &:active {
                             border-radius: calc(#{abstracts.$borderRadius} + 6px);
                             background: linear-gradient(rgba(abstracts.$light, 0.1), rgba(abstracts.$light, 0.2));

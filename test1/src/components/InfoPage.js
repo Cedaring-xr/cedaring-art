@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useLayoutEffect } from "react";
 import styles from '../scss/components/infoText.module.scss';
-import testImage from '../Assets/images/land16-9.png';
 import selfie3 from '../Assets/images/self3.jpg';
 import treeRings from '../Assets/images/T54Y.jpg';
 import mountains from '../Assets/images/fMHm.jpg';

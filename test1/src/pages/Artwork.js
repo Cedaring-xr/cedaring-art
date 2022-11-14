@@ -13,16 +13,18 @@ export default function Artwork()  {
     const [artworkItems, setArtworkItems] = useState([])
     const [showPortal, toggleShowPortal] = useState(false)
 
-//gsap animation
+    const gridCard = useRef()
+
+    //gsap animation
     useLayoutEffect(() => {
-        gsap.from('.grid-card', {
+        gsap.from(gridCard.current, {
             duration: 1.2, 
             y: 80, 
             x: -40, 
             opacity: 0, 
             stagger: 0.1,
             scrollTrigger: {
-                trigger: '.grid-card',
+                trigger: gridCard.current,
                 start: 'center bottom',
                 duration: 1.2
             }
@@ -50,7 +52,7 @@ export default function Artwork()  {
             <div className="artwork-grid-container">
                 { artwork.map( card => {
                     return(
-                        <div key={card.id} className="grid-card" onClick={() => openModal(card)}>
+                        <div key={card.id} ref={gridCard} className="grid-card" onClick={() => openModal(card)}>
                             {showPortal && <ModalCard onClose={() => closeModal(card)} />}
                             <div className="grid-card-content">
                                 <div className="grid-img-container">

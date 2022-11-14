@@ -29,6 +29,18 @@
     border: 5px solid black;
 }
 
+.large-box {
+    min-height: 500px;
+}
+
+.dot-cicle {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: green;
+    position: absolute;
+}
+
 // .parallax-box {
 //     background: rgb(2,0,36);
 //     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,100,121,1) 10%, rgb(255, 146, 13) 79%);
