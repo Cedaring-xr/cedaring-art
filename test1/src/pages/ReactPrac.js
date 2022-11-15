@@ -4,6 +4,7 @@ import ReducerSection from '../components/ReducerSection';
 import Stopwatch from '../components/Stopwatch';
 import StopwatchRef from '../components/StopwatchRef';
 import SideMenu from '../components/SideMenu';
+import SideMenuDynamic from '../components/SideMenuDynamic';
 import DotMaker from '../components/DotMaker';
 
 
@@ -169,6 +170,9 @@ export default function ReactPrac() {
             </div>
             <div className='tutorial-block'>
                 <SideMenu />
+            </div>
+            <div className='tutorial-block'>
+                <SideMenuDynamic />
             </div>
             <div className='tutorial-block large-box'>
                 <DotMaker />

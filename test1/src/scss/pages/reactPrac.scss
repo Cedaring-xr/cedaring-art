@@ -41,6 +41,56 @@
     position: absolute;
 }
 
+.widget-box {
+    min-height: 300px;
+    padding: 0;
+    position: relative;
+
+    .active-page {
+        width: 400px;
+        height: 200px;
+        position: absolute;
+        background-color: beige;
+        left: 50%;
+        top: 0;
+    }
+
+    .side-menu-open {
+        width: 130px;
+        background-color: chocolate;
+        color: white;
+        padding: 10px;
+        border: 2px solid black;
+
+        &:hover {
+            margin-left: 10px;
+        }
+    }
+
+    .side-menu {
+        background-color: rgb(145, 57, 22);
+        max-width: 200px;
+        list-style: none;
+        padding: 0;
+
+        .menu-item {
+            padding: 10px;
+            border: 2px solid black;
+            font-size: 1.2rem;
+
+            .menu-item-text {
+                color: white;
+                font-weight: bold;
+
+                &:hover {
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+
+}
+
 // .parallax-box {
 //     background: rgb(2,0,36);
 //     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,100,121,1) 10%, rgb(255, 146, 13) 79%);

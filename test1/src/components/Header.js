@@ -13,10 +13,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [size, setSize] = useState({ width: undefined, height: undefined });
+
     const menuToggleHandler = () => {
         setMenuOpen((open) => !open);
     };
-    const [size, setSize] = useState({ width: undefined, height: undefined });
 
     useEffect(() => {
         const handleResize = () => {
@@ -52,7 +53,7 @@ export default function Header() {
         //         }
         //     }
         // })
-    })
+    }, [])
     
     return (
         <div className="header-main">
