@@ -68,60 +68,9 @@ export default function ReactPrac() {
         setTodos(newTodos);
     }
 
-// parallax stuff
-    gsap.to('#prlx-back', {
-        scrollTrigger: {
-            scrub : 1
-        },
-        y: 600
-    })
-    gsap.to('#prlx-mid', {
-        scrollTrigger: {
-            scrub : 1
-        },
-        y: 450
-    })
-    gsap.to('#prlx-front', {
-        scrollTrigger: {
-            scrub : 1
-        },
-        y: 300
-    })
-    gsap.to('.parallax-text', {
-        scrollTrigger: {
-            scrub: 1
-        },
-        y: 500,
-        x: 400,
-        rotation: 30
-    })
-    gsap.to('.parallax-nav', {
-        scrollTrigger: {
-            scrub: 1
-        },
-        y: 800,
-        x: -500,
-        rotation: -90
-    })
-
     
     return (
         <>
-            {/* <div>
-                <div className='parallax-box'>
-                    <img src={backLayer} className='parallax-img' id='prlx-back'/>
-                    <a href="/"><h1 className='parallax-text'>Cedaring.Art</h1></a>
-                    <img src={midLayer} className='parallax-img' id='prlx-mid'/>
-                    <nav className='parallax-nav'>
-                        <ul>
-                            <li className='nav-item'><a href='/artwork'>Artwork</a></li>
-                            <li className='nav-item'><a href='/blog'>Writing</a></li>
-                            <li className='nav-item'><a href='climbing'>Climbing</a></li>
-                        </ul>
-                    </nav>
-                    <img src={frontLayer} className='parallax-img' id='prlx-front'/>
-                </div>
-            </div> */}
             <div className="todo-container">
                 <TodoList todos={todos} toggleTodo={toggleTodo} />
                 <input type="text" ref={todoNameRef} />
@@ -134,6 +83,8 @@ export default function ReactPrac() {
                 </div>
             </div>
             <div className="content-block">
+                <span>React spring content loading and animation</span>
+                <br />
                 <button
                     onClick={() => {
                         setItems((v) =>

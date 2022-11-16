@@ -17,19 +17,38 @@ export default function Artwork()  {
 
     //gsap animation
     useLayoutEffect(() => {
-        gsap.from(gridCard.current, {
-            duration: 1.2, 
+        console.warn(gridCard.current)
+        gsap.from('.grid-card', {
+            duration: 0.8, 
             y: 80, 
             x: -40, 
             opacity: 0, 
             stagger: 0.1,
             scrollTrigger: {
-                trigger: gridCard.current,
+                trigger: '.grid-card',
+                // scrub: true,    //scrubing locks the animation to the scroll position. stop scrolling = animation stop
                 start: 'center bottom',
-                duration: 1.2
             }
-        });
+        })
     }, [])
+
+
+
+
+    // useLayoutEffect(() => {
+    //     gsap.from(gridCard.current, {
+    //         duration: 1.2, 
+    //         y: 80, 
+    //         x: -40, 
+    //         opacity: 0, 
+    //         stagger: 0.1,
+    //         scrollTrigger: {
+    //             trigger: gridCard.current,
+    //             start: 'center bottom',
+    //             duration: 1.2
+    //         }
+    //     });
+    // }, [])
 
     const openModal = (card) => {
         // set state to open with id of card?
