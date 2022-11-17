@@ -56,16 +56,19 @@
 }
 
 .grid-img {
-    width: 120%;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    width: 100%;
+    border: 2px solid rgb(48, 44, 44);
 
     @include abstracts.breakpoint(tablet) {
-        border: 2px solid rgb(48, 44, 44);
-        height: 100%;
+    }
+
+    @include abstracts.breakpoint(other) {
+        
     }
 }
 
 .img-mid {
+
     @include abstracts.breakpoint(tablet) {
        grid-column: span 3;
        margin: 10px;

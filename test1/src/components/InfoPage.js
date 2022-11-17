@@ -15,20 +15,17 @@ export default function InfoPage() {
     const gridItem = useRef()
 
     useLayoutEffect(() => {
-        // let gridctx = gsap.context((self) => {
-        //     self.from(".grid-item", {
-        //         duration: 0.6,
-        //         y: 50, 
-        //         x: -20, 
-        //         opacity: 0, 
-        //         stagger: 0.2,
-        //         scrollTrigger: {
-        //             trigger: ".grid-item",
-        //             start: 'center bottom'
-        //         }
-        //     });
-        // }, gridItem)
-        // return () => gridctx.revert()
+        gsap.from(".grid-item", {
+            duration: 0.3,
+            y: 40, 
+            x: -20, 
+            opacity: 0, 
+            stagger: 0.15,
+            scrollTrigger: {
+                trigger: ".grid-item",
+                start: 'center bottom'
+            }
+        });
     }, [])
 
     return (

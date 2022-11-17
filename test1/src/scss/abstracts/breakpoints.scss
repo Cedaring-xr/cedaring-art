@@ -15,21 +15,6 @@ $breakpoints: (
   }
 }
 
-//basic mix-in
-@mixin breakpointOld($point) {
-    @if $point == md {
-        // 1920px (max desktop size)
-        // 760px (standard tablet breakpoint) 
-        // 420px (standard phone)
-        // 320px (min phone width)
-        @media (min-width: 48em) {
-            @content;
-        }
-    }
-
-    // 900px (menu switch)
-}
-
 @mixin for-size($range) {
     $phone-upper-boundary: 420px;
     $tablet-portrait-upper-boundary: 760px;
@@ -48,12 +33,3 @@ $breakpoints: (
       @media (min-width: $desktop-upper-boundary) { @content; }
     }
 }
-  
-// usage
-// .my-box {
-//     padding: 10px;
-    
-//     @include for-size(desktop-up) {
-//       padding: 20px;
-//     }
-// }
