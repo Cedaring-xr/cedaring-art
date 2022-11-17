@@ -7,6 +7,7 @@ import { TransformControls } from "three/examples/jsm/controls/TransformControls
 import gsap from 'gsap'
 import * as lilGui from "lil-gui"
 import Stats from 'stats.js'
+import { sRGBEncoding } from "three"
 
 
 export default class HomepageScene extends Component {
@@ -134,6 +135,7 @@ export default class HomepageScene extends Component {
     // render
         this.renderer = new THREE.WebGLRenderer()
         this.renderer.setSize(window.innerWidth, window.innerHeight)
+        this.renderer.outputEncoding = sRGBEncoding;
         this.mount.appendChild(this.renderer.domElement)
         this.renderer.render(this.scene, this.camera)
 

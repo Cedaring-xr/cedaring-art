@@ -14,8 +14,8 @@ export default function ModalCard({ card, onClose}) {
         <div className="modal-background" >
             <div className='modal-container'>
                 <img src={closeIcon} className='close' alt="" style={{ cursor: 'pointer' }} onClick={() => onClose(card.id)} />
-                {/* <ArtworkSceneR3F card={card}/>  */}
-                <ArtworkScene1 card={card} />
+                <ArtworkSceneR3F card={card}/> 
+                {/* <ArtworkScene1 card={card} /> */}
             </div>
         </div>,
         portalRoot

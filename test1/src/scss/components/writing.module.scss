@@ -1,6 +1,17 @@
 @use '../abstracts';
 
 
+.writing-pagefill {
+    min-height: 100vh;
+}
+
+.writing-block {
+    margin: 50px auto;
+    width: 80%;
+    background-color: aqua;
+}
+
+
 .selection {
     padding: 2rem;
     line-height: 1.2;
