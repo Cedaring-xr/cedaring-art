@@ -27,7 +27,7 @@ export default function Blog() {
             </div>
             <div className="writing-block">
                 <h3>A Fireside Vision</h3>
-                <p>written by: written by: Bliss Carman</p>
+                <p>short poem written by: Bliss Carman</p>
                 <button className="read-btn" onClick={() => {setOpen(true)}}>Explore</button>
             </div>
             {isOpen && <WritingModal  onClose={() => closeModal()}/>}

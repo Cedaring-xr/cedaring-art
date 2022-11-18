@@ -1,9 +1,9 @@
 [
     {
         "id": 0,
-        "name": "Season Clock",
-        "description": "clock scene description",
-        "preview-img": "/extras/clock_Moment.jpg",
+        "name": "Zelda Cyclos",
+        "description": "zelda windwaker fanart",
+        "preview-img": "/extras/cyclos_Moment.jpg",
         "model": "/models/cyclos.glb",
         "three-settings": {
             "lights": "",
@@ -66,8 +66,8 @@
     {
         "id": 4,
         "name": "Pinata",
-        "description": "pinata quest",
-        "preview-img": "/extras/cubeTree_Moment.jpg",
+        "description": "trying out paper texture",
+        "preview-img": "/extras/pinata_Moment.jpg",
         "model": "/models/pinata.glb",
         "three-settings": {
             "lights": "",
@@ -82,9 +82,9 @@
     {
         "id": 5,
         "name": "Origami Crane",
-        "description": "Reconstructing the folds of origami with triangle shapes of the crease-map",
+        "description": "Reconstructing origami with triangle shapes of the crease-map",
         "preview-img": "/extras/origamiCrane_Moment.jpg",
-        "model": "/models/paintBeach.glb",
+        "model": "/models/origamiCrane.glb",
         "three-settings": {
             "lights": "",
             "camera": {
@@ -100,7 +100,7 @@
         "name": "Glass Tree Gate",
         "description": "Stained glass effect for an entryway",
         "preview-img": "/extras/treeGate.jpg",
-        "model": "/models/paintBeach.glb",
+        "model": "/models/glassGate.glb",
         "three-settings": {
             "lights": "",
             "camera": {
@@ -116,7 +116,7 @@
         "name": "Flower Scroll",
         "description": "experimenting with flowers and 2D to 3D transition",
         "preview-img": "/extras/flowerScroll.jpg",
-        "model": "/models/paintBeach.glb",
+        "model": "/models/flowerScroll.glb",
         "three-settings": {
             "lights": "",
             "camera": {
@@ -130,9 +130,41 @@
     {
         "id": 8,
         "name": "Okami",
-        "description": "Okami fan art with openbrush theme",
+        "description": "Okami fan-art with openbrush theme",
         "preview-img": "/extras/AmmyBrush.jpg",
-        "model": "/models/paintBeach.glb",
+        "model": "/models/ammy.glb",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "date-created": "6/24/22"
+    },
+    {
+        "id": 9,
+        "name": "Water Otter",
+        "description": "practicing creating water",
+        "preview-img": "/extras/otter_Moment.jpg",
+        "model": "/models/otter.glb",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "date-created": "6/24/22"
+    },
+    {
+        "id": 10,
+        "name": "floating island",
+        "description": "runes and stuff",
+        "preview-img": "/extras/island_Moment.png",
+        "model": "/models/floatingIsland.glb",
         "three-settings": {
             "lights": "",
             "camera": {

@@ -145,14 +145,18 @@
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
-    height: 22vw;
-    max-height: 180px;
+    max-height: 190px;
     padding: 0;
+    height: 14vw;
+
+    @include abstracts.breakpoint(desktop) {
+        height: 22vw;
+    }
 }
 
 .parallax-text {
     color: abstracts.$light;
-    padding-top:1rem;
+    padding-top:0.2rem;
     padding-left: 0.5rem;
     position: relative;
     z-index: 50;
@@ -181,7 +185,7 @@
         list-style: none;
         flex-direction: column;
         position: static;
-        margin-bottom: 4rem;
+        margin-bottom: 5rem;
 
         @include abstracts.breakpoint(tablet) {
             flex-direction: row;
@@ -204,15 +208,15 @@
 }
 
 #prlx-back {
-    top: 18%;
+    top: 8%;
 }
 
 #prlx-mid {
-    top: 54%;
+    top: 28%;
 }
 
 #prlx-front {
-    top: 70%;
+    top: 40%;
 }
 
 .parallax-img {

@@ -27,8 +27,9 @@ class ArtworkScene1 extends Component {
 
     // model loading
         gltfLoader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../extras/brushes')) //brushes folder has shader files also
-        gltfLoader.load('/models/cubeTree.glb', (model) => {
+        gltfLoader.load(this.props.card.model, (model) => {
             console.log(model)
+            console.log('passing props', this.props)  // ????
             this.scene.add(model.scene)
         });
 
@@ -87,7 +88,8 @@ class ArtworkScene1 extends Component {
 
     render(){
         return (
-            <div
+            <div 
+            className="canvas-test"
             ref={mount => {
                 this.mount = mount;
             }}

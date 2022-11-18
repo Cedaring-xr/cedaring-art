@@ -18,14 +18,24 @@
     border: 2px solid orange;
     background: #363131;
     position: fixed;
-    
+    overflow: hidden;
 }
 
 .close {
-    height: 50px;
     width: 50px;
     position: relative;
     float: right;
     right: 20px;
     top:20px;
+    z-index: 30;
+}
+
+.canvas-test {
+    margin-top: 0;
+    position: relative;
+
+    canvas {
+        top:-50px;
+        position: relative;
+    }
 }

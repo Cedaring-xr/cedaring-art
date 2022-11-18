@@ -5,9 +5,9 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import backLayer from '../Assets/images/parallax/backLayer2.png';
-import midLayer from '../Assets/images/parallax/midLayer2.png';
-import frontLayer from '../Assets/images/parallax/frontLayer2.png';
+import backLayer from '../Assets/images/parallax/clear-back.png';
+import midLayer from '../Assets/images/parallax/clear-mid.png';
+import frontLayer from '../Assets/images/parallax/clear-front.png';
 gsap.registerPlugin(ScrollTrigger);
 
 
