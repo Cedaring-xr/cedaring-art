@@ -68,7 +68,7 @@ export default class HomepageScene extends Component {
 
     // model loading
         this.loader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../extras/brushes')) //brushes folder has shader files also
-        this.loader.load('/models/fallFox.glb', (model) => {
+        this.loader.load('/models/glassGate.glb', (model) => {
             console.log(model)
             model.scene.scale.set(2.3, 2.3, 2.3)
             model.scene.position.set(0, -5, 0)

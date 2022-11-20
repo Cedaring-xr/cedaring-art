@@ -33,10 +33,10 @@
     },
     {
         "id": 2,
-        "name": "City Tree",
-        "description": "single sided box fun",
-        "preview-img": "/extras/cityTree_Moment.jpg",
-        "model": "/models/pinata.glb",
+        "name": "Spiral Trees",
+        "description": "api generated shapes",
+        "preview-img": "/extras/trees_moment.png",
+        "model": "/models/trees.glb",
         "three-settings": {
             "lights": "",
             "camera": {
@@ -165,6 +165,70 @@
         "description": "runes and stuff",
         "preview-img": "/extras/island_Moment.png",
         "model": "/models/floatingIsland.glb",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "date-created": "6/24/22"
+    },
+    {
+        "id": 11,
+        "name": "Fire Spirit Staff",
+        "description": "kalsdkjlksdjflsd",
+        "preview-img": "/extras/fire_moment.jpg",
+        "model": "/models/floatingIsland.glb",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "date-created": "6/24/22"
+    },
+    {
+        "id": 12,
+        "name": "Fox Leaves",
+        "description": "kalsdkjlksdjflsd",
+        "preview-img": "/extras/foxLeaves_Moment.jpg",
+        "model": "/models/fallFox.glb",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "date-created": "6/24/22"
+    },
+    {
+        "id": 13,
+        "name": "Skybox panorama 1",
+        "description": "test",
+        "preview-img": "/extras/skybox1_Moment.jpg",
+        "model": "/models/fallFox.glb",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "date-created": "6/24/22"
+    },
+    {
+        "id": 14,
+        "name": "Skybox panorama 2",
+        "description": "test",
+        "preview-img": "/extras/skybox1_Moment.jpg",
+        "model": "/models/fallFox.glb",
         "three-settings": {
             "lights": "",
             "camera": {

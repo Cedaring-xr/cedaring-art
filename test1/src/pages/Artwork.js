@@ -32,6 +32,7 @@ export default function Artwork(  )  {
                 start: 'center bottom',
             }
         })
+        // TODO: if scrolled down x amount, remove stagger and load in full.
     }, [])
 
     const openModal = (card, index) => {
@@ -46,6 +47,7 @@ export default function Artwork(  )  {
         setActiveObject(null)
         toggleShowPortal(false)
     }
+
 
     return (
         <>

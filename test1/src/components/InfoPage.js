@@ -20,7 +20,7 @@ export default function InfoPage() {
             y: 40, 
             x: -20, 
             opacity: 0, 
-            stagger: 0.15,
+            stagger: 0.05,
             scrollTrigger: {
                 trigger: ".grid-item",
                 start: 'center bottom'

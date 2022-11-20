@@ -14,7 +14,6 @@
     font-family: abstracts.$headerFont;
     width: 100%;
     padding: 0;
-    transition: 0.3s ease all;
     overflow: hidden;
 
     &__content {
@@ -39,7 +38,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            transition: 0.4s ease transform;
+            // transition: 0.4s ease transform;
 
             @include abstracts.breakpoint(tablet) {
                 transform: none;
@@ -140,8 +139,8 @@
 
 // temp other
 .parallax-box {
-    background: url('../../Assets/images/parallax/background1.jpg');
-    background-position: top;
+    background: url('../../Assets/images/parallax/background.jpg');
+    background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
@@ -209,14 +208,27 @@
 
 #prlx-back {
     top: 8%;
+
+    @include abstracts.breakpoint(wide-desktop) {
+        top:-5%;
+    }
 }
 
 #prlx-mid {
     top: 28%;
+
+    @include abstracts.breakpoint(wide-desktop) {
+        top:20%;
+    }
 }
 
 #prlx-front {
-    top: 40%;
+    top: 71%;
+    z-index: 27;
+
+   @include abstracts.breakpoint(wide-desktop) {
+    top: 63%;
+   }
 }
 
 .parallax-img {

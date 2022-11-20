@@ -7,7 +7,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import backLayer from '../Assets/images/parallax/clear-back.png';
 import midLayer from '../Assets/images/parallax/clear-mid.png';
-import frontLayer from '../Assets/images/parallax/clear-front.png';
+import frontLayer from '../Assets/images/parallax/clear-front-short.png';
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -15,7 +15,13 @@ export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [size, setSize] = useState({ width: undefined, height: undefined });
 
-    const menuToggleHandler = () => {
+    const menuOpenHandler = () => {
+        document.body.classList.add('header-menu-open');
+        setMenuOpen((open) => !open);
+    };
+
+    const menuCloseHandler = () => {
+        document.body.classList.remove('header-menu-open');
         setMenuOpen((open) => !open);
     };
 
@@ -39,20 +45,55 @@ export default function Header() {
 
     useLayoutEffect(() => {
         //should be using Ref to attach to elements instead of class or id
-        // let prlxTimeline = gsap.timeline({
-        //     scrollTrigger: {
-        //         trigger: '.header',
-        //         pin: false,
-        //         start: 'top top', // top of trigger top of viewport
-        //         end: '+= 500',
-        //         scrub: 1,
-        //         snap: {
-        //             snapTo: 'labels',
-        //             duration: {min: 0.2, max: 3},
-        //             delay: 0.2
-        //         }
-        //     }
-        // })
+        gsap.to('#prlx-back', {
+            y: 600,
+            scrollTrigger: {
+                trigger: '.header',
+                start: 'top top', // top of trigger top of viewport
+                end: 'bottom top',
+                scrub: true,
+            }
+        })
+        gsap.to('#prlx-mid', {
+            y: 400,
+            scrollTrigger: {
+                trigger: '.header',
+                start: 'top top', // top of trigger top of viewport
+                end: 'bottom top',
+                scrub: true,
+            }
+        })
+        gsap.to('#prlx-front', {
+            y: 200,
+            scrollTrigger: {
+                trigger: '.header',
+                start: 'top top', // top of trigger top of viewport
+                end: 'bottom top',
+                scrub: true,
+            }
+        })
+        gsap.to('.parallax-text', {
+            y: '90vh',
+            x: '20vw',
+            rotation: 15,
+            scrollTrigger: {
+                trigger: '.header',
+                start: 'top top', // top of trigger top of viewport
+                end: 'bottom top',
+                scrub: true,
+            }
+        })
+        gsap.to('.parallax-nav', {
+            y: '90vh',
+            x: '-20vw',
+            rotation: -15,
+            scrollTrigger: {
+                trigger: '.header',
+                start: 'top top', // top of trigger top of viewport
+                end: 'bottom top',
+                scrub: true,
+            }
+        })
     }, [])
     
     return (
@@ -75,9 +116,9 @@ export default function Header() {
                   <img src={frontLayer} className="parallax-img" id="prlx-front" />
                   <div className={styles.header__content__toggle}>
                         {!menuOpen ? (
-                           <BiMenuAltRight onClick={menuToggleHandler} />
+                           <BiMenuAltRight onClick={menuOpenHandler} />
                         ) : (
-                           <AiOutlineClose onClick={menuToggleHandler} />
+                           <AiOutlineClose onClick={menuCloseHandler} />
                         )}
                   </div>
                </div>
