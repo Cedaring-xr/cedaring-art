@@ -41,11 +41,13 @@ export default function Artwork(  )  {
         //toogle portal state
         setActiveObject(card)
         toggleShowPortal(true)
+        // document.body.classList.add('header-menu-open');
     }
 
     const closeModal = (id) => {
         setActiveObject(null)
         toggleShowPortal(false)
+        // document.body.classList.remove('header-menu-open');
     }
 
 

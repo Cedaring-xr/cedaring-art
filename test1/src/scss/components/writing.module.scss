@@ -8,30 +8,30 @@
 .writing-block {
     margin: 50px auto;
     width: 80%;
-    background-color: aqua;
-}
-
-
-.selection {
-    padding: 2rem;
+    padding: 2.2rem;
     line-height: 1.2;
     min-width: 300px;
-    width: 92%;
     max-width: 1400px;
     text-align: left;
-    background: rgb(26, 120, 160);
+    background: linear-gradient(45deg, rgba(7,84,114,1) 28%, rgb(26, 120, 160) 90%);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     opacity: 0.9;
     margin: 30px auto 0;
     border-radius: 6px;
     position: relative;
-    z-index: 60;
-
-    &__content {
-        color: #fff;
-        font-family: abstracts.$bodyFont, serif;
-        font-size: 1.1rem;
-        margin-top: 1rem;
-        line-height: 1.4;
-    }
+    z-index: 20;
 }
+
+.read-btn {
+    padding: 5px;
+    font-size: 1.5rem;
+}
+
+//     &__content {
+//         color: #fff;
+//         font-family: abstracts.$bodyFont, serif;
+//         font-size: 1.1rem;
+//         margin-top: 1rem;
+//         line-height: 1.4;
+//     }
+// }

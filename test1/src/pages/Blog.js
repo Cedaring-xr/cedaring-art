@@ -13,10 +13,12 @@ export default function Blog() {
     
     const openModal = () => {
         setOpen(true)
+        // document.body.classList.remove('header-menu-open');
     }
 
     const closeModal = () => {
         setOpen(false)
+        // document.body.classList.remove('header-menu-open');
     }
 
     return (

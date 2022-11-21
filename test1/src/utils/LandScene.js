@@ -118,28 +118,28 @@ export default class LandScene extends Component {
         const coloradoTexture = textureLoader.load('/extras/images/coTexture.png')
         const txtLoader = new FontLoader();
         txtLoader.load('/extras/fonts/helvetiker_regular.typeface.json', (font)=> {
-        const geometryFont = new TextGeometry('COLORADO', {
-            font: font,
-            size: 10,
-            height: 0.1,
-            curveSegments: 5,  //poly count
-            bevelEnabled: true,
-            bevelThickness: 0.3,
-            bevelSize: 0.2,
-            bevelOffset: 0,
-            bevelSegments: 5
+            const geometryFont = new TextGeometry('COLORADO', {
+                font: font,
+                size: 10,
+                height: 0.1,
+                curveSegments: 5,  //poly count
+                bevelEnabled: true,
+                bevelThickness: 0.3,
+                bevelSize: 0.2,
+                bevelOffset: 0,
+                bevelSegments: 5
+            });
+            geometryFont.computeBoundingBox()
+            geometryFont.center()
+            const fontMaterial = new THREE.MeshBasicMaterial({
+                map: coloradoTexture
+            })
+            const textMaterial = new THREE.MeshBasicMaterial({color: 0x666aaa});
+            this.text = new THREE.Mesh(geometryFont, fontMaterial);
+            this.scene.add(this.text)
+            this.text.position.z = -30 
+            this.text.position.y = 8
         });
-        geometryFont.computeBoundingBox()
-        geometryFont.center()
-        const fontMaterial = new THREE.MeshBasicMaterial({
-            map: coloradoTexture
-        })
-        const textMaterial = new THREE.MeshBasicMaterial({color: 0x666aaa});
-        this.text = new THREE.Mesh(geometryFont, fontMaterial);
-        this.scene.add(this.text)
-        this.text.position.z = -30 
-        this.text.position.y = 8
-    });
 
     // debug gui
         const debugObject = {}

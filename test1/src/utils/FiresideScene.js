@@ -2,6 +2,8 @@ import React, { Component } from "react"
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader"
+import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry"
 import gsap from 'gsap'
 import * as lilGui from "lil-gui"
 
@@ -43,6 +45,56 @@ class FiresideScene extends Component {
         this.loader.load('/models/low_poly_forest_campfire_updated.glb', (model) => {
             console.log(model)
             this.scene.add(model.scene)
+        });
+
+    // 3d font loading
+    const textureLoader = new THREE.TextureLoader()
+        const coloradoTexture = textureLoader.load('/extras/images/coTexture.png')
+        const txtLoader = new FontLoader();
+        txtLoader.load('/extras/fonts/helvetiker_regular.typeface.json', (font)=> {
+            const geometryFont = new TextGeometry("Once I walked the world enchanted Through the scented woods of spring, Hand in hand with Love, in rapture Just to hear a bluebird sing.", {
+                font: font,
+                size: 1,
+                height: 0.1,
+                curveSegments: 5,  //poly count
+                bevelEnabled: true,
+                bevelThickness: 0.3,
+                bevelSize: 0.2,
+                bevelOffset: 0,
+                bevelSegments: 5
+            });
+            const geometryFont2 = new TextGeometry("Now the lonely winds of autumn Moan about my gusty eaves, As I sit beside the fire Listening to the flying leaves.", {
+                font: font,
+                size: 1,
+                height: 0.1,
+                curveSegments: 5,  //poly count
+                bevelEnabled: true,
+                bevelThickness: 0.3,
+                bevelSize: 0.2,
+                bevelOffset: 0,
+                bevelSegments: 5
+            });
+            const geometryFont3 = new TextGeometry("As the dying embers settle And the twilight falls apace, Through the gloom I see a vision Full of ardor, full of grace.", {
+                font: font,
+                size: 1,
+                height: 0.1,
+                curveSegments: 5,  //poly count
+                bevelEnabled: true,
+                bevelThickness: 0.3,
+                bevelSize: 0.2,
+                bevelOffset: 0,
+                bevelSegments: 5
+            });
+            geometryFont.computeBoundingBox()
+            geometryFont.center()
+            const fontMaterial = new THREE.MeshBasicMaterial({
+                map: coloradoTexture
+            })
+            const textMaterial = new THREE.MeshBasicMaterial({color: 0x666aaa});
+            this.text = new THREE.Mesh(geometryFont, textMaterial);
+            this.scene.add(this.text)
+            this.text.position.z = 0
+            this.text.position.y = 5
         });
 
     // gui/debug
