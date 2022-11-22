@@ -40,25 +40,33 @@ class ScrollBasedScene extends Component {
         this.scene.add(this.cube);
 
     // model loading
+        let modelGroup = new THREE.Group();
         let glbModel = new THREE.Object3D();
         this.loader.load('/models/LizardHead2.glb', (model) => {
-        console.log(model)
-        glbModel = model.scene
-        glbModel.scale.set(0.01, 0.01, 0.01)
-        glbModel.position.x = 1.03
-        glbModel.position.z = 2.2
-        glbModel.position.y = 0.15
-        glbModel.rotation.x = -5.88
-        glbModel.rotation.y = -0.92
-        glbModel.rotation.z = 0.12
-        this.gui.add(glbModel.position, 'z').min(-10).max(10).step(0.01).name('Z-position')
-        this.gui.add(glbModel.position, 'x').min(-10).max(10).step(0.01).name('X-position')
-        this.gui.add(glbModel.position, 'y').min(-10).max(10).step(0.01).name('y-position')
-        this.gui.add(glbModel.rotation, 'z').min(-10).max(10).step(0.01).name('z-rotation')
-        this.gui.add(glbModel.rotation, 'x').min(-10).max(10).step(0.01).name('x-rotation')
-        this.gui.add(glbModel.rotation, 'y').min(-10).max(10).step(0.01).name('y-rotation')
-        this.scene.add(glbModel);
-    })
+            glbModel = model.scene
+            glbModel.scale.set(0.01, 0.01, 0.01)
+            glbModel.position.set(1.03, 0.15, 2.2)
+            glbModel.rotation.set(-5.88, -0.92, 0.12)
+            modelGroup.add(glbModel)
+            console.log('glb group', modelGroup)
+            this.gui.add(glbModel.position, 'z').min(-10).max(10).step(0.01).name('Z-position')
+            this.gui.add(glbModel.position, 'x').min(-10).max(10).step(0.01).name('X-position')
+            this.gui.add(glbModel.position, 'y').min(-10).max(10).step(0.01).name('y-position')
+            this.gui.add(glbModel.rotation, 'z').min(-10).max(10).step(0.01).name('z-rotation')
+            this.gui.add(glbModel.rotation, 'x').min(-10).max(10).step(0.01).name('x-rotation')
+            this.gui.add(glbModel.rotation, 'y').min(-10).max(10).step(0.01).name('y-rotation')
+            this.scene.add(glbModel);
+            scrollAnimation()
+        })
+        this.loader.load('/models/low_poly_mountain.glb', (model) => {
+            glbModel = model.scene
+            glbModel.scale.set(0.005, 0.005, 0.005)
+            // glbModel.position.set(1.03, 0.15, 2.2)
+            // glbModel.rotation.set(-5.88, -0.92, 0.12)
+            modelGroup.add(glbModel)
+            this.scene.add(glbModel);
+            scrollAnimation() // needs to be called on the group
+        })
 
     // gui/debug
         this.gui.add(this.cube.position, 'x').min(-5).max(5).step(0.1);
@@ -104,17 +112,33 @@ class ScrollBasedScene extends Component {
         this.animation();
         this.renderer.render(this.scene, this.camera);
 
-        // controls
-        // this.comtrols = new OrbitControls(this.camera, this.renderer.domElement)
-
 
         //gsap animation
-        
-        // gsap.to(glbModel.rotation.x, { duration: 2, delay: 10, x: 4})
-        // gsap.to(this.cube.position, { duration: 2, delay: 1, x: 4})
-        // gsap.to(this.cube.position, { duration: 2, delay: 3, x: -4})
+        const scrollAnimation = () => {
+            const timeline = gsap.timeline({
+                default: {
+                    duration: 1,
+                    ease: 'power2.inOut'
+                },
+                scrollTrigger: {
+                    trigger: ".canvas-text",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 0.1
+                }
+            })
+            timeline.to(glbModel.rotation, {y: 5})
+            timeline.to(glbModel.position, {z: 4, y: 2})
 
-        //event listeners
+            // timeline animations list
+                //load models
+                //zoom and rotate inwards on group
+                // create vector draw line?
+                //scale and translate low poly model up from ground
+                // scale video box sideways and into view
+        }
+
+    //event listeners
         window.addEventListener('resize', this.handleWindowResize);
     }
 
@@ -126,7 +150,7 @@ class ScrollBasedScene extends Component {
     }
 
     handleWindowResize= ()=> {
-        this.camera.aspect = window.innerWidth / window.innerHeight //change to container size???
+        this.camera.aspect = window.innerWidth / window.innerHeight
         this.camera.updateProjectionMatrix()
         this.renderer.setSize(window.innerWidth, window.innerHeight)
         this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))

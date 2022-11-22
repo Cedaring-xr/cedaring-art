@@ -44,56 +44,59 @@ export default function Header() {
     }, [size.width, menuOpen]);
 
     useLayoutEffect(() => {
-        //should be using Ref to attach to elements instead of class or id
-        gsap.to('#prlx-back', {
-            y: 600,
-            scrollTrigger: {
-                trigger: '.header',
-                start: 'top top', // top of trigger top of viewport
-                end: 'bottom top',
-                scrub: true,
+        ScrollTrigger.matchMedia({
+            "(min-width: 768px)" : () => {
+                gsap.to('#prlx-back', {
+                    y: 60,
+                    scrollTrigger: {
+                        trigger: '.header-main',
+                        start: 'top top', // top of trigger top of viewport
+                        end: 'bottom top',
+                        scrub: true,
+                    }
+                })
+                gsap.to('#prlx-mid', {
+                    y: 40,
+                    scrollTrigger: {
+                        trigger: '.header-main',
+                        start: 'top top',
+                        end: 'bottom top',
+                        scrub: true,
+                    }
+                })
+                gsap.to('#prlx-front', {
+                    y: 20,
+                    scrollTrigger: {
+                        trigger: '.header-main',
+                        start: 'top top', 
+                        end: 'bottom top',
+                        scrub: true,
+                    }
+                })
+                gsap.to('.parallax-text', {
+                    y: 110,
+                    x: 40,
+                    rotation: 4,
+                    scrollTrigger: {
+                        trigger: '.header-main',
+                        start: 'top top', 
+                        end: 'bottom top',
+                        scrub: true,
+                    }
+                })
+                gsap.to('.parallax-nav', {
+                    y: 110,
+                    x: -40,
+                    rotation: -4,
+                    scrollTrigger: {
+                        trigger: '.header-main',
+                        start: 'top top', 
+                        end: 'bottom top',
+                        scrub: true,
+                    }
+                })
             }
-        })
-        gsap.to('#prlx-mid', {
-            y: 400,
-            scrollTrigger: {
-                trigger: '.header',
-                start: 'top top', // top of trigger top of viewport
-                end: 'bottom top',
-                scrub: true,
-            }
-        })
-        gsap.to('#prlx-front', {
-            y: 200,
-            scrollTrigger: {
-                trigger: '.header',
-                start: 'top top', // top of trigger top of viewport
-                end: 'bottom top',
-                scrub: true,
-            }
-        })
-        gsap.to('.parallax-text', {
-            y: '90vh',
-            x: '20vw',
-            rotation: 15,
-            scrollTrigger: {
-                trigger: '.header',
-                start: 'top top', // top of trigger top of viewport
-                end: 'bottom top',
-                scrub: true,
-            }
-        })
-        gsap.to('.parallax-nav', {
-            y: '90vh',
-            x: '-20vw',
-            rotation: -15,
-            scrollTrigger: {
-                trigger: '.header',
-                start: 'top top', // top of trigger top of viewport
-                end: 'bottom top',
-                scrub: true,
-            }
-        })
+        });
     }, [])
     
     return (

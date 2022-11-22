@@ -17,15 +17,15 @@ export default function Climbing() {
             <ScrollBasedScene className='scroll-scene'>
                 
             </ScrollBasedScene>
-            <div className='canvas-text'>
-                <h4>Test</h4>
-            </div>
-            <div className='canvas-text'>
-                <h4>Test</h4>
-            </div>
-            <div className='canvas-text'>
-                <h4>Test</h4>
-            </div>
+            <section className='canvas-text'>
+                <h4>Test section 1</h4>
+            </section>
+            <section className='canvas-text'>
+                <h4>Test section 2</h4>
+            </section>
+            <section className='canvas-text'>
+                <h4>Test section 3</h4>
+            </section>
             {/* <div className='center'>
                 <div className='ring'></div>
                 <span>Loading...</span>

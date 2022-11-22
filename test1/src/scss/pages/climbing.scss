@@ -2,7 +2,8 @@
 @use '../components';
 
 .scroll-scene {
-    position: fixed;
+    position: sticky;
+    top: 100px;
 }
 
 .canvas-text {

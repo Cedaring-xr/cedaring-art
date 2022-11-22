@@ -100,7 +100,7 @@ export default class LandScene extends Component {
             updateAllMaterials()
         })
 
-        const mountains = this.loader.load('/models/LizardHead2.glb', (model) => {
+        this.loader.load('/models/LizardHead2.glb', (model) => {
             console.log(model)
             glbModel = model.scene
             glbModel.scale.set(0.01, 0.01, 0.01)
