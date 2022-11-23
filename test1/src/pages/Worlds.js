@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, Suspense } from 'react'
 import Box from '../components/ReactFiber'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
-import OpenBrushScene from '../utils/OBviewer'
 import ModelScene from '../utils/glbLoader'
+import React3Fiber from '../utils/ArtworkSceneR3F'
+import ArtworkSceneFunc from '../utils/ArtworkSceneFunc'
 
 export default function Worlds() {
     return (
@@ -17,8 +17,9 @@ export default function Worlds() {
                     <Box />
                 </Suspense>
             </Canvas> */}
-            {/* <OpenBrushScene /> */}
-            <ModelScene />
+            {/* <React3Fiber /> */}
+            <ArtworkSceneFunc />
+            {/* <ModelScene /> */}
         </div>
     )
 }

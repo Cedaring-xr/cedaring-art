@@ -7,93 +7,65 @@ import gsap from 'gsap'
 import * as lilGui from "lil-gui"
 
 
-
-
 class ArtworkScene1 extends Component {
-    componentDidMount(){
 
+    componentDidMount(){
     // scene
         this.scene = new THREE.Scene()
-        const clock = new THREE.Clock()
-        const gltfLoader = new GLTFLoader()
-        // this.gui = new lilGui.GUI({closed: true, width: 400})
-
+        this.clock = new THREE.Clock()
+        this.scene.background = new THREE.Color(0, 0, 0); //black
     // light
         this.light = new THREE.DirectionalLight(0xffffff, 5)
         this.light2 = new THREE.PointLight(0xffffff, 10)
         this.light3 = new THREE.AmbientLight(0xffffff, 1)
         this.light.position.set(10, 50, 10)
         this.scene.add(this.light, this.light3)
-
     // model loading
+        const gltfLoader = new GLTFLoader()
         gltfLoader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../extras/brushes')) //brushes folder has shader files also
         gltfLoader.load(this.props.card.model, (model) => {
-            console.log(model)
-            console.log('passing props', this.props)  // ????
+            // console.log(model)
+            // console.log('passing props', this.props)
+            this.controls.target.set(0, 0.95, 0)
             this.scene.add(model.scene)
         });
-
-    //envirionment map
-        this.envTexture = new THREE.CubeTextureLoader()
-        const envBackground = this.envTexture.load([
-            '/extras/background/openSky/px.png',  //px
-            '/extras/background/openSky/nx.png',  //py
-            '/extras/background/openSky/py.png',  //nx
-            '/extras/background/openSky/ny.png',  //ny
-            '/extras/background/openSky/pz.png',  //pz
-            '/extras/background/openSky/nz.png'   //nz
-        ])
-        envBackground.encoding = THREE.sRGBEncoding
-        this.scene.background = envBackground
-
     // camera
-        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-        this.camera.position.z = 1.7;
-        this.camera.position.y = 3.9;
-        this.camera.position.x = 0.2;
-
+        this.camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 1000);
+        this.camera.position.set(0.2, 3.9, 1.7)
     // render
-        this.renderer = new THREE.WebGLRenderer()
+        this.renderer = new THREE.WebGLRenderer({
+            antialias: true
+          })
+        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
         this.renderer.setSize(window.innerWidth, window.innerHeight)
+        this.renderer.setClearColor(0x000000, 0)
         this.mount.appendChild(this.renderer.domElement)
-        this.renderer.render(this.scene, this.camera)
 
         const tick = () => {
-            const elapsedTime = clock.getElapsedTime()
-            // console.log(elapsedTime)
             this.controls.update()
             this.renderer.render(this.scene, this.camera)
+            // this.renderer.setAnimationLoop(this.render.bind(this))
             window.requestAnimationFrame(tick);
         }
+        
 
     // controls
         this.controls = new OrbitControls(this.camera, this.renderer.domElement)
-
+        this.controls.enableDamping = true //glide effect after grab
     //animation
-        tick()
+        window.requestAnimationFrame(tick);
         window.addEventListener('resize', this.handleWindowResize);
-    }
-
-    animation = ()=> {
-        requestAnimationFrame(this.animation);
-        this.renderer.render(this.scene, this.camera, this.model);
     }
 
     handleWindowResize = ()=> {
         this.camera.aspect = window.innerWidth / window.innerHeight;
-        this.camera.updateProjectionMatrix();
         this.renderer.setSize(window.innerWidth, window.innerHeight);
-        this.renderer.render(this.scene, this.camera);
+        this.camera.updateProjectionMatrix();
     }
 
     render(){
         return (
-            <div 
-            className="canvas-test"
-            ref={mount => {
-                this.mount = mount;
-            }}
-            />
+            <div className="canvas-test" ref={mount => { this.mount = mount}} />
         )
     }
 }

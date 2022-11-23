@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useLayoutEffect } from "react";
-import styles from '../scss/components/infoText.module.scss';
 import selfie3 from '../Assets/images/self3.jpg';
 import treeRings from '../Assets/images/T54Y.jpg';
 import mountains from '../Assets/images/fMHm.jpg';
@@ -40,7 +39,7 @@ export default function InfoPage() {
                     </div>
                     <div className="grid-item grid-text text-mid">
                         <p className="text-block">
-                            I am a web developer, VR artist, and rock climber. I built this website for fun to showcase some of the art that I have made and also to practice my web development skills. I love the blending of technologies betweeen 3D, VR, AR, and the web. Some of my goals for the next year are expanding into AR more, Virtual world building, and some short 3D web-based puzzle mini-games.
+                            I am a web developer, VR artist, and rock climber. I built this website for fun to showcase some of the art that I have made and also to experiment with different web development effects. I love the blending of technologies betweeen 3D, VR, AR, and the web. Some of my goals for the next year are expanding into AR more, Virtual world building, and some short 3D web-based puzzle mini-games.
                         </p>
                     </div>
                     <div className="grid-item img-mid">

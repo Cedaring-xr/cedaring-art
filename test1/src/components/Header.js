@@ -51,8 +51,8 @@ export default function Header() {
                     scrollTrigger: {
                         trigger: '.header-main',
                         start: 'top top', // top of trigger top of viewport
-                        end: 'bottom top',
-                        scrub: true,
+                        end: 'bottom top', // bottom of the trigger top of the viewport?
+                        scrub: true, // bind to scroll 1:1
                     }
                 })
                 gsap.to('#prlx-mid', {
@@ -74,7 +74,7 @@ export default function Header() {
                     }
                 })
                 gsap.to('.parallax-text', {
-                    y: 110,
+                    y: 110, 
                     x: 40,
                     rotation: 4,
                     scrollTrigger: {
@@ -114,6 +114,7 @@ export default function Header() {
                         <li className="nav-item"><a href="/blog">Writing</a></li>
                         <li className="nav-item"><a href="/climbing">Climbing</a></li>
                         {/* <li><a href="/react">React</a></li> */}
+                        <li><a href="/worlds">Worlds</a></li>
                      </ul>
                   </nav>
                   <img src={frontLayer} className="parallax-img" id="prlx-front" />

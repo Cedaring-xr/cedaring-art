@@ -1,5 +1,6 @@
 import React, { Component, useLayoutEffect, useRef, useFrame } from "react"
 import { Canvas, useLoader } from "@react-three/fiber"
+import { OrbitControls } from "@react-three/drei"
 import { GLTFGoogleTiltBrushMaterialExtension } from 'three-icosa'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
@@ -7,9 +8,18 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 const TestModel = () => {
   const gltfLoader = new GLTFLoader()
-  gltfLoader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../extras/brushes')) 
+  // gltfLoader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../extras/brushes')) 
   const model = useLoader(gltfLoader, "/models/ammy.glb")
   return <primitive object={model.scene} />
+}
+
+const Box = () => {
+  return (
+    <mesh>
+      <boxBufferGeometry attach="geometry" />
+      <meshLambertMaterial attach="material" color="hotpink" />
+    </mesh>
+  )
 }
 
 
@@ -28,7 +38,8 @@ export default function ArtworkSceneR3F(card) {
 
   return (
     <Canvas>
-      <TestModel />
+      <OrbitControls />
+      <Box />
     </Canvas>
   );
 }
