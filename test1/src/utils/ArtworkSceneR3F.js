@@ -1,7 +1,6 @@
-import React, { Component, useLayoutEffect, useRef, useFrame } from "react"
+import React from "react"
 import { Canvas, useLoader } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
-import { GLTFGoogleTiltBrushMaterialExtension } from 'three-icosa'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 

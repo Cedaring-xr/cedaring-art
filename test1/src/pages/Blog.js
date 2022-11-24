@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from "react";
-import OpenBrushScene from '../utils/OBviewer'
-import ShaderPractice from '../utils/shaderScene'
-import ThreeScene from '../utils/three-scene'
-import WritingSelection from '../components/WritingSelection'
+import React, { useState } from "react";
 import WritingModal from "../components/WritingModal";
 
 export default function Blog() {
 
     const [isOpen, setOpen] = useState(false) 
-    const [showPortal, toggleShowPortal] = useState(false)
 
     
     const openModal = () => {

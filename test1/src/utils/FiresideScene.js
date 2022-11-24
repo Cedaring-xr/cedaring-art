@@ -4,10 +4,6 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader"
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry"
-import gsap from 'gsap'
-import * as lilGui from "lil-gui"
-
-
 
 class FiresideScene extends Component {
     componentDidMount(){

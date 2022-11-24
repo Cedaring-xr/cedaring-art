@@ -13,10 +13,10 @@ export default function PageRoutes() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/artwork" element={<Artwork />} />
-                <Route path="/climbing" element={<Climbing />} />
                 <Route path="/blog" element={<Blog />} />
-                <Route path="/worlds" element={<Worlds />} />
+                <Route path="/climbing" element={<Climbing />} />
                 <Route path="/react" element={<ReactPrac />} />
+                <Route path="/worlds" element={<Worlds />} />
             </Routes>
         </Router>
     )

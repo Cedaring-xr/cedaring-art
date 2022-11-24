@@ -1,3 +1,5 @@
+// I don't remember what this was used for
+
 export default class EventEmitter
 {
     constructor()

@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/all";
 import * as lilGui from "lil-gui"
@@ -92,7 +91,7 @@ class ScrollBasedScene extends Component {
         this.cube.scale.z = 0.1
 
     //scroll
-        let scrollY = window.scrollY
+        let scrollY = null
         window.addEventListener('scroll', () => {
             scrollY = window.scrollY
         })

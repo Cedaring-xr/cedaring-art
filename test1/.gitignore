@@ -8,17 +8,14 @@
 # testing
 /coverage
 
+public/models/
+public/extras/brushes
+
+/models/
+/extras/brushes
+
 # production
 /build
-
-# brushes
-/public/extras/brushes
-/src/Assets/brushes
-/src/Assets/models/fbx
-
-# models
-/public/models
-/public/extras
 
 # misc
 .DS_Store

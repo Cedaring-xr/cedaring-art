@@ -12,7 +12,7 @@ export default function Footer() {
                 <h6 className={styles.footer__content__logo}></h6>
             </div>
             <div className={styles.footer__social__icon}>
-                <a href="https://www.instagram.com/cedaring_xr/" target="_blank">
+                <a href="https://www.instagram.com/cedaring_xr/" target="_blank" rel="noreferrer">
                     <img
                         src={instaIcon}
                         className={styles.footer__img}
@@ -21,7 +21,7 @@ export default function Footer() {
                 </a>
             </div>
             <div className={styles.footer__social__icon}>
-                <a href="https://twitter.com/CedaringXR" target="_blank">
+                <a href="https://twitter.com/CedaringXR" target="_blank" rel="noreferrer">
                     <img
                         src={twitterIcon}
                         className={styles.footer__img}
@@ -30,7 +30,7 @@ export default function Footer() {
                 </a>
             </div>
             <div className={styles.footer__social__icon}>
-                <a href="https://github.com/Cedaring-xr" target="_blank">
+                <a href="https://github.com/Cedaring-xr" target="_blank" rel="noreferrer">
                     <img
                         src={githubIcon}
                         className={styles.footer__img}

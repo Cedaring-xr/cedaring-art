@@ -5,7 +5,6 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import { TransformControls } from "three/examples/jsm/controls/TransformControls"
 import gsap from 'gsap'
-import * as lilGui from "lil-gui"
 import Stats from 'stats.js'
 import { sRGBEncoding } from "three"
 

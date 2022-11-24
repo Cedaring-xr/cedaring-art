@@ -2,9 +2,7 @@ import React, { Component } from "react"
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
-import { TransformControls } from "three/examples/jsm/controls/TransformControls"
 import gsap from 'gsap'
-import * as lilGui from "lil-gui"
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader"
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry"
 
@@ -42,9 +40,9 @@ export default class LandScene extends Component {
             }
         }
         manager.onProgress = (itemUrl, itemsLoaded, itemsTotal)=> {
-            console.log(itemUrl, itemsLoaded, itemsTotal)
+            // console.log(itemUrl, itemsLoaded, itemsTotal)
             const progressRatio = itemsLoaded / itemsTotal
-            
+            return progressRatio
 
         }
         manager.onError = ()=> {
@@ -114,8 +112,7 @@ export default class LandScene extends Component {
         })
 
     // 3d font loading
-        const textureLoader = new THREE.TextureLoader()
-        const coloradoTexture = textureLoader.load('/extras/images/coTexture.png')
+        // const coloradoTexture = textureLoader.load('/extras/images/coTexture.png')
         const txtLoader = new FontLoader();
         txtLoader.load('/extras/fonts/helvetiker_regular.typeface.json', (font)=> {
             const geometryFont = new TextGeometry('COLORADO', {
@@ -131,11 +128,11 @@ export default class LandScene extends Component {
             });
             geometryFont.computeBoundingBox()
             geometryFont.center()
-            const fontMaterial = new THREE.MeshBasicMaterial({
-                map: coloradoTexture
-            })
+            // const fontMaterial = new THREE.MeshBasicMaterial({
+            //     map: coloradoTexture
+            // })
             const textMaterial = new THREE.MeshBasicMaterial({color: 0x666aaa});
-            this.text = new THREE.Mesh(geometryFont, fontMaterial);
+            this.text = new THREE.Mesh(geometryFont, textMaterial);
             this.scene.add(this.text)
             this.text.position.z = -30 
             this.text.position.y = 8

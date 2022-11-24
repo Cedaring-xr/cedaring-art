@@ -103,9 +103,9 @@ export default function Header() {
         <div className="header-main">
             <header className={styles.header}>
                <div className="parallax-box">
-                    <img src={backLayer} className="parallax-img" id="prlx-back" />
+                    <img alt="mtns-back-layer" src={backLayer} className="parallax-img" id="prlx-back" />
                     <h1 className="parallax-text"><a href="/">Cedaring.Art</a></h1>
-                    <img src={midLayer} className="parallax-img" id="prlx-mid" />
+                    <img alt="mtns-mid-layer" src={midLayer} className="parallax-img" id="prlx-mid" />
                     <nav className={`parallax-nav ${styles.header__content__nav} ${
                             menuOpen ? styles.isMenu : ''
                         }`}>
@@ -114,10 +114,10 @@ export default function Header() {
                         <li className="nav-item"><a href="/blog">Writing</a></li>
                         <li className="nav-item"><a href="/climbing">Climbing</a></li>
                         {/* <li><a href="/react">React</a></li> */}
-                        <li><a href="/worlds">Worlds</a></li>
+                        {/* <li><a href="/worlds">Worlds</a></li> */}
                      </ul>
                   </nav>
-                  <img src={frontLayer} className="parallax-img" id="prlx-front" />
+                  <img alt="mtns-front-layer" src={frontLayer} className="parallax-img" id="prlx-front" />
                   <div className={styles.header__content__toggle}>
                         {!menuOpen ? (
                            <BiMenuAltRight onClick={menuOpenHandler} />

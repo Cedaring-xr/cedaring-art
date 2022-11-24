@@ -27,12 +27,10 @@ export default function Artwork(  )  {
             opacity: 0, 
             stagger: 0.1,
             scrollTrigger: {
-                trigger: '.grid-card',
-                // scrub: true,    //scrubing locks the animation to the scroll position. stop scrolling = animation stop
+                trigger: '.grid-card', 
                 start: 'center bottom',
             }
         })
-        // TODO: if scrolled down x amount, remove stagger and load in full.
     }, [])
 
     const openModal = (card, index) => {
@@ -55,9 +53,9 @@ export default function Artwork(  )  {
         <>
             <div className={styles.text}>
                 <h4 className={styles.tagline}>3D artwork created in virtual reality with OpenBrush</h4>
-                <p className={styles.text__content}>OpenBrush is a VR painting application. It is an open source version of TiltBrush. Open source projects like this take a lot of work to maintain. If you like my artwork or are interested in learning more, consider supporting Openbrush or contributing to the community so that we don't lose these awesome resources.
-                    <a href="https://openbrush.app/" target="_blank">
-                        <img className='openbrush-logo' src={Openbrushlogo} />
+                <p className={styles.text__content}>OpenBrush is a VR painting application. It is an open source version of TiltBrush. If you like my artwork or are interested in learning more about the program or process of creating in VR, consider checking out the community. There are lots of new features and improvements over the original version of TiltBrush. 
+                    <a href="https://openbrush.app/" target="_blank" rel="noreferrer">
+                        <img className='openbrush-logo' src={Openbrushlogo} alt="openbrush-logo"/>
                     </a>
                 </p>
                 
@@ -68,7 +66,7 @@ export default function Artwork(  )  {
                         <div key={index} ref={gridCard} className="grid-card" onClick={() => openModal(card, index)}>
                             <div className="grid-card-content">
                                 <div className="grid-img-container">
-                                    <img className="grid-card-img" src={card["preview-img"]}/>
+                                    <img className="grid-card-img" alt="grid-card" src={card["preview-img"]}/>
                                 </div>
                                 <div className="grid-card-desc-container">
                                     <h4>{card.name}</h4>

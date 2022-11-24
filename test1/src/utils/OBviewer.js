@@ -3,10 +3,6 @@ import * as THREE from 'three'
 import { GLTFGoogleTiltBrushMaterialExtension } from 'three-icosa'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
-import gsap from 'gsap'
-import * as lilGui from "lil-gui"
-
-
 
 
 class OpenBrushScene extends Component {
@@ -14,7 +10,6 @@ class OpenBrushScene extends Component {
 
     // scene
         this.scene = new THREE.Scene()
-        const clock = new THREE.Clock()
         const gltfLoader = new GLTFLoader()
         // this.gui = new lilGui.GUI({closed: true, width: 400})
 
@@ -58,7 +53,6 @@ class OpenBrushScene extends Component {
         this.renderer.render(this.scene, this.camera)
 
         const tick = () => {
-            const elapsedTime = clock.getElapsedTime()
             // console.log(elapsedTime)
             this.controls.update()
             this.renderer.render(this.scene, this.camera)

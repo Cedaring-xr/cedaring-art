@@ -1,6 +1,5 @@
 {
   "name": "test1",
-  "homepage": "https://cedaring-xr.github.io/cedaring-art",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

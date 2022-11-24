@@ -45,6 +45,7 @@ export default function CardInfo(props) {
                                 <div className="grid-img-container">
                                     <img
                                         className="grid-card-img"
+                                        alt="grid-img"
                                         src={card['preview-img']}
                                     />
                                 </div>

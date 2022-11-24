@@ -2,8 +2,6 @@ import React, { Component } from "react"
 import * as THREE from 'three'
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
-import gsap from 'gsap'
-import * as lilGui from "lil-gui"
 
 
 class FbxScene extends Component {

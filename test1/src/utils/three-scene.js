@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import * as THREE from 'three'
-import { GLTFGoogleTiltBrushMaterialExtension } from 'three-icosa'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import gsap from 'gsap'

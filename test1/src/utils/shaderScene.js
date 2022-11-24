@@ -1,18 +1,12 @@
 import React, { Component } from "react"
 import * as THREE from 'three'
-import { GLTFGoogleTiltBrushMaterialExtension } from 'three-icosa'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
-import gsap from 'gsap'
 import * as lilGui from 'lil-gui'
 
 
 class ShaderPractice extends Component {
     componentDidMount(){
-
-        const parameters = {
-            color: 0x44bb22
-        }
 
         //scene
         this.scene = new THREE.Scene()
@@ -107,10 +101,9 @@ class ShaderPractice extends Component {
         this.mount.appendChild(this.renderer.domElement)
 
         //animation
-        const clock = new THREE.Clock()
+        
 
         const tick = () => {
-            const elapsedTime = clock.getElapsedTime()
             this.controls.update()
             this.renderer.render(this.scene, this.camera)
             window.requestAnimationFrame(tick);
@@ -128,6 +121,7 @@ class ShaderPractice extends Component {
         // gsap.to(this.cube.position, { duration: 2, delay: 3, x: -4})
 
         //event listeners
+        tick()
         window.addEventListener('resize', this.handleWindowResize);
     }
 

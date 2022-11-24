@@ -1,8 +1,4 @@
-import React, { useCallback, useEffect, Suspense } from 'react'
-import Box from '../components/ReactFiber'
-import { Canvas } from '@react-three/fiber'
-import ModelScene from '../utils/glbLoader'
-import React3Fiber from '../utils/ArtworkSceneR3F'
+import React from 'react'
 import ArtworkSceneFunc from '../utils/ArtworkSceneFunc'
 
 export default function Worlds() {

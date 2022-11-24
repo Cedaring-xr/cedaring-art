@@ -1,8 +1,6 @@
-import React, { useCallback, useEffect, Suspense } from 'react'
-import LandScene from '../utils/LandScene'
+import React from 'react'
+
 import ScrollBasedScene from '../utils/ScrollBasedScene'
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
-import styles from '../scss/pages/climbing.scss';
 
 export default function Climbing() {
 
