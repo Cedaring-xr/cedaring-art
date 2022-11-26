@@ -1,12 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import TodoList from '../components/TodoList';
-import ReducerSection from '../components/ReducerSection';
-import Stopwatch from '../components/Stopwatch';
-import StopwatchRef from '../components/StopwatchRef';
-import SideMenu from '../components/SideMenu';
-import SideMenuDynamic from '../components/SideMenuDynamic';
-import DotMaker from '../components/DotMaker';
-
 
 import { v4 as uuidv4 } from 'uuid';
 import { useTransition, animated } from 'react-spring';
@@ -112,21 +105,6 @@ export default function ReactPrac() {
                         ''
                     )
                 )}
-            </div>
-            <div className='tutorial-block'>
-                {/* <CardInfo />  */}
-                <ReducerSection />
-                <Stopwatch />
-                <StopwatchRef />
-            </div>
-            <div className='tutorial-block'>
-                <SideMenu />
-            </div>
-            <div className='tutorial-block'>
-                <SideMenuDynamic />
-            </div>
-            <div className='tutorial-block large-box'>
-                <DotMaker />
             </div>
         </>
     );
