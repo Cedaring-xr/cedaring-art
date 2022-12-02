@@ -11,24 +11,23 @@ gsap.registerPlugin(ScrollTrigger);
 class ScrollBasedScene extends Component {
     componentDidMount(){
 
-        const parameters = {
-            color: 0x44bb22
-        }
 
     //scene
         this.scene = new THREE.Scene();
         this.loader = new GLTFLoader()
-        this.gui = new lilGui.GUI({closed: true, width: 400});
+        this.gui = new lilGui.GUI();
 
     // lights
         this.directLight = new THREE.DirectionalLight('#fff', 4)
-        this.directLight.position.set(5, 8, 0)
-        // this.lightHelper = new THREE.DirectionalLightHelper(this.directLight, 5)
+        this.directLight.position.set(50, -50, 0)
+        this.lightHelper = new THREE.DirectionalLightHelper(this.directLight, 5)
+        this.gui.add(this.directLight.position, 'x').min(-50).max(50).step(0.2).name('light-x-position')
+        this.gui.add(this.directLight.position, 'y').min(-50).max(50).step(0.2).name('light-y-position')
+        this.gui.add(this.directLight.position, 'z').min(-50).max(50).step(0.2).name('light-Z-position')
         // this.light2 = new THREE.PointLight(0xffffff , 10)
         this.light3 = new THREE.AmbientLight(0xffffff, 10)
-        // this.directLight.position.set(5, 5, 10)
+        this.light3.position.set(50, 50, 50)
         this.scene.add(this.ligth3, this.directLight)
-
 
     //shapes
         const geometry = new THREE.BoxGeometry(1,1,1);
@@ -37,14 +36,32 @@ class ScrollBasedScene extends Component {
         });
         this.cube = new THREE.Mesh(geometry, material);
         this.scene.add(this.cube);
+        this.cube.scale.set(0.1, 0.1, 0.1)
+
+    // video
+        const video = document.getElementById("summit1-video")
+        const videoTexture = new THREE.VideoTexture(video)
+        videoTexture.minFilter = THREE.LinearFilter
+        videoTexture.magFilter = THREE.LinearFilter
+
+        const videoMaterial = new THREE.MeshBasicMaterial({
+            map: videoTexture,
+            side: THREE.FrontSide,
+            toneMapped: false,
+        })
+
+        const videoGeometry = new THREE.PlaneGeometry(10, 10)
+        let screen = new THREE.Mesh(videoGeometry, videoMaterial)
+        screen.position.set(0, 50, 0)
+        this.scene.add(screen)
 
     // model loading
         let modelGroup = new THREE.Group();
         let glbModel = new THREE.Object3D();
-        this.loader.load('/models/LizardHead2.glb', (model) => {
+        this.loader.load('/models/noddleHead.glb', (model) => {
             glbModel = model.scene
-            glbModel.scale.set(0.01, 0.01, 0.01)
-            glbModel.position.set(1.03, 0.15, 2.2)
+            glbModel.scale.set(0.005, 0.005, 0.005)
+            glbModel.position.set(0.5, -10, -15)
             glbModel.rotation.set(-5.88, -0.92, 0.12)
             modelGroup.add(glbModel)
             console.log('glb group', modelGroup)
@@ -54,41 +71,22 @@ class ScrollBasedScene extends Component {
             this.gui.add(glbModel.rotation, 'z').min(-10).max(10).step(0.01).name('z-rotation')
             this.gui.add(glbModel.rotation, 'x').min(-10).max(10).step(0.01).name('x-rotation')
             this.gui.add(glbModel.rotation, 'y').min(-10).max(10).step(0.01).name('y-rotation')
-            this.scene.add(glbModel);
-            scrollAnimation()
         })
         this.loader.load('/models/low_poly_mountain.glb', (model) => {
             glbModel = model.scene
-            glbModel.scale.set(0.005, 0.005, 0.005)
-            // glbModel.position.set(1.03, 0.15, 2.2)
-            // glbModel.rotation.set(-5.88, -0.92, 0.12)
+            glbModel.scale.set(0.01, 0.01, 0.01)
+            glbModel.position.set(0, 0, -15)
+            glbModel.rotation.set(-5.88, -0.92, 0.12)
             modelGroup.add(glbModel)
-            this.scene.add(glbModel);
-            scrollAnimation() // needs to be called on the group
-        })
-
-    // gui/debug
-        this.gui.add(this.cube.position, 'x').min(-5).max(5).step(0.1);
-        this.gui.add(this.cube.position, 'y').min(-5).max(5).step(0.1);
-        this.gui.add(this.cube.position, 'z').min(-5).max(5).step(0.1);
-        this.gui.add(this.cube, 'visible');
-        this.gui.addColor(parameters, 'color').onChange(()=> {
-            material.color.set(parameters.color)
+            this.scene.add(modelGroup);
+            scrollAnimation() 
         })
 
     //camera
         this.camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 1000);
-        this.camera.position.set(0, 0, 6)
-        // this.camera.position.z = 5;
-
-        // focusing the camera at object
+        this.camera.position.set(0, 10, 20)
         let cameraTarget = this.cube.position
         this.camera.lookAt(cameraTarget)
-       
-    //scale
-        this.cube.scale.x = 0.5
-        this.cube.scale.y = 0.7
-        this.cube.scale.z = 0.1
 
     //scroll
         let scrollY = null
@@ -96,21 +94,17 @@ class ScrollBasedScene extends Component {
             scrollY = window.scrollY
         })
 
-       
         //renderer
         this.renderer = new THREE.WebGLRenderer( {alpha: true });
         this.renderer.setClearColor( 0x000000, 0 ); // the default
         this.renderer.setSize(window.innerWidth, window.innerHeight)
         this.mount.appendChild(this.renderer.domElement)
 
-
         const container = document.querySelector('.scroll-scene')
         container.appendChild(this.renderer.domElement)
-
-        
-        this.animation();
+        window.addEventListener('resize', this.handleWindowResize); 
         this.renderer.render(this.scene, this.camera);
-
+        this.animation();
 
         //gsap animation
         const scrollAnimation = () => {
@@ -126,25 +120,19 @@ class ScrollBasedScene extends Component {
                     scrub: 0.1
                 }
             })
-            timeline.to(glbModel.rotation, {y: 5})
-            timeline.to(glbModel.position, {z: 4, y: 2})
-
-            // timeline animations list
-                //load models
-                //zoom and rotate inwards on group
-                // create vector draw line?
-                //scale and translate low poly model up from ground
-                // scale video box sideways and into view
+            timeline.to(modelGroup.rotation, {y: 5})
+            timeline.to(modelGroup.position, {z: 4, y: 2})
         }
 
     //event listeners
-        window.addEventListener('resize', this.handleWindowResize);
+        
     }
 
     animation= ()=> {
         requestAnimationFrame(this.animation);
         this.cube.rotation.x +=0.01;
         this.cube.rotation.y +=0.01;
+        // this.videoTexture.needsUpdate = true
         this.renderer.render(this.scene, this.camera);
     }
 
