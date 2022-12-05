@@ -1,37 +1,101 @@
 @use '../abstracts';
 @use '../components';
 
-
+.body-content {
+    min-height: 100vh;
+}
 
 .canvas-container {
     position: relative;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid blue;
-    justify-content: center;
-    @include abstracts.breakpoint(desktop) {
-        width: 85%;
-        max-width: 1440px;
-    }
-
-    .canvas-text {
-        max-width: 100vw;
-        height: 100vh;
-        padding: 0 auto;
+    margin: 0 auto;
     
-        h4 {
-            font-size: 4rem;
+
+    .scrol-text-container {
+        display: flex;
+        flex-direction: column;
+        height: 500vh;
+
+        .canvas-text {
+            padding: 0 auto;
+            z-index: 10;
+            align-self: flex-start;
+            width: 50%;
+            background:rgba(129, 195, 236, 0.92);
+            border-radius: 12px;
+            margin-bottom: 100vh;
+        
+            h4 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1.5rem;
+
+            }
         }
     }
 
     .scroll-scene {
         position: sticky;
-        border: 1px solid red;
         top: 0;
+    }
+
+    .top-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 250px;
+        background: rgba(49, 47, 47, 0.95); //footer color
+
+        h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin: 0 0 2rem;
+        }
+
+        .icon {
+            width: 5em;
+            height: 5em;
+            border-radius: 50%;
+            background-color: #fff;
+
+            .chevron-down {
+                width: 5em;
+                height: 5em;
+                opacity: 0.9;
+            }
+        }
+
+        .icon::before,
+        .icon::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background-color: rosybrown;
+            z-index: 10;
+        }
+
+        .icon::before {
+            background-color: aquamarine;
+        }
     }
 }
 
 .climbing-text {
     margin-bottom: 100px;
+    display: flex;
+
+    h3 {
+        color: #fff;
+        margin: 10px;
+    }
+
+    .view-btn {
+        padding: 10px;
+        margin: 5px;
+        background-color: rgb(218, 185, 3);
+        border: 1px solid rgb(17, 16, 16);
+    }
 }
