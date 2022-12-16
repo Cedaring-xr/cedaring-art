@@ -15,19 +15,19 @@ class ScrollBasedScene extends Component {
     //scene
         this.scene = new THREE.Scene();
         this.loader = new GLTFLoader()
-        // this.gui = new lilGui.GUI();
+        this.gui = new lilGui.GUI();
         const videoPlane = new THREE.Object3D();
 
     // lights
-        this.directLight = new THREE.DirectionalLight('#fff', 4)
-        this.directLight.position.set(50, -50, 0)
+        this.directLight = new THREE.DirectionalLight('#fff', 3)
+        this.directLight.position.set(50, -50, 25)
         this.lightHelper = new THREE.DirectionalLightHelper(this.directLight, 5)
-        // this.gui.add(this.directLight.position, 'x').min(-50).max(50).step(0.2).name('light-x-position')
-        // this.gui.add(this.directLight.position, 'y').min(-50).max(50).step(0.2).name('light-y-position')
-        // this.gui.add(this.directLight.position, 'z').min(-50).max(50).step(0.2).name('light-Z-position')
-        this.light3 = new THREE.AmbientLight(0xffffff, 10)
-        this.light3.position.set(50, 50, 50)
-        this.scene.add(this.ligth3, this.directLight)
+        // this.gui.add(this.directLight.position, 'x').min(-100).max(100).step(0.5).name('light-x-position')
+        // this.gui.add(this.directLight.position, 'y').min(-100).max(100).step(0.5).name('light-y-position')
+        // this.gui.add(this.directLight.position, 'z').min(-100).max(100).step(0.5).name('light-Z-position')
+        this.ambientLight = new THREE.AmbientLight(0xffffff, 3)
+        this.ambientLight.position.set(50, 50, 50)
+        this.scene.add(this.ambientLight)
 
     //shapes
         const geometry = new THREE.BoxGeometry(1,1,1);
@@ -82,7 +82,22 @@ class ScrollBasedScene extends Component {
             modelGroup.add(spireMtn)
             scrollAnimation() 
         })
-
+        let mapPin = new THREE.Object3D();
+        this.loader.load('/models/mapPin.glb', (model) => {
+            mapPin = model.scene
+            mapPin.scale.set(0.015, 0.015, 0.015)
+            mapPin.position.set(3.6, 11.6, -1)
+            modelGroup.add(mapPin)
+        })
+        let hikePath = new THREE.Object3D();
+        this.loader.load('/models/hikePath.glb', (model) => {
+            hikePath = model.scene
+            hikePath.scale.set(0.005, 0.005, 0.005)
+            hikePath.position.set(0, -0.1, 0)
+            modelGroup.add(hikePath)
+            scrollAnimation() //gsap hook
+        })
+            
         this.scene.add(modelGroup);
 
     //camera
@@ -128,13 +143,14 @@ class ScrollBasedScene extends Component {
             timeline.to(
                 modelGroup.rotation, {y: -2.2},
                 this.camera.position, {z: 4, y: 2}//this does something odd
-                )
+                )    
             timeline.to(this.camera.position, {x: 3, y: 13, z: 6})
+            timeline.to(hikePath.position, {y: 0.01})
             timeline.to(this.camera.rotation, {x: 0, y: 0.3, z: -0.1})
             timeline.to(spireMtn.position, {y: 11.8})
-            
-            timeline.to(screen.position, {x: 2, y: 13, z: -0.6})
-            timeline.to(screen.scale, {x: 40, y: 30}) //pair these two
+            timeline.to(spireMtn.scale, {y: 0.008})
+            timeline.to(screen.position, {x: 1.4, y: 13, z: 0})
+            timeline.to(screen.scale, {x: 53, y: 39.75})
         }
     }
 
@@ -142,6 +158,8 @@ class ScrollBasedScene extends Component {
         requestAnimationFrame(this.animation);
         this.cube.rotation.x +=0.01;
         this.cube.rotation.y +=0.01;
+        // video update image
+        
         // this.videoTexture.needsUpdate = true
         this.renderer.render(this.scene, this.camera);
     }

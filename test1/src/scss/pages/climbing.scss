@@ -20,7 +20,8 @@
             padding: 0 auto;
             z-index: 10;
             align-self: flex-start;
-            width: 50%;
+            max-width: 50%;
+            padding: 1rem;
             background:rgba(129, 195, 236, 0.92);
             border-radius: 12px;
             margin-bottom: 100vh;
