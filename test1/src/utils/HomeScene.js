@@ -44,11 +44,11 @@ export default class HomepageScene extends Component {
         this.scene.add(overlayIntro)
 
     // lights
-        this.directLight = new THREE.DirectionalLight(0xffaaff, 3)
+        this.directLight = new THREE.DirectionalLight(0xffaaff, 1)
         this.light2 = new THREE.PointLight(0xffffff , 2)
-        this.light3 = new THREE.AmbientLight(0xf5d058, 0.5)
-        this.directLight.position.set(-40, 10, 0)
-        this.scene.add(this.directLight, this.light3)
+        this.light3 = new THREE.AmbientLight(0xf5d058, 20)
+        this.directLight.position.set(10, 60, 40)
+        this.scene.add(this.light3)
 
     // helpers
         const axesHelper = new THREE.AxesHelper()
@@ -56,20 +56,11 @@ export default class HomepageScene extends Component {
         const ambientLightHelper = new THREE.AmbientLightProbe(this.light3, 2)
         this.scene.add(axesHelper, directLightHelper, ambientLightHelper)
 
-    // test cube
-        const geoPlane = new THREE.PlaneGeometry(3, 3)
-        const material = new THREE.MeshBasicMaterial({color: 0x16844b, side: THREE.DoubleSide})
-        this.plane = new THREE.Mesh(geoPlane, material)
-        this.plane.position.set(-3, -5, 2)
-        this.scene.add(this.plane)
-        this.plane.rotation.x = - Math.PI / 2
-
-
     // model loading
         this.loader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../extras/brushes')) //brushes folder has shader files also
-        this.loader.load('/models/glassGate.glb', (model) => {
+        this.loader.load('/models/ammy.glb', (model) => {
             console.log(model)
-            model.scene.scale.set(2.3, 2.3, 2.3)
+            model.scene.scale.set(3, 3, 3)
             model.scene.position.set(0, -5, 0)
             this.scene.add(model.scene)
         });
@@ -111,9 +102,9 @@ export default class HomepageScene extends Component {
         
     // camera
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
-        this.camera.position.z = -10
-        this.camera.position.y = -1
-        this.camera.position.x = -10
+        this.camera.position.z = 20
+        this.camera.position.y = 4
+        this.camera.position.x = 8
         // this.camera.lookAt(this.cube.position)
 
 
