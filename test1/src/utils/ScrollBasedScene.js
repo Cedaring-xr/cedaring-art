@@ -15,7 +15,7 @@ class ScrollBasedScene extends Component {
     //scene
         this.scene = new THREE.Scene();
         this.loader = new GLTFLoader()
-        this.gui = new lilGui.GUI();
+        // this.gui = new lilGui.GUI();
         const videoPlane = new THREE.Object3D();
 
     // lights
@@ -50,8 +50,9 @@ class ScrollBasedScene extends Component {
             toneMapped: false,
         })
         videoMaterial.needsUpdate = true;
+        videoTexture.needsUpdate = true;
 
-        const videoGeometry = new THREE.PlaneGeometry(0.1, 0.077)
+        const videoGeometry = new THREE.PlaneGeometry(0.01, 0.0077)
         let screen = new THREE.Mesh(videoGeometry, videoMaterial)
         screen.position.set(2, 5, -0.6)
         screen.rotation.set(0, 0.3,  -0.1)
@@ -150,7 +151,7 @@ class ScrollBasedScene extends Component {
             timeline.to(spireMtn.position, {y: 11.8})
             timeline.to(spireMtn.scale, {y: 0.008})
             timeline.to(screen.position, {x: 1.4, y: 13, z: 0})
-            timeline.to(screen.scale, {x: 53, y: 39.75})
+            timeline.to(screen.scale, {x: 530, y: 397.5})
         }
     }
 

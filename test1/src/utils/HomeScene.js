@@ -44,21 +44,21 @@ export default class HomepageScene extends Component {
         this.scene.add(overlayIntro)
 
     // lights
-        this.directLight = new THREE.DirectionalLight(0xffaaff, 1)
+        this.directLight = new THREE.DirectionalLight(0xffaaff, 3)
         this.light2 = new THREE.PointLight(0xffffff , 2)
         this.light3 = new THREE.AmbientLight(0xf5d058, 20)
         this.directLight.position.set(10, 60, 40)
-        this.scene.add(this.light3)
+        this.scene.add(this.directLight)
 
     // helpers
-        const axesHelper = new THREE.AxesHelper()
+        // const axesHelper = new THREE.AxesHelper()
         const directLightHelper = new THREE.DirectionalLightHelper(this.directLight, 5)
-        const ambientLightHelper = new THREE.AmbientLightProbe(this.light3, 2)
-        this.scene.add(axesHelper, directLightHelper, ambientLightHelper)
+        // const ambientLightHelper = new THREE.AmbientLightProbe(this.light3, 2)
+        this.scene.add(directLightHelper)
 
     // model loading
         this.loader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../extras/brushes')) //brushes folder has shader files also
-        this.loader.load('/models/ammy.glb', (model) => {
+        this.loader.load('/models/materialTest.glb', (model) => {
             console.log(model)
             model.scene.scale.set(3, 3, 3)
             model.scene.position.set(0, -5, 0)
@@ -68,12 +68,12 @@ export default class HomepageScene extends Component {
     //envirionment map
         this.envTexture = new THREE.CubeTextureLoader()
         const envBackground = this.envTexture.load([
-            '/extras/background/treePark2/px.png',  //px
-            '/extras/background/treePark2/nx.png',  //py
-            '/extras/background/treePark2/py.png',  //nx
-            '/extras/background/treePark2/ny.png',  //ny
-            '/extras/background/treePark2/pz.png',  //pz
-            '/extras/background/treePark2/nz.png'   //nz
+            '/extras/background/snow/px.png',  //px
+            '/extras/background/snow/nx.png',  //py
+            '/extras/background/snow/py.png',  //nx
+            '/extras/background/snow/ny.png',  //ny 
+            '/extras/background/snow/pz.png',  //pz
+            '/extras/background/snow/nz.png'   //nz
         ])
         envBackground.encoding = THREE.sRGBEncoding
         this.scene.background = envBackground
@@ -132,7 +132,7 @@ export default class HomepageScene extends Component {
     //controls
         this.controls = new OrbitControls(this.camera, this.renderer.domElement)
         this.controls.enableZoom = false
-        this.controls.enablePan = false
+        this.controls.enablePan = true
         this.transform = new TransformControls(this.camera, this.renderer.domElement)
         this.transform.addEventListener('change', render)
 

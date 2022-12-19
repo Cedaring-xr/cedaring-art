@@ -32,8 +32,7 @@
 .grid-card-content {
     position: relative;
     width: 85%;
-    border-width: 3px;
-    border-style: solid;
+    border: 2px solid black;
     background: linear-gradient(45deg, gold, rgb(124, 124, 8));
     border-radius: 6px;
 
@@ -46,6 +45,8 @@
         position: relative;
         height: 95%;
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        border: none;
+        border-radius: 0;
     }
 }
 

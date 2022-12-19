@@ -13,11 +13,14 @@ class ArtworkScene1 extends Component {
         this.clock = new THREE.Clock()
         this.scene.background = new THREE.Color(0, 0, 0); //black
     // light
-        this.light = new THREE.DirectionalLight(0xffffff, 5)
+        this.light = new THREE.DirectionalLight(0xffffff, 4)
         this.light2 = new THREE.PointLight(0xffffff, 10)
         this.light3 = new THREE.AmbientLight(0xffffff, 1)
-        this.light.position.set(10, 50, 10)
-        this.scene.add(this.light, this.light3)
+        this.light.position.set(-10, 20, 5)
+        this.scene.add(this.light)
+
+        const directLightHelper = new THREE.DirectionalLightHelper(this.light, 5)
+        this.scene.add(directLightHelper)
     // model loading
         const gltfLoader = new GLTFLoader()
         gltfLoader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../extras/brushes')) //brushes folder has shader files also

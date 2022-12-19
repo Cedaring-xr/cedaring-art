@@ -180,7 +180,7 @@
         "name": "Fire Spirit Staff",
         "description": "kalsdkjlksdjflsd",
         "preview-img": "/extras/fire_moment.jpg",
-        "model": "/models/floatingIsland.glb",
+        "model": "/models/fireSpirit.glb",
         "three-settings": {
             "lights": "",
             "camera": {
