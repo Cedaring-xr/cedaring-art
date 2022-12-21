@@ -16,8 +16,8 @@ export default function Climbing() {
                 <p className="text__content">Working with gps and elevation data to create 3D layouts of mountains</p>
             </div>
             <div className='text climbing-text'>
-                <h3>south Platte Test Demo Summit</h3>
-                <button className="view-btn" onClick={() => setView(!view)} >Click to view</button>
+                <h2>South Platte test demo Route</h2>
+                <button className="view-btn" onClick={() => setView(!view)} >{!view ? 'Click to view' : 'Close'}</button>
             </div>
             { view && <div className='canvas-container'>
                 <div className="top-text">

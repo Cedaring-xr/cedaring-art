@@ -1,0 +1,51 @@
+@use '../abstracts';
+
+
+.writing-pagefill {
+    min-height: 100vh;
+}
+
+.writing-block {
+    width: 70%;
+    line-height: 1.2;
+    min-width: 300px;
+    max-width: 800px;
+    opacity: 0.9;
+    margin: 30px auto 0;
+    border-radius: 6px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    h3 {
+        color: #fff;
+        font-family: abstracts.$bodyFont, serif;
+        font-size: 1.4rem;
+        margin-top: 1rem;
+        line-height: 1.4;
+    }
+
+    p {
+        color: rgb(243, 201, 12);
+        font-family: abstracts.$bodyFont, serif;
+        font-size: 1.1rem;
+        margin-top: 1rem;
+        line-height: 1.4;
+    }
+
+    .read-btn {
+        padding: 5px;
+        font-size: 1.5rem;
+        background: rgb(243, 201, 12);
+        margin: 0 50%;
+        border: 1px solid black;
+        border-radius: 6px;
+
+        
+        @include abstracts.breakpoint(tablet) {
+            position: relative;
+            top: 40%;
+            margin: 0;
+        }
+    }
+}

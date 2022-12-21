@@ -26,18 +26,7 @@ export default function Blog() {
                 <div className="text">
                     <h3>A Fireside Vision</h3>
                     <p>short poem written by: Bliss Carman</p>
-                </div>
-                <div className="explore">
-                    <button className="read-btn" onClick={() => {setOpen(true)}}>Explore</button>
-                </div>
-            </div>
-            <div className="writing-block">
-                <div className="text">
-                    <h3>section 2</h3>
-                    <p>test test test test</p>
-                </div>
-                <div className="explore">
-                    <button className="read-btn" onClick={() => {setOpen(true)}}>Explore</button>
+                    <button className="read-btn" onClick={() => {setOpen(true)}}>Click to view</button>
                 </div>
             </div>
             {isOpen && <WritingModal  onClose={() => closeModal()}/>}
