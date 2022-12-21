@@ -3,7 +3,7 @@
         "id": 0,
         "name": "Zelda Cyclos",
         "description": "zelda windwaker fanart",
-        "preview-img": "/extras/cyclos_Moment.jpg",
+        "preview-img": "/extras/images/cyclos_Moment.jpg",
         "model": "/models/cyclos.glb",
         "three-settings": {
             "lights": "",
@@ -19,7 +19,7 @@
         "id": 1,
         "name": "Circuit Arm",
         "description": "electric should be animated",
-        "preview-img": "/extras/circuitArm2_Moment.jpg",
+        "preview-img": "/extras/images/circuitArm2_Moment.jpg",
         "model": "/models/circuitArm.glb",
         "three-settings": {
             "lights": "",
@@ -35,7 +35,7 @@
         "id": 2,
         "name": "Spiral Trees",
         "description": "api generated shapes",
-        "preview-img": "/extras/trees_moment.png",
+        "preview-img": "/extras/images/trees_moment.png",
         "model": "/models/trees.glb",
         "three-settings": {
             "lights": "",
@@ -51,7 +51,7 @@
         "id": 3,
         "name": "Cube Tree",
         "description": "tree growing around white cubes",
-        "preview-img": "/extras/cubeTree_Moment.jpg",
+        "preview-img": "/extras/images/cubeTree_Moment.jpg",
         "model": "/models/cubeTree.glb",
         "three-settings": {
             "lights": "",
@@ -67,7 +67,7 @@
         "id": 4,
         "name": "Pinata",
         "description": "trying out paper texture",
-        "preview-img": "/extras/pinata_Moment.jpg",
+        "preview-img": "/extras/images/pinata_Moment.jpg",
         "model": "/models/pinata.glb",
         "three-settings": {
             "lights": "",
@@ -83,7 +83,7 @@
         "id": 5,
         "name": "Origami Crane",
         "description": "Reconstructing origami with triangle shapes of the crease-map",
-        "preview-img": "/extras/origamiCrane_Moment.jpg",
+        "preview-img": "/extras/images/origamiCrane_Moment.jpg",
         "model": "/models/origamiCrane.glb",
         "three-settings": {
             "lights": "",
@@ -99,7 +99,7 @@
         "id": 6,
         "name": "Glass Tree Gate",
         "description": "Stained glass effect for an entryway",
-        "preview-img": "/extras/treeGate.jpg",
+        "preview-img": "/extras/images/treeGate.jpg",
         "model": "/models/glassGate.glb",
         "three-settings": {
             "lights": "",
@@ -115,7 +115,7 @@
         "id": 7,
         "name": "Flower Scroll",
         "description": "experimenting with flowers and 2D to 3D transition",
-        "preview-img": "/extras/flowerScroll.jpg",
+        "preview-img": "/extras/images/flowerScroll.jpg",
         "model": "/models/flowerScroll.glb",
         "three-settings": {
             "lights": "",
@@ -131,7 +131,7 @@
         "id": 8,
         "name": "Okami",
         "description": "Okami fan-art with openbrush theme",
-        "preview-img": "/extras/AmmyBrush.jpg",
+        "preview-img": "/extras/images/AmmyBrush.jpg",
         "model": "/models/ammy.glb",
         "three-settings": {
             "lights": "",
@@ -147,7 +147,7 @@
         "id": 9,
         "name": "Water Otter",
         "description": "practicing creating water",
-        "preview-img": "/extras/otter_Moment.jpg",
+        "preview-img": "/extras/images/otter_Moment.jpg",
         "model": "/models/otter.glb",
         "three-settings": {
             "lights": "",
@@ -163,7 +163,7 @@
         "id": 10,
         "name": "floating island",
         "description": "runes and stuff",
-        "preview-img": "/extras/island_Moment.png",
+        "preview-img": "/extras/images/island_Moment.png",
         "model": "/models/floatingIsland.glb",
         "three-settings": {
             "lights": "",
@@ -179,7 +179,7 @@
         "id": 11,
         "name": "Fire Spirit Staff",
         "description": "kalsdkjlksdjflsd",
-        "preview-img": "/extras/fire_moment.jpg",
+        "preview-img": "/extras/images/fire_moment.jpg",
         "model": "/models/fireSpirit.glb",
         "three-settings": {
             "lights": "",
@@ -195,7 +195,7 @@
         "id": 12,
         "name": "Fox Leaves",
         "description": "kalsdkjlksdjflsd",
-        "preview-img": "/extras/foxLeaves_Moment.jpg",
+        "preview-img": "/extras/images/foxLeaves_Moment.jpg",
         "model": "/models/fallFox.glb",
         "three-settings": {
             "lights": "",
@@ -209,10 +209,10 @@
     },
     {
         "id": 13,
-        "name": "Skybox panorama 1",
-        "description": "test",
-        "preview-img": "/extras/skybox1_Moment.jpg",
-        "model": "/models/fallFox.glb",
+        "name": "Water Swirl",
+        "description": "Volumetric water effect",
+        "preview-img": "/extras/images/waterSwirl_Moment.jpg",
+        "model": "/models/waterSwirl.glb",
         "three-settings": {
             "lights": "",
             "camera": {
@@ -225,9 +225,9 @@
     },
     {
         "id": 14,
-        "name": "Skybox panorama 2",
+        "name": "Skybox panorama",
         "description": "test",
-        "preview-img": "/extras/skybox1_Moment.jpg",
+        "preview-img": "/extras/images/skybox1_Moment.jpg",
         "model": "/models/fallFox.glb",
         "three-settings": {
             "lights": "",
@@ -237,6 +237,176 @@
                 "z": ""
             }
         },
+        "date-created": "6/24/22"
+    },
+    {
+        "id": 15,
+        "name": "single-Sided Beach",
+        "description": "test video scene",
+        "preview-img": "/extras/images/Beach1Side_Moment.jpg",
+        "model": "",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "video": "/extras/videos/Beach1Side.mp4",
+        "date-created": "6/24/22"
+    },
+    {
+        "id": 16,
+        "name": "single-Sided City",
+        "description": "directional transitions",
+        "preview-img": "/extras/images/cityTree_Moment.jpg",
+        "model": "",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "video": "/extras/videos/cityTree.mp4",
+        "date-created": "6/24/22"
+    },
+    {
+        "id": 17,
+        "name": "Tiger pond",
+        "description": "trying out blending",
+        "preview-img": "/extras/images/tigerPond_Moment.jpg",
+        "model": "",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "video": "/extras/videos/tigerPond.mp4",
+        "date-created": "6/24/22"
+    },
+    {
+        "id": 18,
+        "name": "Gears",
+        "description": "complex objects with poly tool",
+        "preview-img": "/extras/images/gears_Moment.jpg",
+        "model": "",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "video": "/extras/videos/gears.mp4",
+        "date-created": "6/24/22"
+    },
+    {
+        "id": 19,
+        "name": "Sky Dragon",
+        "description": "single sided brushes with complex angles",
+        "preview-img": "/extras/images/skyDragonSingleSided_Moment.jpg",
+        "model": "",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "video": "/extras/videos/skyDragonSingleSided.mp4",
+        "date-created": "6/24/22"
+    },
+    {
+        "id": 20,
+        "name": "Portal Owl",
+        "description": "working with feather brush type",
+        "preview-img": "/extras/images/chainsOwlPortal_Moment.jpg",
+        "model": "",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "video": "/extras/videos/chainsOwlPortal.mp4",
+        "date-created": "6/24/22"
+    },
+    {
+        "id": 21,
+        "name": "Fish tank",
+        "description": "single sided brushes",
+        "preview-img": "/extras/images/fishTank_Moment.jpg",
+        "model": "",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "video": "/extras/videos/fishTank.mp4",
+        "date-created": "6/24/22"
+    },
+    {
+        "id": 22,
+        "name": "Ground Smash VFX",
+        "description": "color blending and particle effects",
+        "preview-img": "/extras/images/groundSmash_Moment.jpg",
+        "model": "",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "video": "/extras/videos/groundSmash.mp4",
+        "date-created": "6/24/22"
+    },
+    {
+        "id": 23,
+        "name": "Forest Fox Spirit",
+        "description": "grass and leaves",
+        "preview-img": "/extras/images/foxSpirit_Moment.jpg",
+        "model": "",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "video": "/extras/videos/foxSpirit.mp4",
+        "date-created": "6/24/22"
+    },
+    {
+        "id": 24,
+        "name": "Clock gears",
+        "description": "more complex shapes with poly tool",
+        "preview-img": "/extras/images/clock_Moment.jpg",
+        "model": "",
+        "three-settings": {
+            "lights": "",
+            "camera": {
+                "x": "",
+                "y": "",
+                "z": ""
+            }
+        },
+        "video": "/extras/videos/clock_trim.mp4",
         "date-created": "6/24/22"
     }
 ]

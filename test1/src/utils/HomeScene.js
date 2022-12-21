@@ -18,7 +18,7 @@ export default class HomepageScene extends Component {
         const loadingBar = document.querySelector('.center')
         // this.gui = new lilGui.GUI({closed: true, width: 0})
 
-    //overlay
+    //overlay intro
         const overlayGeometry = new THREE.PlaneBufferGeometry(2,2,1,1)
         const overlayMaterial = new THREE.ShaderMaterial({
             transparent: true,
@@ -44,22 +44,25 @@ export default class HomepageScene extends Component {
         this.scene.add(overlayIntro)
 
     // lights
-        this.directLight = new THREE.DirectionalLight(0xffaaff, 3)
-        this.light2 = new THREE.PointLight(0xffffff , 2)
-        this.light3 = new THREE.AmbientLight(0xf5d058, 20)
+        this.directLight = new THREE.DirectionalLight(0xeeeeee, 1)
         this.directLight.position.set(10, 60, 40)
-        this.scene.add(this.directLight)
+        this.directLight2 = new THREE.DirectionalLight(0xffffff , 0.2)
+        this.directLight2.position.set(10, 50, -40)
+        this.light3 = new THREE.PointLight(0x99aacc, 0.2)
+        this.light3.position.set(10, 10, 10)
+        this.scene.add(this.directLight, this.directLight2, this.light3)
 
     // helpers
         // const axesHelper = new THREE.AxesHelper()
         const directLightHelper = new THREE.DirectionalLightHelper(this.directLight, 5)
-        // const ambientLightHelper = new THREE.AmbientLightProbe(this.light3, 2)
-        this.scene.add(directLightHelper)
+        const LightHelper2 = new THREE.DirectionalLightHelper(this.directLight2, 2)
+        const pointLightHelper = new THREE.PointLightHelper(this.light3, 5)
+        this.scene.add(directLightHelper, LightHelper2, pointLightHelper)
 
     // model loading
         this.loader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../extras/brushes')) //brushes folder has shader files also
         this.loader.load('/models/materialTest.glb', (model) => {
-            console.log(model)
+            console.log('model', model)
             model.scene.scale.set(3, 3, 3)
             model.scene.position.set(0, -5, 0)
             this.scene.add(model.scene)
@@ -94,7 +97,7 @@ export default class HomepageScene extends Component {
             this.animation()
         }
         manager.onProgress = (itemUrl, itemsLoaded, itemsTotal)=> {
-            console.log(itemUrl, itemsLoaded, itemsTotal)
+            // console.log(itemUrl, itemsLoaded, itemsTotal)
         }
         manager.onError = ()=> {
             console.log('Error on loading manager')
@@ -102,8 +105,8 @@ export default class HomepageScene extends Component {
         
     // camera
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
-        this.camera.position.z = 20
-        this.camera.position.y = 4
+        this.camera.position.z = 80
+        this.camera.position.y = 20
         this.camera.position.x = 8
         // this.camera.lookAt(this.cube.position)
 
@@ -132,7 +135,9 @@ export default class HomepageScene extends Component {
     //controls
         this.controls = new OrbitControls(this.camera, this.renderer.domElement)
         this.controls.enableZoom = false
-        this.controls.enablePan = true
+        this.controls.enablePan = false
+        this.controls.autoRotate = true
+        this.controls.autoRotateSpeed = 0.7
         this.transform = new TransformControls(this.camera, this.renderer.domElement)
         this.transform.addEventListener('change', render)
 
@@ -155,6 +160,7 @@ export default class HomepageScene extends Component {
     }
 
     animation = () => {
+        this.controls.update()
         requestAnimationFrame(this.animation)
         this.renderer.render(this.scene, this.camera)
     }

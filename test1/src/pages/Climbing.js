@@ -5,8 +5,6 @@ import { BiChevronDown } from 'react-icons/bi';
 export default function Climbing() {
     const [view, setView] = useState(false)
 
-
-
     const videoStyle = {
         'display': 'none'
     }

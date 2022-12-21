@@ -9,14 +9,13 @@ import * as lilGui from "lil-gui"
 gsap.registerPlugin(ScrollTrigger);
 
 class ScrollBasedScene extends Component {
-    
     componentDidMount(){
 
     //scene
         this.scene = new THREE.Scene();
         this.loader = new GLTFLoader()
         // this.gui = new lilGui.GUI();
-        const videoPlane = new THREE.Object3D();
+        const loadedItems = []
 
     // lights
         this.directLight = new THREE.DirectionalLight('#fff', 3)
@@ -74,13 +73,12 @@ class ScrollBasedScene extends Component {
             // this.gui.add(gpsBlock.rotation, 'x').min(-10).max(10).step(0.01).name('x-rotation')
             // this.gui.add(gpsBlock.rotation, 'y').min(-10).max(10).step(0.01).name('y-rotation')
         })
-        let spireMtn = new THREE.Object3D();
+        let lowPolyMtn = new THREE.Object3D();
         this.loader.load('/models/low_poly_mountain.glb', (model) => {
-            spireMtn = model.scene
-            spireMtn.scale.set(0.006, 0.006, 0.006)
-            spireMtn.position.set(-3.4, 10, -2.6)
-            // spireMtn.rotation.set(-5.88, -0.92, 0.12)
-            modelGroup.add(spireMtn)
+            lowPolyMtn = model.scene
+            lowPolyMtn.scale.set(0.006, 0.006, 0.006)
+            lowPolyMtn.position.set(-3.4, 10, -2.6)
+            modelGroup.add(lowPolyMtn)
             scrollAnimation() 
         })
         let mapPin = new THREE.Object3D();
@@ -98,7 +96,6 @@ class ScrollBasedScene extends Component {
             modelGroup.add(hikePath)
             scrollAnimation() //gsap hook
         })
-            
         this.scene.add(modelGroup);
 
     //camera
@@ -148,8 +145,8 @@ class ScrollBasedScene extends Component {
             timeline.to(this.camera.position, {x: 3, y: 13, z: 6})
             timeline.to(hikePath.position, {y: 0.01})
             timeline.to(this.camera.rotation, {x: 0, y: 0.3, z: -0.1})
-            timeline.to(spireMtn.position, {y: 11.8})
-            timeline.to(spireMtn.scale, {y: 0.008})
+            timeline.to(lowPolyMtn.position, {y: 11.8})
+            timeline.to(lowPolyMtn.scale, {y: 0.008})
             timeline.to(screen.position, {x: 1.4, y: 13, z: 0})
             timeline.to(screen.scale, {x: 530, y: 397.5})
         }
@@ -159,8 +156,6 @@ class ScrollBasedScene extends Component {
         requestAnimationFrame(this.animation);
         this.cube.rotation.x +=0.01;
         this.cube.rotation.y +=0.01;
-        // video update image
-        
         // this.videoTexture.needsUpdate = true
         this.renderer.render(this.scene, this.camera);
     }
