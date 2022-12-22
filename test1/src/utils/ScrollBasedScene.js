@@ -39,19 +39,26 @@ class ScrollBasedScene extends Component {
 
     // video
         const video = document.getElementById("summit1-video")
-        const videoTexture = new THREE.VideoTexture(video)
-        videoTexture.minFilter = THREE.LinearFilter
-        videoTexture.magFilter = THREE.LinearFilter
+        // let video = document.createElement("video")
+        // video.src = "./clip2.mp4"
+        // video.loop()
+        video.play()
 
-        const videoMaterial = new THREE.MeshBasicMaterial({
-            map: videoTexture,
-            side: THREE.FrontSide,
-            toneMapped: false,
-        })
-        videoMaterial.needsUpdate = true;
-        videoTexture.needsUpdate = true;
+        let videoTexture = new THREE.VideoTexture(video)
+        videoTexture.format = THREE.RGBAFormat
+        videoTexture.minFilter = THREE.NearestFilter
+        videoTexture.magFilter = THREE.NearestFilter
+
+        // const videoMaterial = new THREE.MeshBasicMaterial({
+        //     map: videoTexture,
+        //     side: THREE.FrontSide,
+        //     toneMapped: false,
+        // })
+        // videoMaterial.needsUpdate = true;
+        // videoTexture.needsUpdate = true;
 
         const videoGeometry = new THREE.PlaneGeometry(0.01, 0.0077)
+        const videoMaterial = new THREE.MeshBasicMaterial({map: videoTexture})
         let screen = new THREE.Mesh(videoGeometry, videoMaterial)
         screen.position.set(2, 5, -0.6)
         screen.rotation.set(0, 0.3,  -0.1)

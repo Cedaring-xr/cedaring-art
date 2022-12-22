@@ -29,24 +29,26 @@ export default function Climbing() {
                 <ScrollBasedScene className='scroll-scene' />
                 <div className="scrol-text-container">
                     <section className='canvas-text'>
-                        <h4>South platte, Colorado</h4>
-                        <p>Area to the south west of denver</p>
+                        <h4>South Platte, Colorado</h4>
+                        <p>Area to the southwest of Denver</p>
                     </section>
                     <section className='canvas-text'>
-                        <h4></h4>
-                        <p>starting location</p>
-                        <p>approach length: 5.5 miles round trip</p>
-                        <p>trail winds down and around then back up</p>
+                        <h4>Approach Hike</h4>
+                        <p>length: 5.5 miles round trip</p>
+                        <p>starts at the Pin</p>
+                        <p>Follows 4x4 trails down the valley then walk the powerlines eventually heading up the steep ridge to the base of the climb.</p>
                     </section>
                     <section className='canvas-text'>
-                        <h4>Climb Stats</h4>
-                        <p>Pitches: 2 short pitches</p>
+                        <h4>Climb Route</h4>
                         <p>difficulty: easy</p>
+                        <p>length: ~200ft of climbing</p>
+                        <p>Pitches: 2 short pitches of 5.7ish</p>
+                        <p>Rock: Pikes peak granite</p>
                     </section>
                     <section className='canvas-text'>
-                        <h4>Summit?</h4>
-                        <p>elevation: 8224'</p>
-                        <p>other info</p>
+                        <h4>Summit</h4>
+                        <p>elevation: 8224' (2506m)</p>
+                        <p>good view of Long Scraggy Peak to the east</p>
                     </section>
                 </div>
             </div> }
@@ -60,11 +62,10 @@ export default function Climbing() {
                 muted
                 loop
                 autoPlay
-                width="1260"
-                height="1040"
-                src="../Assets/videos/clip2.mp4"
+                crossOrigin="anonymous"
+                src="extras/videos/noddleSummit.mp4"
                 style={videoStyle}
-                ></video>
+                />
         </div> 
     )
 }
