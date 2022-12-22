@@ -13,9 +13,57 @@ class ScrollBasedScene extends Component {
 
     //scene
         this.scene = new THREE.Scene();
-        this.loader = new GLTFLoader()
+        const manager = new THREE.LoadingManager()
+        this.loader = new GLTFLoader(manager)
+        const loadingBar = document.querySelector('.center-loading')
         // this.gui = new lilGui.GUI();
-        const loadedItems = []
+ 
+    //overlay intro
+        const overlayGeometry = new THREE.PlaneBufferGeometry(2,2,1,1)
+        const overlayMaterial = new THREE.ShaderMaterial({
+            transparent: true,
+            uniforms:
+            {
+                uAlpha: { value: 1 }
+            },
+            vertexShader: `
+                void main()
+                {
+                    gl_Position = vec4(position, 1.0);
+                }
+            `,
+            fragmentShader: `
+                uniform float uAlpha;
+                void main()
+                {
+                    gl_FragColor = vec4(129, 195, 236, uAlpha);
+                }
+            `
+        })
+        const overlayIntro = new THREE.Mesh(overlayGeometry, overlayMaterial)
+        this.scene.add(overlayIntro)
+
+    // Loading manager
+        manager.onStart = ()=> {
+            console.log('started')
+        }
+        manager.onProgress = (itemUrl, itemsLoaded, itemsTotal)=> {
+            // console.log(itemUrl, itemsLoaded, itemsTotal)
+        }
+        manager.onLoad = ()=> {
+            if(loadingBar){
+                gsap.delayedCall(0.5, () => {
+                    console.log('loaded')
+                    gsap.to(overlayMaterial.uniforms.uAlpha, {duration: 2, value: 0})
+                    loadingBar.classList.add('ended')
+                    loadingBar.style.transform = ''
+                })
+            }
+            this.animation()
+        }
+        manager.onError = ()=> {
+            console.log('Error on loading manager')
+        }
 
     // lights
         this.directLight = new THREE.DirectionalLight('#fff', 3)
@@ -81,7 +129,7 @@ class ScrollBasedScene extends Component {
             // this.gui.add(gpsBlock.rotation, 'y').min(-10).max(10).step(0.01).name('y-rotation')
         })
         let lowPolyMtn = new THREE.Object3D();
-        this.loader.load('/models/low_poly_mountain.glb', (model) => {
+        this.loader.load('/models/mountainLowPoly.glb', (model) => {
             lowPolyMtn = model.scene
             lowPolyMtn.scale.set(0.006, 0.006, 0.006)
             lowPolyMtn.position.set(-3.4, 10, -2.6)
@@ -117,7 +165,7 @@ class ScrollBasedScene extends Component {
             scrollY = window.scrollY
         })
 
-        //renderer
+    //renderer
         this.renderer = new THREE.WebGLRenderer( {alpha: true });
         this.renderer.setClearColor( 0x000000, 0 ); // the default
         this.renderer.setSize(window.innerWidth, window.innerHeight)
@@ -129,7 +177,7 @@ class ScrollBasedScene extends Component {
         this.renderer.render(this.scene, this.camera);
         this.animation();
 
-        //gsap animation
+    //gsap animation
         const scrollAnimation = () => {
             const timeline = gsap.timeline({
                 default: {
@@ -155,6 +203,7 @@ class ScrollBasedScene extends Component {
             timeline.to(lowPolyMtn.position, {y: 11.8})
             timeline.to(lowPolyMtn.scale, {y: 0.008})
             timeline.to(screen.position, {x: 1.4, y: 13, z: 0})
+            timeline.to(screen.scale, {x: 530, y: 397.5})
             timeline.to(screen.scale, {x: 530, y: 397.5})
         }
     }

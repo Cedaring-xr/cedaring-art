@@ -138,6 +138,16 @@ export default class HomepageScene extends Component {
         this.controls.enablePan = false
         this.controls.autoRotate = true
         this.controls.autoRotateSpeed = 0.7
+        this.controls.touches = {
+            TWO: THREE.TOUCH.ROTATE,
+        }
+        // this.controls.addEventListener('pointerdown', () => {
+
+        // })
+        // this.controls.addEventListener('pointerup', () => {
+            
+        // })
+
         this.transform = new TransformControls(this.camera, this.renderer.domElement)
         this.transform.addEventListener('change', render)
 

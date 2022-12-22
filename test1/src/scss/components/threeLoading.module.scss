@@ -18,6 +18,24 @@
     }
 }
 
+.center-loading {
+    z-index: 20;
+    position: sticky;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    margin-left: 200px;
+    margin-top: 200px;
+
+    span {
+        color: #000;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        line-height: 180px;
+        animation: text 3s ease-in-out infinite;
+    }
+}
+
 .ended {
     display: none;
 }
@@ -28,17 +46,6 @@
     height: 180px;
     border-radius: 50%;
     animation: ring 1.8s linear infinite;
-
-    // :before {
-    //     position: absolute;
-    //     content: '';
-    //     left: 0;
-    //     top: 0;
-    //     height: 100%;
-    //     width: 100%;
-    //     border-radius: 50%;
-    //     box-shadow: 0 0 8px rgba(179, 37, 37, 0.3);
-    // }
 }
 
 @keyframes ring {
