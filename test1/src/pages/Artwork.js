@@ -1,6 +1,7 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
 import artwork from "../Assets/artwork.json";
 import ModalCard from "../components/ModalCard";
+import LazyImage from "../components/LazyImage";
 import Openbrushlogo from "../Assets/logos/OBtestTP.png";
 
 import styles from '../scss/components/infoText.module.scss';
@@ -66,7 +67,7 @@ export default function Artwork(  )  {
                         <div key={index} ref={gridCard} className="grid-card" onClick={() => openModal(card, index)}>
                             <div className="grid-card-content">
                                 <div className="grid-img-container">
-                                    <img className="grid-card-img" alt="grid-card" src={card["preview-img"]}/>
+                                    <LazyImage src={card["preview-img"]} placeholderSrc={card["placeholder-img"]}/>
                                 </div>
                                 <div className="grid-card-desc-container">
                                     <h4>{card.name}</h4>

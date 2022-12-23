@@ -141,7 +141,8 @@
                 "z": ""
             }
         },
-        "date-created": "6/24/22"
+        "date-created": "6/24/22",
+        "placeholder-img": "/extras/placeholderImages/AmmyBrush.jpg"
     },
     {
         "id": 9,
@@ -177,8 +178,8 @@
     },
     {
         "id": 11,
-        "name": "Fire Spirit Staff",
-        "description": "kalsdkjlksdjflsd",
+        "name": "Spirit Staff",
+        "description": "size perspective and animated brushes",
         "preview-img": "/extras/images/fire_moment.jpg",
         "model": "/models/fireSpirit.glb",
         "three-settings": {
@@ -194,7 +195,7 @@
     {
         "id": 12,
         "name": "Fox Leaves",
-        "description": "kalsdkjlksdjflsd",
+        "description": "The winds of change affect us all",
         "preview-img": "/extras/images/foxLeaves_Moment.jpg",
         "model": "/models/fallFox.glb",
         "three-settings": {
@@ -276,7 +277,7 @@
     {
         "id": 17,
         "name": "Tiger pond",
-        "description": "trying out blending",
+        "description": "trying out blending/smearing water effects",
         "preview-img": "/extras/images/tigerPond_Moment.jpg",
         "model": "",
         "three-settings": {
@@ -344,7 +345,7 @@
     {
         "id": 21,
         "name": "Fish tank",
-        "description": "single sided brushes",
+        "description": "fish always appear on back side of cube",
         "preview-img": "/extras/images/fishTank_Moment.jpg",
         "model": "",
         "three-settings": {
@@ -360,7 +361,7 @@
     },
     {
         "id": 22,
-        "name": "Ground Smash VFX",
+        "name": "Smash VFX",
         "description": "color blending and particle effects",
         "preview-img": "/extras/images/groundSmash_Moment.jpg",
         "model": "",

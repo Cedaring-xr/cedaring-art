@@ -53,14 +53,16 @@
 .grid-card-desc-container {
     position: relative;
     p {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        font-family: abstracts.$bodyFont;
         padding: 5px;
     }
 
     h4 {
-      position: relative;
-      bottom: 25px;
-      float: right;
-      margin: 0.5rem 20px;
+        font-family: abstracts.$headerFont;
+        position: relative;
+        bottom: 25px;
+        float: right;
+        margin: 0.5rem 8px;
     }
 }
