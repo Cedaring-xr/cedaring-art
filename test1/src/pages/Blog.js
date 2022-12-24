@@ -22,12 +22,12 @@ export default function Blog() {
                 <h1 className="tagline">Blending 3D visuals and written naratives</h1>
                 <p className="text__content">I want to write my own stories or blog posts eventually but for now I am starting with poems or short stories written by actual writers. The goal is to create a fun 3D visual based aspect to ehance the storytelling.</p>
             </div>
-            <div className="writing-block">
-                <div className="text">
+            <div className="text writing-block">
+                <div className="text-inner">
                     <h3>A Fireside Vision</h3>
-                    <p>short poem written by: Bliss Carman</p>
-                    <button className="read-btn" onClick={() => {setOpen(true)}}>Click to view</button>
+                    <p>Short poem written by: Bliss Carman</p>
                 </div>
+                <button className="read-btn" onClick={() => {setOpen(true)}}>{ !isOpen ? 'Click to view' : 'Close' }</button>
             </div>
             {isOpen && <WritingModal  onClose={() => closeModal()}/>}
         </div>

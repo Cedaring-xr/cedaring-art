@@ -16,7 +16,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border: 2px solid orange;
-    background: #363131;
+    background: rgb(14, 13, 13);
     position: fixed;
     overflow: hidden;
 }
@@ -38,4 +38,12 @@
         top:-50px;
         position: relative;
     }
+}
+
+.video-description {
+    color: #fff;
+    font-family: abstracts.$bodyFont;
+    width: 78%;
+    margin: 15px;
+    font-size: 1.2rem;
 }

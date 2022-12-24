@@ -7,7 +7,7 @@ export default function VideoScene({ card, onClose}) {
   return (
     <>
         <div className='video-description-box'>
-            <h2 className='video-description'>Video instead of 3D model</h2>
+            <h2 className='video-description'>Some VR scenes are harder to import, so here is a video instead</h2>
         </div>
         <video width="100%" height="100%" src={card.video} muted autoPlay loop/>
     </>
