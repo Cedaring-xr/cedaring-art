@@ -46,9 +46,9 @@ export default class HomepageScene extends Component {
     // lights
         this.directLight = new THREE.DirectionalLight(0xeeeeee, 1)
         this.directLight.position.set(10, 60, 40)
-        this.directLight2 = new THREE.DirectionalLight(0xffffff , 0.2)
+        this.directLight2 = new THREE.DirectionalLight(0xffffff , 1)
         this.directLight2.position.set(10, 50, -40)
-        this.light3 = new THREE.PointLight(0x99aacc, 0.2)
+        this.light3 = new THREE.PointLight(0x99aacc, 0.4)
         this.light3.position.set(10, 10, 10)
         this.scene.add(this.directLight, this.directLight2, this.light3)
 
@@ -63,7 +63,7 @@ export default class HomepageScene extends Component {
         this.loader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../extras/brushes')) //brushes folder has shader files also
         this.loader.load('/models/materialTest.glb', (model) => {
             console.log('model', model)
-            model.scene.scale.set(3, 3, 3)
+            model.scene.scale.set(9, 9, 9)
             model.scene.position.set(0, -5, 0)
             this.scene.add(model.scene)
         });

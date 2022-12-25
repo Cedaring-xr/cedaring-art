@@ -1,24 +1,25 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
+import React from 'react';
+import { useState, useEffect } from 'react';
 
-function LazyImage({placeholderSrc, src, ...props}) {
-    const [imgSrc, setImgSrc] = useState( placeholderSrc || src )
+function LazyImage({ placeholderSrc, src }) {
+    const [imgSrc, setImgSrc] = useState(placeholderSrc || src);
 
     useEffect(() => {
         const img = new Image();
         img.src = src;
         img.onLoad = () => {
-            setImgSrc(src)
-        }
-    }, [src])
+            setImgSrc(src);
+        };
+    }, [src]);
 
-  return (
-    <img 
-        {...{ src: imgSrc, ...props }}
-        alt={ props.alt || "" }
-        className="grid-card-img"
-    />
-  )
+    return (
+        <img
+            {...{ src: imgSrc }}
+            className="grid-card-img"
+            loading="lazy"
+            width="100%"
+        />
+    );
 }
 
-export default LazyImage
+export default LazyImage;
