@@ -13,7 +13,7 @@ export default function ModalCard({ card, onClose}) {
     const [isModel, setIsModel] = useState(true)
 
     const check = () => {
-        console.log('single card', card)
+        // console.log('single card', card)
         //if card has no model
         if(card.model == '') {
             setIsModel(false)
@@ -35,6 +35,10 @@ export default function ModalCard({ card, onClose}) {
                 { isModel 
                 ? <ArtworkScene1 card={card} /> 
                 : <VideoScene card={card}/> }
+                <div className="center">
+                    <div className="ring"></div>
+                    <span>Loading...</span>
+                </div>
             </div>
         </div>,
         portalRoot

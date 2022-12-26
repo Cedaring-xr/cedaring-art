@@ -44,11 +44,13 @@ export default class HomepageScene extends Component {
         this.scene.add(overlayIntro)
 
     // lights
-        this.directLight = new THREE.DirectionalLight(0xeeeeee, 1)
+        this.directLight = new THREE.DirectionalLight(0xeeeeee, 0.5)
         this.directLight.position.set(10, 60, 40)
-        this.directLight2 = new THREE.DirectionalLight(0xffffff , 1)
+        this.directLight.castShadow = true
+        this.directLight2 = new THREE.DirectionalLight(0xffffff , 0.5)
         this.directLight2.position.set(10, 50, -40)
-        this.light3 = new THREE.PointLight(0x99aacc, 0.4)
+        this.directLight2.castShadow = true
+        this.light3 = new THREE.PointLight(0x99aacc, 2)
         this.light3.position.set(10, 10, 10)
         this.scene.add(this.directLight, this.directLight2, this.light3)
 
@@ -105,9 +107,7 @@ export default class HomepageScene extends Component {
         
     // camera
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
-        this.camera.position.z = 80
-        this.camera.position.y = 20
-        this.camera.position.x = 8
+        this.camera.position.set(8, 30, 90)
         // this.camera.lookAt(this.cube.position)
 
 
@@ -137,7 +137,8 @@ export default class HomepageScene extends Component {
         this.controls.enableZoom = false
         this.controls.enablePan = false
         this.controls.autoRotate = true
-        this.controls.autoRotateSpeed = 0.7
+        this.controls.autoRotateSpeed = 0.6
+        this.controls.maxPolarAngle = 1.4
         this.controls.touches = {
             TWO: THREE.TOUCH.ROTATE,
         }

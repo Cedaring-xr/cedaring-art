@@ -4,14 +4,16 @@
         "name": "Zelda Cyclos",
         "description": "zelda windwaker fan-art",
         "preview-img": "/extras/images/cyclos_Moment.jpg",
+        "background": "#0d0d0d",
         "model": "/models/cyclos.glb",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "",
-                "y": "",
-                "z": ""
-            }
+                "x": "-7.75",
+                "y": "10",
+                "z": "-2.5"
+            },
+            "lookAt": [0, 7, 0]
         },
         "date-created": "1/2/22",
         "placeholder-img": ""
@@ -22,30 +24,35 @@
         "name": "Circuit Arm",
         "description": "Sci-fi themed robot arm with electric animation",
         "preview-img": "/extras/images/circuitArm2_Moment.jpg",
+        "background": "#5c5c5c",
         "model": "/models/circuitArm.glb",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "",
-                "y": "",
-                "z": ""
-            }
+                "x": "5",
+                "y": "5",
+                "z": "5"
+            },
+            "lookAt": [0, 8, 0]
         },
-        "date-created": "6/24/22"
+        "date-created": "6/24/22",
+        "placeholder-img": ""
     },
     {
         "id": 2,
         "name": "Spiral Trees",
         "description": "working with api generated shapes",
         "preview-img": "/extras/images/trees_moment.png",
+        "background": "#0d0d0d",
         "model": "/models/trees.glb",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "",
-                "y": "",
-                "z": ""
-            }
+                "x": "2",
+                "y": "8",
+                "z": "4"
+            },
+            "lookAt": [0, 5, 0]
         },
         "date-created": "6/24/22"
     },
@@ -54,14 +61,16 @@
         "name": "Cube Tree",
         "description": "using grid tool to make precise cube arrangements",
         "preview-img": "/extras/images/cubeTree_Moment.jpg",
+        "background": "#0d0d0d",
         "model": "/models/cubeTree.glb",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "",
-                "y": "",
-                "z": ""
-            }
+                "x": "-3.5",
+                "y": "4.5",
+                "z": "2.8"
+            },
+            "lookAt": [0, 2.3, 0]
         },
         "date-created": "6/24/22"
     },
@@ -70,14 +79,16 @@
         "name": "Pinata",
         "description": "trying out different textures and shading",
         "preview-img": "/extras/images/pinata_Moment.jpg",
+        "background": "#0d0d0d",
         "model": "/models/pinata.glb",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "",
-                "y": "",
-                "z": ""
-            }
+                "x": "5",
+                "y": "5",
+                "z": "5"
+            },
+            "lookAt": [0, 5, 0]
         },
         "date-created": "6/24/22"
     },
@@ -86,14 +97,16 @@
         "name": "Origami Crane",
         "description": "Reconstructing origami in VR with triangle shapes of a crease-map",
         "preview-img": "/extras/images/origamiCrane_Moment.jpg",
+        "background": "#0d0d0d",
         "model": "/models/origamiCrane.glb",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "",
-                "y": "",
-                "z": ""
-            }
+                "x": "5",
+                "y": "5",
+                "z": "5"
+            },
+            "lookAt": [0, 5, 0]
         },
         "date-created": "6/24/22"
     },
@@ -102,14 +115,16 @@
         "name": "Glass Tree Gate",
         "description": "Stained glass brush effects for an entryway",
         "preview-img": "/extras/images/treeGate.jpg",
+        "background": "#0d0d0d",
         "model": "/models/glassGate.glb",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "",
-                "y": "",
-                "z": ""
-            }
+                "x": "5",
+                "y": "5",
+                "z": "5"
+            },
+            "lookAt": [0, 5, 0]
         },
         "date-created": "6/24/22"
     },
@@ -118,14 +133,16 @@
         "name": "Flower Scroll",
         "description": "experimenting with flowers and 2D to 3D transition",
         "preview-img": "/extras/images/flowerScroll.jpg",
+        "background": "#0d0d0d",
         "model": "/models/flowerScroll.glb",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "",
-                "y": "",
-                "z": ""
-            }
+                "x": "5",
+                "y": "5",
+                "z": "5"
+            },
+            "lookAt": [0, 5, 0]
         },
         "date-created": "6/24/22"
     },
@@ -134,31 +151,36 @@
         "name": "Okami",
         "description": "Okami fan-art with openbrush theme",
         "preview-img": "/extras/images/AmmyBrush.jpg",
+        "placeholder-img": "/extras/placeholderImages/AmmyBrush.jpg",
+        "background": "#0d0d0d",
         "model": "/models/ammy.glb",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "",
-                "y": "",
-                "z": ""
-            }
+                "x": "5",
+                "y": "5",
+                "z": "5"
+            },
+            "lookAt": [0, 5, 0]
         },
-        "date-created": "6/24/22",
-        "placeholder-img": "/extras/placeholderImages/AmmyBrush.jpg"
+        "date-created": "6/24/22"
+        
     },
     {
         "id": 9,
         "name": "Water Otter",
         "description": "practicing 3D flowing water shapes",
         "preview-img": "/extras/images/otter_Moment.jpg",
+        "background": "#0d0d0d",
         "model": "/models/otter.glb",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "",
-                "y": "",
-                "z": ""
-            }
+                "x": "5",
+                "y": "5",
+                "z": "5"
+            },
+            "lookAt": [0, 5, 0]
         },
         "date-created": "6/24/22"
     },
@@ -167,14 +189,16 @@
         "name": "floating island",
         "description": "creating rocks and syncing the timing of animated brushes",
         "preview-img": "/extras/images/island_Moment.png",
+        "background": "#0d0d0d",
         "model": "/models/floatingIsland.glb",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "",
-                "y": "",
-                "z": ""
-            }
+                "x": "5",
+                "y": "5",
+                "z": "5"
+            },
+            "lookAt": [0, 5, 0]
         },
         "date-created": "6/24/22"
     },
@@ -183,14 +207,16 @@
         "name": "Spirit Staff",
         "description": "size perspective and fantasy theme",
         "preview-img": "/extras/images/fire_moment.jpg",
+        "background": "#0d0d0d",
         "model": "/models/fireSpirit.glb",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "",
-                "y": "",
-                "z": ""
-            }
+                "x": "5",
+                "y": "5",
+                "z": "5"
+            },
+            "lookAt": [0, 5, 0]
         },
         "date-created": "6/24/22"
     },
@@ -199,14 +225,16 @@
         "name": "Fox Leaves",
         "description": "The winds of change affect us all",
         "preview-img": "/extras/images/foxLeaves_Moment.jpg",
+        "background": "#0d0d0d",
         "model": "/models/fallFox.glb",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "",
-                "y": "",
-                "z": ""
-            }
+                "x": "5",
+                "y": "5",
+                "z": "5"
+            },
+            "lookAt": [0, 5, 0]
         },
         "date-created": "6/24/22"
     },
@@ -215,14 +243,16 @@
         "name": "Water Swirl",
         "description": "First try at making water",
         "preview-img": "/extras/images/waterSwirl_Moment.jpg",
+        "background": "#0d0d0d",
         "model": "/models/waterSwirl.glb",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "",
-                "y": "",
-                "z": ""
-            }
+                "x": "5",
+                "y": "5",
+                "z": "5"
+            },
+            "lookAt": [0, 5, 0]
         },
         "date-created": "6/24/22"
     },
@@ -231,14 +261,16 @@
         "name": "Skybox panorama",
         "description": "creating a world panorama with unlocked zoom settings",
         "preview-img": "/extras/images/skybox1_Moment.jpg",
+        "background": "#0d0d0d",
         "model": "/models/fallFox.glb",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "",
-                "y": "",
-                "z": ""
-            }
+                "x": "5",
+                "y": "5",
+                "z": "5"
+            },
+            "lookAt": [0, 5, 0]
         },
         "date-created": "6/24/22"
     },
@@ -247,8 +279,9 @@
         "name": "single-Sided Beach",
         "description": "visuals change based on viewing perspective",
         "preview-img": "/extras/images/Beach1Side_Moment.jpg",
+        "background": "#0d0d0d",
         "model": "",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
                 "x": "",
@@ -264,8 +297,9 @@
         "name": "single-Sided City",
         "description": "visuals change based on viewing perspective",
         "preview-img": "/extras/images/cityTree_Moment.jpg",
+        "background": "#0d0d0d",
         "model": "",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
                 "x": "",
@@ -281,8 +315,9 @@
         "name": "Tiger pond",
         "description": "animal practice and transparent layers",
         "preview-img": "/extras/images/tigerPond_Moment.jpg",
+        "background": "#0d0d0d",
         "model": "",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
                 "x": "",
@@ -298,8 +333,9 @@
         "name": "Gears",
         "description": "practice creating complex objects with poly tool",
         "preview-img": "/extras/images/gears_Moment.jpg",
+        "background": "#0d0d0d",
         "model": "",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
                 "x": "",
@@ -315,8 +351,9 @@
         "name": "Sky Dragon",
         "description": "visuals change based on viewing perspective",
         "preview-img": "/extras/images/skyDragonSingleSided_Moment.jpg",
+        "background": "#0d0d0d",
         "model": "",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
                 "x": "",
@@ -332,8 +369,9 @@
         "name": "Portal Owl",
         "description": "working with feather brush type",
         "preview-img": "/extras/images/chainsOwlPortal_Moment.jpg",
+        "background": "#0d0d0d",
         "model": "",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
                 "x": "",
@@ -349,8 +387,9 @@
         "name": "Fish tank",
         "description": "fish always appear on back side of cube",
         "preview-img": "/extras/images/fishTank_Moment.jpg",
+        "background": "#0d0d0d",
         "model": "",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
                 "x": "",
@@ -366,8 +405,9 @@
         "name": "Smash VFX",
         "description": "color blending and particle effects practice",
         "preview-img": "/extras/images/groundSmash_Moment.jpg",
+        "background": "#0d0d0d",
         "model": "",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
                 "x": "",
@@ -383,8 +423,9 @@
         "name": "Fox Spirit",
         "description": "practice creating grass and floral effects",
         "preview-img": "/extras/images/foxSpirit_Moment.jpg",
+        "background": "#0d0d0d",
         "model": "",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
                 "x": "",
@@ -400,8 +441,9 @@
         "name": "Clock gears",
         "description": "anatomically correct clock with gearing pieces",
         "preview-img": "/extras/images/clock_Moment.jpg",
+        "background": "#0d0d0d",
         "model": "",
-        "three-settings": {
+        "threeSettings": {
             "lights": "",
             "camera": {
                 "x": "",

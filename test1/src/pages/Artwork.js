@@ -11,7 +11,7 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
 
-export default function Artwork(  )  {
+export default function Artwork()  {
     const [artworkItems, setArtworkItems] = useState(artwork)
     const [showPortal, toggleShowPortal] = useState(false)
     const [activeObject, setActiveObject] = useState(null); //should be card object
@@ -35,7 +35,7 @@ export default function Artwork(  )  {
     }, [])
 
     const openModal = (card, index) => {
-        console.warn('card id', index)
+        // console.warn('card id', index)
         //set active object
         //toogle portal state
         setActiveObject(card)
