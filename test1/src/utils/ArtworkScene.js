@@ -14,7 +14,6 @@ class ArtworkScene1 extends Component {
     // scene
         this.scene = new THREE.Scene()
         this.clock = new THREE.Clock()
-        // this.scene.background = new THREE.Color( 0x0b0b0b );
         this.scene.background = new THREE.Color(this.props.card.background)
         const manager = new THREE.LoadingManager()
         this.loader = new GLTFLoader(manager)
@@ -88,11 +87,6 @@ class ArtworkScene1 extends Component {
         this.camera.position.setY(this.props.card.threeSettings.camera.y)
         this.camera.position.setZ(this.props.card.threeSettings.camera.z)
 
-    // gui/debug
-        // this.gui.add(this.camera.position, 'x').min(-80).max(80).step(1)
-        // this.gui.add(this.camera.position, 'y').min(-80).max(80).step(1)
-        // this.gui.add(this.camera.position, 'z').min(-80).max(80).step(1)
-
     // render
         this.renderer = new THREE.WebGLRenderer({
             antialias: true
@@ -114,7 +108,6 @@ class ArtworkScene1 extends Component {
         this.controls = new OrbitControls(this.camera, this.renderer.domElement)
         // this.controls.enableDamping = true //glide effect after grab
         this.controls.target = new THREE.Vector3(0, 3, 0);
-        // console.warn('lookAt', this.props.card.threeSettings.lookAt)
         let x = this.props.card.threeSettings.lookAt[0]
         let y = this.props.card.threeSettings.lookAt[1]
         let z = this.props.card.threeSettings.lookAt[2]

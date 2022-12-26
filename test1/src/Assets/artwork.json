@@ -29,11 +29,11 @@
         "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "5",
-                "y": "5",
-                "z": "5"
+                "x": "1.2",
+                "y": "4.2",
+                "z": "2.5"
             },
-            "lookAt": [0, 8, 0]
+            "lookAt": [0, 0.7, 0]
         },
         "date-created": "6/24/22",
         "placeholder-img": ""
@@ -48,9 +48,9 @@
         "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "2",
-                "y": "8",
-                "z": "4"
+                "x": "12",
+                "y": "23",
+                "z": "24"
             },
             "lookAt": [0, 5, 0]
         },
@@ -84,11 +84,11 @@
         "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "5",
-                "y": "5",
-                "z": "5"
+                "x": "2.2",
+                "y": "2",
+                "z": "-0.7"
             },
-            "lookAt": [0, 5, 0]
+            "lookAt": [0, 0.6, 0]
         },
         "date-created": "6/24/22"
     },
@@ -102,11 +102,11 @@
         "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "5",
-                "y": "5",
-                "z": "5"
+                "x": "-3.6",
+                "y": "2.4",
+                "z": "1.6"
             },
-            "lookAt": [0, 5, 0]
+            "lookAt": [0, 0.5, 0]
         },
         "date-created": "6/24/22"
     },
@@ -120,11 +120,11 @@
         "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "5",
-                "y": "5",
-                "z": "5"
+                "x": "3.6",
+                "y": "4",
+                "z": "6.6"
             },
-            "lookAt": [0, 5, 0]
+            "lookAt": [0, 1.4, 0]
         },
         "date-created": "6/24/22"
     },
@@ -138,11 +138,11 @@
         "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "5",
-                "y": "5",
-                "z": "5"
+                "x": "-0.5",
+                "y": "3.1",
+                "z": "5.4"
             },
-            "lookAt": [0, 5, 0]
+            "lookAt": [0, 0.7, 0]
         },
         "date-created": "6/24/22"
     },
@@ -161,7 +161,7 @@
                 "y": "5",
                 "z": "5"
             },
-            "lookAt": [0, 5, 0]
+            "lookAt": [0, 1, 0]
         },
         "date-created": "6/24/22"
         
@@ -176,11 +176,11 @@
         "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "5",
-                "y": "5",
-                "z": "5"
+                "x": "-4.5",
+                "y": "5.2",
+                "z": "-4"
             },
-            "lookAt": [0, 5, 0]
+            "lookAt": [0, 2, 0]
         },
         "date-created": "6/24/22"
     },
@@ -212,9 +212,9 @@
         "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "5",
-                "y": "5",
-                "z": "5"
+                "x": "-3.8",
+                "y": "7",
+                "z": "3.3"
             },
             "lookAt": [0, 5, 0]
         },
@@ -232,9 +232,9 @@
             "camera": {
                 "x": "5",
                 "y": "5",
-                "z": "5"
+                "z": "7"
             },
-            "lookAt": [0, 5, 0]
+            "lookAt": [0, 1, 0]
         },
         "date-created": "6/24/22"
     },
@@ -248,11 +248,11 @@
         "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "5",
-                "y": "5",
-                "z": "5"
+                "x": "1.75",
+                "y": "4.2",
+                "z": "2.8"
             },
-            "lookAt": [0, 5, 0]
+            "lookAt": [0, 1, 0]
         },
         "date-created": "6/24/22"
     },
@@ -284,10 +284,11 @@
         "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "",
-                "y": "",
-                "z": ""
-            }
+                "x": "0",
+                "y": "0",
+                "z": "0"
+            },
+            "lookAt": [0, 1, 0]
         },
         "video": "/extras/videos/Beach1Side.mp4",
         "date-created": "6/24/22"
@@ -305,7 +306,8 @@
                 "x": "",
                 "y": "",
                 "z": ""
-            }
+            },
+            "lookAt": [0, 1, 0]
         },
         "video": "/extras/videos/cityTree.mp4",
         "date-created": "6/24/22"
@@ -323,7 +325,8 @@
                 "x": "",
                 "y": "",
                 "z": ""
-            }
+            },
+            "lookAt": [0, 1, 0]
         },
         "video": "/extras/videos/tigerPond.mp4",
         "date-created": "6/24/22"
@@ -341,7 +344,8 @@
                 "x": "",
                 "y": "",
                 "z": ""
-            }
+            },
+            "lookAt": [0, 1, 0]
         },
         "video": "/extras/videos/gears.mp4",
         "date-created": "6/24/22"
@@ -359,7 +363,8 @@
                 "x": "",
                 "y": "",
                 "z": ""
-            }
+            },
+            "lookAt": [0, 1, 0]
         },
         "video": "/extras/videos/skyDragonSingleSided.mp4",
         "date-created": "6/24/22"
@@ -377,7 +382,8 @@
                 "x": "",
                 "y": "",
                 "z": ""
-            }
+            },
+            "lookAt": [0, 1, 0]
         },
         "video": "/extras/videos/chainsOwlPortal.mp4",
         "date-created": "6/24/22"
@@ -395,7 +401,8 @@
                 "x": "",
                 "y": "",
                 "z": ""
-            }
+            },
+            "lookAt": [0, 1, 0]
         },
         "video": "/extras/videos/fishTank.mp4",
         "date-created": "6/24/22"
@@ -413,7 +420,8 @@
                 "x": "",
                 "y": "",
                 "z": ""
-            }
+            },
+            "lookAt": [0, 1, 0]
         },
         "video": "/extras/videos/groundSmash.mp4",
         "date-created": "6/24/22"
@@ -431,7 +439,8 @@
                 "x": "",
                 "y": "",
                 "z": ""
-            }
+            },
+            "lookAt": [0, 1, 0]
         },
         "video": "/extras/videos/foxSpirit.mp4",
         "date-created": "6/24/22"
@@ -449,7 +458,8 @@
                 "x": "",
                 "y": "",
                 "z": ""
-            }
+            },
+            "lookAt": [0, 1, 0]
         },
         "video": "/extras/videos/clock_trim.mp4",
         "date-created": "6/24/22"
