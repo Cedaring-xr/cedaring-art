@@ -41,5 +41,14 @@
     margin-left: 5px;
 }
 
+.alert-container {
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+}
 
+.alert-message {
+    color: #fff;
+    font-family: abstracts.$headerFont;
+}
         

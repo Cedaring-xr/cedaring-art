@@ -3,6 +3,7 @@ import ReactDom from 'react-dom';
 
 import closeIcon from '../Assets/logos/x-png.png';
 import FiresideScene from '../utils/FiresideScene'
+import WIPalert from './WIPalert';
 
 const portalRoot = document.getElementById('portal-root');
 
@@ -12,7 +13,8 @@ export default function WritingModal({ card, onClose}) {
         <div className="modal-background" >
             <div className='modal-container'>
                 <img src={closeIcon} className='close' alt="" style={{ cursor: 'pointer' }} onClick={() => onClose()} />
-                <FiresideScene />
+                <WIPalert />
+                {/* <FiresideScene /> */}
             </div>
         </div>,
         portalRoot
