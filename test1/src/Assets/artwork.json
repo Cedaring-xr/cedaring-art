@@ -4,6 +4,7 @@
         "name": "Zelda Cyclos",
         "description": "zelda windwaker fan-art",
         "preview-img": "/extras/images/cyclos_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/cyclos_Moment.jpg",
         "background": "#0d0d0d",
         "model": "/models/cyclos.glb",
         "threeSettings": {
@@ -15,15 +16,14 @@
             },
             "lookAt": [0, 7, 0]
         },
-        "date-created": "1/2/22",
-        "placeholder-img": ""
-        
+        "date-created": "1/2/22"
     },
     {
         "id": 1,
         "name": "Circuit Arm",
         "description": "Sci-fi themed robot arm with electric animation",
         "preview-img": "/extras/images/circuitArm2_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/circuitArm2_Moment.jpg",
         "background": "#5c5c5c",
         "model": "/models/circuitArm.glb",
         "threeSettings": {
@@ -35,14 +35,14 @@
             },
             "lookAt": [0, 0.7, 0]
         },
-        "date-created": "6/24/22",
-        "placeholder-img": ""
+        "date-created": "6/24/22"
     },
     {
         "id": 2,
         "name": "Spiral Trees",
         "description": "working with api generated shapes",
         "preview-img": "/extras/images/trees_moment.png",
+        "placeholder-img": "/extras/placeholderImages/trees_moment.jpg",
         "background": "#0d0d0d",
         "model": "/models/trees.glb",
         "threeSettings": {
@@ -61,6 +61,7 @@
         "name": "Cube Tree",
         "description": "using grid tool to make precise cube arrangements",
         "preview-img": "/extras/images/cubeTree_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/cubeTree_Moment.jpg",
         "background": "#0d0d0d",
         "model": "/models/cubeTree.glb",
         "threeSettings": {
@@ -79,6 +80,7 @@
         "name": "Pinata",
         "description": "trying out different textures and shading",
         "preview-img": "/extras/images/pinata_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/pinata_Moment.jpg",
         "background": "#0d0d0d",
         "model": "/models/pinata.glb",
         "threeSettings": {
@@ -97,6 +99,7 @@
         "name": "Origami Crane",
         "description": "Reconstructing origami in VR with triangle shapes of a crease-map",
         "preview-img": "/extras/images/origamiCrane_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/origamiCrane_Moment.jpg",
         "background": "#0d0d0d",
         "model": "/models/origamiCrane.glb",
         "threeSettings": {
@@ -115,6 +118,7 @@
         "name": "Glass Tree Gate",
         "description": "Stained glass brush effects for an entryway",
         "preview-img": "/extras/images/treeGate.jpg",
+        "placeholder-img": "/extras/placeholderImages/treeGate.jpg",
         "background": "#0d0d0d",
         "model": "/models/glassGate.glb",
         "threeSettings": {
@@ -133,6 +137,7 @@
         "name": "Flower Scroll",
         "description": "experimenting with flowers and 2D to 3D transition",
         "preview-img": "/extras/images/flowerScroll.jpg",
+        "placeholder-img": "/extras/placeholderImages/flowerScroll.jpg",
         "background": "#0d0d0d",
         "model": "/models/flowerScroll.glb",
         "threeSettings": {
@@ -171,6 +176,7 @@
         "name": "Water Otter",
         "description": "practicing 3D flowing water shapes",
         "preview-img": "/extras/images/otter_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/otter_Moment.jpg",
         "background": "#0d0d0d",
         "model": "/models/otter.glb",
         "threeSettings": {
@@ -189,6 +195,7 @@
         "name": "floating island",
         "description": "creating rocks and syncing the timing of animated brushes",
         "preview-img": "/extras/images/island_Moment.png",
+        "placeholder-img": "/extras/placeholderImages/island_Moment.jpg",
         "background": "#0d0d0d",
         "model": "/models/floatingIsland.glb",
         "threeSettings": {
@@ -207,6 +214,7 @@
         "name": "Spirit Staff",
         "description": "size perspective and fantasy theme",
         "preview-img": "/extras/images/fire_moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/fire_moment.jpg",
         "background": "#0d0d0d",
         "model": "/models/fireSpirit.glb",
         "threeSettings": {
@@ -225,6 +233,7 @@
         "name": "Fox Leaves",
         "description": "The winds of change affect us all",
         "preview-img": "/extras/images/foxLeaves_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/foxLeaves_Moment.jpg",
         "background": "#0d0d0d",
         "model": "/models/fallFox.glb",
         "threeSettings": {
@@ -243,6 +252,7 @@
         "name": "Water Swirl",
         "description": "First try at making water",
         "preview-img": "/extras/images/waterSwirl_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/waterSwirl_Moment.jpg",
         "background": "#0d0d0d",
         "model": "/models/waterSwirl.glb",
         "threeSettings": {
@@ -261,6 +271,7 @@
         "name": "Skybox panorama",
         "description": "creating a world panorama with unlocked zoom settings",
         "preview-img": "/extras/images/skybox1_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/skybox1_Moment.jpg",
         "background": "#0d0d0d",
         "model": "/models/fallFox.glb",
         "threeSettings": {
@@ -279,6 +290,7 @@
         "name": "single-Sided Beach",
         "description": "visuals change based on viewing perspective",
         "preview-img": "/extras/images/Beach1Side_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/Beach1Side_Moment.jpg",
         "background": "#0d0d0d",
         "model": "",
         "threeSettings": {
@@ -298,6 +310,7 @@
         "name": "single-Sided City",
         "description": "visuals change based on viewing perspective",
         "preview-img": "/extras/images/cityTree_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/cityTree_Moment.jpg",
         "background": "#0d0d0d",
         "model": "",
         "threeSettings": {
@@ -317,6 +330,7 @@
         "name": "Tiger pond",
         "description": "animal practice and transparent layers",
         "preview-img": "/extras/images/tigerPond_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/tigerPond_Moment.jpg",
         "background": "#0d0d0d",
         "model": "",
         "threeSettings": {
@@ -336,6 +350,7 @@
         "name": "Gears",
         "description": "practice creating complex objects with poly tool",
         "preview-img": "/extras/images/gears_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/gears_Moment.jpg",
         "background": "#0d0d0d",
         "model": "",
         "threeSettings": {
@@ -355,6 +370,7 @@
         "name": "Sky Dragon",
         "description": "visuals change based on viewing perspective",
         "preview-img": "/extras/images/skyDragonSingleSided_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/skyDragonSingleSided_Moment.jpg",
         "background": "#0d0d0d",
         "model": "",
         "threeSettings": {
@@ -374,6 +390,7 @@
         "name": "Portal Owl",
         "description": "working with feather brush type",
         "preview-img": "/extras/images/chainsOwlPortal_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/chainsOwlPortal_Moment.jpg",
         "background": "#0d0d0d",
         "model": "",
         "threeSettings": {
@@ -393,6 +410,7 @@
         "name": "Fish tank",
         "description": "fish always appear on back side of cube",
         "preview-img": "/extras/images/fishTank_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/fishTank_Moment.jpg",
         "background": "#0d0d0d",
         "model": "",
         "threeSettings": {
@@ -412,6 +430,7 @@
         "name": "Smash VFX",
         "description": "color blending and particle effects practice",
         "preview-img": "/extras/images/groundSmash_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/groundSmash_Moment.jpg",
         "background": "#0d0d0d",
         "model": "",
         "threeSettings": {
@@ -431,6 +450,7 @@
         "name": "Fox Spirit",
         "description": "practice creating grass and floral effects",
         "preview-img": "/extras/images/foxSpirit_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/foxSpirit_Moment.jpg",
         "background": "#0d0d0d",
         "model": "",
         "threeSettings": {
@@ -450,6 +470,7 @@
         "name": "Clock gears",
         "description": "anatomically correct clock with gearing pieces",
         "preview-img": "/extras/images/clock_Moment.jpg",
+        "placeholder-img": "/extras/placeholderImages/clock_Moment.jpg",
         "background": "#0d0d0d",
         "model": "",
         "threeSettings": {

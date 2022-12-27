@@ -1,23 +1,24 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-function LazyImage({ placeholderSrc, src }) {
+function LazyImage({ src, placeholderSrc, id  }) {
     const [imgSrc, setImgSrc] = useState(placeholderSrc || src);
 
     useEffect(() => {
         const img = new Image();
         img.src = src;
-        img.onLoad = () => {
+        img.onload = () => {
             setImgSrc(src);
         };
     }, [src]);
 
+    const loadingStyle = placeholderSrc && imgSrc === placeholderSrc ? "loading" : "loaded";
+
     return (
         <img
             {...{ src: imgSrc }}
-            className="grid-card-img"
-            loading="lazy"
-            width="100%"
+            className={`grid-card-img ${loadingStyle}`}
+            id={id}
         />
     );
 }

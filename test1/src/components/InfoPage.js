@@ -1,7 +1,11 @@
 import React, { useEffect, useRef, useLayoutEffect } from "react";
+import LazyImage from "./LazyImage";
 import selfie3 from '../Assets/images/self3.jpg';
+import selfPlaceholder from "../Assets/images/self3_mini.jpg"
 import treeRings from '../Assets/images/T54Y.jpg';
+import treeRingsPlaceholder from "../Assets/images/T54Y_mini.jpg"
 import mountains from '../Assets/images/fMHm.jpg';
+import mountainsPlaceholder from "../Assets/images/fMHm_mini.jpg"
 
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/all";
@@ -35,7 +39,7 @@ export default function InfoPage() {
                         <h4 className="tagline grid-tagline">Hi! I'm Matt. <br></br>Welcome to my personal website. </h4>
                     </div>
                     <div className="grid-item">
-                        <img src={selfie3} className="grid-img-sm"/>
+                        <LazyImage src={selfie3} placeholderSrc={selfPlaceholder} id="grid-img-sm"/>
                     </div>
                     <div className="grid-item grid-text text-mid">
                         <p className="text-block">
@@ -43,7 +47,7 @@ export default function InfoPage() {
                         </p>
                     </div>
                     <div className="grid-item img-mid">
-                        <img src={mountains} className="grid-img"/>
+                        <LazyImage src={mountains} placeholderSrc={mountainsPlaceholder} id="grid-img"/>
                     </div>
                     <div className="grid-item grid-text">
                         <h4 className="tagline grid-header">What is Cedaring???</h4>
@@ -52,7 +56,7 @@ export default function InfoPage() {
                         </p>
                     </div>
                     <div className="grid-item">
-                        <img src={treeRings} className="grid-img-sm"/>
+                        <LazyImage src={treeRings} placeholderSrc={treeRingsPlaceholder} id="grid-img-sm"/>
                     </div>
                     
                 </div>

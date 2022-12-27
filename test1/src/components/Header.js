@@ -6,8 +6,12 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import backLayer from '../Assets/images/parallax/clear-back.png';
+import backPlaceholder from '../Assets/images/parallax/backPlaceholder.png'
 import midLayer from '../Assets/images/parallax/clear-mid.png';
+import midPlaceholder from '../Assets/images/parallax/midPlaceholder.png'
 import frontLayer from '../Assets/images/parallax/clear-front-short.png';
+import frontPlaceholder from '../Assets/images/parallax/frontPlaceholder.png'
+import LazyImage from './LazyImage';
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -103,9 +107,9 @@ export default function Header() {
         <div className="header-main">
             <header className={styles.header}>
                <div className="parallax-box">
-                    <img alt="mtns-back-layer" src={backLayer} className="parallax-img" id="prlx-back" loading="eager"/>
+                    <LazyImage src={backLayer} placeholderSrc={backPlaceholder} className="parallax-img" id="prlx-back" loading="eager"/>
                     <h1 className="parallax-text"><a href="/">Cedaring.Art</a></h1>
-                    <img alt="mtns-mid-layer" src={midLayer} className="parallax-img" id="prlx-mid" loading="eager"/>
+                    <LazyImage src={midLayer} placeholderSrc={midPlaceholder} className="parallax-img" id="prlx-mid" loading="eager"/>
                     <nav className={`parallax-nav ${styles.header__content__nav} ${
                             menuOpen ? styles.isMenu : ''
                         }`}>
@@ -117,7 +121,7 @@ export default function Header() {
                         {/* <li><a href="/worlds">Worlds</a></li> */}
                      </ul>
                   </nav>
-                  <img alt="mtns-front-layer" src={frontLayer} className="parallax-img" id="prlx-front" loading="eager"/>
+                  <LazyImage src={frontLayer} placeholderSrc={frontPlaceholder} className="parallax-img" id="prlx-front" loading="eager"/>
                   <div className={styles.header__content__toggle}>
                         {!menuOpen ? (
                            <BiMenuAltRight onClick={menuOpenHandler} />

@@ -147,6 +147,7 @@
     max-height: 190px;
     padding: 0;
     height: 14vw;
+    overflow: hidden;
 
     @include abstracts.breakpoint(desktop) {
         height: 22vw;
@@ -157,7 +158,8 @@
     color: abstracts.$light;
     padding-top:0.2rem;
     padding-left: 0.5rem;
-    position: relative;
+    position: absolute;
+    top: 0; 
     z-index: 50;
     font-size: clamp(1.5rem, 5vw, 3rem);
     width:fit-content;
@@ -170,7 +172,7 @@
 
     @include abstracts.breakpoint(tablet) {
         font-size: clamp(2.5rem, 5vw, 4rem);
-        
+         
     }
 }
 
@@ -207,6 +209,7 @@
 }
 
 #prlx-back {
+    position: absolute;
     top: 8%;
 
     @include abstracts.breakpoint(wide-desktop) {
@@ -215,6 +218,7 @@
 }
 
 #prlx-mid {
+    position: absolute;
     top: 28%;
 
     @include abstracts.breakpoint(wide-desktop) {
@@ -223,16 +227,11 @@
 }
 
 #prlx-front {
+    position: absolute;
     top: 71%;
     z-index: 27;
 
    @include abstracts.breakpoint(wide-desktop) {
     top: 63%;
    }
-}
-
-.parallax-img {
-    width: 100%;
-    position: absolute;
-    z-index: 2;
 }
