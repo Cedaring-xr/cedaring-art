@@ -115,9 +115,9 @@ export default function Header() {
                             menuOpen ? styles.isMenu : ''
                         }`}>
                      <ul>
-                        <li className="nav-item"><Link to="/artwork" onClick={menuToggleOpen}>Artwork</Link></li>
-                        <li className="nav-item"><Link to="/writing" onClick={menuToggleOpen}>Writing</Link></li>
-                        <li className="nav-item"><Link to="/climbing" onClick={menuToggleOpen}>Climbing</Link></li>
+                        <li className="nav-item"><Link to="/artwork" onClick={menuCloseFull}>Artwork</Link></li>
+                        <li className="nav-item"><Link to="/writing" onClick={menuCloseFull}>Writing</Link></li>
+                        <li className="nav-item"><Link to="/climbing" onClick={menuCloseFull}>Climbing</Link></li>
                         {/* <li><Link to="/worlds">Worlds</Link></li> */}
                         {/* <li><Link to="/react">React</LInk></li> */}
                      </ul>
