@@ -1,7 +1,8 @@
-import React, { useLayoutEffect, useState, useEffect, useRef } from 'react';
+import React, { useLayoutEffect, useState, useEffect } from 'react';
 import styles from '../scss/components/header.module.scss';
 import { BiMenuAltRight } from 'react-icons/bi';
 import { AiOutlineClose } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -19,14 +20,14 @@ export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [size, setSize] = useState({ width: undefined, height: undefined });
 
-    const menuOpenHandler = () => {
-        document.body.classList.add('header-menu-open');
+    const menuToggleOpen = () => {
+        document.body.classList.toggle('header-menu-open');
         setMenuOpen((open) => !open);
     };
 
-    const menuCloseHandler = () => {
+    const menuCloseFull = () => {
         document.body.classList.remove('header-menu-open');
-        setMenuOpen((open) => !open);
+        setMenuOpen(false);
     };
 
     useEffect(() => {
@@ -108,25 +109,25 @@ export default function Header() {
             <header className={styles.header}>
                <div className="parallax-box" rel="preload">
                     <LazyImage src={backLayer} placeholderSrc={backPlaceholder} className="parallax-img" id="prlx-back" loading="eager"/>
-                    <h1 className="parallax-text"><a href="/">Cedaring.Art</a></h1>
+                    <h1 className="parallax-text"><Link to="/" onClick={menuCloseFull}>Cedaring.Art</Link></h1>
                     <LazyImage src={midLayer} placeholderSrc={midPlaceholder} className="parallax-img" id="prlx-mid" loading="eager"/>
                     <nav className={`parallax-nav ${styles.header__content__nav} ${
                             menuOpen ? styles.isMenu : ''
                         }`}>
                      <ul>
-                        <li className="nav-item"><a href="/artwork">Artwork</a></li>
-                        <li className="nav-item"><a href="/writing">Writing</a></li>
-                        <li className="nav-item"><a href="/climbing">Climbing</a></li>
-                        {/* <li><a href="/worlds">Worlds</a></li> */}
-                        {/* <li><a href="/react">React</a></li> */}
+                        <li className="nav-item"><Link to="/artwork" onClick={menuToggleOpen}>Artwork</Link></li>
+                        <li className="nav-item"><Link to="/writing" onClick={menuToggleOpen}>Writing</Link></li>
+                        <li className="nav-item"><Link to="/climbing" onClick={menuToggleOpen}>Climbing</Link></li>
+                        {/* <li><Link to="/worlds">Worlds</Link></li> */}
+                        {/* <li><Link to="/react">React</LInk></li> */}
                      </ul>
                   </nav>
                   <LazyImage src={frontLayer} placeholderSrc={frontPlaceholder} className="parallax-img" id="prlx-front" loading="eager"/>
                   <div className={styles.header__content__toggle}>
                         {!menuOpen ? (
-                           <BiMenuAltRight onClick={menuOpenHandler} />
+                           <BiMenuAltRight onClick={menuToggleOpen} />
                         ) : (
-                           <AiOutlineClose onClick={menuCloseHandler} />
+                           <AiOutlineClose onClick={menuToggleOpen} />
                         )}
                   </div>
                </div>

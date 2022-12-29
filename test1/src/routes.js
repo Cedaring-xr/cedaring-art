@@ -6,18 +6,22 @@ import Climbing from "./pages/Climbing";
 import Writing from "./pages/Writing";
 import Worlds from "./pages/Worlds";
 import ReactPrac from "./pages/ReactPrac";
+import Footer from './components/Footer'
+import Header from './components/Header'
 
 export default function PageRoutes() {
     return (
         <Router>
+            <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/artwork" element={<Artwork />} />
                 <Route path="/writing" element={<Writing />} />
                 <Route path="/climbing" element={<Climbing />} />
-                <Route path="/react" element={<ReactPrac />} />
-                <Route path="/worlds" element={<Worlds />} />
+                {/* <Route path="/react" element={<ReactPrac />} />
+                <Route path="/worlds" element={<Worlds />} /> */}
             </Routes>
+            <Footer />
         </Router>
     )
 }
