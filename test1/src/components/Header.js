@@ -106,7 +106,7 @@ export default function Header() {
     return (
         <div className="header-main">
             <header className={styles.header}>
-               <div className="parallax-box">
+               <div className="parallax-box" rel="preload">
                     <LazyImage src={backLayer} placeholderSrc={backPlaceholder} className="parallax-img" id="prlx-back" loading="eager"/>
                     <h1 className="parallax-text"><a href="/">Cedaring.Art</a></h1>
                     <LazyImage src={midLayer} placeholderSrc={midPlaceholder} className="parallax-img" id="prlx-mid" loading="eager"/>
@@ -115,10 +115,10 @@ export default function Header() {
                         }`}>
                      <ul>
                         <li className="nav-item"><a href="/artwork">Artwork</a></li>
-                        <li className="nav-item"><a href="/blog">Writing</a></li>
+                        <li className="nav-item"><a href="/writing">Writing</a></li>
                         <li className="nav-item"><a href="/climbing">Climbing</a></li>
-                        {/* <li><a href="/react">React</a></li> */}
                         {/* <li><a href="/worlds">Worlds</a></li> */}
+                        {/* <li><a href="/react">React</a></li> */}
                      </ul>
                   </nav>
                   <LazyImage src={frontLayer} placeholderSrc={frontPlaceholder} className="parallax-img" id="prlx-front" loading="eager"/>

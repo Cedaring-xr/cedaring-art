@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import WritingModal from "../components/WritingModal";
 
-export default function Blog() {
+export default function Writing() {
 
     const [isOpen, setOpen] = useState(false) 
 
