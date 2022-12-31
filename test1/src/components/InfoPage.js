@@ -36,14 +36,14 @@ export default function InfoPage() {
             <div className="outer-container">
                 <div className="grid info-grid-container">
                     <div ref={gridItem} className="grid-item grid-text">
-                        <h4 className="tagline grid-tagline">Hi! I'm Matt. <br></br>Welcome to my personal website. </h4>
+                        <h4 className="tagline grid-tagline">Hi! My name is Matt. <br></br>Welcome to my personal website. </h4>
                     </div>
                     <div className="grid-item">
                         <LazyImage src={selfie3} placeholderSrc={selfPlaceholder} id="grid-img-sm"/>
                     </div>
                     <div className="grid-item grid-text text-mid">
                         <p className="text-block">
-                            I am a web developer, VR artist, and rock climber. I built this website for fun to showcase some of the art that I have made and also to experiment with different web development effects. I love the blending of technologies betweeen 3D, VR, AR, and the web. Some of my goals for the next year are expanding into AR more, Virtual world building, and some short 3D web-based puzzle mini-games.
+                            I am a web developer, VR artist, and rock climber. I built this website for fun to showcase some of the art that I have made and also to experiment with different web development effects. I love the blending of technologies betweeen 3D, VR, AR, and the web. Some of my goals for this next year are expanding into AR more, Virtual world building, and some short 3D web-based puzzle mini-games.
                         </p>
                     </div>
                     <div className="grid-item img-mid">

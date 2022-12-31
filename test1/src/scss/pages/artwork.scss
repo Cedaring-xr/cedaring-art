@@ -7,19 +7,20 @@
 
     &:hover {
         height: 2.5rem;
-        border-bottom: 2px solid rgb(218, 185, 3);
+        border-bottom: 2px solid rgba(243, 208, 7, 0.952);
     }
 }
 
 .artwork-grid-container {
     display: grid;
-    gap: 3rem;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     place-items: center center;
-    padding: 20px;
+    padding: 3rem;
 
     @include abstracts.breakpoint(tablet) {
-        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 20px;
     }
 }
 
@@ -37,7 +38,7 @@
     position: relative;
     width: 85%;
     border: 2px solid black;
-    background: linear-gradient(45deg, gold, rgb(124, 124, 8));
+    background: linear-gradient(45deg, rgba(243, 208, 7, 0.952), rgb(156, 156, 7));
     border-radius: 6px;
 
     &:hover {
