@@ -349,18 +349,18 @@
     },
     {
         "id": 18,
-        "name": "Skybox panorama",
-        "description": "creating a world panorama with unlocked zoom settings",
-        "preview-img": "/extras/images/skybox1_Moment.jpg",
-        "placeholder-img": "/extras/placeholderImages/skybox1_Moment.jpg",
+        "name": "Spiral Trees",
+        "description": "working with api generated shapes",
+        "preview-img": "/extras/images/trees_moment.png",
+        "placeholder-img": "/extras/placeholderImages/trees_moment.jpg",
         "background": "#0d0d0d",
-        "model": "/models/fallFox.glb",
+        "model": "/models/trees.glb",
         "threeSettings": {
             "lights": "",
             "camera": {
-                "x": "5",
-                "y": "5",
-                "z": "5"
+                "x": "12",
+                "y": "23",
+                "z": "24"
             },
             "lookAt": [0, 5, 0]
         },
@@ -463,25 +463,6 @@
             "lookAt": [0, 1, 0]
         },
         "video": "/extras/videos/groundSmash.mp4",
-        "date-created": "6/24/22"
-    },
-    {
-        "id": 24,
-        "name": "Spiral Trees",
-        "description": "working with api generated shapes",
-        "preview-img": "/extras/images/trees_moment.png",
-        "placeholder-img": "/extras/placeholderImages/trees_moment.jpg",
-        "background": "#0d0d0d",
-        "model": "/models/trees.glb",
-        "threeSettings": {
-            "lights": "",
-            "camera": {
-                "x": "12",
-                "y": "23",
-                "z": "24"
-            },
-            "lookAt": [0, 5, 0]
-        },
         "date-created": "6/24/22"
     }
 ]

@@ -20,13 +20,24 @@
 }
 
 .alert-container {
-    padding: 100px;
+    padding: 70px 10px 10px 10px;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .alert-message {
+        color: #fff;
+        font-family: abstracts.$headerFont;
+        font-size: 1.8rem;
+    }
+
+    .wip-image {
+        width: 120%;
+        max-width: 1000px;
+    }
 }
 
-.alert-message {
-    color: #fff;
-    font-family: abstracts.$headerFont;
-}
+
+
+
         
