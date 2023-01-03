@@ -2,11 +2,6 @@
 @use '../components';
 
 
-
-.canvas-openbrush {
-  max-height: 300px; //overwritten by three js
-}
-
 .canvas-box {
   display: flex;
   min-height: 80vh;
@@ -15,4 +10,12 @@
   position: relative;
   z-index: 11;
   background-color: black;
+}
+
+.mobile {
+  pointer-events: none;
+}
+
+.tablet {
+  pointer-events: none;
 }

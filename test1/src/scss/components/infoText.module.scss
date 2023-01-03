@@ -163,7 +163,6 @@
     border-bottom: 4px solid rgb(43, 43, 58);
 
     @include abstracts.breakpoint(tablet) {
-        
         padding-bottom: 0;
     }
 }
@@ -177,7 +176,7 @@
     @include abstracts.breakpoint(tablet) {
         border-bottom: 4px solid rgb(43, 43, 58);
         width: 90%;
-        font-size: clamp(1.6rem, 2.5vw, 2.6rem);
+        font-size: clamp(1.6rem, 2.5vw, 2.4rem);
         padding-top: 8%;
         padding-bottom: 0;
     }

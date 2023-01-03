@@ -11,10 +11,15 @@
 
     span {
         color: #f1f1f1;
-        font-size: 1.8rem;
+        font-size: 1.2em;
         text-transform: uppercase;
-        line-height: 180px;
+        line-height: 120px;
         animation: text 3s ease-in-out infinite;
+
+        @include abstracts.breakpoint(tablet) {
+            font-size: 1.8rem;
+            line-height: 180px;
+        }
     }
 }
 
@@ -29,24 +34,35 @@
 
     span {
         color: #000;
-        font-size: 1.8rem;
-        font-weight: 700;
+        font-size: 1.2em;
+        font-weight: 600;
         text-transform: uppercase;
-        line-height: 180px;
+        line-height: 120px;
         animation: text 2.5s ease-in-out infinite;
+
+        @include abstracts.breakpoint(tablet) {
+            font-size: 1.8rem;
+            line-height: 180px;
+            font-weight: 700;
+        }
+    }
+}
+
+.ring {
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    animation: ring 1.8s linear infinite;
+
+    @include abstracts.breakpoint(tablet) {
+        width: 180px;
+        height: 180px;
     }
 }
 
 .ended {
     display: none;
-}
-
-.ring {
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    animation: ring 1.8s linear infinite;
 }
 
 @keyframes ring {

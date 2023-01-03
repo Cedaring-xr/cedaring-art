@@ -38,11 +38,6 @@
             a {
                 text-decoration: none;
             }
-
-            a:visited {
-                text-decoration: none;
-                color: rgba(#fff, 0.1);
-            }
         }
 
         &__text {
@@ -54,7 +49,7 @@
             color: rgb(29,29,29);
             position: relative;
             top: -45px;
-            left: 66px;
+            left: 64px;
             margin-right: 0;
         }
     }
@@ -64,12 +59,38 @@
     }
 }
 
+#instagram {
+    img {
+        margin-left: -10px
+    }
+
+    p {
+        left: 57px;
+    }
+}
+
+#twitter {
+    img {
+        margin-left: -15px;
+    }
+
+    p {
+        left: 55px;
+    }
+}
+
+#github  {
+    img {
+        margin-left: 0;
+    }
+}
+
 .footer::before {
     content: '';
     position: absolute;
     transform: translateY(-15px);
-    height: 15px;
+    height: 10px;
     width: 100%;
-    background: linear-gradient(to top, rgb(45, 45, 48), transparent);
+    background: linear-gradient(to top, rgb(89, 89, 90), transparent);
 }
         

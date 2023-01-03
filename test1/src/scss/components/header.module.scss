@@ -152,7 +152,7 @@
 
 .parallax-text {
     color: abstracts.$light;
-    padding-top:0.2rem;
+    padding-top:0.6rem;
     padding-left: 0.5rem;
     position: absolute;
     top: 0; 
@@ -162,11 +162,11 @@
     text-shadow: 1px 1px 1px #919191,
         1px 2px 1px #919191,
         1px 3px 1px #919191,
-        1px 5px 1px #919191,
+        1px 4px 1px #919191,
         1px 10px 6px rgba(16, 16, 16, 0.8);
 
     @include abstracts.breakpoint(tablet) {
-        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-size: clamp(2.5rem, 5vw, 3.8rem);
          
     }
 }
