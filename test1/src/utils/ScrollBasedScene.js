@@ -129,7 +129,7 @@ class ScrollBasedScene extends Component {
             // this.gui.add(gpsBlock.rotation, 'y').min(-10).max(10).step(0.01).name('y-rotation')
         })
         let lowPolyMtn = new THREE.Object3D();
-        this.loader.load('/models/mountainLowPoly.glb', (model) => {
+        this.loader.load('/models/MountainLowPoly.glb', (model) => {
             lowPolyMtn = model.scene
             lowPolyMtn.scale.set(0.006, 0.006, 0.006)
             lowPolyMtn.position.set(-3.4, 10, -2.6)

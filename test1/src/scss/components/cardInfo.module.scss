@@ -27,8 +27,8 @@
 
     .alert-message {
         color: #fff;
-        font-family: abstracts.$headerFont;
-        font-size: 1.8rem;
+        font-family: abstracts.$bodyFont;
+        font-size: clamp(0.8rem, 3vw, 1.5rem);
     }
 
     .wip-image {

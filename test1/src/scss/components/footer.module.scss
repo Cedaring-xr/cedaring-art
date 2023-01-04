@@ -8,7 +8,7 @@
     gap: 0.2rem;
     text-decoration: none;
     transition: 0.3s ease all;
-    padding: 5px 0;
+    padding: 10px 0;
     align-content: center;
 
     @include abstracts.breakpoint(tablet) {
@@ -88,9 +88,9 @@
 .footer::before {
     content: '';
     position: absolute;
-    transform: translateY(-15px);
+    transform: translateY(-20px);
     height: 10px;
     width: 100%;
-    background: linear-gradient(to top, rgb(89, 89, 90), transparent);
+    background: linear-gradient(to top, rgba(79, 79, 80, 0.7), transparent);
 }
         

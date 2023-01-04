@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ScrollBasedScene from '../utils/ScrollBasedScene'
-import { BiChevronDown } from 'react-icons/bi';
+import { BiChevronDown } from 'react-icons/bi'
 
 export default function Climbing() {
     const [view, setView] = useState(false)
@@ -38,9 +38,9 @@ export default function Climbing() {
                     </section>
                     <section className='canvas-text'>
                         <h4>Approach Hike</h4>
-                        <ul><span className='highlight'>Length:</span> 5.5 miles round trip</ul>
-                        <ul>Starts at the Pin</ul>
-                        <ul>Follows atv trails down the valley then walk the powerlines clearing heading up the steep ridge to the base of the rock.</ul>
+                        <ul><span className='highlight'>Length:</span> ~5.5 miles round trip</ul>
+                        <ul>Starts at the red Pin</ul>
+                        <ul>Follows atv trails down the valley then walk the powerlines clearing heading up a steep ridge to the base of the rock.</ul>
                     </section>
                     <section className='canvas-text'>
                         <h4>Climb Route</h4>

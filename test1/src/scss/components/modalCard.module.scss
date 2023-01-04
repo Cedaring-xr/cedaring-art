@@ -45,5 +45,17 @@
     font-family: abstracts.$bodyFont;
     width: 75%;
     margin: 15px;
-    font-size: 1.3rem;
+    font-size: clamp(0.8rem, 3vw, 1.25rem);
+}
+
+.video {
+    width:125%;
+    height: 100%;
+    margin-left: -25px;
+    margin-bottom: -5px;
+
+    @include abstracts.breakpoint(tablet) {
+        width: 100%;
+        margin-left: 0;
+    }
 }

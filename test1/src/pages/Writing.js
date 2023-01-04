@@ -20,7 +20,7 @@ export default function Writing() {
         <div className="writing-pagefill">
             <div className="text">
                 <h1 className="tagline">Blending 3D visuals and written narratives</h1>
-                <p className="text__content">I want to write my own stories or blog posts eventually, but for now I am starting with poems or short stories written by actual writers as a test. The goal is to create fun 3D visual based aspects to ehance the storytelling of the writing.</p>
+                <p className="text__content">I want to write my own stories or blog posts eventually, but for now I am starting with poems or short stories written by actual writers as a test. The goal is to create fun 3D visual-based aspects to enhance the storytelling of the writing.</p>
             </div>
             <div className="text writing-block">
                 <div className="text-inner">
