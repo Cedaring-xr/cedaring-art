@@ -17,6 +17,9 @@ export default class HomepageScene extends Component {
         this.loader = new GLTFLoader(manager)
         const loadingBar = document.querySelector('.center')
         // this.gui = new lilGui.GUI({closed: true, width: 0})
+        this.clock = new THREE.Clock();
+        this.delta = 0;
+        this.interval = 1 / 30; // 30 fps
 
     //overlay intro
         const overlayGeometry = new THREE.PlaneBufferGeometry(2,2,1,1)
@@ -96,7 +99,7 @@ export default class HomepageScene extends Component {
                     loadingBar.style.transform = ''
                 })
             }
-            this.animation()
+            this.update()
         }
         manager.onProgress = (itemUrl, itemsLoaded, itemsTotal)=> {
             // console.log(itemUrl, itemsLoaded, itemsTotal)
@@ -109,15 +112,6 @@ export default class HomepageScene extends Component {
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
         this.camera.position.set(8, 30, 90)
         // this.camera.lookAt(this.cube.position)
-
-
-    //raycaster
-        const raycaster = new THREE.Raycaster()
-        const rayOrigin = new THREE.Vector3(-10, 3, -5)
-        const rayDirection = new THREE.Vector3(0, 10, 0) // needs to match camera since camera doesn't move
-        rayDirection.normalize() //reduce vector 3 length to 1 but keep directions
-        raycaster.set(rayOrigin, rayDirection)
-        // const intersects = raycaster.intersectObject([this.modelObj])
 
     //stats
         const stats = new Stats() 
@@ -137,7 +131,7 @@ export default class HomepageScene extends Component {
         this.controls.enableZoom = false
         this.controls.enablePan = false
         this.controls.autoRotate = true
-        this.controls.autoRotateSpeed = 0.6
+        this.controls.autoRotateSpeed = 1.5
         this.controls.maxPolarAngle = 1.4
 
         this.transform = new TransformControls(this.camera, this.renderer.domElement)
@@ -161,11 +155,16 @@ export default class HomepageScene extends Component {
 
     }
 
-    animation = () => {
-        this.controls.update()
-        requestAnimationFrame(this.animation)
-        this.renderer.render(this.scene, this.camera)
-    }
+    update = () => {
+        requestAnimationFrame(this.update);
+        this.delta += this.clock.getDelta();
+      
+         if (this.delta  > this.interval) {
+            this.renderer.render(this.scene, this.camera)
+            this.controls.update()
+            this.delta = this.delta % this.interval;
+         }
+      }
 
     handleWindowResize = () => {
         this.camera.aspect = window.innerWidth / window.innerHeight;
