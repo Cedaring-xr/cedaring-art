@@ -28,8 +28,7 @@
 }
 
 .grid-text {
-    background: rgb(7,84,114);
-    background: linear-gradient(45deg, rgba(7,84,114,1) 28%, rgb(20, 106, 143) 90%);
+    background: linear-gradient(45deg, rgba(7,84,114,1) 28%, rgb(15, 106, 145) 90%);
     border-radius: 6px;
     opacity: 0.95;
     margin: 0.5rem;
@@ -49,6 +48,7 @@
 }
 
 .text-mid {
+    background: rgb(7,84,114);
     @include abstracts.breakpoint(tablet) {
         grid-column: span 2;
     }
@@ -68,6 +68,8 @@
 }
 
 .img-mid {
+    display: grid;
+    align-items: center;
 
     @include abstracts.breakpoint(tablet) {
        grid-column: span 3;
@@ -131,8 +133,7 @@
     width: 92%;
     max-width: 1400px;
     text-align: left;
-    background: rgb(7,84,114);
-    background: linear-gradient(45deg, rgba(7,84,114,1) 28%, rgb(26, 120, 160) 90%);
+    background: linear-gradient(45deg, rgba(7,84,114,1) 28%, rgb(17, 112, 153) 90%);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     opacity: 0.9;
     margin: 30px auto 0;

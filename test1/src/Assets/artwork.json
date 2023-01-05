@@ -25,7 +25,7 @@
         "preview-img": "/extras/images/cyclos_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/cyclos_Moment.jpg",
         "background": "#0d0d0d",
-        "model": "/models/cyclos.glb",
+        "model": "/models/Cyclos.glb",
         "threeSettings": {
             "lights": "",
             "camera": {

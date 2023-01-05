@@ -3,28 +3,22 @@ import ReactDom from 'react-dom';
 
 import closeIcon from '../Assets/logos/x-png.png';
 import ArtworkScene1 from '../utils/ArtworkScene';
-import ArtworkSceneR3F from '../utils/ArtworkSceneR3F';
 import VideoScene from '../utils/VideoScene';
 
 const portalRoot = document.getElementById('portal-root');
 
 export default function ModalCard({ card, onClose}) {
-
     const [isModel, setIsModel] = useState(true)
 
-    const check = () => {
+    const modelCheck = () => {
         // console.log('single card', card)
-        //if card has no model
         if(card.model == '') {
             setIsModel(false)
         }
-        // then fall back to video
-        // also fallback to picture?
     }
     
-    
     useEffect(() => {
-        check() 
+        modelCheck() 
     })
 
     return ReactDom.createPortal(

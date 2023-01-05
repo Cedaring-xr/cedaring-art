@@ -13,7 +13,7 @@ export default function Climbing() {
         <div className='body-content'>
             <div className="text">
                 <h1 className="tagline">Rock Climbing Trips</h1>
-                <p className="text__content">Working with GPS and elevation data to create 3D explorable layouts of mountain areas and climbing locations</p>
+                <p className="text__content">Working with GPS and elevation data to create 3D explorable layouts of mountain areas and climbing Destinations</p>
             </div>
             <div className='text climbing-text'>
                 <h2>South Platte test demo Route</h2>

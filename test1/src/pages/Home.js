@@ -24,7 +24,7 @@ export default function Home() {
 
     useEffect(() => {
         let device = getDeviceType()
-        console.log(device)
+        // console.log(device)
         setDevice(device)
     }, [])
 

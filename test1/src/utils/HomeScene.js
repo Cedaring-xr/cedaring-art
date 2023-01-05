@@ -47,27 +47,25 @@ export default class HomepageScene extends Component {
         this.scene.add(overlayIntro)
 
     // lights
-        this.directLight = new THREE.DirectionalLight(0xeeeeee, 0.5)
+        this.directLight = new THREE.DirectionalLight(0xeeeeee, 1.5)
         this.directLight.position.set(10, 60, 40)
-        this.directLight.castShadow = true
-        this.directLight2 = new THREE.DirectionalLight(0xffffff , 0.5)
+        this.directLight2 = new THREE.DirectionalLight(0xffffff , 1.5)
         this.directLight2.position.set(10, 50, -40)
-        this.directLight2.castShadow = true
         this.light3 = new THREE.PointLight(0x99aacc, 2)
         this.light3.position.set(10, 10, 10)
-        this.scene.add(this.directLight, this.directLight2, this.light3)
+        this.scene.add(this.directLight, this.directLight2)
 
     // helpers
         // const axesHelper = new THREE.AxesHelper()
-        const directLightHelper = new THREE.DirectionalLightHelper(this.directLight, 5)
-        const LightHelper2 = new THREE.DirectionalLightHelper(this.directLight2, 2)
-        const pointLightHelper = new THREE.PointLightHelper(this.light3, 5)
-        this.scene.add(directLightHelper, LightHelper2, pointLightHelper)
+        // const directLightHelper = new THREE.DirectionalLightHelper(this.directLight, 5)
+        // const LightHelper2 = new THREE.DirectionalLightHelper(this.directLight2, 2)
+        // const pointLightHelper = new THREE.PointLightHelper(this.light3, 5)
+        // this.scene.add(directLightHelper, LightHelper2, pointLightHelper)
 
     // model loading
         this.loader.register(parser => new GLTFGoogleTiltBrushMaterialExtension(parser, '../extras/brushes')) //brushes folder has shader files also
         this.loader.load('/models/materialTest.glb', (model) => {
-            console.log('model', model)
+            // console.log('model', model)
             model.scene.scale.set(9, 9, 9)
             model.scene.position.set(0, -5, 0)
             this.scene.add(model.scene)
@@ -88,12 +86,12 @@ export default class HomepageScene extends Component {
 
     // Loading manager
         manager.onStart = ()=> {
-            console.log('started')
+            // console.log('started')
         }
         manager.onLoad = ()=> {
             if(loadingBar){
                 gsap.delayedCall(0.5, () => {
-                    console.log('loaded')
+                    // console.log('loaded')
                     gsap.to(overlayMaterial.uniforms.uAlpha, {duration: 2, value: 0})
                     loadingBar.classList.add('ended')
                     loadingBar.style.transform = ''
@@ -105,7 +103,7 @@ export default class HomepageScene extends Component {
             // console.log(itemUrl, itemsLoaded, itemsTotal)
         }
         manager.onError = ()=> {
-            console.log('Error on loading manager')
+            console.warn('Error on loading manager')
         }
         
     // camera
@@ -120,7 +118,9 @@ export default class HomepageScene extends Component {
         // document.body.appendChild( stats.dom );
 
     // render
-        this.renderer = new THREE.WebGLRenderer()
+        this.renderer = new THREE.WebGLRenderer({
+            powerPreference: "high-performance",
+        })
         this.renderer.setSize(window.innerWidth, window.innerHeight)
         this.renderer.outputEncoding = sRGBEncoding;
         this.mount.appendChild(this.renderer.domElement)
@@ -131,11 +131,8 @@ export default class HomepageScene extends Component {
         this.controls.enableZoom = false
         this.controls.enablePan = false
         this.controls.autoRotate = true
-        this.controls.autoRotateSpeed = 1.5
+        this.controls.autoRotateSpeed = 1.8
         this.controls.maxPolarAngle = 1.4
-
-        this.transform = new TransformControls(this.camera, this.renderer.domElement)
-        this.transform.addEventListener('change', render)
 
         function render() {
             this.renderer.render(this.scene, this.camera)

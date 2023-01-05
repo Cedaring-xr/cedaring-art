@@ -43,7 +43,7 @@ export default function InfoPage() {
                     </div>
                     <div className="grid-item grid-text text-mid">
                         <p className="text-block">
-                            I am a web developer, VR artist, and rock climber. I built this website for fun to showcase some of the art that I have made, and also to experiment with different web development effects. I love the blending of technologies betweeen 3D, VR, AR, and the web. Some of my goals for this next year are expanding into AR more, Virtual world building, and some short 3D web-based puzzle mini-games with ThreeJS.
+                            I am a web developer, VR artist, and rock climber. I built this website for fun to showcase some of the art that I have made, and also to experiment with different web development effects. I love the blending of technologies between 3D, VR, AR, and the web. Some of my goals for this next year are expanding into AR more, VR world building, and some short 3D web-based puzzle mini-games with ThreeJS. The website will improve and expand over time as I build and learn more.
                         </p>
                     </div>
                     <div className="grid-item img-mid">
@@ -52,7 +52,7 @@ export default function InfoPage() {
                     <div className="grid-item grid-text">
                         <h4 className="tagline grid-header">What is Cedaring???</h4>
                         <p className="text-block text-extra">
-                            Cedaring is the name I use on social media. It is a play on words that combines the two (Cedar + Ring). Similar to a tree ring it symbolizes continual growth and circular unity. I also just like trees and needed a unique username. I have some plans to make an artwork piece themed around it soon. 
+                            Cedaring is the name that I use on social media. It is a play on words that combines the two (Cedar + Ring). Similar to tree rings in nature, it symbolizes continual growth and circular connectedness. I also just like trees and needed a unique username. I have some plans to make an artwork piece themed around it soon. 
                         </p>
                     </div>
                     <div className="grid-item">

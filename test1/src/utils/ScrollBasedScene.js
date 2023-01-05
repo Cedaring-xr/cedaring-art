@@ -45,7 +45,7 @@ class ScrollBasedScene extends Component {
 
     // Loading manager
         manager.onStart = ()=> {
-            console.log('started')
+            // console.log('started')
         }
         manager.onProgress = (itemUrl, itemsLoaded, itemsTotal)=> {
             // console.log(itemUrl, itemsLoaded, itemsTotal)
@@ -53,7 +53,7 @@ class ScrollBasedScene extends Component {
         manager.onLoad = ()=> {
             if(loadingBar){
                 gsap.delayedCall(0.5, () => {
-                    console.log('loaded')
+                    // console.log('loaded')
                     gsap.to(overlayMaterial.uniforms.uAlpha, {duration: 2, value: 0})
                     loadingBar.classList.add('ended')
                     loadingBar.style.transform = ''
