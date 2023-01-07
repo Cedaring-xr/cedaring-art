@@ -19,7 +19,7 @@ export default class HomepageScene extends Component {
         // this.gui = new lilGui.GUI({closed: true, width: 0})
         this.clock = new THREE.Clock();
         this.delta = 0;
-        this.interval = 1 / 30; // 30 fps
+        this.interval = 1 / 30; // 30 fps not working
 
     //overlay intro
         const overlayGeometry = new THREE.PlaneBufferGeometry(2,2,1,1)
