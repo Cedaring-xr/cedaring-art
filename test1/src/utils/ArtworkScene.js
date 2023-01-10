@@ -8,7 +8,7 @@ import gsap from 'gsap'
 // import { Vector3 } from "three"
 
 
-class ArtworkScene1 extends Component {
+class ArtworkScene extends Component {
 
     componentDidMount(){
     // scene
@@ -132,4 +132,4 @@ class ArtworkScene1 extends Component {
     }
 }
 
-export default ArtworkScene1
+export default ArtworkScene

@@ -1,9 +1,6 @@
 import React from 'react'
-import closeIcon from '../Assets/logos/x-png.png';
 
 export default function VideoScene({ card, onClose}) {
-    // console.log("video scene log")
-
   return (
     <>
         <div className='video-description-box'>

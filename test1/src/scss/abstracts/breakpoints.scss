@@ -1,5 +1,4 @@
 
-
 // px / 16 = em
 $breakpoints: (
   'phone': 26em, //420
@@ -7,30 +6,12 @@ $breakpoints: (
   'other': 56em, //900
   'desktop': 78em, //1260
   'wide-desktop': 89em, //1440 
-  'max-desktop': 120em  //1920
+  'max-desktop': 120em,  //1920
+  'max-full': 140em     //2240
 );
 
 @mixin breakpoint($size) {
   @media (min-width: map-get($breakpoints, $size)) {
     @content;
   }
-}
-
-@mixin for-size($range) {
-    $phone-upper-boundary: 420px;
-    $tablet-portrait-upper-boundary: 760px;
-    $tablet-landscape-upper-boundary: 1260px;
-    $desktop-upper-boundary: 1920px;
-  
-    @if $range == phone-only {
-      @media (max-width: #{$phone-upper-boundary - 1}) { @content; }
-    } @else if $range == tablet-portrait-up {
-      @media (min-width: $phone-upper-boundary) { @content; }
-    } @else if $range == tablet-landscape-up {
-      @media (min-width: $tablet-portrait-upper-boundary) { @content; }
-    } @else if $range == desktop-up {
-      @media (min-width: $tablet-landscape-upper-boundary) { @content; }
-    } @else if $range == big-desktop-up {
-      @media (min-width: $desktop-upper-boundary) { @content; }
-    }
 }

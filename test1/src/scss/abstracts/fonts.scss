@@ -1,11 +1,8 @@
 
-
-//sans-serif
+//sans-serif header font
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
-//serif
+//serif body text font
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
-
-
 
 $headerFont: 'Ubuntu', sans-serif;
 $bodyFont: 'Lora', serif;

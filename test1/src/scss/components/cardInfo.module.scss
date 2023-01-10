@@ -1,6 +1,5 @@
 @use '../abstracts';
 
-
 .content {
     position: relative;
     display: flex;
@@ -11,8 +10,6 @@
     border-radius: 10px;
 }
 
-
-    //other card stuff
 .grid-img-container {
     height: 100%;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -26,7 +23,7 @@
     flex-direction: column;
 
     .alert-message {
-        color: #fff;
+        color: abstracts.$ivoryWhite;
         font-family: abstracts.$bodyFont;
         font-size: clamp(0.8rem, 3vw, 1.5rem);
     }
@@ -36,8 +33,4 @@
         max-width: 1000px;
     }
 }
-
-
-
-
         

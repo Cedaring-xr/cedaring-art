@@ -3,14 +3,15 @@
 .header-main::after {
     content: '';
     position: absolute;
-    height: 50px;
+    height: 20px;
     width: 100%;
-    background: linear-gradient(to bottom, rgb(43, 43, 44), transparent);
+    max-width: 2240px;
+    background: linear-gradient(to bottom, abstracts.$slateBlack, transparent);
     z-index: 14;
 }
         
 .header {
-    background: abstracts.$dark;
+    background: abstracts.$slateBlack;
     font-family: abstracts.$headerFont;
     width: 100%;
     padding: 0;
@@ -18,7 +19,7 @@
 
     &__content {
         overflow: hidden;
-        color: abstracts.$light;
+        color: abstracts.$ivoryWhite;
         max-width: 1920px;
         height: 100%;
         display: flex;
@@ -38,7 +39,6 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            // transition: 0.4s ease transform;
 
             @include abstracts.breakpoint(tablet) {
                 transform: none;
@@ -62,20 +62,24 @@
                 }
                 
                 li {
-                    text-shadow: 1px 1px 1px #919191,
+                    text-shadow: none;
+
+                    @include abstracts.breakpoint(tablet) {
+                        text-shadow: 
+                        1px 1px 1px #919191,
                         1px 2px 1px #919191,
-                        1px 3px 1px #919191,
-                        1px 6px 4px rgba(16, 16, 16, 0.7);
+                        2px 5px 6px rgba(16, 16, 16, 0.8);
+                    }
                     
                     a {
                         text-decoration: none;
                         color: inherit;
-                        padding: 0.75rem rem;
-                        border-radius: abstracts.$borderRadius;
+                        padding: 0.1rem;
+                        border-radius: abstracts.$borderRadiusLarge;
                         transition: 0.3s ease all;
         
                         &:active {
-                            border-radius: calc(#{abstracts.$borderRadius} + 6px);
+                            border-radius: abstracts.$borderRadiusLarge;
                             background: linear-gradient(rgba(abstracts.$light, 0.1), rgba(abstracts.$light, 0.2));
                         }
                     }
@@ -86,7 +90,7 @@
                 cursor: pointer;
                 outline: none;
                 padding: 0.75rem 1.25rem;
-                border-radius: abstracts.$borderRadius;
+                border-radius: abstracts.$borderRadiusLarge;
                 font-size: 1rem;
                 font-family: inherit;
                 background: abstracts.$primary;
@@ -102,12 +106,12 @@
                 &:active {
                     border-color: abstracts.$primary;
                     background: linear-gradient(rgba(abstracts.$light, 0.2), rgba(abstracts.$light, 0.3));
-                    color: #fff;
+                    color: abstracts.$ivoryWhite;
                 }
             }
     
             &.isMenu {
-                background-color: #2c2c2c;
+                background-color: abstracts.$slateBlack;
                 position: fixed;
                 z-index: 28;
                 top:0;
@@ -124,10 +128,10 @@
             right: 0.6rem;
             top: 0.4rem;
             z-index: 30;
-            color: #fff;
+            color: abstracts.$ivoryWhite;
 
             &:hover {
-                color: #aaa6a6;
+                color: abstracts.$mistGray;
             }
 
             @include abstracts.breakpoint(tablet) {
@@ -137,37 +141,42 @@
     }
 }
 
-// temp other
 .parallax-box {
     background: url('../../Assets/images/parallax/background.jpg');
     background-repeat: no-repeat;
-    background-size: 120%;
+    background-size: 160%;
     position: relative;
     padding: 0;
     height: 15vw;
-    min-height: 80px;
-    max-height: 170px;
+    min-height: 90px;
+    max-height: 140px;
     overflow: hidden;
+
+    @include abstracts.breakpoint(phone) {
+        background-size: 110%;
+    }
 }
 
 .parallax-text {
     color: abstracts.$light;
-    padding-top:0.6rem;
+    padding-top:0.2rem;
     padding-left: 0.5rem;
     position: absolute;
     top: 0; 
     z-index: 50;
     font-size: clamp(1.5rem, 5vw, 3rem);
     width:fit-content;
-    text-shadow: 1px 1px 1px #919191,
+    text-shadow: 
+        1px 1px 1px #919191,
         1px 2px 1px #919191,
         1px 3px 1px #919191,
         1px 4px 1px #919191,
-        1px 10px 6px rgba(16, 16, 16, 0.8);
+        1px 4px 6px rgba(16, 16, 16, 0.6),
+        1px 6px 8px rgba(16, 16, 16, 0.9);
 
     @include abstracts.breakpoint(tablet) {
-        font-size: clamp(2.5rem, 5vw, 3.8rem);
-         
+        font-size: clamp(2.25rem, 3vw, 3.3rem);
+        padding-top:0;
     }
 }
 
@@ -190,15 +199,15 @@
         li {
             text-decoration: none;
             color: abstracts.$light;
-            padding: 0.85rem 1rem;
+            padding: 0.5rem 1rem;
             border-radius: abstracts.$borderRadiusSmall;
-            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
             font-weight: bold;
+            margin-top: 0.2em;
 
             &:hover {
-                background: rgba(abstracts.$dark, 0.5);
+                background: rgba(abstracts.$slateBlack, 0.5);
             }
-        
         }
     }
 }
@@ -213,8 +222,18 @@
         width: 110%
     }
 
+    @include abstracts.breakpoint(tablet) {
+        top: 5%;
+        width: 100%
+    }
+
     @include abstracts.breakpoint(wide-desktop) {
-        top:-12%;
+        top:-16%;
+        width: 100%
+    }
+
+    @include abstracts.breakpoint(max-desktop) {
+        top: -30%;
         width: 100%
     }
 }
@@ -229,8 +248,18 @@
         width: 110%
     }
 
+    @include abstracts.breakpoint(tablet) {
+        top: 27%;
+        width: 100%
+    }
+
     @include abstracts.breakpoint(wide-desktop) {
-        top:18%;
+        top:14%;
+        width: 100%
+    }
+
+    @include abstracts.breakpoint(max-desktop) {
+        top: 0%;
         width: 100%
     }
 }
@@ -239,15 +268,25 @@
     position: absolute;
     top: 76%;
     z-index: 27;
-    width: 120%;
+    width: 150%;
 
     @include abstracts.breakpoint(phone) {
         top: 71%;
         width: 110%
     }
 
-   @include abstracts.breakpoint(wide-desktop) {
-        top: 65%;
+    @include abstracts.breakpoint(tablet) {
+        top: 71%;
+        width: 100%
+    }
+
+    @include abstracts.breakpoint(wide-desktop) {
+        top: 68%;
         width: 100%
    }
+
+    @include abstracts.breakpoint(max-desktop) {
+        top: 68%;
+        width: 100%
+    }
 }

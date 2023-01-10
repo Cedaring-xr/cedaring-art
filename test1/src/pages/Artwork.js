@@ -64,8 +64,8 @@ export default function Artwork()  {
             <div className="artwork-grid-container">
                 { artworkItems.map((card, index) => {
                     return(
-                        <div key={index} ref={gridCard} className="grid-card" onClick={() => openModal(card, index)}>
-                            <div className="grid-card-content">
+                        <div key={index} ref={gridCard} className="grid-card">
+                            <div className="grid-card-content" onClick={() => openModal(card, index)}>
                                 <div className="grid-img-container">
                                     <LazyImage src={card["preview-img"]} placeholderSrc={card["placeholder-img"]}/>
                                 </div>

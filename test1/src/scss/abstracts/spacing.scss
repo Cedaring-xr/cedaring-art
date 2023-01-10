@@ -2,9 +2,12 @@
 //spacing
 $spacing-med: 16px;
 $spacing-large: 24px;
-
-//border
-$borderRadius: 12px;
-$borderRadiusSmall: 6px;
-
 // if using em for spacing, it is based on font size of that element not parent. Rem is still based on root.
+
+// borders
+$borderRadiusLarge: 8px;
+$borderRadiusSmall: 4px;
+
+// margins
+$phoneStandardMargin: 1rem;
+$desktopStandardMargin: 2rem;

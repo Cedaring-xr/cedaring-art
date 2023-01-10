@@ -6,17 +6,17 @@
     height: 100vh;
     top: 0;
     left: 0;
-    background: #000;
 }
 
 .modal-container {
-    max-height:88vh;
-    width: 95vw;
+    max-height:80vh;
+    width: clamp(85vw, 47em, 100vw);
+    max-width: 1980px;
     top: 54%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 2px solid rgb(223, 153, 3);
-    background: rgb(14, 13, 13);
+    border: 1px solid abstracts.$honeyGold;
+    background: abstracts.$slateBlack;
     position: fixed;
     overflow: hidden;
 }
@@ -26,7 +26,7 @@
     position: relative;
     float: right;
     right: 20px;
-    top:20px;
+    top:15px;
     z-index: 30;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .video-description {
-    color: #fff;
+    color: abstracts.$ivoryWhite;
     font-family: abstracts.$bodyFont;
     width: 75%;
     margin: 15px;

@@ -1,4 +1,5 @@
 @use "./scss/pages";
+@use "./scss/abstracts";
 
 //variables
 $altBlueColor: #61dafb;
@@ -9,17 +10,21 @@ $altBlueColor: #61dafb;
 }
 
 html {
-  background: rgb(49, 47, 47);
+  background: rgb(75, 74, 74);
 }
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: abstracts.$ivoryWhite; //title
 }
 
 body {
-  background: rgb(230,214,209);
-  background: radial-gradient(circle, rgb(208, 212, 211) 0%, rgba(235,220,217,1) 50%, rgba(203,210,213,1) 100%);
+  // background: abstracts.$morningTeal;
+  // background: radial-gradient(circle, rgb(222, 224, 224) 0%, rgb(216, 222, 224) 70%, abstracts.$morningTeal 100%);
+  background: rgb(245,245,245);
+  background: linear-gradient(0deg, rgba(245,245,245,1) 0%, rgb(196, 204, 201) 84%);
+  max-width: 2240px;
+  margin: 0 auto;
 }
 
 #portal-root {

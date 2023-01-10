@@ -79,9 +79,8 @@ export default function Header() {
                     }
                 })
                 gsap.to('.parallax-text', {
-                    y: 110, 
-                    x: 40,
-                    rotation: 4,
+                    y: 90, 
+                    x: 10,
                     scrollTrigger: {
                         trigger: '.header-main',
                         start: 'top top', 
@@ -90,9 +89,8 @@ export default function Header() {
                     }
                 })
                 gsap.to('.parallax-nav', {
-                    y: 110,
-                    x: -40,
-                    rotation: -4,
+                    y: 90,
+                    x: -10,
                     scrollTrigger: {
                         trigger: '.header-main',
                         start: 'top top', 

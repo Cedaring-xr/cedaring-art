@@ -1,7 +1,5 @@
 @use '../abstracts';
 
-
-//grid stuff
 .info-grid-container {
     margin-top: 30px;
     margin-bottom: 20px;
@@ -16,7 +14,11 @@
 }
 
 .grid-header {
-    margin-left: 2rem;
+    margin-left: abstracts.$phoneStandardMargin;
+
+    @include abstracts.breakpoint(tablet) {
+        margin-left: abstracts.$desktopStandardMargin;
+    }
 }
 
 .grid-item {
@@ -28,11 +30,11 @@
 }
 
 .grid-text {
-    background: linear-gradient(45deg, rgba(7,84,114,1) 28%, rgb(15, 106, 145) 90%);
-    border-radius: 6px;
-    opacity: 0.95;
+    border-radius: abstracts.$borderRadiusSmall;
+    opacity: 1;
     margin: 0.5rem;
     padding: 0.2rem;
+    background: abstracts.$ceruleanBlueFade;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
     @include abstracts.breakpoint(tablet) {
@@ -48,23 +50,14 @@
 }
 
 .text-mid {
-    background: rgb(7,84,114);
     @include abstracts.breakpoint(tablet) {
         grid-column: span 2;
     }
-
 }
 
 #grid-img {
     width: 100%;
-    border: 2px solid rgb(48, 44, 44);
-
-    @include abstracts.breakpoint(tablet) {
-    }
-
-    @include abstracts.breakpoint(other) {
-        
-    }
+    border: 1px solid abstracts.$slateBlack;
 }
 
 .img-mid {
@@ -94,19 +87,15 @@
 .text-block {
     line-height: 1.4;
     text-align: left;
-    color: #fff;
+    color: abstracts.$ivoryWhite;
     font-family: abstracts.$bodyFont, serif;
     font-size: 1.05rem;
-    padding: 1.8rem;
+    padding: 1.5rem;
 }
 
 .text-extra {
     padding-top: 0.2rem;
 }
-
-
-
-
 
 .outer-container {
     overflow: hidden;
@@ -133,11 +122,10 @@
     width: 92%;
     max-width: 1400px;
     text-align: left;
-    background: linear-gradient(45deg, rgba(7,84,114,1) 28%, rgb(17, 112, 153) 90%);
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    opacity: 0.9;
     margin: 30px auto 0;
-    border-radius: 6px;
+    background: abstracts.$ceruleanBlueFade;
+    box-shadow: abstracts.$bodyTextShadow;
+    border-radius: abstracts.$borderRadiusLarge;
     position: relative;
     z-index: 20;
 
@@ -146,7 +134,7 @@
     }
 
     &__content {
-        color: #fff;
+        color: abstracts.$ivoryWhite;
         font-family: abstracts.$bodyFont, serif;
         font-size: 1.1rem;
         margin-top: 1rem;
@@ -157,11 +145,9 @@
 .tagline {
     font-size: 1.6rem;
     font-family: abstracts.$headerFont;
-    color: rgba(243, 208, 7, 0.952);
+    color: abstracts.$honeyGold;
     text-shadow: 1px 2px 2px rgba(16, 16, 16, 0.7);
-    width: 70%;
     margin-top: 15px;
-    border-bottom: 4px solid rgb(43, 43, 58);
 
     @include abstracts.breakpoint(tablet) {
         padding-bottom: 0;
@@ -175,7 +161,6 @@
     padding-bottom: 10px;
 
     @include abstracts.breakpoint(tablet) {
-        border-bottom: 4px solid rgb(43, 43, 58);
         width: 90%;
         font-size: clamp(1.6rem, 2.5vw, 2.4rem);
         padding-top: 8%;
