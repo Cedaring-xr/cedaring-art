@@ -1,5 +1,5 @@
 @use '../abstracts';
- 
+
 .header-main::after {
     content: '';
     position: absolute;
@@ -9,7 +9,7 @@
     background: linear-gradient(to bottom, abstracts.$slateBlack, transparent);
     z-index: 14;
 }
-        
+
 .header {
     background: abstracts.$slateBlack;
     font-family: abstracts.$headerFont;
@@ -60,27 +60,28 @@
                     margin-bottom: 0;
                     margin-right: calc(0.5rem + #{abstracts.$spacing-med});
                 }
-                
+
                 li {
                     text-shadow: none;
 
                     @include abstracts.breakpoint(tablet) {
-                        text-shadow: 
-                        1px 1px 1px #919191,
-                        1px 2px 1px #919191,
-                        2px 5px 6px rgba(16, 16, 16, 0.8);
+                        text-shadow: 1px 1px 1px #919191, 1px 2px 1px #919191,
+                            2px 5px 6px rgba(16, 16, 16, 0.8);
                     }
-                    
+
                     a {
                         text-decoration: none;
                         color: inherit;
                         padding: 0.1rem;
                         border-radius: abstracts.$borderRadiusLarge;
                         transition: 0.3s ease all;
-        
+
                         &:active {
                             border-radius: abstracts.$borderRadiusLarge;
-                            background: linear-gradient(rgba(abstracts.$light, 0.1), rgba(abstracts.$light, 0.2));
+                            background: linear-gradient(
+                                rgba(abstracts.$light, 0.1),
+                                rgba(abstracts.$light, 0.2)
+                            );
                         }
                     }
                 }
@@ -97,7 +98,7 @@
                 color: abstracts.$dark;
                 border: 1px solid transparent;
                 transition: 0.3s ease all;
-        
+
                 &:hover {
                     border-color: abstracts.$primary;
                     background: rgba(abstracts.$primary, 0.1);
@@ -105,16 +106,19 @@
                 }
                 &:active {
                     border-color: abstracts.$primary;
-                    background: linear-gradient(rgba(abstracts.$light, 0.2), rgba(abstracts.$light, 0.3));
+                    background: linear-gradient(
+                        rgba(abstracts.$light, 0.2),
+                        rgba(abstracts.$light, 0.3)
+                    );
                     color: abstracts.$ivoryWhite;
                 }
             }
-    
+
             &.isMenu {
                 background-color: abstracts.$slateBlack;
                 position: fixed;
                 z-index: 28;
-                top:0;
+                top: 0;
             }
         }
 
@@ -159,24 +163,20 @@
 
 .parallax-text {
     color: abstracts.$light;
-    padding-top:0.2rem;
+    padding-top: 0.2rem;
     padding-left: 0.5rem;
     position: absolute;
-    top: 0; 
+    top: 0;
     z-index: 50;
     font-size: clamp(1.5rem, 5vw, 3rem);
-    width:fit-content;
-    text-shadow: 
-        1px 1px 1px #919191,
-        1px 2px 1px #919191,
-        1px 3px 1px #919191,
-        1px 4px 1px #919191,
-        1px 4px 6px rgba(16, 16, 16, 0.6),
+    width: fit-content;
+    text-shadow: 1px 1px 1px #919191, 1px 2px 1px #919191, 1px 3px 1px #919191,
+        1px 4px 1px #919191, 1px 4px 6px rgba(16, 16, 16, 0.6),
         1px 6px 8px rgba(16, 16, 16, 0.9);
 
     @include abstracts.breakpoint(tablet) {
         font-size: clamp(2.25rem, 3vw, 3.3rem);
-        padding-top:0;
+        padding-top: 0;
     }
 }
 
@@ -195,7 +195,7 @@
         @include abstracts.breakpoint(tablet) {
             flex-direction: row;
         }
-        
+
         li {
             text-decoration: none;
             color: abstracts.$light;
@@ -219,22 +219,22 @@
 
     @include abstracts.breakpoint(phone) {
         top: 8%;
-        width: 110%
+        width: 110%;
     }
 
     @include abstracts.breakpoint(tablet) {
         top: 5%;
-        width: 100%
+        width: 100%;
     }
 
     @include abstracts.breakpoint(wide-desktop) {
-        top:-16%;
-        width: 100%
+        top: -16%;
+        width: 100%;
     }
 
     @include abstracts.breakpoint(max-desktop) {
         top: -30%;
-        width: 100%
+        width: 100%;
     }
 }
 
@@ -245,22 +245,22 @@
 
     @include abstracts.breakpoint(phone) {
         top: 35%;
-        width: 110%
+        width: 110%;
     }
 
     @include abstracts.breakpoint(tablet) {
         top: 27%;
-        width: 100%
+        width: 100%;
     }
 
     @include abstracts.breakpoint(wide-desktop) {
-        top:14%;
-        width: 100%
+        top: 14%;
+        width: 100%;
     }
 
     @include abstracts.breakpoint(max-desktop) {
         top: 0%;
-        width: 100%
+        width: 100%;
     }
 }
 
@@ -272,21 +272,21 @@
 
     @include abstracts.breakpoint(phone) {
         top: 71%;
-        width: 110%
+        width: 110%;
     }
 
     @include abstracts.breakpoint(tablet) {
         top: 71%;
-        width: 100%
+        width: 100%;
     }
 
     @include abstracts.breakpoint(wide-desktop) {
         top: 68%;
-        width: 100%
-   }
+        width: 100%;
+    }
 
     @include abstracts.breakpoint(max-desktop) {
         top: 68%;
-        width: 100%
+        width: 100%;
     }
 }

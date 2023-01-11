@@ -1,7 +1,5 @@
 import { render, screen, cleanup } from '@testing-library/react'
-import Todo from "../../components/Todo"
-
-
+import Todo from '../../components/Todo'
 
 test('should render Todo component', () => {
     render(<Todo />)

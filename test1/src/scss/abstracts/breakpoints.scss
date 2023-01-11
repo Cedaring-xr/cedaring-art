@@ -1,17 +1,22 @@
-
 // px / 16 = em
 $breakpoints: (
-  'phone': 26em, //420
-  'tablet': 48em,  //768
-  'other': 56em, //900
-  'desktop': 78em, //1260
-  'wide-desktop': 89em, //1440 
-  'max-desktop': 120em,  //1920
-  'max-full': 140em     //2240
+    'phone': 26em,
+    //420
+    'tablet': 48em,
+    //768
+    'other': 56em,
+    //900
+    'desktop': 78em,
+    //1260
+    'wide-desktop': 89em,
+    //1440
+    'max-desktop': 120em,
+    //1920
+    'max-full': 140em //2240
 );
 
 @mixin breakpoint($size) {
-  @media (min-width: map-get($breakpoints, $size)) {
-    @content;
-  }
+    @media (min-width: map-get($breakpoints, $size)) {
+        @content;
+    }
 }

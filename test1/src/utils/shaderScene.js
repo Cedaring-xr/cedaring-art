@@ -1,20 +1,18 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import * as lilGui from 'lil-gui'
 
-
 class ShaderPractice extends Component {
-    componentDidMount(){
-
+    componentDidMount() {
         //scene
         this.scene = new THREE.Scene()
         this.loader = new GLTFLoader()
-        this.gui = new lilGui.GUI({closed: true, width: 400})
+        this.gui = new lilGui.GUI({ closed: true, width: 400 })
 
         //shapes
-        const geometry = new THREE.BoxGeometry(1,1,1)
+        const geometry = new THREE.BoxGeometry(1, 1, 1)
 
         const material = new THREE.RawShaderMaterial({
             vertexShader: `#version 300 es
@@ -77,36 +75,38 @@ class ShaderPractice extends Component {
                 fragColor.rgb = ApplyFog(v_color.rgb);
                 fragColor.a = 1.0;
                 }
-            `,
+            `
         })
         this.cube = new THREE.Mesh(geometry, material)
         this.scene.add(this.cube)
 
         //camera
-        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
+        this.camera = new THREE.PerspectiveCamera(
+            75,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            1000
+        )
         this.camera.position.z = 5
-         // focusing the camera at object
-         this.camera.lookAt(this.cube.position)
-       
+        // focusing the camera at object
+        this.camera.lookAt(this.cube.position)
 
         //scale
         this.cube.scale.x = 1
         this.cube.scale.y = 1
         this.cube.scale.z = 1
 
-       
         //renderer
         this.renderer = new THREE.WebGLRenderer()
         this.renderer.setSize(window.innerWidth, window.innerHeight)
         this.mount.appendChild(this.renderer.domElement)
 
         //animation
-        
 
         const tick = () => {
             this.controls.update()
             this.renderer.render(this.scene, this.camera)
-            window.requestAnimationFrame(tick);
+            window.requestAnimationFrame(tick)
         }
         this.animation()
         // this.groupAnimation()
@@ -115,21 +115,20 @@ class ShaderPractice extends Component {
         // controls
         this.controls = new OrbitControls(this.camera, this.renderer.domElement)
 
-
         //gsap animation
         // gsap.to(this.cube.position, { duration: 2, delay: 1, x: 4})
         // gsap.to(this.cube.position, { duration: 2, delay: 3, x: -4})
 
         //event listeners
         tick()
-        window.addEventListener('resize', this.handleWindowResize);
+        window.addEventListener('resize', this.handleWindowResize)
     }
 
-    animation= ()=> {
-        requestAnimationFrame(this.animation);
-        this.cube.rotation.x +=0.01;
-        this.cube.rotation.y +=0.01;
-        this.renderer.render(this.scene, this.camera);
+    animation = () => {
+        requestAnimationFrame(this.animation)
+        this.cube.rotation.x += 0.01
+        this.cube.rotation.y += 0.01
+        this.renderer.render(this.scene, this.camera)
     }
 
     // groupAnimation= ()=> {
@@ -138,19 +137,19 @@ class ShaderPractice extends Component {
     //     this.renderer.render(this.scene, this.camera);
     // }
 
-    handleWindowResize= ()=> {
-        this.camera.aspect = window.innerWidth / window.innerHeight;
-        this.camera.updateProjectionMatrix();
-        this.renderer.setSize(window.innerWidth, window.innerHeight);
-        this.renderer.render(this.scene, this.camera);
+    handleWindowResize = () => {
+        this.camera.aspect = window.innerWidth / window.innerHeight
+        this.camera.updateProjectionMatrix()
+        this.renderer.setSize(window.innerWidth, window.innerHeight)
+        this.renderer.render(this.scene, this.camera)
     }
 
-    render(){
+    render() {
         return (
             <div
-            ref={mount => {
-                this.mount = mount;
-            }}
+                ref={(mount) => {
+                    this.mount = mount
+                }}
             />
         )
     }

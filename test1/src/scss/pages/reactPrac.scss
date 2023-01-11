@@ -80,7 +80,6 @@
             }
         }
     }
-
 }
 
 // .parallax-box {
@@ -104,7 +103,6 @@
 //         1px 5px 1px #919191,
 //         1px 10px 6px rgba(16, 16, 16, 0.8);
 
-
 //     @include abstracts.breakpoint(tablet) {
 //         font-size: clamp(3rem, 4vw, 4rem);
 //     }
@@ -122,7 +120,7 @@
 //         padding: 0;
 //         position: static;
 //         margin-bottom: abstracts.$spacing-large;
-        
+
 //         li {
 //             text-decoration: none;
 //             color: abstracts.$light;
@@ -144,7 +142,7 @@
 //                 background: transparent;
 //                 color: abstracts.$light;
 //             }
-        
+
 //         }
 //     }
 // }
@@ -161,7 +159,6 @@
 //     top: 170px;
 // }
 
-
 // .parallax-img {
 //     max-height: 200px;
 //     width: 110%;
@@ -175,4 +172,3 @@
 //         height: 350px;
 //     }
 // }
-

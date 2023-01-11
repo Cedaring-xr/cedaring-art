@@ -1,63 +1,62 @@
-import React, { useLayoutEffect, useState, useEffect } from 'react';
-import styles from '../scss/components/header.module.scss';
-import { BiMenuAltRight } from 'react-icons/bi';
-import { AiOutlineClose } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import React, { useLayoutEffect, useState, useEffect } from 'react'
+import styles from '../scss/components/header.module.scss'
+import { BiMenuAltRight } from 'react-icons/bi'
+import { AiOutlineClose } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 
-import { gsap } from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import backLayer from '../Assets/images/parallax/clear-back.png';
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import backLayer from '../Assets/images/parallax/clear-back.png'
 import backPlaceholder from '../Assets/images/parallax/backPlaceholder.png'
-import midLayer from '../Assets/images/parallax/clear-mid.png';
+import midLayer from '../Assets/images/parallax/clear-mid.png'
 import midPlaceholder from '../Assets/images/parallax/midPlaceholder.png'
-import frontLayer from '../Assets/images/parallax/clear-front-short.png';
+import frontLayer from '../Assets/images/parallax/clear-front-short.png'
 import frontPlaceholder from '../Assets/images/parallax/frontPlaceholder.png'
-import LazyImage from './LazyImage';
-gsap.registerPlugin(ScrollTrigger);
-
+import LazyImage from './LazyImage'
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Header() {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [size, setSize] = useState({ width: undefined, height: undefined });
+    const [menuOpen, setMenuOpen] = useState(false)
+    const [size, setSize] = useState({ width: undefined, height: undefined })
 
     const menuToggleOpen = () => {
-        document.body.classList.toggle('header-menu-open');
-        setMenuOpen((open) => !open);
-    };
+        document.body.classList.toggle('header-menu-open')
+        setMenuOpen((open) => !open)
+    }
 
     const menuCloseFull = () => {
-        document.body.classList.remove('header-menu-open');
-        setMenuOpen(false);
-    };
+        document.body.classList.remove('header-menu-open')
+        setMenuOpen(false)
+    }
 
     useEffect(() => {
         const handleResize = () => {
             setSize({
                 width: window.innerWidth,
                 height: window.innerHeight
-            });
-        };
-        window.addEventListener('resize', handleResize);
+            })
+        }
+        window.addEventListener('resize', handleResize)
 
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
 
     useEffect(() => {
         if (size.width > 768 && menuOpen) {
-            setMenuOpen(false);
+            setMenuOpen(false)
         }
-    }, [size.width, menuOpen]);
+    }, [size.width, menuOpen])
 
     useLayoutEffect(() => {
         ScrollTrigger.matchMedia({
-            "(min-width: 768px)" : () => {
+            '(min-width: 768px)': () => {
                 gsap.to('#prlx-back', {
                     y: 60,
                     scrollTrigger: {
                         trigger: '.header-main',
                         start: 'top top', // top of trigger top of viewport
                         end: 'bottom top', // bottom of the trigger top of the viewport?
-                        scrub: true, // bind to scroll 1:1
+                        scrub: true // bind to scroll 1:1
                     }
                 })
                 gsap.to('#prlx-mid', {
@@ -66,26 +65,26 @@ export default function Header() {
                         trigger: '.header-main',
                         start: 'top top',
                         end: 'bottom top',
-                        scrub: true,
+                        scrub: true
                     }
                 })
                 gsap.to('#prlx-front', {
                     y: 20,
                     scrollTrigger: {
                         trigger: '.header-main',
-                        start: 'top top', 
+                        start: 'top top',
                         end: 'bottom top',
-                        scrub: true,
+                        scrub: true
                     }
                 })
                 gsap.to('.parallax-text', {
-                    y: 90, 
+                    y: 90,
                     x: 10,
                     scrollTrigger: {
                         trigger: '.header-main',
-                        start: 'top top', 
+                        start: 'top top',
                         end: 'bottom top',
-                        scrub: true,
+                        scrub: true
                     }
                 })
                 gsap.to('.parallax-nav', {
@@ -93,43 +92,79 @@ export default function Header() {
                     x: -10,
                     scrollTrigger: {
                         trigger: '.header-main',
-                        start: 'top top', 
+                        start: 'top top',
                         end: 'bottom top',
-                        scrub: true,
+                        scrub: true
                     }
                 })
             }
-        });
+        })
     }, [])
-    
+
     return (
         <div className="header-main">
             <header className={styles.header}>
-               <div className="parallax-box" rel="preload">
-                    <LazyImage src={backLayer} placeholderSrc={backPlaceholder} className="parallax-img" id="prlx-back" loading="eager"/>
-                    <h1 className="parallax-text"><Link to="/" onClick={menuCloseFull}>Cedaring.Art</Link></h1>
-                    <LazyImage src={midLayer} placeholderSrc={midPlaceholder} className="parallax-img" id="prlx-mid" loading="eager"/>
-                    <nav className={`parallax-nav ${styles.header__content__nav} ${
-                            menuOpen ? styles.isMenu : ''
-                        }`}>
-                     <ul>
-                        <li className="nav-item"><Link to="/artwork" onClick={menuCloseFull}>Artwork</Link></li>
-                        <li className="nav-item"><Link to="/writing" onClick={menuCloseFull}>Writing</Link></li>
-                        <li className="nav-item"><Link to="/climbing" onClick={menuCloseFull}>Climbing</Link></li>
-                        {/* <li><Link to="/worlds">Worlds</Link></li> */}
-                        {/* <li><Link to="/react">React</LInk></li> */}
-                     </ul>
-                  </nav>
-                  <LazyImage src={frontLayer} placeholderSrc={frontPlaceholder} className="parallax-img" id="prlx-front" loading="eager"/>
-                  <div className={styles.header__content__toggle}>
+                <div className="parallax-box" rel="preload">
+                    <LazyImage
+                        src={backLayer}
+                        placeholderSrc={backPlaceholder}
+                        className="parallax-img"
+                        id="prlx-back"
+                        loading="eager"
+                    />
+                    <h1 className="parallax-text">
+                        <Link to="/" onClick={menuCloseFull}>
+                            Cedaring.Art
+                        </Link>
+                    </h1>
+                    <LazyImage
+                        src={midLayer}
+                        placeholderSrc={midPlaceholder}
+                        className="parallax-img"
+                        id="prlx-mid"
+                        loading="eager"
+                    />
+                    <nav
+                        className={`parallax-nav ${
+                            styles.header__content__nav
+                        } ${menuOpen ? styles.isMenu : ''}`}
+                    >
+                        <ul>
+                            <li className="nav-item">
+                                <Link to="/artwork" onClick={menuCloseFull}>
+                                    Artwork
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/writing" onClick={menuCloseFull}>
+                                    Writing
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/climbing" onClick={menuCloseFull}>
+                                    Climbing
+                                </Link>
+                            </li>
+                            {/* <li><Link to="/worlds">Worlds</Link></li> */}
+                            {/* <li><Link to="/react">React</LInk></li> */}
+                        </ul>
+                    </nav>
+                    <LazyImage
+                        src={frontLayer}
+                        placeholderSrc={frontPlaceholder}
+                        className="parallax-img"
+                        id="prlx-front"
+                        loading="eager"
+                    />
+                    <div className={styles.header__content__toggle}>
                         {!menuOpen ? (
-                           <BiMenuAltRight onClick={menuToggleOpen} />
+                            <BiMenuAltRight onClick={menuToggleOpen} />
                         ) : (
-                           <AiOutlineClose onClick={menuToggleOpen} />
+                            <AiOutlineClose onClick={menuToggleOpen} />
                         )}
-                  </div>
-               </div>
+                    </div>
+                </div>
             </header>
         </div>
-    );
+    )
 }

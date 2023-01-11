@@ -1,21 +1,22 @@
 @use '../abstracts';
 @use '../components';
 
-
 .canvas-box {
-  display: flex;
-  min-height: 80vh;
-  max-height: 200vw;
-  overflow: hidden;
-  position: relative;
-  z-index: 11;
-  background-color: black;
+    min-height: 80vh;
+    max-height: 200vw;
+    overflow: hidden;
+    position: sticky;
+    z-index: 11;
 }
 
 .mobile {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 .tablet {
-  pointer-events: none;
+    pointer-events: none;
+}
+
+.scroll-home-scene {
+    position: sticky;
 }

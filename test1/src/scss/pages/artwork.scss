@@ -20,7 +20,7 @@
 
     @include abstracts.breakpoint(tablet) {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        padding:1rem;
+        padding: 1rem;
     }
 }
 
@@ -31,7 +31,7 @@
 }
 
 .grid-card-img {
-    width: 100%; 
+    width: 100%;
 }
 
 .grid-card-content {
@@ -42,9 +42,9 @@
     border-radius: abstracts.$borderRadiusSmall;
 
     &:hover {
-      box-shadow: abstracts.$hoverShadow;
+        box-shadow: abstracts.$hoverShadow;
     }
-    
+
     .grid-img-container {
         position: relative;
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);

@@ -1,6 +1,5 @@
 @use '../abstracts';
 
-
 .writing-pagefill {
     min-height: 100vh;
 }
@@ -21,10 +20,9 @@
     @include abstracts.breakpoint(tablet) {
         gap: 3rem;
     }
-    
+
     .text-inner {
         padding: 4px;
-        
 
         h3 {
             color: #fff;
@@ -54,7 +52,8 @@
         font-family: abstracts.$bodyFont;
 
         &:hover {
-            box-shadow: rgba(0, 0, 0, 0.4) 2px 5px 7px, rgba(0, 0, 0, 0.3) 0px 8px 15px -3px;
+            box-shadow: rgba(0, 0, 0, 0.4) 2px 5px 7px,
+                rgba(0, 0, 0, 0.3) 0px 8px 15px -3px;
         }
     }
 }

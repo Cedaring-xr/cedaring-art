@@ -1,18 +1,19 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React from 'react'
+import { useState, useEffect } from 'react'
 
-function LazyImage({ src, placeholderSrc, id  }) {
-    const [imgSrc, setImgSrc] = useState(placeholderSrc || src);
+function LazyImage({ src, placeholderSrc, id }) {
+    const [imgSrc, setImgSrc] = useState(placeholderSrc || src)
 
     useEffect(() => {
-        const img = new Image();
-        img.src = src;
+        const img = new Image()
+        img.src = src
         img.onload = () => {
-            setImgSrc(src);
-        };
-    }, [src]);
+            setImgSrc(src)
+        }
+    }, [src])
 
-    const loadingStyle = placeholderSrc && imgSrc === placeholderSrc ? "loading" : "loaded";
+    const loadingStyle =
+        placeholderSrc && imgSrc === placeholderSrc ? 'loading' : 'loaded'
 
     return (
         <img
@@ -20,7 +21,7 @@ function LazyImage({ src, placeholderSrc, id  }) {
             className={`grid-card-img ${loadingStyle}`}
             id={id}
         />
-    );
+    )
 }
 
-export default LazyImage;
+export default LazyImage
