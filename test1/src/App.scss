@@ -19,8 +19,6 @@ a {
 }
 
 body {
-    // background: abstracts.$morningTeal;
-    // background: radial-gradient(circle, rgb(222, 224, 224) 0%, rgb(216, 222, 224) 70%, abstracts.$morningTeal 100%);
     background: rgb(245, 245, 245);
     background: linear-gradient(
         0deg,
@@ -38,13 +36,6 @@ body {
 
 .App-link {
     color: #61dafb;
-}
-
-.break-box {
-    width: 100%;
-    height: 50px;
-    background-color: white;
-    display: block;
 }
 
 .header-menu-open {

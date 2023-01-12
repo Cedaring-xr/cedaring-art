@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ScrollBasedScene from '../utils/ScrollBasedScene'
+import ScrollBasedScene from '../class utils/ScrollBasedScene'
 import { BiChevronDown } from 'react-icons/bi'
 
 export default function Climbing() {
@@ -17,19 +17,26 @@ export default function Climbing() {
                     layouts of mountain areas and climbing Destinations
                 </p>
             </div>
-
             <div className="climbing-text">
-                <h2>South Platte test demo Route</h2>
+                <h2>Noddle Head North</h2>
                 <button className="view-btn" onClick={() => setView(!view)}>
                     {!view ? 'View' : 'Close'}
                 </button>
             </div>
             <div className="climbing-text">
-                <h2>Pangborn's Pinicle</h2>
+                <h2>Pangborn's Pinacle</h2>
                 <button className="view-btn">View</button>
             </div>
             <div className="climbing-text">
-                <h2>Tarral Tower</h2>
+                <h2>Tarryal Tower</h2>
+                <button className="view-btn">View</button>
+            </div>
+            <div className="climbing-text">
+                <h2>Lizard Head</h2>
+                <button className="view-btn">View</button>
+            </div>
+            <div className="climbing-text">
+                <h2>Curecanti Needle</h2>
                 <button className="view-btn">View</button>
             </div>
             {view && (

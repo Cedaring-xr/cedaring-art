@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import ReactDom from 'react-dom'
 
 import closeIcon from '../Assets/logos/x-png.png'
-import ArtworkScene from '../utils/ArtworkScene'
-import VideoScene from '../utils/VideoScene'
+import ArtworkScene from '../classUtils/ArtworkScene'
+import VideoScene from '../classUtils/VideoScene'
 
 const portalRoot = document.getElementById('portal-root')
 

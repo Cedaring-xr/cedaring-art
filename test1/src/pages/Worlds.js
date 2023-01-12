@@ -1,5 +1,5 @@
 import React from 'react'
-import ArtworkSceneFunc from '../utils/ArtworkSceneFunc'
+import ArtworkSceneFunc from '../classUtils/ArtworkSceneFunc'
 
 export default function Worlds() {
     return (

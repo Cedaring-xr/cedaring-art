@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef, useLayoutEffect } from 'react'
-import HomepageScene from '../utils/HomeScene'
-import InfoPage from '../components/InfoPage'
+import OpenBrushHomeScene from '../classUtils/HomeScene'
 import LazyImage from '../components/LazyImage'
 import selfie3 from '../Assets/images/self3.jpg'
 import selfPlaceholder from '../Assets/images/self3_mini.jpg'
@@ -57,49 +56,45 @@ export default function Home() {
     return (
         <>
             <div className={`canvas-box ${device}`} id="canvas">
-                <HomepageScene className="scroll-scene" />
+                <OpenBrushHomeScene />
             </div>
-            <div className="content-container scroll-text-container">
-                <div className="grid info-grid-container">
+            <div className="content-container">
+                <div className="grid grid-container">
                     <div ref={gridItem} className="grid-item grid-text">
-                        <h4 className="tagline grid-tagline">
-                            Hi! <br></br>My name is Matt. <br></br>Welcome to my
-                            personal website.{' '}
-                        </h4>
+                        <h2 className="title">
+                            <span className='hello'>Hello!</span><br></br>My name is Matt<br></br>Welcome to
+                            my personal website
+                        </h2>
                     </div>
-                    <div className="grid-item">
+                    <div className="grid-item grid-image grid-image-round">
                         <LazyImage
                             src={selfie3}
                             placeholderSrc={selfPlaceholder}
-                            id="grid-img-sm"
                         />
                     </div>
                     <div className="grid-item grid-text text-mid">
-                        <p className="text-block">
+                        <p className="text">
                             I am a web developer, VR artist, and rock climber. I
-                            built this website for fun to showcase some of the
-                            art that I have made, and also to experiment with
+                            built this site for fun to showcase some of the art
+                            that I have made, and also to experiment with
                             different web development effects. I love the
                             blending of technologies between 3D, VR, AR, and the
                             web. Some of my goals for this next year are
                             expanding into AR more, VR world building, and some
                             short 3D web-based puzzle mini-games with ThreeJS.
-                            The website will improve and expand over time as I
-                            build and learn more.
+                            The site will improve and expand over time as I
+                            build and finish more projects.
                         </p>
                     </div>
-                    <div className="grid-item img-mid">
+                    <div className="grid-item grid-image">
                         <LazyImage
                             src={mountains}
                             placeholderSrc={mountainsPlaceholder}
-                            id="grid-img"
                         />
                     </div>
                     <div className="grid-item grid-text">
-                        <h4 className="tagline grid-header">
-                            What is Cedaring???
-                        </h4>
-                        <p className="text-block text-extra">
+                        <h4 className="title">What is Cedaring?</h4>
+                        <p className="text">
                             Cedaring is the name that I use on social media. It
                             is a play on words that combines the two (Cedar +
                             Ring). Similar to tree rings in nature, it
@@ -109,11 +104,10 @@ export default function Home() {
                             artwork piece themed around it soon.
                         </p>
                     </div>
-                    <div className="grid-item">
+                    <div className="grid-item grid-image">
                         <LazyImage
                             src={treeRings}
                             placeholderSrc={treeRingsPlaceholder}
-                            id="grid-img-sm"
                         />
                     </div>
                 </div>

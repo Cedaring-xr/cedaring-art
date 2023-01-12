@@ -1,0 +1,113 @@
+@use '../abstracts';
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0;
+    gap: 0.5rem;
+
+    @include abstracts.breakpoint(tablet) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .grid-item {
+        overflow: hidden;
+    
+        @include abstracts.breakpoint(tablet) {
+            grid-column: span 2;
+        }
+    }
+
+    .grid-text {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0.25rem;
+    
+        @include abstracts.breakpoint(tablet) {
+            grid-column: span 3;
+        }
+    
+        p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: abstracts.$slateBlack;
+            line-height: 1.3;
+            margin: 0.25rem;
+
+            @include abstracts.breakpoint(desktop) {
+                line-height: 1.5;
+            }
+        }
+    }
+
+    .title {
+        font-family: abstracts.$headerFont;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        padding: 5px;
+        color: abstracts.$ceruleanBlue;
+        text-shadow: abstracts.$bodyTextShadow;
+        border-bottom: 4px solid abstracts.$honeyGold;
+
+        span {
+            font-size: 3.5rem;
+            color: abstracts.$honeyGold;
+            text-shadow: abstracts.$headerShadow;
+        }
+    }
+
+    .grid-image {
+        margin: 0 auto;
+        width: 100%;
+
+        @include abstracts.breakpoint(phone) {
+            width: 90%;
+        }
+
+        img {
+            border: 1px solid abstracts.$slateBlack;
+        }
+    }
+}
+
+
+.outer-container {
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+
+    @include abstracts.breakpoint(other) {
+        margin: 0px auto;
+        max-width: 1340px;
+    }
+
+    @include abstracts.breakpoint(desktop) {
+        margin: 2% auto;
+        align-items: center;
+    }
+}
+
+.text {
+    max-width: 1400px;
+    text-align: left;
+    position: relative;
+    z-index: 20;
+    font-family: abstracts.$bodyFont;
+
+}
+
+.tagline {
+    font-size: 1.6rem;
+    font-family: abstracts.$headerFont;
+    color: abstracts.$ceruleanBlue;
+    text-shadow: abstracts.$bodyTextShadow;
+    margin-top: 15px;
+
+    @include abstracts.breakpoint(tablet) {
+        padding-bottom: 0;
+    }
+}
+
+.grid-image-round {
+    border-radius: 50%;
+    width: 80% !important;
+}

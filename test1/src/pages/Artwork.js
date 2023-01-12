@@ -4,7 +4,6 @@ import ModalCard from '../components/ModalCard'
 import LazyImage from '../components/LazyImage'
 import Openbrushlogo from '../Assets/logos/OBtestTP.png'
 
-import styles from '../scss/components/infoText.module.scss'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 
@@ -50,11 +49,11 @@ export default function Artwork() {
 
     return (
         <>
-            <div className={styles.text}>
-                <h4 className={styles.tagline}>
+            <div className="text">
+                <h4 className="tagline">
                     3D artwork created in virtual reality with OpenBrush
                 </h4>
-                <p className={styles.text__content}>
+                <p className="text__content">
                     OpenBrush is a VR painting application. It is an open source
                     version of TiltBrush. If you like my artwork or are
                     interested in learning more about the program or process of

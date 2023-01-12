@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ReactDom from 'react-dom'
 
 import closeIcon from '../Assets/logos/x-png.png'
-import FiresideScene from '../utils/FiresideScene'
+import FiresideScene from '../classUtils/FiresideScene'
 import WIPalert from './WIPalert'
 
 const portalRoot = document.getElementById('portal-root')
