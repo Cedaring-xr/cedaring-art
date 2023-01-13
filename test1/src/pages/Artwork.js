@@ -49,29 +49,31 @@ export default function Artwork() {
 
     return (
         <>
-            <div className="text">
-                <h4 className="tagline">
+            <div className="page-title-container">
+                <h4 className="title">
                     3D artwork created in virtual reality with OpenBrush
                 </h4>
-                <p className="text__content">
-                    OpenBrush is a VR painting application. It is an open source
-                    version of TiltBrush. If you like my artwork or are
-                    interested in learning more about the program or process of
-                    creating in VR, consider checking out the community. There
-                    are lots of new features and improvements over the original
-                    version of TiltBrush.
-                    <a
-                        href="https://openbrush.app/"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <img
-                            className="openbrush-logo"
-                            src={Openbrushlogo}
-                            alt="openbrush-logo"
-                        />
-                    </a>
-                </p>
+                <div className="heading-banner">
+                    <p className="text">
+                        OpenBrush is a VR painting application. It is an open source
+                        version of TiltBrush. If you like my artwork or are
+                        interested in learning more about the program or process of
+                        creating in VR, consider checking out the community. There
+                        are lots of new features and improvements over the original
+                        version of TiltBrush.
+                        <a
+                            href="https://openbrush.app/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <img
+                                className="openbrush-logo"
+                                src={Openbrushlogo}
+                                alt="openbrush-logo"
+                            />
+                        </a>
+                    </p>
+                </div>
             </div>
             <div className="artwork-grid-container">
                 {artworkItems.map((card, index) => {

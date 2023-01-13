@@ -76,13 +76,7 @@
                         border-radius: abstracts.$borderRadiusLarge;
                         transition: 0.3s ease all;
 
-                        &:active {
-                            border-radius: abstracts.$borderRadiusLarge;
-                            background: linear-gradient(
-                                rgba(abstracts.$light, 0.1),
-                                rgba(abstracts.$light, 0.2)
-                            );
-                        }
+                        
                     }
                 }
             }
@@ -94,23 +88,15 @@
                 border-radius: abstracts.$borderRadiusLarge;
                 font-size: 1rem;
                 font-family: inherit;
-                background: abstracts.$primary;
-                color: abstracts.$dark;
+                background: abstracts.$ivoryWhite;
+                color: abstracts.$slateBlack;
                 border: 1px solid transparent;
                 transition: 0.3s ease all;
 
                 &:hover {
-                    border-color: abstracts.$primary;
-                    background: rgba(abstracts.$primary, 0.1);
-                    color: abstracts.$primary;
-                }
-                &:active {
-                    border-color: abstracts.$primary;
-                    background: linear-gradient(
-                        rgba(abstracts.$light, 0.2),
-                        rgba(abstracts.$light, 0.3)
-                    );
-                    color: abstracts.$ivoryWhite;
+                    border-color: abstracts.$mistGray;
+                    background: rgba(abstracts.$mistGray, 0.1);
+                    color: abstracts.$mistGray;
                 }
             }
 
@@ -162,7 +148,7 @@
 }
 
 .parallax-text {
-    color: abstracts.$light;
+    color: abstracts.$ivoryWhite;
     padding-top: 0.2rem;
     padding-left: 0.5rem;
     position: absolute;
@@ -198,7 +184,7 @@
 
         li {
             text-decoration: none;
-            color: abstracts.$light;
+            color: abstracts.$ivoryWhite;
             padding: 0.5rem 1rem;
             border-radius: abstracts.$borderRadiusSmall;
             font-size: clamp(1.5rem, 2.5vw, 2rem);
@@ -218,7 +204,7 @@
     width: 150%;
 
     @include abstracts.breakpoint(phone) {
-        top: 8%;
+        top: 12%;
         width: 110%;
     }
 
@@ -244,7 +230,7 @@
     width: 150%;
 
     @include abstracts.breakpoint(phone) {
-        top: 35%;
+        top: 38%;
         width: 110%;
     }
 

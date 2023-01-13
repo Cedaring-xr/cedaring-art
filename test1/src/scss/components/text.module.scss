@@ -6,83 +6,209 @@
     padding: 0;
     gap: 0.5rem;
 
+    @include abstracts.breakpoint(phone) {
+        grid-template-columns: repeat(4, 1fr);
+    }
     @include abstracts.breakpoint(tablet) {
-        grid-template-columns: repeat(5, 1fr);
+        margin: 0 5rem;
+    }
+
+    @include abstracts.breakpoint(desktop) {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1rem;
+        margin-bottom: 400px;
+    }
+
+    #name-text {
+        @include abstracts.breakpoint(phone) {
+            grid-row-start: 1;
+            grid-column-start: 1;
+            grid-row-end: 2;
+            grid-column-end: 3;
+        }
+        @include abstracts.breakpoint(desktop) {
+            grid-row-start: 1;
+            grid-column-start: 2;
+            grid-row-end: 2;
+            grid-column-end: 5;
+        }
+    }
+
+    #welcome-title {
+        @include abstracts.breakpoint(phone) {
+            grid-row-start: 2;
+            grid-column-start: 1;
+            grid-row-end: 3;
+            grid-column-end: 4;
+        }
+
+        @include abstracts.breakpoint(desktop) {
+            grid-row-start: 2;
+            grid-column-start: 2;
+            grid-row-end: 3;
+            grid-column-end: 5;
+        }
+    }
+
+    #self-img {
+        border-radius: 50%;
+        display: flex;
+        align-items:flex-start;
+        justify-content: center;
+
+        img {
+            max-width: 225px;
+            min-width: 200px;
+            max-height: 225px;
+        }
+
+        @include abstracts.breakpoint(phone) {
+            border-radius: 0;
+            grid-row-start: 4;
+            grid-column-start: 1;
+            grid-row-end: 5;
+            grid-column-end: 3;
+        }
+        @include abstracts.breakpoint(desktop) {
+            border-radius: 0;
+            grid-row-start: 4;
+            grid-column-start: 2;
+            grid-row-end: 5;
+            grid-column-end: 4;
+        }
+    }
+
+    #about-text {
+        @include abstracts.breakpoint(phone) {
+            grid-row-start: 3;
+            grid-column-start: 1;
+            grid-row-end: 4;
+            grid-column-end: 5;
+        }
+
+        @include abstracts.breakpoint(desktop) {
+            grid-row-start: 3;
+            grid-column-start: 2;
+            grid-row-end: 4;
+            grid-column-end: 6;
+        }
+    }
+
+    #mtn-img {
+        
+        @include abstracts.breakpoint(phone) {
+            grid-row-start: 7;
+            grid-column-start: 1;
+            grid-row-end: 8;
+            grid-column-end: 5;
+            margin-bottom: -25px;
+        }
+        @include abstracts.breakpoint(desktop) {
+            grid-row-start: 7;
+            grid-column-start: 2;
+            grid-row-end: 8;
+            grid-column-end: 6;
+            margin-bottom: 25px;
+        }
+    }
+
+    #cedaring {
+        @include abstracts.breakpoint(phone) {
+            grid-row-start: 5;
+            grid-column-start: 1;
+            grid-row-end: 6;
+            grid-column-end: 5;
+        }
+        @include abstracts.breakpoint(desktop) {
+            grid-row-start: 5;
+            grid-column-start: 2;
+            grid-row-end: 6;
+            grid-column-end: 6;
+        }
+
+    }
+
+    #tree-img {
+        width: 65%;
+
+        @include abstracts.breakpoint(phone) {
+            grid-row-start: 4;
+            grid-column-start: 3;
+            grid-row-end: 5;
+            grid-column-end: 5;
+            width: 100%;
+        }
+        @include abstracts.breakpoint(desktop) {
+            grid-row-start: 4;
+            grid-column-start: 4;
+            grid-row-end: 5;
+            grid-column-end: 6;
+            width: 100%;
+        }
     }
 
     .grid-item {
         overflow: hidden;
-    
-        @include abstracts.breakpoint(tablet) {
-            grid-column: span 2;
-        }
     }
 
     .grid-text {
-        width: 100%;
-        margin: 0 auto;
-        padding: 0.25rem;
-    
-        @include abstracts.breakpoint(tablet) {
-            grid-column: span 3;
-        }
+        padding: 0 0.5rem;
     
         p {
             font-size: 1.1rem;
             font-weight: 500;
             color: abstracts.$slateBlack;
-            line-height: 1.3;
+            line-height: 1.4;
             margin: 0.25rem;
 
             @include abstracts.breakpoint(desktop) {
-                line-height: 1.5;
+                font-size: 1.2rem;
             }
         }
     }
 
     .title {
-        font-family: abstracts.$headerFont;
-        font-size: clamp(2rem, 5vw, 3.5rem);
         padding: 5px;
         color: abstracts.$ceruleanBlue;
         text-shadow: abstracts.$bodyTextShadow;
-        border-bottom: 4px solid abstracts.$honeyGold;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
 
-        span {
+        #hello {
+            font-family: abstracts.$headerFont;
             font-size: 3.5rem;
+            font-weight: 500;
             color: abstracts.$honeyGold;
             text-shadow: abstracts.$headerShadow;
+        }
+
+        .heading {
+            font-family: abstracts.$bodyFont;
+            border-bottom: 4px solid abstracts.$honeyGold;
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            margin: 0.5rem 0;
+            line-height: 1.1;
+            font-weight: 600;
+
+            @include abstracts.breakpoint(phone) {
+                grid-column: span 1;
+            }
         }
     }
 
     .grid-image {
         margin: 0 auto;
-        width: 100%;
-
-        @include abstracts.breakpoint(phone) {
-            width: 90%;
-        }
 
         img {
-            border: 1px solid abstracts.$slateBlack;
+            box-shadow: abstracts.$headerShadow;
+            width: 100%;
         }
     }
-}
 
-
-.outer-container {
-    overflow: hidden;
-    padding: 0;
-    position: relative;
-
-    @include abstracts.breakpoint(other) {
-        margin: 0px auto;
-        max-width: 1340px;
-    }
-
-    @include abstracts.breakpoint(desktop) {
-        margin: 2% auto;
-        align-items: center;
+    .grid-img-small {
+        width: 65%;
+        max-width: 400px;
     }
 }
 
@@ -92,22 +218,4 @@
     position: relative;
     z-index: 20;
     font-family: abstracts.$bodyFont;
-
-}
-
-.tagline {
-    font-size: 1.6rem;
-    font-family: abstracts.$headerFont;
-    color: abstracts.$ceruleanBlue;
-    text-shadow: abstracts.$bodyTextShadow;
-    margin-top: 15px;
-
-    @include abstracts.breakpoint(tablet) {
-        padding-bottom: 0;
-    }
-}
-
-.grid-image-round {
-    border-radius: 50%;
-    width: 80% !important;
 }

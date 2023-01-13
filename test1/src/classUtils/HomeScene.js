@@ -51,7 +51,7 @@ class OpenBrushHomeScene extends Component {
         ) //brushes folder has shader files also
         gltfLoader.load('/models/phyllotaxis.glb', (model) => {
             glbModel = model.scene
-            glbModel.position.set(0,0,0)
+            glbModel.position.set(0.2,0.6,0.2)
             this.scene.add(glbModel)
         })
 
@@ -65,9 +65,9 @@ class OpenBrushHomeScene extends Component {
             1000
         )
         this.camera.position.z = 0.8
-        this.camera.position.y = 0.5
-        this.camera.position.x = 0
-        this.camera.lookAt(glbModel)
+        this.camera.position.y = 0.9
+        this.camera.position.x = -0.2
+        this.camera.lookAt(0,0,0)
 
     // render
         this.renderer = new THREE.WebGLRenderer({ alpha: true })
@@ -78,7 +78,7 @@ class OpenBrushHomeScene extends Component {
         const animation = () => {
             this.controls.update()
             // rotation
-            glbModel.rotation.y += -0.03
+            glbModel.rotation.y += 0.015
             this.renderer.render(this.scene, this.camera)
             window.requestAnimationFrame(animation)
         }
@@ -91,6 +91,7 @@ class OpenBrushHomeScene extends Component {
         this.controls = new OrbitControls(this.camera, this.renderer.domElement)
         this.controls.enablePan = false
         this.controls.enableZoom = false
+        this.controls.enableRotate = false
 
     //animation
         animation()

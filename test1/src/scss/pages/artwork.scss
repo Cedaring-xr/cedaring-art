@@ -22,51 +22,51 @@
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         padding: 1rem;
     }
-}
 
-.grid-card {
-    display: grid;
-    place-items: center center;
-    position: relative;
-}
-
-.grid-card-img {
-    width: 100%;
-}
-
-.grid-card-content {
-    position: relative;
-    width: 85%;
-    border: 2px solid abstracts.$slateBlack;
-    background: abstracts.$honeyGold;
-    border-radius: abstracts.$borderRadiusSmall;
-
-    &:hover {
-        box-shadow: abstracts.$hoverShadow;
+    .grid-card {
+        display: grid;
+        place-items: center center;
+        position: relative;
     }
 
-    .grid-img-container {
+    .grid-card-img {
+        width: 100%;
+    }
+
+    .grid-card-content {
         position: relative;
-        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        border: none;
+        width: 85%;
+        border: 2px solid abstracts.$slateBlack;
+        background: abstracts.$honeyGold;
         border-radius: abstracts.$borderRadiusSmall;
+    
+        &:hover {
+            box-shadow: abstracts.$hoverShadow;
+        }
+    
+        .grid-img-container {
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            border: none;
+            border-radius: abstracts.$borderRadiusSmall;
+        }
     }
-}
 
-.grid-card-desc-container {
-    position: relative;
-    p {
-        font-size: 0.9rem;
-        font-family: abstracts.$bodyFont;
-        padding: 5px;
-    }
-
-    h4 {
-        font-family: abstracts.$headerFont;
+    .grid-card-desc-container {
         position: relative;
-        bottom: 25px;
-        float: right;
-        margin: 0.5rem 8px;
+        p {
+            font-size: 0.9rem;
+            font-family: abstracts.$bodyFont;
+            padding: 5px;
+        }
+    
+        h4 {
+            font-family: abstracts.$headerFont;
+            position: relative;
+            bottom: 25px;
+            float: right;
+            margin: 0.5rem 8px;
+        }
     }
 }
 
@@ -77,4 +77,45 @@
 .loaded {
     filter: blur(0px);
     transition: filter 0.5s linear;
+}
+
+.page-title-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 95%;
+    max-width: 1250px;
+    margin: 30px auto;
+    border-radius: abstracts.$borderRadiusLarge;
+
+    @include abstracts.breakpoint(phone) {
+        width: 85%
+    }
+
+    .title {
+        font-family: abstracts.$bodyFont;
+        color: abstracts.$ceruleanBlue;
+        font-size: clamp(2rem, 4vw, 2.2rem);
+        margin: 0.5rem 0;
+        line-height: 1.1;
+        font-weight: 600;
+        border-bottom: 4px solid abstracts.$honeyGold;
+    }
+
+    .heading-banner {
+        margin-top: 40px;
+        background-color: abstracts.$ceruleanBlueFade;
+        padding: 1rem;
+        border-radius: abstracts.$borderRadiusLarge;
+        box-shadow: abstracts.$buttonShadow;
+
+
+        .text {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: abstracts.$ivoryWhite;
+            line-height: 1.3;
+            margin: 0.25rem;
+        }
+    }
 }

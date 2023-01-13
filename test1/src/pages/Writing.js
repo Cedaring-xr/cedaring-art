@@ -15,12 +15,12 @@ export default function Writing() {
     }
 
     return (
-        <div className="writing-pagefill">
-            <div className="text">
-                <h1 className="tagline">
+        <div className="body-content">
+            <div className="page-title-container">
+                <h1 className="title">
                     Blending 3D visuals and written narratives
                 </h1>
-                <p className="text__content">
+                <p className="text">
                     I want to write my own stories or blog posts eventually, but
                     for now I am starting with poems or short stories written by
                     actual writers as a test. The goal is to create fun 3D
@@ -28,7 +28,7 @@ export default function Writing() {
                     writing.
                 </p>
             </div>
-            <div className="text writing-block">
+            <div className="writing-block">
                 <div className="text-inner">
                     <h3>A Fireside Vision</h3>
                     <p>Short poem written by: Bliss Carman</p>

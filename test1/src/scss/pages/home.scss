@@ -2,11 +2,16 @@
 @use '../components';
 
 .canvas-box {
-    min-height: 80vh;
+    width: 100%;
+    min-height: 60vh;
     max-height: 200vw;
     overflow: hidden;
-    position: sticky;
-    z-index: 11;
+    position: absolute;
+    z-index: 1;
+
+    @include abstracts.breakpoint(tablet) {
+        top: 250px;
+    }
 }
 
 .mobile {
@@ -17,7 +22,23 @@
     pointer-events: none;
 }
 
-.object-model-scene {
-  height: 400px;
+.content-container {
+    padding: 0;
+    position: relative;
+    top: 340px;
+    margin-bottom: 360px;
+
+    @include abstracts.breakpoint(desktop) {
+        margin: 2% auto;
+        align-items: center;
+    }
 }
 
+.self {
+    max-width: 250px;
+    border-radius: 50%;
+
+    @include abstracts.breakpoint(phone) {
+        border-radius: 0;
+    }
+}

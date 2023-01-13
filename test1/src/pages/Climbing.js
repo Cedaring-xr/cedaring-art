@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ScrollBasedScene from '../class utils/ScrollBasedScene'
+import ScrollBasedScene from '../classUtils/ScrollBasedScene'
 import { BiChevronDown } from 'react-icons/bi'
 
 export default function Climbing() {
@@ -11,9 +11,9 @@ export default function Climbing() {
 
     return (
         <div className="body-content">
-            <div className="heading-block">
-                <p className="text-content">
-                    Working with GPS and elevation data to create 3D explorable
+            <div className="page-title-container">
+                <p className="title">
+                    Using GPS and elevation data to create 3D explorable
                     layouts of mountain areas and climbing Destinations
                 </p>
             </div>

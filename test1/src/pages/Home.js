@@ -60,19 +60,24 @@ export default function Home() {
             </div>
             <div className="content-container">
                 <div className="grid grid-container">
-                    <div ref={gridItem} className="grid-item grid-text">
-                        <h2 className="title">
-                            <span className='hello'>Hello!</span><br></br>My name is Matt<br></br>Welcome to
-                            my personal website
-                        </h2>
+                    <div ref={gridItem} className="grid-item grid-text grid-title" id="name-text">
+                        <div className="title">
+                            <span id='hello'>Hello!</span>
+                            <span className='heading'>My name is Matt</span>
+                        </div>
                     </div>
-                    <div className="grid-item grid-image grid-image-round">
+                    <div ref={gridItem} className="grid-item grid-text grid-title" id="welcome-title">
+                        <div className="title">
+                            <span className='heading'>Welcome to my own personal website</span>
+                        </div>
+                    </div>
+                    <div className="grid-item grid-image self" id="self-img">
                         <LazyImage
                             src={selfie3}
                             placeholderSrc={selfPlaceholder}
                         />
                     </div>
-                    <div className="grid-item grid-text text-mid">
+                    <div className="grid-item grid-text" id="about-text">
                         <p className="text">
                             I am a web developer, VR artist, and rock climber. I
                             built this site for fun to showcase some of the art
@@ -82,20 +87,22 @@ export default function Home() {
                             web. Some of my goals for this next year are
                             expanding into AR more, VR world building, and some
                             short 3D web-based puzzle mini-games with ThreeJS.
-                            The site will improve and expand over time as I
+                            This site will improve and expand over time as I
                             build and finish more projects.
                         </p>
                     </div>
-                    <div className="grid-item grid-image">
+                    <div className="grid-item grid-image" id="mtn-img">
                         <LazyImage
                             src={mountains}
                             placeholderSrc={mountainsPlaceholder}
                         />
                     </div>
-                    <div className="grid-item grid-text">
-                        <h4 className="title">What is Cedaring?</h4>
+                    <div className="grid-item grid-text" id="cedaring">
+                        <div className="title">
+                            <span className='heading'>What is Cedaring?</span>
+                        </div>
                         <p className="text">
-                            Cedaring is the name that I use on social media. It
+                            Cedaring is the pseudonym that I use on social media. It
                             is a play on words that combines the two (Cedar +
                             Ring). Similar to tree rings in nature, it
                             symbolizes continual growth and circular
@@ -104,7 +111,7 @@ export default function Home() {
                             artwork piece themed around it soon.
                         </p>
                     </div>
-                    <div className="grid-item grid-image">
+                    <div className="grid-item grid-image grid-img-small" id="tree-img">
                         <LazyImage
                             src={treeRings}
                             placeholderSrc={treeRingsPlaceholder}

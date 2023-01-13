@@ -15,7 +15,7 @@
     }
 
     &__content {
-        color: abstracts.$light;
+        color: abstracts.$ivoryWhite;
         align-self: center;
         flex-grow: 1;
         position: relative;
@@ -86,4 +86,5 @@
     width: 100%;
     max-width: 2240px;
     background: linear-gradient(to top, rgba(12, 12, 12, 0.7), transparent);
+    z-index: 10;
 }
