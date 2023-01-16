@@ -55,17 +55,14 @@ export default function Artwork() {
                 </h4>
                 <div className="heading-banner">
                     <p className="text">
-                        OpenBrush is a VR painting application. It is an open source
-                        version of TiltBrush. If you like my artwork or are
-                        interested in learning more about the program or process of
-                        creating in VR, consider checking out the community. There
-                        are lots of new features and improvements over the original
-                        version of TiltBrush.
-                        <a
-                            href="https://openbrush.app/"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
+                        OpenBrush is a VR painting application. It is an open
+                        source version of TiltBrush. If you like my artwork or
+                        are interested in learning more about the program or
+                        process of creating in VR, consider checking out the
+                        community. There are lots of new features and
+                        improvements over the original version of TiltBrush.
+                        It's also free.
+                        <a href="https://openbrush.app/" target="_blank">
                             <img
                                 className="openbrush-logo"
                                 src={Openbrushlogo}

@@ -1,5 +1,9 @@
 @use '../abstracts';
 
+.header-menu-open {
+    position: fixed;
+}
+
 .header-main::after {
     content: '';
     position: absolute;

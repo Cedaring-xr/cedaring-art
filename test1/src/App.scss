@@ -1,9 +1,6 @@
 @use './scss/pages';
 @use './scss/abstracts';
 
-//variables
-$altBlueColor: #61dafb;
-
 * {
     margin: 0;
     box-sizing: border-box;
@@ -23,7 +20,7 @@ body {
     background: linear-gradient(
         0deg,
         rgba(240, 240, 240, 1) 0%,
-        rgb(196, 204, 203) 84%
+        rgb(210, 214, 216) 84%
     );
     max-width: 2240px;
     margin: 0 auto;
@@ -32,12 +29,4 @@ body {
 #portal-root {
     position: fixed;
     z-index: 500;
-}
-
-.App-link {
-    color: #61dafb;
-}
-
-.header-menu-open {
-    position: fixed;
 }

@@ -111,7 +111,7 @@ export default function Home() {
                             artwork piece themed around it soon.
                         </p>
                     </div>
-                    <div className="grid-item grid-image grid-img-small" id="tree-img">
+                    <div className="grid-item grid-image" id="tree-img">
                         <LazyImage
                             src={treeRings}
                             placeholderSrc={treeRingsPlaceholder}

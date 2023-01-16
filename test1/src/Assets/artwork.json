@@ -20,8 +20,8 @@
     },
     {
         "id": 1,
-        "name": "Zelda Cyclos",
-        "description": "zelda windwaker fan-art",
+        "name": "Cyclos",
+        "description": "Legend of Zelda windwaker fan-art",
         "preview-img": "/extras/images/cyclos_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/cyclos_Moment.jpg",
         "background": "#0d0d0d",
@@ -59,7 +59,7 @@
     {
         "id": 3,
         "name": "Portal Owl",
-        "description": "working with feather brush type",
+        "description": "trying out the experimental feather brush type",
         "preview-img": "/extras/images/chainsOwlPortal_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/chainsOwlPortal_Moment.jpg",
         "background": "#0d0d0d",
@@ -79,7 +79,7 @@
     {
         "id": 4,
         "name": "Origami Crane",
-        "description": "Reconstructing origami in VR with triangle shapes of a crease-map",
+        "description": "Reconstructing origami in VR with shapes from a crease-map",
         "preview-img": "/extras/images/origamiCrane_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/origamiCrane_Moment.jpg",
         "background": "#0d0d0d",
@@ -98,7 +98,7 @@
     {
         "id": 5,
         "name": "Okami",
-        "description": "Okami fan-art with openbrush theme",
+        "description": "Okami fan-art with painting theme",
         "preview-img": "/extras/images/AmmyBrush.jpg",
         "placeholder-img": "/extras/placeholderImages/AmmyBrush.jpg",
         "background": "#0d0d0d",
@@ -174,7 +174,7 @@
     {
         "id": 9,
         "name": "Water Otter",
-        "description": "practicing 3D flowing water shapes",
+        "description": "more practice with water effects",
         "preview-img": "/extras/images/otter_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/otter_Moment.jpg",
         "background": "#0d0d0d",
@@ -193,7 +193,7 @@
     {
         "id": 10,
         "name": "floating island",
-        "description": "creating rocks and syncing the timing of animated brushes",
+        "description": "floating rocks and syncing the timing of animated brushes",
         "preview-img": "/extras/images/island_Moment.png",
         "placeholder-img": "/extras/placeholderImages/island_Moment.jpg",
         "background": "#0d0d0d",
@@ -212,7 +212,7 @@
     {
         "id": 11,
         "name": "Spirit Staff",
-        "description": "size perspective and fantasy theme",
+        "description": "size perspective and fantasy themed items",
         "preview-img": "/extras/images/fire_moment.jpg",
         "placeholder-img": "/extras/placeholderImages/fire_moment.jpg",
         "background": "#0d0d0d",
@@ -251,7 +251,7 @@
     {
         "id": 13,
         "name": "Circuit Arm",
-        "description": "Sci-fi themed robot arm with electric animation",
+        "description": "Sci-fi themed robot arm with electric and circuit effects",
         "preview-img": "/extras/images/circuitArm2_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/circuitArm2_Moment.jpg",
         "background": "#5c5c5c",
@@ -289,7 +289,7 @@
     {
         "id": 15,
         "name": "Fish tank",
-        "description": "fish always appear on back side of cube",
+        "description": "fish always appear on back side of cube because of single sided brush effect",
         "preview-img": "/extras/images/fishTank_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/fishTank_Moment.jpg",
         "background": "#0d0d0d",
@@ -329,7 +329,7 @@
     {
         "id": 17,
         "name": "single-Sided Beach",
-        "description": "visuals change based on viewing perspective",
+        "description": "made with a 4-way symmetry tool and single-sided experimental brush",
         "preview-img": "/extras/images/Beach1Side_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/Beach1Side_Moment.jpg",
         "background": "#0d0d0d",
@@ -369,7 +369,7 @@
     {
         "id": 19,
         "name": "Spiral Trees",
-        "description": "working with api generated shapes",
+        "description": "expanding on shapes that are generated from an api script",
         "preview-img": "/extras/images/trees_moment.png",
         "placeholder-img": "/extras/placeholderImages/trees_moment.jpg",
         "background": "#0d0d0d",

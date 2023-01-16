@@ -9,10 +9,10 @@
 }
 
 .modal-container {
-    max-height: 80vh;
+    max-height: 85vh;
     width: clamp(85vw, 47em, 100vw);
     max-width: 1980px;
-    top: 54%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     border: 2px solid abstracts.$honeyGold;

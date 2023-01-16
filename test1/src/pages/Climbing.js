@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useLayoutEffect } from 'react'
 import ScrollBasedScene from '../classUtils/ScrollBasedScene'
 import { BiChevronDown } from 'react-icons/bi'
+import { gsap } from 'gsap'
 
 export default function Climbing() {
     const [view, setView] = useState(false)
@@ -9,35 +10,30 @@ export default function Climbing() {
         display: 'none'
     }
 
+    useLayoutEffect(() => {
+        gsap.to('.canvas-container', {
+            duration: 0.3,
+            y: 40,
+            x: -20,
+        })
+    }, [])
+
     return (
         <div className="body-content">
             <div className="page-title-container">
                 <p className="title">
-                    Using GPS and elevation data to create 3D explorable
-                    layouts of mountain areas and climbing Destinations
+                    Using GPS and elevation data to create 3D explorable layouts
+                    of mountain areas and climbing Destinations
                 </p>
             </div>
-            <div className="climbing-text">
-                <h2>Noddle Head North</h2>
+            <div className="writing-block">
+                <div className="text-inner">
+                    <h3>Noddle Head North</h3>
+                    <p>south platte</p>
+                </div>
                 <button className="view-btn" onClick={() => setView(!view)}>
                     {!view ? 'View' : 'Close'}
                 </button>
-            </div>
-            <div className="climbing-text">
-                <h2>Pangborn's Pinacle</h2>
-                <button className="view-btn">View</button>
-            </div>
-            <div className="climbing-text">
-                <h2>Tarryal Tower</h2>
-                <button className="view-btn">View</button>
-            </div>
-            <div className="climbing-text">
-                <h2>Lizard Head</h2>
-                <button className="view-btn">View</button>
-            </div>
-            <div className="climbing-text">
-                <h2>Curecanti Needle</h2>
-                <button className="view-btn">View</button>
             </div>
             {view && (
                 <div className="canvas-container">
@@ -114,6 +110,30 @@ export default function Climbing() {
                 src="extras/videos/noddleSummit.mp4"
                 style={videoStyle}
             />
+            <div className="writing-block">
+                <div className="text-inner">
+                    <h2>Pangborn's Pinacle</h2>
+                    <p>Pike's Peak wilderness</p>
+                </div>
+            </div>
+            <div className="writing-block">
+                <div className="text-inner">
+                    <h2>Tarryall Tower</h2>
+                    <p>Lost Creek wilderness</p>
+                </div>
+            </div>
+            <div className="writing-block">
+                <div className="text-inner">
+                    <h2>Lizard Head</h2>
+                    <p>San Juan mountains</p>
+                </div>
+            </div>
+            <div className="writing-block">
+                <div className="text-inner">
+                    <h2>Curecanti Needle</h2>
+                    <p>Black Canyon</p>
+                </div>
+            </div>
         </div>
     )
 }

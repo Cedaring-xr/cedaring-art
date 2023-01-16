@@ -2,14 +2,15 @@
 
 .center {
     display: flex;
-    position: relative;
+    position: absolute;
+    top: calc(50% - 60px);
+    left: calc(50% - 60px);
     z-index: 20;
-    top: -70vh;
     text-align: center;
     justify-content: center;
 
     span {
-        color: #f1f1f1;
+        color: abstracts.$ivoryWhite;
         font-size: 1.2em;
         text-transform: uppercase;
         line-height: 120px;

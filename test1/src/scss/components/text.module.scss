@@ -4,13 +4,13 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     padding: 0;
-    gap: 0.5rem;
+    gap: 1rem;
+    overflow: hidden;
 
-    @include abstracts.breakpoint(phone) {
-        grid-template-columns: repeat(4, 1fr);
-    }
     @include abstracts.breakpoint(tablet) {
+        grid-template-columns: repeat(4, 1fr);
         margin: 0 5rem;
+        gap: 1rem;
     }
 
     @include abstracts.breakpoint(desktop) {
@@ -19,12 +19,21 @@
         margin-bottom: 400px;
     }
 
+    #hello {
+        @include abstracts.breakpoint(tablet) {
+            margin: 25px 0 ;
+        }
+    }
+
     #name-text {
-        @include abstracts.breakpoint(phone) {
+        margin-bottom: -20px;
+
+        @include abstracts.breakpoint(tablet) {
             grid-row-start: 1;
             grid-column-start: 1;
             grid-row-end: 2;
             grid-column-end: 3;
+            margin: 0;
         }
         @include abstracts.breakpoint(desktop) {
             grid-row-start: 1;
@@ -35,7 +44,7 @@
     }
 
     #welcome-title {
-        @include abstracts.breakpoint(phone) {
+        @include abstracts.breakpoint(tablet) {
             grid-row-start: 2;
             grid-column-start: 1;
             grid-row-end: 3;
@@ -62,12 +71,13 @@
             max-height: 225px;
         }
 
-        @include abstracts.breakpoint(phone) {
+        @include abstracts.breakpoint(tablet) {
             border-radius: 0;
             grid-row-start: 4;
             grid-column-start: 1;
             grid-row-end: 5;
             grid-column-end: 3;
+            margin: 0;
         }
         @include abstracts.breakpoint(desktop) {
             border-radius: 0;
@@ -79,7 +89,7 @@
     }
 
     #about-text {
-        @include abstracts.breakpoint(phone) {
+        @include abstracts.breakpoint(tablet) {
             grid-row-start: 3;
             grid-column-start: 1;
             grid-row-end: 4;
@@ -95,55 +105,74 @@
     }
 
     #mtn-img {
-        
-        @include abstracts.breakpoint(phone) {
-            grid-row-start: 7;
-            grid-column-start: 1;
-            grid-row-end: 8;
-            grid-column-end: 5;
-            margin-bottom: -25px;
-        }
-        @include abstracts.breakpoint(desktop) {
-            grid-row-start: 7;
-            grid-column-start: 2;
-            grid-row-end: 8;
-            grid-column-end: 6;
-            margin-bottom: 25px;
-        }
-    }
 
-    #cedaring {
-        @include abstracts.breakpoint(phone) {
-            grid-row-start: 5;
-            grid-column-start: 1;
-            grid-row-end: 6;
-            grid-column-end: 5;
-        }
-        @include abstracts.breakpoint(desktop) {
-            grid-row-start: 5;
-            grid-column-start: 2;
-            grid-row-end: 6;
-            grid-column-end: 6;
-        }
-
-    }
-
-    #tree-img {
-        width: 65%;
-
-        @include abstracts.breakpoint(phone) {
+        @include abstracts.breakpoint(tablet) {
             grid-row-start: 4;
             grid-column-start: 3;
             grid-row-end: 5;
             grid-column-end: 5;
-            width: 100%;
+            
+            img {
+                height: 225px;
+                width: auto;
+            }
         }
         @include abstracts.breakpoint(desktop) {
             grid-row-start: 4;
             grid-column-start: 4;
             grid-row-end: 5;
             grid-column-end: 6;
-            width: 100%;
+        }
+
+        @include abstracts.breakpoint(max-desktop) {
+            grid-row-start: 4;
+            grid-column-start: 3;
+            grid-row-end: 5;
+            grid-column-end: 6;
+        }
+    }
+
+    #cedaring {
+        @include abstracts.breakpoint(tablet) {
+            grid-row-start: 5;
+            grid-column-start: 1;
+            grid-row-end: 6;
+            grid-column-end: 3;
+        }
+        @include abstracts.breakpoint(desktop) {
+            grid-row-start: 5;
+            grid-column-start: 2;
+            grid-row-end: 6;
+            grid-column-end: 4;
+        }
+
+    }
+
+    #tree-img {
+        width: 280px;
+
+        @include abstracts.breakpoint(tablet) {
+            grid-row-start: 5;
+            grid-column-start: 3;
+            grid-row-end: 6;
+            grid-column-end: 5;
+            width: 90%;
+            max-width: 300px;
+            margin: auto auto;
+            
+        }
+        @include abstracts.breakpoint(desktop) {
+            grid-row-start: 5;
+            grid-column-start: 4;
+            grid-row-end: 7;
+            grid-column-end: 7;
+        }
+
+        @include abstracts.breakpoint(max-desktop) {
+            grid-row-start: 5;
+            grid-column-start: 4;
+            grid-row-end: 7;
+            grid-column-end: 5;
         }
     }
 
@@ -201,7 +230,7 @@
         margin: 0 auto;
 
         img {
-            box-shadow: abstracts.$headerShadow;
+            box-shadow: abstracts.$imageShadow;
             width: 100%;
         }
     }
@@ -218,4 +247,21 @@
     position: relative;
     z-index: 20;
     font-family: abstracts.$bodyFont;
+}
+
+.view-btn {
+    padding: 5px 2rem;
+    margin: 0px;
+    background-color: abstracts.$honeyGold;
+    border: none;
+    border-radius: abstracts.$borderRadiusLarge;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: abstracts.$bodyFont;
+    color: abstracts.$slateBlack;
+    box-shadow: abstracts.$buttonShadow;
+
+    &:hover {
+        box-shadow: abstracts.$hoverShadow;
+    }
 }

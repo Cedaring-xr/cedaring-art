@@ -20,13 +20,14 @@ export default function Writing() {
                 <h1 className="title">
                     Blending 3D visuals and written narratives
                 </h1>
-                <p className="text">
-                    I want to write my own stories or blog posts eventually, but
-                    for now I am starting with poems or short stories written by
-                    actual writers as a test. The goal is to create fun 3D
-                    visual-based aspects to enhance the storytelling of the
-                    writing.
-                </p>
+                <div className="heading-banner">
+                    <p className="text">
+                        I want to write my own stories or blog posts eventually,
+                        but for now I am starting with poems or short stories.
+                        The goal is to create fun 3D visual-based aspects to
+                        enhance the storytelling of the writing.
+                    </p>
+                </div>
             </div>
             <div className="writing-block">
                 <div className="text-inner">
@@ -34,14 +35,15 @@ export default function Writing() {
                     <p>Short poem written by: Bliss Carman</p>
                 </div>
                 <button
-                    className="read-btn"
+                    className="view-btn"
                     onClick={() => {
                         setOpen(true)
                     }}
                 >
-                    {!isOpen ? 'Click to view' : 'Close'}
+                    {!isOpen ? 'View' : 'Close'}
                 </button>
             </div>
+
             {isOpen && <WritingModal onClose={() => closeModal()} />}
         </div>
     )
