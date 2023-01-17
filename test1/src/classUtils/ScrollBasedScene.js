@@ -71,14 +71,6 @@ class ScrollBasedScene extends Component {
         this.ambientLight.position.set(50, 50, 50)
         this.scene.add(this.ambientLight)
 
-        //shapes
-        const geometry = new THREE.BoxGeometry(1, 1, 1)
-        const material = new THREE.MeshBasicMaterial({
-            color: 0x00ff00
-        })
-        this.cube = new THREE.Mesh(geometry, material)
-        this.scene.add(this.cube)
-        this.cube.scale.set(0.1, 0.1, 0.1)
 
         // video
         const video = document.getElementById('summit1-video')
@@ -91,14 +83,6 @@ class ScrollBasedScene extends Component {
         videoTexture.format = THREE.RGBAFormat
         videoTexture.minFilter = THREE.NearestFilter
         videoTexture.magFilter = THREE.NearestFilter
-
-        // const videoMaterial = new THREE.MeshBasicMaterial({
-        //     map: videoTexture,
-        //     side: THREE.FrontSide,
-        //     toneMapped: false,
-        // })
-        // videoMaterial.needsUpdate = true;
-        // videoTexture.needsUpdate = true;
 
         const videoGeometry = new THREE.PlaneGeometry(0.01, 0.0077)
         const videoMaterial = new THREE.MeshBasicMaterial({ map: videoTexture })
@@ -160,7 +144,7 @@ class ScrollBasedScene extends Component {
 
         //renderer
         this.renderer = new THREE.WebGLRenderer({ alpha: true })
-        this.renderer.setClearColor(0x000000, 0)
+        this.renderer.setClearColor(0xcae4db, 1)
         this.renderer.setSize(window.innerWidth, window.innerHeight)
         this.mount.appendChild(this.renderer.domElement)
 
@@ -195,7 +179,7 @@ class ScrollBasedScene extends Component {
             timeline.to(this.camera.position, { x: 3, y: 13, z: 6 })
             timeline.to(hikePath.position, { y: 0.01 })
             timeline.to(this.camera.rotation, { x: 0, y: 0.3, z: -0.1 })
-            timeline.to(lowPolyMtn.position, { y: 11.8 })
+            timeline.to(lowPolyMtn.position, { y: 11.9 })
             timeline.to(screen.position, { x: 1.4, y: 13, z: 0 })
             timeline.to(screen.scale, { x: 530, y: 397.5 })
             timeline.to(screen.scale, { x: 530, y: 397.5 })

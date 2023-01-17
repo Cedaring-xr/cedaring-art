@@ -14,7 +14,7 @@
     max-width: 1980px;
     top: 55%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); // don't mix with gsap
     border: 2px solid abstracts.$honeyGold;
     background: abstracts.$slateBlack;
     position: fixed;

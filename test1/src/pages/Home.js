@@ -41,11 +41,11 @@ export default function Home() {
 
     useLayoutEffect(() => {
         gsap.from('.grid-item', {
-            duration: 0.3,
-            y: 40,
-            x: -20,
+            duration: 0.6,
+            y: 80,
+            x: -80,
             opacity: 0,
-            stagger: 0.05,
+            stagger: 0.1,
             scrollTrigger: {
                 trigger: '.grid-item',
                 start: 'center bottom'
