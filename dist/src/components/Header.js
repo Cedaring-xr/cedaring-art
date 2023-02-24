@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom'
 
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import backLayer from '../Assets/images/parallax/clear-back.png'
-import backPlaceholder from '../Assets/images/parallax/backPlaceholder.png'
-import midLayer from '../Assets/images/parallax/clear-mid.png'
-import midPlaceholder from '../Assets/images/parallax/midPlaceholder.png'
-import frontLayer from '../Assets/images/parallax/clear-front-short.png'
-import frontPlaceholder from '../Assets/images/parallax/frontPlaceholder.png'
+import backLayer from '../Assets/images/parallax/clear-back.webp'
+import backPlaceholder from '../Assets/images/parallax/backPlaceholder.webp'
+import midLayer from '../Assets/images/parallax/clear-mid.webp'
+import midPlaceholder from '../Assets/images/parallax/midPlaceholder.webp'
+import frontLayer from '../Assets/images/parallax/clear-front-short.webp'
+import frontPlaceholder from '../Assets/images/parallax/frontPlaceholder.webp'
 import LazyImage from './LazyImage'
 gsap.registerPlugin(ScrollTrigger)
 

@@ -112,7 +112,7 @@ export default function Climbing() {
             />
             <div className="writing-block">
                 <div className="text-inner">
-                    <h2>Pangborn's Pinacle</h2>
+                    <h2>Pangborn's Pinnacle</h2>
                     <p>Pike's Peak wilderness</p>
                 </div>
             </div>
