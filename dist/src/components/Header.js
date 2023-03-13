@@ -112,7 +112,7 @@ export default function Header() {
                         id="prlx-back"
                         loading="eager"
                     />
-                    <h1 className="parallax-text">
+                    <h1 className="parallax-text" >
                         <Link to="/" onClick={menuCloseFull}>
                             Cedaring.Art
                         </Link>
@@ -130,17 +130,17 @@ export default function Header() {
                         } ${menuOpen ? styles.isMenu : ''}`}
                     >
                         <ul>
-                            <li className="nav-item">
+                            <li className="nav-item" id="artwork">
                                 <Link to="/artwork" onClick={menuCloseFull}>
                                     Artwork
                                 </Link>
                             </li>
-                            <li className="nav-item">
+                            <li className="nav-item" id="writing">
                                 <Link to="/writing" onClick={menuCloseFull}>
                                     Writing
                                 </Link>
                             </li>
-                            <li className="nav-item">
+                            <li className="nav-item" id="climbing">
                                 <Link to="/climbing" onClick={menuCloseFull}>
                                     Climbing
                                 </Link>
