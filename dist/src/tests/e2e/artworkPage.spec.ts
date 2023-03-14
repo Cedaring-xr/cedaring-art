@@ -1,18 +1,15 @@
 import { test, expect, chromium, Locator, Page } from '@playwright/test';
 
-export class HomePage {
+export class ArtworkPage {
   readonly page: Page;
   readonly homeLink: Locator;
-  readonly paralaxHeader: Locator;
-  readonly pageNavList: Locator;
-  readonly infoGrid: Locator;
+  readonly introDescription: Locator;
+  readonly artworkList: Locator;
+  readonly portalModal: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.homeLink = page.locator('a', { hasText: 'Cedaring.Art' });
-    this.paralaxHeader = page.locator('nav', { hasText: 'Installation' });
-    this.pageNavList = page.locator('li', { hasText: 'Guides' }).locator('a', { hasText: 'Page Object Model' });
-    this.infoGrid = page.locator('');
   }
 }
 
@@ -26,8 +23,8 @@ test.beforeEach(async () => {
   await page.goto(localEnv)
 });
 
-test.describe('Home page', () => {
-  test('should verify header elements', async ({ page }) => {
+test.describe('Artwork Page', () => {
+  test('should verify the list of artwork cards', async ({ page }) => {
 
     await expect(page.getByText('Cedaring.art')).toBeVisible();
     await page.getByRole('listitem').filter({ hasText: 'Artwork'}).click()
@@ -39,15 +36,11 @@ test.describe('Home page', () => {
     
   // });
 
-  // test('should verify visibility of info sections', async ({ page }) => {
+  // test('should verify loading of video scene', async ({ page }) => {
     
   // });
 
-  // test('should verify visibility of images', async ({ page }) => {
+  // test('should verify loading of threeJS scene', async ({ page }) => {
     
-  // });
-
-  // test('should check the footer social links', async ({ page }) => {
-
   // });
 });

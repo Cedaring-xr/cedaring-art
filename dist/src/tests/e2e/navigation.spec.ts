@@ -8,7 +8,6 @@ test.beforeEach(async ({ page }) => {
 test.describe('Page navigation', () => {
   test('should transition through available pages', async ({ page }) => {
 
-    await expect(page.getByText('Cedaring.art')).toBeVisible();
-    await page.getByRole('link', { name: 'Artwork' }).click();
+    await page.getByRole('listitem').filter({ hasText: 'Artwork'}).click()
   });
 });
