@@ -1,11 +1,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Artwork from './pages/Artwork'
-import Climbing from './pages/Climbing'
-import Writing from './pages/Writing'
-import Footer from './components/Footer'
-import Header from './components/Header'
+import Home from './pages/Home.js'
+import Artwork from './pages/Artwork.js'
+import Climbing from './pages/Climbing.js'
+import Writing from './pages/Writing.js'
+import Footer from './components/Footer.js'
+import Header from './components/Header.js'
 
 export default function PageRoutes() {
     return (

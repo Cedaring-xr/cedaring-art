@@ -1,7 +1,6 @@
 import React from 'react'
-import styles from '../scss/components/writing.module.scss'
 
-export default function WritingSelection() {
+export default function WritingScene() {
     return (
         <>
             <div className="outer-container">

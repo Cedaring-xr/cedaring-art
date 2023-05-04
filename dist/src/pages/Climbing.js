@@ -112,6 +112,12 @@ export default function Climbing() {
             />
             <div className="writing-block">
                 <div className="text-inner">
+                    <h2>Needle Rock</h2>
+                    <p>Crawford valley</p>
+                </div>
+            </div>
+            <div className="writing-block">
+                <div className="text-inner">
                     <h2>Pangborn's Pinnacle</h2>
                     <p>Pike's Peak wilderness</p>
                 </div>

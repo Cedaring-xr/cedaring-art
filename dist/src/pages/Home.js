@@ -13,7 +13,7 @@ import { ScrollTrigger } from 'gsap/all'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function Home() {
+const Home = () => {
     const [device, setDevice] = useState('')
 
     const getDeviceType = () => {
@@ -122,3 +122,5 @@ export default function Home() {
         </>
     )
 }
+
+export default Home;

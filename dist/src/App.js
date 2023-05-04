@@ -1,5 +1,5 @@
 import React from 'react'
-import PageRoutes from './routes'
+import PageRoutes from './routes.js'
 import './App.scss'
 
 function App() {

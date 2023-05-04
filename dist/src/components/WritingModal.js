@@ -4,6 +4,7 @@ import ReactDom from 'react-dom'
 import closeIcon from '../Assets/logos/x-png.png'
 import FiresideScene from '../classUtils/FiresideScene'
 import WIPalert from './WIPalert'
+import WritingScene from './WritingScene'
 
 const portalRoot = document.getElementById('portal-root')
 
@@ -18,8 +19,9 @@ export default function WritingModal({ card, onClose }) {
                     style={{ cursor: 'pointer' }}
                     onClick={() => onClose()}
                 />
-                <WIPalert />
+                {/* <WIPalert /> */}
                 {/* <FiresideScene /> */}
+                <WritingScene />
             </div>
         </div>,
         portalRoot
