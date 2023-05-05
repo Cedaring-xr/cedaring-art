@@ -31,7 +31,6 @@ export default function ModalCard({ card, onClose }) {
                     style={{ cursor: 'pointer' }}
                     onClick={() => onClose(card.id)}
                 />
-                {/* <ArtworkSceneR3F card={card}/>  */}
                 {isModel ? (
                     <ArtworkScene card={card} />
                 ) : (

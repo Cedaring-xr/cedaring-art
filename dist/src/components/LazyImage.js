@@ -12,8 +12,7 @@ function LazyImage({ src, placeholderSrc, id }) {
         }
     }, [src])
 
-    const loadingStyle =
-        placeholderSrc && imgSrc === placeholderSrc ? 'loading' : 'loaded'
+    const loadingStyle = placeholderSrc && imgSrc === placeholderSrc ? 'loading' : 'loaded'
 
     return (
         <img
