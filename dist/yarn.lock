@@ -1619,14 +1619,6 @@
     "@react-spring/shared" "~9.4.5"
     "@react-spring/types" "~9.4.5"
 
-"@react-spring/animated@~9.5.2":
-  version "9.5.2"
-  resolved "https://registry.npmjs.org/@react-spring/animated/-/animated-9.5.2.tgz"
-  integrity sha512-oRlX+MmYLbK8IuUZR7SQUnRjXxJ4PMIZeBkBd1SUWVgVJAHMTfJzPltzm+I6p59qX+qLlklYHfnWaonQKDqLuQ==
-  dependencies:
-    "@react-spring/shared" "~9.5.2"
-    "@react-spring/types" "~9.5.2"
-
 "@react-spring/core@~9.4.5":
   version "9.4.5"
   resolved "https://registry.npmjs.org/@react-spring/core/-/core-9.4.5.tgz"
@@ -1637,33 +1629,10 @@
     "@react-spring/shared" "~9.4.5"
     "@react-spring/types" "~9.4.5"
 
-"@react-spring/core@~9.5.2":
-  version "9.5.2"
-  resolved "https://registry.npmjs.org/@react-spring/core/-/core-9.5.2.tgz"
-  integrity sha512-UMRtFH6EfebMp/NMDGCUY5+hZFXsg9iT9hzt/iPzJSz2WMXKBjLoFZHJXcmiVOrIhzHmg1O0pFECn1Wp6pZ5Gw==
-  dependencies:
-    "@react-spring/animated" "~9.5.2"
-    "@react-spring/rafz" "~9.5.2"
-    "@react-spring/shared" "~9.5.2"
-    "@react-spring/types" "~9.5.2"
-
-"@react-spring/parallax@^9.5.2":
-  version "9.5.2"
-  resolved "https://registry.npmjs.org/@react-spring/parallax/-/parallax-9.5.2.tgz"
-  integrity sha512-1LoJODtccFA7EARDJb1ZesI1jx4/HqBUy7f2UQRt1tWHviVG9imoSTP8S0KqDmGxXaA1itUUvo690bpw02pwzQ==
-  dependencies:
-    "@react-spring/shared" "~9.5.2"
-    "@react-spring/web" "~9.5.2"
-
 "@react-spring/rafz@~9.4.5":
   version "9.4.5"
   resolved "https://registry.npmjs.org/@react-spring/rafz/-/rafz-9.4.5.tgz"
   integrity sha512-swGsutMwvnoyTRxvqhfJBtGM8Ipx6ks0RkIpNX9F/U7XmyPvBMGd3GgX/mqxZUpdlsuI1zr/jiYw+GXZxAlLcQ==
-
-"@react-spring/rafz@~9.5.2":
-  version "9.5.2"
-  resolved "https://registry.npmjs.org/@react-spring/rafz/-/rafz-9.5.2.tgz"
-  integrity sha512-xHSRXKKBI/wDUkZGrspkOm4VlgN6lZi8Tw9Jzibp9QKf3neoof+U2mDNgklvnLaasymtUwAq9o4ZfFvQIVNgPQ==
 
 "@react-spring/shared@~9.4.5":
   version "9.4.5"
@@ -1672,14 +1641,6 @@
   dependencies:
     "@react-spring/rafz" "~9.4.5"
     "@react-spring/types" "~9.4.5"
-
-"@react-spring/shared@~9.5.2":
-  version "9.5.2"
-  resolved "https://registry.npmjs.org/@react-spring/shared/-/shared-9.5.2.tgz"
-  integrity sha512-/OSf2sjwY4BUnjZL6xMC+H3WxOOhMUCk+yZwgdj40XuyUpk6E6tYyiPeD9Yq5GLsZHodkvE1syVMRVReL4ndAg==
-  dependencies:
-    "@react-spring/rafz" "~9.5.2"
-    "@react-spring/types" "~9.5.2"
 
 "@react-spring/three@^9.3.1":
   version "9.4.5"
@@ -1695,21 +1656,6 @@
   version "9.4.5"
   resolved "https://registry.npmjs.org/@react-spring/types/-/types-9.4.5.tgz"
   integrity sha512-mpRIamoHwql0ogxEUh9yr4TP0xU5CWyZxVQeccGkHHF8kPMErtDXJlxyo0lj+telRF35XNihtPTWoflqtyARmg==
-
-"@react-spring/types@~9.5.2":
-  version "9.5.2"
-  resolved "https://registry.npmjs.org/@react-spring/types/-/types-9.5.2.tgz"
-  integrity sha512-n/wBRSHPqTmEd4BFWY6TeR1o/UY+3ujoqMxLjqy90CcY/ozJzDRuREL3c+pxMeTF2+B7dX33dTPCtFMX51nbxg==
-
-"@react-spring/web@~9.5.2":
-  version "9.5.2"
-  resolved "https://registry.npmjs.org/@react-spring/web/-/web-9.5.2.tgz"
-  integrity sha512-cusTjbOGTgtbsnpBDjb6Ia+B0lQLE0Fk5rGDog6Sww7hWnLIQ521PMiOBnAWtkntB9eXDUfj7L91nwJviEC0lw==
-  dependencies:
-    "@react-spring/animated" "~9.5.2"
-    "@react-spring/core" "~9.5.2"
-    "@react-spring/shared" "~9.5.2"
-    "@react-spring/types" "~9.5.2"
 
 "@react-three/drei@^9.13.2":
   version "9.13.2"
@@ -8428,7 +8374,7 @@ react-dev-utils@^12.0.1:
     strip-ansi "^6.0.1"
     text-table "^0.2.0"
 
-"react-dom@^16.8.0  || >=17.0.0 || >=18.0.0", react-dom@^18.0.0, react-dom@^18.2.0, react-dom@>=16.13, react-dom@>=16.8, react-dom@>=18.0:
+react-dom@^18.0.0, react-dom@^18.2.0, react-dom@>=16.13, react-dom@>=16.8, react-dom@>=18.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
@@ -10165,11 +10111,6 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   integrity sha512-O84QOnr0icsbFGLS0O3bI5FswxzRr8/gHwWkDlQFskhSPryQXvrTMxjxGP4+iWYoauLoBvfDpkrOauZ+0iZpDA==
   dependencies:
     minimalistic-assert "^1.0.0"
-
-web-vitals@^2.1.0:
-  version "2.1.4"
-  resolved "https://registry.npmjs.org/web-vitals/-/web-vitals-2.1.4.tgz"
-  integrity sha512-sVWcwhU5mX6crfI5Vd2dC4qchyTqxV8URinzt25XqVh+bHEPGH4C3NPrNionCP7Obx59wrYEbNlw4Z8sjALzZg==
 
 webgl-constants@^1.1.1:
   version "1.1.1"
