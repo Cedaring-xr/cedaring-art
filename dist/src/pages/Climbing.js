@@ -21,10 +21,10 @@ export default function Climbing() {
     return (
         <div className="body-content">
             <div className="page-title-container">
-                <p className="title">
+                <h4 className="title">
                     Using GPS and elevation data to create 3D explorable layouts
-                    of mountain areas and climbing Destinations
-                </p>
+                    of mountain areas and climbing destinations
+                </h4>
             </div>
             <div className="writing-block">
                 <div className="text-inner">

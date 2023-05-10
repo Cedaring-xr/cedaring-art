@@ -15,9 +15,9 @@ export default function Writing() {
     return (
         <div className="body-content">
             <div className="page-title-container">
-                <h1 className="title">
+                <h4 className="title">
                     Exploritory writings about technology and the future
-                </h1>
+                </h4>
                 <div className="heading-banner">
                     <p className="text">
                         I write about lesser explored aspects of technology that I find interesting. These blog style posts are just my own musings about life.
