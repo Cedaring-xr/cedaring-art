@@ -3,7 +3,7 @@ import ReactDom from 'react-dom'
 
 import closeIcon from '../Assets/logos/x-png.png'
 import ArtworkScene from '../classUtils/ArtworkScene'
-import VideoScene from '../classUtils/VideoScene'
+import VideoScene from './VideoScene'
 
 const portalRoot = document.getElementById('portal-root')
 

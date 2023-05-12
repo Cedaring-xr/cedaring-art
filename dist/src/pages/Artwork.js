@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger)
 export default function Artwork() {
     const [artworkItems, setArtworkItems] = useState(artwork)
     const [showPortal, toggleShowPortal] = useState(false)
-    const [activeObject, setActiveObject] = useState(null) //should be card object
+    const [activeObject, setActiveObject] = useState(null)
 
     const gridCard = useRef()
 
@@ -33,18 +33,15 @@ export default function Artwork() {
     }, [])
 
     const openModal = (card, index) => {
-        // console.warn('card id', index)
         //set active object
-        //toogle portal state
+        //toggle portal state
         setActiveObject(card)
         toggleShowPortal(true)
-        // document.body.classList.add('header-menu-open');
     }
 
-    const closeModal = (id) => {
+    const closeModal = () => {
         setActiveObject(null)
         toggleShowPortal(false)
-        // document.body.classList.remove('header-menu-open');
     }
 
     return (
@@ -61,7 +58,7 @@ export default function Artwork() {
                         process of creating in VR, consider checking out the
                         community. There are lots of new features and
                         improvements over the original version of TiltBrush.
-                        It's also free.
+                        It's also free!
                         <a href="https://openbrush.app/" target="_blank">
                             <img
                                 className="openbrush-logo"
@@ -76,10 +73,7 @@ export default function Artwork() {
                 {artworkItems.map((card, index) => {
                     return (
                         <div key={index} ref={gridCard} className="grid-card">
-                            <div
-                                className="grid-card-content"
-                                onClick={() => openModal(card, index)}
-                            >
+                            <div className="grid-card-content" onClick={() => openModal(card, index)}>
                                 <div className="grid-img-container">
                                     <LazyImage
                                         src={card['preview-img']}

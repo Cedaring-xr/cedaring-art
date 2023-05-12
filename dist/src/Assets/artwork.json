@@ -40,7 +40,7 @@
     {
         "id": 2,
         "name": "Cube Tree",
-        "description": "using grid tool to make precise cube arrangements",
+        "description": "Using grid tool to make precise cube arrangements",
         "preview-img": "/extras/images/cubeTree_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/cubeTree_Moment.jpg",
         "background": "#0d0d0d",
@@ -59,7 +59,7 @@
     {
         "id": 3,
         "name": "Portal Owl",
-        "description": "trying out the experimental feather brush type",
+        "description": "Trying out the experimental feather brush type",
         "preview-img": "/extras/images/chainsOwlPortal_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/chainsOwlPortal_Moment.jpg",
         "background": "#0d0d0d",
@@ -117,7 +117,7 @@
     {
         "id": 6,
         "name": "Pinata",
-        "description": "trying out different textures and shading",
+        "description": "Trying out different textures and shading",
         "preview-img": "/extras/images/pinata_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/pinata_Moment.jpg",
         "background": "#0d0d0d",
@@ -136,7 +136,7 @@
     {
         "id": 7,
         "name": "Flower Scroll",
-        "description": "experimenting with flowers and 2D to 3D transition",
+        "description": "Experimenting with flowers and 2D to 3D transition",
         "preview-img": "/extras/images/flowerScroll.jpg",
         "placeholder-img": "/extras/placeholderImages/flowerScroll.jpg",
         "background": "#0d0d0d",
@@ -174,7 +174,7 @@
     {
         "id": 9,
         "name": "Water Otter",
-        "description": "more practice with water effects",
+        "description": "More practice with water effects",
         "preview-img": "/extras/images/otter_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/otter_Moment.jpg",
         "background": "#0d0d0d",
@@ -192,8 +192,8 @@
     },
     {
         "id": 10,
-        "name": "floating island",
-        "description": "floating rocks and syncing the timing of animated brushes",
+        "name": "Floating Island",
+        "description": "Floating rocks and syncing the timing of animated brushes",
         "preview-img": "/extras/images/island_Moment.png",
         "placeholder-img": "/extras/placeholderImages/island_Moment.jpg",
         "background": "#0d0d0d",
@@ -212,7 +212,7 @@
     {
         "id": 11,
         "name": "Spirit Staff",
-        "description": "size perspective and fantasy themed items",
+        "description": "Size perspective and fantasy themed items",
         "preview-img": "/extras/images/fire_moment.jpg",
         "placeholder-img": "/extras/placeholderImages/fire_moment.jpg",
         "background": "#0d0d0d",
@@ -230,8 +230,8 @@
     },
     {
         "id": 12,
-        "name": "Clock gears",
-        "description": "anatomically correct clock with gearing pieces",
+        "name": "Clock Gears",
+        "description": "Anatomically correct clock with gearing pieces",
         "preview-img": "/extras/images/clock_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/clock_Moment.jpg",
         "background": "#0d0d0d",
@@ -288,8 +288,8 @@
     },
     {
         "id": 15,
-        "name": "Fish tank",
-        "description": "fish always appear on back side of cube because of single sided brush effect",
+        "name": "Fish Tank",
+        "description": "Fish always appear on back side of cube because of single sided brush effect",
         "preview-img": "/extras/images/fishTank_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/fishTank_Moment.jpg",
         "background": "#0d0d0d",
@@ -309,7 +309,7 @@
     {
         "id": 16,
         "name": "Fox Spirit",
-        "description": "practice creating grass and floral effects",
+        "description": "Practice creating grass and floral effects",
         "preview-img": "/extras/images/foxSpirit_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/foxSpirit_Moment.jpg",
         "background": "#0d0d0d",
@@ -328,8 +328,8 @@
     },
     {
         "id": 17,
-        "name": "single-Sided Beach",
-        "description": "made with a 4-way symmetry tool and single-sided experimental brush",
+        "name": "Single-Sided Beach",
+        "description": "Made with a 4-way symmetry tool and single-sided experimental brush",
         "preview-img": "/extras/images/Beach1Side_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/Beach1Side_Moment.jpg",
         "background": "#0d0d0d",
@@ -348,8 +348,8 @@
     },
     {
         "id": 18,
-        "name": "single-Sided City",
-        "description": "visuals change based on viewing perspective",
+        "name": "Single-Sided City",
+        "description": "Visuals change based on viewing perspective",
         "preview-img": "/extras/images/cityTree_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/cityTree_Moment.jpg",
         "background": "#0d0d0d",
@@ -369,7 +369,7 @@
     {
         "id": 19,
         "name": "Spiral Trees",
-        "description": "expanding on shapes that are generated from an api script",
+        "description": "Expanding on shapes that are generated from an api script",
         "preview-img": "/extras/images/trees_moment.png",
         "placeholder-img": "/extras/placeholderImages/trees_moment.jpg",
         "background": "#0d0d0d",
@@ -388,7 +388,7 @@
     {
         "id": 20,
         "name": "Gears",
-        "description": "practice creating complex objects with poly tool",
+        "description": "Practice creating complex objects with poly tool",
         "preview-img": "/extras/images/gears_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/gears_Moment.jpg",
         "background": "#0d0d0d",
@@ -407,8 +407,8 @@
     },
     {
         "id": 21,
-        "name": "Tiger pond",
-        "description": "animal practice and transparent layers",
+        "name": "Tiger Pond",
+        "description": "Animal practice and transparent layers",
         "preview-img": "/extras/images/tigerPond_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/tigerPond_Moment.jpg",
         "background": "#0d0d0d",
@@ -428,7 +428,7 @@
     {
         "id": 22,
         "name": "Sky Dragon",
-        "description": "visuals change based on viewing perspective",
+        "description": "Visuals change based on viewing perspective",
         "preview-img": "/extras/images/skyDragonSingleSided_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/skyDragonSingleSided_Moment.jpg",
         "background": "#0d0d0d",
@@ -448,7 +448,7 @@
     {
         "id": 23,
         "name": "Smash VFX",
-        "description": "color blending and particle effects practice",
+        "description": "Color blending and particle effects practice",
         "preview-img": "/extras/images/groundSmash_Moment.jpg",
         "placeholder-img": "/extras/placeholderImages/groundSmash_Moment.jpg",
         "background": "#0d0d0d",

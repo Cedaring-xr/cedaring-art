@@ -80,6 +80,20 @@ export default function Writing() {
                     {!isOpen ? 'View' : 'Close'}
                 </button>
             </div>
+            <div className="writing-block">
+                <div className="text-inner">
+                    <h3>Parasocial relationships in the metaverse</h3>
+                    <p>How popularity and celebrityship works with online experiences</p>
+                </div>
+                <button
+                    className="view-btn"
+                    onClick={() => {
+                        setOpen(true)
+                    }}
+                >
+                    {!isOpen ? 'View' : 'Close'}
+                </button>
+            </div>
 
             {isOpen && <WritingModal onClose={() => closeModal()} />}
         </div>

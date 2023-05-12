@@ -48,7 +48,6 @@ class ScrollBasedScene extends Component {
         manager.onLoad = () => {
             if (loadingBar) {
                 gsap.delayedCall(0.5, () => {
-                    // console.log('loaded')
                     gsap.to(overlayMaterial.uniforms.uAlpha, {
                         duration: 2,
                         value: 0
@@ -74,9 +73,6 @@ class ScrollBasedScene extends Component {
 
         // video
         const video = document.getElementById('summit1-video')
-        // let video = document.createElement("video")
-        // video.src = "./clip2.mp4"
-        // video.loop()
         video.play()
 
         let videoTexture = new THREE.VideoTexture(video)

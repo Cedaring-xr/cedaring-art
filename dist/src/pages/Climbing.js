@@ -5,6 +5,7 @@ import { gsap } from 'gsap'
 
 export default function Climbing() {
     const [view, setView] = useState(false)
+    const [scene, setViewScene] = useState(null)
 
     const videoStyle = {
         display: 'none'
@@ -17,6 +18,10 @@ export default function Climbing() {
             x: -20,
         })
     }, [])
+
+    const openScene = (climb) => {
+        setViewScene(climb)
+    }
 
     return (
         <div className="body-content">
