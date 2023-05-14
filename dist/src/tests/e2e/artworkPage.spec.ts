@@ -10,7 +10,6 @@ test.describe('Artwork Page', () => {
   test('should verify the list of artwork cards', async ({ page }) => {
 
     await expect(page.getByRole('heading', {name: 'Cedaring.Art'})).toBeVisible()
-    // await expect(page.getByText('Cedaring.Art')).toBeVisible();
     await page.getByRole('listitem').filter({ hasText: 'Artwork'}).click()
     await expect(page.getByRole('link', { name: 'Writing' })).toBeVisible()
     await expect(page.getByRole('link', { name: 'Climbing' })).toBeVisible()

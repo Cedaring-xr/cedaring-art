@@ -1,6 +1,8 @@
 import React from 'react'
 
-export default function VideoScene({ card, onClose }) {
+const VideoScene = (card, onClose) => {
+
+// export default function VideoScene({ card, onClose }) {
     return (
         <>
             <div className="video-description-box">
@@ -14,3 +16,5 @@ export default function VideoScene({ card, onClose }) {
         </>
     )
 }
+
+export default VideoScene
